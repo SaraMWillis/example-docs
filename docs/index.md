@@ -29,7 +29,7 @@ This site is divided into sections that describe the High Performance Computing 
 === "Puma"
 
     <div style="float: right; width: 0px; height: 100px"></div>
-    <div style="float: right; clear: right"><img width="300" src="/home/images/puma.jpg"></div>
+    <div style="float: right; clear: right"><img width="300" src="home/images/puma.jpg"></div>
     
     Implemented in 2020, Puma is the biggest cat yet. Similar to Ocelote, it has standard CPU nodes (with 94 cores and 512 GB of memory per node), GPU nodes (with Nvidia V100) and two high-memory nodes (3 TB). Local scratch storage increased to ~1.4 TB. Puma runs on CentOS 7.
     
@@ -54,7 +54,7 @@ This site is divided into sections that describe the High Performance Computing 
 === "Ocelote"
 
     <div style="float: right; width: 0px; height: 100px"></div>
-    <div style="float: right; clear: right"><img width="300" src="/home/images/ocelote.jpg"></div>
+    <div style="float: right; clear: right"><img width="300" src="home/images/ocelote.jpg"></div>
     
     Implemented in the middle of 2016, Ocelote is designed to support the majority of workloads on the standard nodes. Additionally, Ocelote has one large memory  node with 2TB of memory and 46 nodes with Nvidia P100 GPUs for GPU-accelerated workflows
     
@@ -79,7 +79,7 @@ This site is divided into sections that describe the High Performance Computing 
 === "ElGato"
 
     <div style="float: right; width: 0px; height: 100px"></div>
-    <div style="float: right; clear: right"><img width="300" src="/home/images/elgato_jones.jpg"></div>
+    <div style="float: right; clear: right"><img width="300" src="home/images/elgato_jones.jpg"></div>
 
     Implemented at the start of 2014, ElGato has been reprovisioned with CentOS 7 and new compilers and libraries. From July 2021 it has been using Slurm for job submission. ElGato is our smallest cluster with 130 standard nodes each with 16 CPUs. Purchased by an NSF MRI grant by researchers in Astronomy and SISTA.
     
@@ -103,7 +103,7 @@ This site is divided into sections that describe the High Performance Computing 
 
 
 <div style="float: right; width: 0px; height: 100px"></div>
-<div style="float: right; clear: right"><img width="300" src="/home/images/HypersonicTravel.jpg"></div>
+<div style="float: right; clear: right"><img width="300" src="home/images/HypersonicTravel.jpg"></div>
 
 
 ## Highlighted Research
