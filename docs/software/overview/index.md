@@ -1,0 +1,35 @@
+# Software Overview
+
+## Overview
+???+ warning "Module availability"
+    Software modules are not available on the login nodes. To access them, you will need to connect to a compute either via an interactive session or batch job.
+
+Software packages are available as modules and are accessible from the compute nodes{ title="Important information" } of any of our three clusters. A list of installed software can be seen by clicking the link below, but may not be as current as using the module avail command (more information under Module Commands).
+
+## Policies
+### Academic/Free Software
+There is a plethora of software generally available for scientific and research usage.  We will install that software if it meets the following requirements:
+
+
+|Requirements||
+|-|-|
+|**Compatible with our module environment**|Some software is not written with clusters in mind and tries to install into system directories, or needs a custom environment on every compute node. |
+|**Generally useful**|Some software has to be configured to the specific compute environment of the user. You are encouraged to use our "contrib" environment to install your own.|
+|**Public license**|We do not install software if that would be a violation of its licensing.|
+|**Reasonably well written**|Some software takes days of effort and still does not work right.  We have limited resources and reserve the right to "give up". Sometimes software is written for workstations and does not function correctly in a shared environment.|
+|**Downloadable**|Some software requires additional steps to download installation files, such as registering on a website or accepting a license agreement. In these cases we ask researchers to download files and put them in a directory on the HPC storage. When you submit a software installation request let us know that you have already downloaded the files and provide path to the directory where they are located.|
+
+
+
+### Commercial/Fee-based Software
+The University of Arizona Research Computing facility has many commercial and freeware packages installed on our supercomputers. Our approach to acquisition of additional software depends upon its cost, licensing restrictions, and user interest.   
+
+|Audience||
+|-|-|
+|**Single user interest**|The license for the software is purchased by the user and his/her department or sponsor.  This software is best installed by the user.  There are two main options; the first and easiest, is to install the software locally in the relevant user's account using the example procedure. The second is to use the "contrib" environment.  The advantage is that you can share the software built here with other users. This is created through a support ticket where a consultant will create a "contrib" group in which you can build software and add users.|
+|**Group interest**|If a package is of interest to a group of several users, the best approach at first is for one user to act as a primary sponsor and arrange to split the procurement/licensing costs among the group. We can install the software and manage the user access according to requests from the group.|
+|**Broad interest**|The High Performance Computing team will consider acquiring and supporting software packages that have broad interest among our users. Full facility support will depend on the cost of the package and our ability to comply with any restrictive licensing conditions.|
+
+
+### Federal Regulations
+By policy, it is prohibited to use any of the facility's resources in any manner that violates the US Export Administration Regulations (EAR) or the International Trafficking in Arms Regulations (ITAR). It is relevant in this regard to be aware that the facility employs analysts who are foreign, nonresident, nationals and who have root-access privileges to all files and data. Specifically, you must agree not to use any software or data on facility systems that are restricted under EAR and/or ITAR.

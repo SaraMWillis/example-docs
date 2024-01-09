@@ -1,0 +1,114 @@
+# System Access
+
+## Overview
+
+??? tip "Comprehensive tutorial available"
+    A comprehensive walkthrough of this process is in our [quick start guide](/tutorials_and_training/quick_start). 
+
+<img src="images/cluster_diagram.png" alt="cluster-diagram" width="300"/>
+
+Logging into the HPC supercomputers starts with your UArizona NetID and password with two-factor authentication enabled. Logging in will first connect you to something called the **bastion host**, a computer that provides a gateway to our three clusters: Ocelote, ElGato, and Puma. This is the only function the bastion host serves. It is not for storing files, running programs, or accessing software. 
+
+This page is intended to provide you with instructions on getting terminal access to the system from your specific OS, how to log into the system from our web interface (Open OnDemand), how to set up X11 (image) forwarding, and how to configure your account to allow for a password-less login (see: [SSH Keys](#ssh-keys) ).
+
+If you experience any problems, refer to our FAQ page which provides some solutions to common problems.
+
+## Web Access
+
+[Open OnDemand](https://ood.hpc.arizona.edu){ .md-button }
+
+!!! example "OnDemand Options"
+    === "Browser Terminal"
+
+
+        Users can gain command line access to HPC through our OOD web interface as an alternative to using a local SSH Client. To use this interface:
+
+        <img src="images/ood_shell.png" alt="ood-shell" width="800"/>
+
+        1. Log into [Open OnDemand](https://ood.hpc.arizona.edu/)
+        2. Go to the dropdown menu at the top of the screen and select ```Clusters```
+        3. Click ```Shell```
+        4. This will put you on the command line on one of the login nodes where you may perform regular housekeeping work, submit jobs, or request an interactive session. By default, you will automatically be connected to Puma. To navigate to a different cluster, use the displayed shortcuts. 
+        
+    === "Virtual Desktop"
+        Users may also interact with a cluster using a virtual desktop interface. To do this:
+
+        1. Log into https://ood.hpc.arizona.edu/ and, under My Interactive Sessions, select Interactive Desktop under Desktops on the left-hand side of the page.
+        2. A form will appear where you will select the target cluster, enter the amount of time you'd like to be allotted (in hours), the number of cores you need, your PI Group (if you are unsure what your group name is, you can check in https://portal.hpc.arizona.edu/portal/), and the queue. Once you've filled in your request, click Launch.
+        <img src="images/desktop_form.jpg" width="700"/>
+        3. A window will appear with the status of your request. It will start in a Pending state and will switch to Running when your desktop session is ready. Click Launch Interactive Desktop to access your session.
+        <img src="images/desktop_tile.jpg" width="700"/>
+        4. That's it! You can now use the cluster with a Desktop interface
+        <img src="images/desktop_session.png" width="700"/>
+
+
+## Command Line Access
+
+???+ tip "Credentials"
+     To log into HPC, you will need NetID+ enabled, an HPC account, and internet access. Because we require Duo-authentication to access the system, no VPN is required. 
+???+ tip "Password Visibility"
+     When entering your password in the terminal at the prompt, you will not see any characters appear on the screen while typing during this step. This is normal and everything is working as it should.
+
+!!! example "Choose your operating system"
+    === "Linux/Mac"
+        Mac systems provide a built-in SSH client, so there is no need to install any additional software. You will find the terminal application under Applications → Utilities → Terminal.
+        
+        Open the terminal and enter:
+        ```bash
+        $ ssh netid@hpc.arizona.edu
+        ```
+        where netid is your UArizona NetID. When you press enter, you will be prompted for your university password. After successfully entering your password, you will be prompted to Duo Authenticate. If everything is successful, you will be connected to the bastion host.
+
+    === "Windows"
+        "More Stuff"
+
+
+## X11 Forwarding
+
+X11 forwarding is a mechanism that allows a user to start up a remote application (e.g. VisIt or Matlab) and forward the application display to their local machine. The key to make forwarding work successfully is to include the ```-X``` flag at each login step. To check whether X11 forwarding is active, you may run the command:
+
+```bash
+$ echo $DISPLAY
+```
+If it comes back blank, X11 forwarding is not enabled.
+
+## SSH Keys
+### Why Use SSH Keys?
+
+The Bastion Host uses two-factor authentication and will, by default, prompt you for a password and 2nd factor when you attempt to log in. As an alternative, you can use PKI (Public Key Authentication). This means you will not have to provide a password or Duo-authenticate for any future sessions. To do this, you will need to create an SSH Key on your local workstation and copy the public key to the ```~/.ssh/authorized_keys``` file in your HPC account on the bastion host.
+
+### Create and Use SSH Keys
+
+!!! example "Choose your operating system"
+    === "Linux/Mac"
+        In a Terminal session on your local workstation:
+
+        1. Create a public-key pair: 
+        ```bash
+        $ ssh-keygen -t rsa
+        ```
+        You will be prompted to enter a passphrase. This is optional, but we strongly recommend that you do so.
+        
+        2. After running that command, you will have two new files on your local computer: ```~/.ssh/id_rsa``` and ```~/.ssh/id_rsa.pub```
+            ```id_rsa``` is your private key file. Do not share this with anybody! It is analagous to your password; anybody who has this file can impersonate you.
+            ```id_rsa.pub``` is your public key file. You will upload this onto any servers that you wish to automatically login to.
+        
+        3. Copy the public key to the Bastion Host (you will need to enter your password this one time): 
+        ```bash
+        $ ssh-copy-id netid@hpc.arizona.edu
+        ```
+        3b. If your computer does not support the ssh-copy-id command, run the following commands:
+        ```bash
+        $ scp ~/.ssh/id_rsa.pub netid@hpc.arizona.edu:
+        $ ssh netid@hpc.arizona.edu # (you will need to use your password this time)
+        $ mkdir -p ~/.ssh && cat ~/id_rsa.pub >> .ssh/authorized_keys && rm ~/id_rsa.pub # On the server, copies the key into the appropriate file
+        ```
+        
+        Now, logout and attempt to login to the server again. You should not be prompted for a password!
+        
+    === "Windows"
+        To setup SSH keys on Windows with the PuTTy client, refer to the [official PuTTy documentation](http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter8.html#pubkey).
+
+### Using SSH Keys for file transfers
+
+Note that SSH Keys can also be used to avoid entering a password and 2nd factor when transferring files to to the cluster via the file transfer node (```filexfer.hpc.arizona.edu```) using command line programs like ```scp``` or ```sftp```.  Follow the steps above (2-4 under the Mac and Linux instructions), except use ```filexfer.hpc.arizona.edu``` instead of ```hpc.arizona.edu```. Note that you only need to generate the keys in Step 1 once. The same ```~/.ssh/id_rsa.pub``` file may be used to identify yourself to multiple hosts.

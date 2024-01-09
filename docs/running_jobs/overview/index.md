@@ -1,0 +1,3 @@
+# Overview
+
+A job is an allocation of resources assigned to an user for a fixed amount of time. It can be [interactive](../interactive_jobs/index.md) (happens in real time) or [batch](../batch_jobs/index.md) (a script scheduled for execution at a later time). We use [Slurm](https://slurm.schedmd.com/), an open source, fault-tolerant, and highly scalable cluster manager and job scheduler, to manage our cluster resources and schedule jobs. You can interact with Slurm from one of the login nodes, to start an interactive job or submit a batch job.
