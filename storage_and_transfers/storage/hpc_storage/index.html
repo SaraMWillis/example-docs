@@ -1,3 +1,4 @@
+<!-- Elements added to main will be displayed on all pages -->
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -34,8 +35,19 @@
 
     
     
-      
-    
+<script>
+var gtmId = 'GTM-TQPKQK7';
+if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1')) {
+  gtmId = 'GTM-XXX'
+}
+(function(w,d,s,l,i){
+  w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', gtmId);
+</script>
+
     
       
         
@@ -70,6 +82,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#hpc-high-performance-storage" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -828,6 +845,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    HPC Storage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -838,6 +868,94 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-your-storage-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking Your Storage Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xdisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      xdisk
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="xdisk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-xdisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is xdisk?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-modifying-and-deleting-an-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requesting, Modifying, and Deleting an Allocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1938,6 +2056,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../support_and_training/consulting_services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consulting Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -1948,10 +2087,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1962,8 +2101,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
             <span class="md-nav__icon md-icon"></span>
             Workshops
           </label>
@@ -2131,11 +2270,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support_and_training/consulting_services/" class="md-nav__link">
+      <a href="../../../support_and_training/best_practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Consulting Services
+    Best Practices
   </span>
   
 
@@ -2230,9 +2369,153 @@
                   
 
 
-  <h1>HPC Storage</h1>
-
-<p>foo</p>
+<h1 id="hpc-high-performance-storage">HPC High Performance Storage</h1>
+<h2 id="overview">Overview</h2>
+<p>The University’s Research Data Center provides data storage for active analysis on the high-performance computers (HPCs). Using central computing storage services and resources, University researchers, faculty researchers, and post-doctoral researchers are able to:</p>
+<ul>
+<li>Share research data in a collaborative environment with other UArizona affiliates on the HPC system</li>
+<li>Store large-scale computational research data</li>
+<li>Request additional storage for further data analysis</li>
+</ul>
+<p>The storage is mounted as a filesystem and all the clusters have access to the same filesystems.</p>
+<h2 id="storage-summary">Storage Summary</h2>
+<p>Every user has access to individual and shared storage on the system where they can host data for active analyses. A summary of these locations is shown below:</p>
+<table>
+<thead>
+<tr>
+<th><div style="width:120px">Path</div></th>
+<th>Description</th>
+<th><div style="width:120px">Quota</div></th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/home/uxx/netid</code></td>
+<td>An individual storage allocation provided for every HPC user</td>
+<td>50gb</td>
+<td>Accessible for the duration of user's account</td>
+</tr>
+<tr>
+<td><code>/groups/pi_netid</code></td>
+<td>A communal storage allocation provided for every research group</td>
+<td>500gb</td>
+<td>Accessible for the duration of a PI's account</td>
+</tr>
+<tr>
+<td><code>/xdisk/pi_netid</code></td>
+<td>Temporary communal storage available for every group on request. See xdisk section below for details.</td>
+<td>200gb-20tb</td>
+<td>Up to 300 days</td>
+</tr>
+<tr>
+<td><code>/tmp</code></td>
+<td>Local storage available on individual compute nodes.</td>
+<td><span class="arithmatex">\(&lt;\)</span> 800GB to 1.4TB</td>
+<td>Only accessible for the duration of a job's run.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="checking-your-storage-usage">Checking Your Storage Usage</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Command Line</label><label for="__tabbed_1_2">User Portal</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To check your storage usage, on a compute node, file transfer node, or login node, use the command <code>uquota</code>. This will show you all the spaces you have access to, their quotas, and current usage.
+<div class="highlight"><pre><span></span><code>(puma) [netid@junonia ~]$ uquota
+                                        used  soft limit  hard limit
+/groups/pi_netid                            6.6G      500.0G      500.0G
+/home                                      37.1G       50.0G       50.0G
+/xdisk/pi_netid                            12.9G        9.8T        9.8T
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>You can check your storage allocation through our <a href="https://portal.hpc.arizona.edu/portal/">online user portal</a> by navigating to the Storage tab and clicking Check Disk Quotas:</p>
+<p><img src="images/check_storage_quota.png" style="width:450px;"></p>
+</div>
+</div>
+</div>
+<h2 id="xdisk">xdisk</h2>
+<h3 id="what-is-xdisk">What is xdisk?</h3>
+<p>xdisk is a temporary storage allocation available to all PIs and offers up to 20 TB of usable space for their group for up to 300 days. PIs may only have one active xdisk at a time.</p>
+<p>A PI can request an allocation either via the command line or through our web portal (no paperwork necessary!). Only faculty members (PIs) may request, alter, or delete an allocation from the command line. Members of their research group may be <a href="registration_and_access/group_management/#delegating-group-management-rights">delegated management rights</a> allowing them to manage a group's xdisk on their PI's behalf through our web portal.</p>
+<p>Once an xdisk allocation is created, it is immediately available for use. Groups can find their allocations under <code>/xdisk/pi_netid</code>. By default, a subdirectory is created for each group member under <code>/xdisk/pi_netid/netid</code>. If a group member is added after the allocation is created, a directory is not automatically created for them. To add one, <a href="support_and_training/consulting_services/">reach out to our consultants</a>.</p>
+<p>Because xdisk allocations are temporary, they will expire as soon as their time limit is reached. Warnings will be sent to every group member at their netid@arizona.edu addresses beginning one week before the expiration. It is the group's responsibility to renew xdisk allocations or copy files to an alternate storage location prior to the expiration date. Once an xdisk allocation expires, everything in it is permanently deleted.</p>
+<p>PIs may request a new xdisk allocation immediately after their previous one has expired. This ensures groups will always have access to increased storage on HPC on a rolling basis with the requirement that housekeeping be done once per academic year. </p>
+<h3 id="requesting-modifying-and-deleting-an-allocation">Requesting, Modifying, and Deleting an Allocation</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Requesting an Allocation</label><label for="__tabbed_2_2">Modifying an Allocation</label><label for="__tabbed_2_3">Deleting an Allocation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If a group has an active xdisk allocation, a new one cannot be created until the active allocation expires or is deleted.</p>
+</div>
+<p>PIs or delegates can request an xdisk allocation at any time through the user portal. Under the <strong>Storage</strong> tab, select <strong>Manage XDISK</strong></p>
+<p><img src="images/manage_xdisk.png" style="width:500px;"></p>
+<p>This will open a web form where you can enter your size and duration requirements. The maximum size that can be requested is 20000GB and the maximum duration is 300 days. If a PI has created multiple research groups, you can specify the desired group ownership for the allocation from the Group dropdown menu. Once you click Ok, your allocation should immediately be available.</p>
+<p><img src="images/manage_xdisk.png" style="width:500px;"></p>
+</div>
+<div class="tabbed-block">
+<p>PIs or delegates may manage their xdisk allocation at any time through the user portal. Under the <strong>Storage</strong> tab, select <strong>Manage XDISK</strong></p>
+<p><img src="images/manage_xdisk.png" style="width:500px;"></p>
+<p>This will open a form which will allow you to modify the size and duration of your xdisk. Xdisk allocations cannot be increased beyond 20000GB and the maximum duration of 300 days. Note: the Group field may only be modified at the time of the allocation's creation.</p>
+<p><img src="images/request-xdisk.png" style="width:500px;"></p>
+</div>
+<div class="tabbed-block">
+<p>PIs or delegates may delete their xdisk allocation at any time through the user portal. Under the <strong>Storage</strong> tab, select <strong>Delete XDISK</strong></p>
+<p><img src="images/delete-xdisk.png" style="width:500px;"></p>
+<p>Clicking this link will open a window with a prompt. Type <strong>confirm</strong> and then select <strong>Delete XDISK</strong> to complete the process.</p>
+<p><img src="images/confirm-delete.png" style="width:300px;"></p>
+<p>If you would like to request a new xdisk, you may do so as soon as the request is processed. Note: sometimes processing the request can take a few minutes, depending on the number of files and the size of the allocation.</p>
+</div>
+</div>
+</div>
+<h3 id="cli-commands">CLI Commands</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The xdisk CLI commands are usable by PIs only. Group delegates can manage allocations via the user portal.</p>
+</div>
+<p>xdisk is a locally written utility for PI's to create, delete, resize, and expire (renew) xdisk allocations. Any PIs who wish to utilize the CLI to manage their allocations can do so using the syntax shown below:</p>
+<table>
+<thead>
+<tr>
+<th>xdisk Function</th>
+<th>Command</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Display xdisk help</td>
+<td><code>xdisk -c help</code></td>
+<td><code>$ xdisk -c help</code></td>
+</tr>
+<tr>
+<td>View Current Information</td>
+<td><code>xdisk -c query</code></td>
+<td><code>$ xdisk -c query</code><br><code>XDISK on host: ericidle.hpc.arizona.edu</code><br><code>Current xdisk allocation for &lt;netid&gt;:</code><br><code>Disk location: /xdisk/&lt;netid&gt;</code><br><code>Allocated size: 200GB</code><br><code>Creation date: 3/10/2020 Expiration date: 6/8/2020</code><br><code>Max days: 45    Max size: 1000GB</code></td>
+</tr>
+<tr>
+<td>Create an xdisk</td>
+<td><code>xdisk -c create -m [size in gb] -d [days]</code></td>
+<td><code>$ xdisk -c create -m 300 -d 30</code><br><code>Your create request of 300 GB for 30 days was successful.</code><br><code>Your space is in /xdisk/&lt;netid&gt;</code></td>
+</tr>
+<tr>
+<td>Extend xdisk Expiration Date</td>
+<td><code>xdisk -c expire -d [days]</code></td>
+<td><code>$ xdisk -c expire -d 15</code><br><code>Your extension of 15 days was successfully processed</code></td>
+</tr>
+<tr>
+<td>Resize an xdisk Allocation</td>
+<td><code>xdisk -c size -m [size in gb]</code></td>
+<td><code>$ # Assuming an initial xdisk allocation size of 200 gb</code><br><code>$ xdisk -c size -m 200</code><br><code>XDISK on host: ericidle.hpc.arizona.edu</code><br><code>Your resize to 400GB was successful</code><br><code>$ xdisk -c size -m -100</code><br><code>XDISK on host: ericidle.hpc.arizona.edu</code><br><code>Your resize to 300GB was successful</code></td>
+</tr>
+<tr>
+<td>Delete an xdisk Allocation</td>
+<td><code>xdisk -c delete</code></td>
+<td><code>$ xdisk -c delete</code><br><code>Your delete request has been processed</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2257,56 +2540,16 @@
         
       </main>
       
-        <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                University of Arizona Research Computing
             </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Overview
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../rental_storage/" class="md-footer__link md-footer__link--next" aria-label="Next: Rental Storage">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Rental Storage
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-</div>
-      
-        <div class="md-social">
+            
+            <div class="md-social">
   
     
     
@@ -2350,11 +2593,11 @@
     </a>
   
 </div>
-      
+            
+        </div>
     </div>
-  </div>
 </footer>
-      
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>

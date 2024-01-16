@@ -1,3 +1,6 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+<!-- Elements added to main will be displayed on all pages -->
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -18,7 +21,7 @@
     
     
       
-        <title>UArizona HPC Documentation</title>
+        <title>UArizona HPC Documentation - UArizona HPC Documentation</title>
       
     
     
@@ -32,8 +35,19 @@
 
     
     
-      
-    
+<script>
+var gtmId = 'GTM-TQPKQK7';
+if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1')) {
+  gtmId = 'GTM-XXX'
+}
+(function(w,d,s,l,i){
+  w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', gtmId);
+</script>
+
     
       
         
@@ -69,11 +83,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#uarizona-hpc-documentation" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              UArizona HPC Documentation
             
           </span>
         </div>
@@ -318,8 +327,705 @@
     <div class="md-container" data-md-component="container">
       
       
+
         
       
+<style>
+
+    .md-main {
+        flex-grow: 0
+    }
+
+    .md-main__inner {
+        display: flex;
+        height: 100%;
+    }
+
+    .tx-container {
+        position: relative;
+        padding-top: .0rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.2)), url('home/images/AdobeStock_87909563.jpg') center center fixed;
+        background-size: cover;
+        color: #fff; /* Set text color to be visible on the gradient overlay */
+    }
+    
+    h2 {
+      font-size: 36px; /* Adjust the font size as needed */
+      font-family: inherit;
+    }
+
+
+    .body-paragraph {
+      font-size: 14px; /* Adjust the font size as needed */
+      font-family: inherit;
+      padding: 0 150px;
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    
+    div.fadeMe {
+        opacity:    0.5; 
+        background: #000; 
+        width:      100%;
+        height:     100%; 
+        z-index:    10;
+        top:        0; 
+        left:       0; 
+        position:   fixed; 
+    }
+    .tx-hero {
+        margin: 32px 2.8rem;
+        color: var(--md-primary-bg-color);
+        justify-content: center;
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 700
+    }
+
+    .tx-hero__content {
+        padding-bottom: 1rem;
+        margin: 0 auto;
+    }
+
+    .tx-hero__image{
+        width:17rem;
+        height:17rem;
+        order:1;
+        padding-right: 2.5rem;
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: hsla(280deg, 37%, 48%, 1);
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-default-bg-color);
+        border-color: var(--md-accent-fg-color)
+    }
+
+    .feature-item h2 svg {
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        transform: translateY(10%);
+    }
+
+    .top-hr {
+        margin-top: 42px;
+    }
+
+    .feature-item {
+        font-family: inherit;
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+    }
+
+    .feature-item h2 {
+        color: #333;
+        font-weight: 300;
+        font-size: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: inherit;
+    }
+
+    .feature-item p {
+        font-size: 16px;
+        font-family: inherit;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: #111;
+        margin: 0 0 10px;
+        display: block;
+    }
+
+    @media screen and (max-width:30em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+    }
+
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+
+        .tx-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tx-hero__content {
+            max-width: 22rem;
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            margin-left: 1.0rem;
+            margin-right: 4.0rem;
+            align-items: center;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+
+        .top-hr {
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .bottom-hr {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .feature-item:hover {
+            background-color: #526cfe47;
+            border-radius: 3px;
+        }
+    }
+
+    .hr {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .text-center {
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 15px;
+        font-family: inherit;
+        font-size: 23px;
+        font-weight: 300;
+        padding-bottom: 10px;
+    }
+
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin: 0 auto;
+    }
+
+    .logos img {
+        flex: 1 1 auto;
+        padding: 25px;
+        max-height: 130px;
+        vertical-align: middle;
+    }
+
+    .hr-logos {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .md-footer-meta__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 1.0rem;
+        padding-left: 200px; 
+        padding-right: 200px;
+        font-size: 12px;
+        font-family: inherit;
+        color: "#717171";
+    }
+
+    .md-footer-social {
+        padding-top: 20px;
+    }
+    
+    * {box-sizing:border-box}
+
+    /* Slideshow container */
+    .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    padding-top: 20px;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+    display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    }
+
+    
+    /* Caption text box */
+    .text-box {
+        position: absolute;
+        top: 20%; /* Center vertically */
+        left: 33.33%; /* Adjust as needed for alignment */
+        width: 63%; ; /* Adjust as needed for width */
+        background-color: rgba(241, 241, 241, 0.93);
+        padding: 20px;
+        padding-right: 40px;
+        box-sizing: border-box;
+        font-size: 13px;
+        font-family: inherit;
+        font-color: "#00266E";
+        display: flex;
+        flex-direction: column;
+        height: auto; 
+        word-wrap: break-word;
+    }
+    
+    /* Heading text styling */
+    .heading {
+        color: #fff;
+        font-size: 24px; /* Adjust the font size as needed */
+        font-family: inherit;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+    background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+    }
+    
+    .demobox {
+        background-color: #cfc ;
+        padding: 10px ;
+        border: 1px solid green ;
+    } 
+    
+    .hero-section {
+      padding: 20px 200px;
+      padding-bottom: 60px;
+      border: none;
+    }
+
+    .our-mission {
+      background-color: #00266E;
+      color: #f6f7fb;
+    }
+    
+    .quick-links {
+      background-color: #f8f8f8;
+      color: #212121;
+      font-family: inherit;
+    }
+    
+    .quick-links-button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    
+    .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #EF4056;
+    }
+    
+    .button1:hover {
+        background-color: #EF4056;
+        color: white;
+    }
+    
+    
+    .hero-section h2 {
+      font-size: 38px;
+      font-family: inherit;
+      line-height: normal;
+      font-weight: 600;
+      
+    }
+    
+    .hero-section h3 {
+      font-size: 25px;
+      font-family: inherit;
+      line-height: normal;
+      font-weight: 600;
+    }
+    
+    .hero-section p {
+        font-size: 16px; /* Adjust the size as needed */
+        font-family: inherit;
+
+    }
+    
+    .card-container {
+      display: flex; /* Set the container as a flex container */
+      justify-content: center; /* Center cards horizontally */
+    }
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 10px;
+    }
+    
+    .card img {
+      width: 100%; /* Make the image span the entire width of the card */
+      padding-top: 10px;
+    }
+    
+    .container h4 {
+      font-size: 19px;
+      font-family: inherit;
+    }
+
+    .container p {
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .container {
+        padding: 2px 16px;
+        padding-top: 10px;
+        width: 300px; 
+        position: relative;
+    }
+    
+    .video-container {
+      max-width: 800px;
+      width: 100%;
+      padding-top: 40%; /* Adjust the padding-top to set the aspect ratio */
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .research-container {
+        display: grid;
+        align-items: center; 
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+    
+    .research-container text{
+        font-size: 16px;
+        font-family: inherit;
+    }
+    
+    .research-container h3{
+        font-size: 24px;
+        font-family: inherit;
+    }
+    
+    .research-container h4{
+        font-size: 18px;
+        font-family: inherit;
+    }
+    
+    
+</style>
+
+<!-- Main site Entry button descriptions -->
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+      <div class="tx-hero">
+
+        <div class="tx-hero__content">
+          <h1> UArizona HPC Services </h1>
+          <p>The University of Arizona offers free high performance computing resources in the Research Data Center (RDC), a state-of-the-art facility that hosts large computer clusters. Scientific research relies upon such systems to analyze massive amounts of collected data.</p>
+          <a href="running_jobs/batch_jobs/quick_start/" title="Quick Start" class="md-button md-button--primary">
+            Quick Start
+          </a>
+          <a href="registration_and_access/account_creation/" title="Account Creation" class="md-button">
+            Register for Access
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<div class="hero-section our-mission">
+  <h2>Our Mission</h2>
+  <div>
+  <p>UArizona High Performance Computing (HPC) is an interdisciplinary research center focused on facilitating research and discoveries that advance science and technology. We deploy and operate advanced computing and data resources for the research activities of students, faculty, and staff at the University of Arizona. We also provide consulting, technical documentation, and training to support our users.
+  <br><br>
+  This site is divided into sections that describe the High Performance Computing (HPC) resources that are available, how to use them, and the rules for use.</p>
+  </div>
+</div>
+
+<center>
+<h2> News </h2>
+
+<div class="card-container">
+    <div class="card">
+        <img src="home/images/apptainer.png" style="width:200px">
+            <div class="container">
+                <h4><b>Singularity Update</b></h4> 
+                <p>Singularity has been renamed Apptainer as the project is brought into the Linux Foundation. An alias exists so that you can continue to invoke singularity. Local builds are now possible in many cases and remote builds with Sylabs are no longer supported</p> 
+            </div>
+    </div>
+    <div class="card">
+        <img src="home/images/terminal.png" style="width:200px">
+            <div class="container">
+                <h4><b>Faster Interactive Sessions</b></h4> 
+                <p>Are you frustrated waiting for slow interactive sessions to start? Try using the standard queue on ElGato. We have provisioned 44 nodes to only accept the standard queue to facilitate faster connections. To access a session</p> 
+            </div>
+    </div>
+    <div class="card">
+        <img src="home/images/ocelote.jpg" style="width:200px">
+            <div class="container">
+                <h4><b>Increased Ocelote Allocation</b></h4> 
+                <p>Do you like using Ocelote? Good news! On November 9th 2021 , the standard allocation on Ocelote was increased from 35,000 to 70,000 CPU hours.</p> 
+            </div>
+    </div>
+    <div class="card">
+        <img src="home/images/puma.jpg" style="width:200px">
+            <div class="container">
+                <h4><b>Puma News</b></h4> 
+                <p>Last year we increased the standard allocation.  From the end of April 2022 the standard allocation of CPU hours is increased from 70,000 to 100,000. </p> 
+            </div>
+    </div>
+</div>
+</center>
+
+<center><h2>Highlighted Research</h2></center>
+
+<div class="research-container">
+    <div class="image">
+        <img src="home/images/HypersonicTravel.jpg" style="width:500px;">
+    </div>
+        <div class="text">
+        <h3>Faster Speeds Need Faster Computation</h3>
+        <h4>Hypersonic Travel</h4><br>
+        <text> Professors Christoph Hader, Hermann Fasel, and their team are exploring the use of our GPUs to optimize Navier-Stokes codes for simulating the flow field around hypersonic vehicles traveling at size times the speed of sound (Mach 6) or more. <br><br>
+        In the image to the right, instantaneous flow structures obtained from a DNS for a flared cone at Mach 6 are visualized using the Q-isocontours colored with instantaneous temperature disturbance values. The small scales towards the end of the computational domain indicate the regions where the boundary layer is turbulent. </text>
+        </div>
+</div>
+
+
+<div class="hero-section quick-links">
+  <center><h2>Quick Links</h2></center>
+    <center>
+    <a href="https://ood.hpc.arizona.edu" title="Open OnDemand" class="quick-links-button button1">
+        Open OnDemand<br><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+    </a>
+    <a href="https://portal.hpc.arizona.edu" title="HPC User Portal" class="quick-links-button button1">
+        User Portal<br><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@universityofarizonauitsres7597" title="Training Videos" class="quick-links-button button1">
+        Training Videos<br><svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
+    </a>
+    </center>
+</div>
+
+
+<center><h2>Our Clusters</h2></center>
+ <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="home/images/puma.png" style="width:100%">
+    <div class="text-box">
+      <div class="text"><h3>Puma</h3><br>
+      Implemented in the middle of 2020, Puma is the biggest cat yet. Similar to Ocelote, it has standard CPU nodes (with 94 cores and 512 GB of memory per node), GPU nodes (with Nvidia V100) and two high-memory nodes (3 TB). Local scratch storage increased to ~1.4 TB. Puma runs on CentOS 7.<br>
+      As is the case for our other supercomputers, we use the RFP process to get the best value for our financial resources, that meet our technical requirements.  This time Penguin Computing one with AMD processors. This is tremendously valuable as each node comes with:<br>
+        &ensp;- Two AMD Zen2 48 core processors<br>
+        &ensp;- 512GB RAM<br>
+        &ensp;- 25Gb path to storage<br>
+        &ensp;- 25Gb path to other nodes for MPI<br>
+        &ensp;- 2TB internal NVME disk (largely available as /tmp)<br>
+        &ensp;- Qumulo all flash storage array for shared filesystems<br>
+        &ensp;- Two large memory nodes with 3TB memory and the same processors and memory as the other nodes<br>
+        &ensp;- Six nodes with four Nvidia V100S GPU's each <br>
+    </div>
+    </div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="home/images/cables.png" style="width:100%">
+    <div class="text-box">
+      <div class="text"><h3>Ocelote</h3><br>
+      Ocelote arrived in 2016. Lenovo's Nextscale M5 technology was the winner of the RFP mainly on price, performance and meeting our specific requirements. Ocelote has one large memory node with 2TB of memory and 46 nodes with Nvidia P100 GPUs for GPU-accelerated workflows. This cluster is actually the next generation of the IBM cluster we call ElGato. Lenovo purchased IBM's Intel server line in 2015.<br>
+      In 2021, Ocelote's operating system was upgraded from CentOS6 to CentOS7 and was configured to use SLURM, like Puma. It will continue until it is either too expensive to maintain or it is replaced by something else.<br>
+      &ensp;- Intel Haswell V3 28 core processors<br>
+      &ensp;- 192GB RAM per node<br>
+      &ensp;- FDR infiniband for fast MPI interconnect<br>
+      &ensp;- Qumulo all flash storage array (all HPC storage is integrated into one array)<br>
+      &ensp;- One large memory node with 2TB RAM,  Intel Ivy Bridge V2 48 cores<br>
+      &ensp;- 46 nodes with Nvidia P100 GPU's<br>
+
+    </div>
+    </div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="home/images/HPC_0.png" style="width:100%">
+    <div class="text-box">
+      <div class="text"><h3>ElGato</h3><br>
+    Implemented at the start of 2014, ElGato has been reprovisioned with CentOS 7 and new compilers and libraries. From July 2021 it has been using Slurm for job submission. ElGato is our smallest cluster with 130 standard nodes each with 16 CPUs. Purchased by an NSF MRI grant by researchers in Astronomy and SISTA.
+      </div>
+    </div>
+    </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div> 
+
+<script src="script.js"></script>
+
+<center>
+<h2>HPC Data Center Tour</h2>
+<p class="body-paragraph">You may not get to see the actual supercomputers where your work is done, but you can watch this tour. Note how loud it is in the room. The video does not convey the temperature of the room, but there are no warm areas. As you will hear explained, the cooling is done with chilled water.</p>
+</center>
+<center>
+<div class="video-container">
+  <iframe width="300" height="100" src="https://www.youtube.com/embed/JOJ8RO4tLcc" frameborder="0" allowfullscreen></iframe>
+</div>
+</center>
+
+
+<div class="top-hr">
+    <div class="hr">
+    </div>
+</div>
+
+
+<footer>
+
+<div class="md-footer-meta__inner">
+    <center>
+    We respectfully acknowledge the University of Arizona is on the land and territories of Indigenous peoples. Today, Arizona is home to 22 federally recognized tribes, with Tucson being home to the O'odham and the Yaqui. Committed to diversity and inclusion, the University strives to build sustainable relationships with sovereign Native Nations and Indigenous communities through education offerings, partnerships, and community service.
+    <center>
+</div>
+
+
+</footer>
+
+
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -361,19 +1067,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
         
@@ -384,70 +1077,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#our-mission" class="md-nav__link">
-    <span class="md-ellipsis">
-      Our Mission
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Links
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#our-clusters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Our Clusters
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#highlighted-research" class="md-nav__link">
-    <span class="md-ellipsis">
-      Highlighted Research
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hpc-data-center-tour" class="md-nav__link">
-    <span class="md-ellipsis">
-      HPC Data Center Tour
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2012,6 +2641,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="support_and_training/consulting_services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consulting Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -2022,10 +2672,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2036,8 +2686,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
             <span class="md-nav__icon md-icon"></span>
             Workshops
           </label>
@@ -2205,11 +2855,11 @@
   
   
     <li class="md-nav__item">
-      <a href="support_and_training/consulting_services/" class="md-nav__link">
+      <a href="support_and_training/best_practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Consulting Services
+    Best Practices
   </span>
   
 
@@ -2301,274 +2951,6 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
-
-
-<h1 id="uarizona-hpc-documentation">UArizona HPC Documentation</h1>
-<h2 id="our-mission">Our Mission</h2>
-<p>UA High Performance Computing (HPC) is an interdisciplinary research center focused on facilitating research and discoveries that advance science and technology. We deploy and operate advanced computing and data resources for the research activities of students, faculty, and staff at the University of Arizona. We also provide consulting, technical documentation, and training to support our users.</p>
-<p>This site is divided into sections that describe the High Performance Computing (HPC) resources that are available, how to use them, and the rules for use.</p>
-<h2 id="quick-links">Quick Links</h2>
-<div class="grid">
-<p class="card"><a href="https://ood.hpc.arizona.edu/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> <strong>Open OnDemand</strong></a></p>
-<p class="card"><a href="https://portal.hpc.arizona.edu/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg></span> <strong>User Portal</strong></a></p>
-<p class="card"><a href="https://www.youtube.com/@universityofarizonauitsres7597"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></span> Training Videos</a></p>
-<p class="card"><a href="/support_and_training/consulting_services/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m8.19 3.5c-.89 0-1.6.18-2.14.54-.55.36-.83.96-.78 1.65h1.97c0-.28.1-.49.26-.63.2-.14.42-.21.69-.21.31 0 .58.08.76.26.18.17.27.39.27.69 0 .28-.08.53-.22.74-.17.22-.38.4-.64.54-.52.32-.86.6-1.07.84-.19.24-.29.58-.29 1.08h2c0-.28.05-.5.14-.68.09-.17.26-.32.52-.47.46-.21.84-.49 1.13-.85.29-.37.44-.76.44-1.2 0-.7-.27-1.26-.81-1.68-.54-.41-1.29-.62-2.23-.62M11 12v2h2v-2h-2Z"/></svg></span> Getting Help</a></p>
-</div>
-<h2 id="our-clusters">Our Clusters</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Puma</label><label for="__tabbed_1_2">Ocelote</label><label for="__tabbed_1_3">ElGato</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><div style="float: right; width: 0px; height: 100px"></div>
-<div style="float: right; clear: right"><img width="300" src="home/images/puma.jpg"></div></p>
-<p>Implemented in 2020, Puma is the biggest cat yet. Similar to Ocelote, it has standard CPU nodes (with 94 cores and 512 GB of memory per node), GPU nodes (with Nvidia V100) and two high-memory nodes (3 TB). Local scratch storage increased to ~1.4 TB. Puma runs on CentOS 7.</p>
-<table>
-<thead>
-<tr>
-<th>Puma Technical Specifications</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Model</td>
-<td>Penguin Altus XE2242</td>
-</tr>
-<tr>
-<td>Year Purchased</td>
-<td>2020</td>
-</tr>
-<tr>
-<td>Node Count</td>
-<td>236 CPU-only<br>8 GPU<br>3 High-memory</td>
-</tr>
-<tr>
-<td>Total System Memory (TB)</td>
-<td>128TB</td>
-</tr>
-<tr>
-<td>Processors</td>
-<td>2x AMD EPYC 7642 48-core (Rome)</td>
-</tr>
-<tr>
-<td>Cores/Node (Schedulable)</td>
-<td>94c</td>
-</tr>
-<tr>
-<td>Total Cores</td>
-<td>23616*</td>
-</tr>
-<tr>
-<td>Processor Speed</td>
-<td>2.4GHz</td>
-</tr>
-<tr>
-<td>Memory Per Node</td>
-<td>512GB (3TB - High-memory nodes)</td>
-</tr>
-<tr>
-<td>Accelerators</td>
-<td>29 NVIDIA V100S</td>
-</tr>
-<tr>
-<td><code>/tmp</code></td>
-<td>~1440 TB NVMe<br><code>/tmp</code> is part of root filesystem</td>
-</tr>
-<tr>
-<td>HPL Rmax (TFlop/s)</td>
-<td></td>
-</tr>
-<tr>
-<td>OS</td>
-<td>CentOS 7</td>
-</tr>
-<tr>
-<td>Interconnect</td>
-<td>1x 25Gb/s Ethernet RDMA (RoCEv2)<br>1x 25Gb/s Ethernet to storage</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<p><div style="float: right; width: 0px; height: 100px"></div>
-<div style="float: right; clear: right"><img width="300" src="home/images/ocelote.jpg"></div></p>
-<p>Implemented in the middle of 2016, Ocelote is designed to support the majority of workloads on the standard nodes. Additionally, Ocelote has one large memory  node with 2TB of memory and 46 nodes with Nvidia P100 GPUs for GPU-accelerated workflows</p>
-<table>
-<thead>
-<tr>
-<th>Ocelote Technical Specifications</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Model</td>
-<td>Lenovo NeXtScale nx360 M5</td>
-</tr>
-<tr>
-<td>Year Purchased</td>
-<td>2016 (2018 P100 nodes)</td>
-</tr>
-<tr>
-<td>Node Count</td>
-<td>400</td>
-</tr>
-<tr>
-<td>Total System Memory (TB)</td>
-<td>82.6TB</td>
-</tr>
-<tr>
-<td>Processors</td>
-<td>2x Xeon E5-2695v3 14-core (Haswell)<br>2x Xeon E5-2695v4 14-core (Broadwell)<br>4x Xeon E7-4850v2 12-core (Ivy Bridge)</td>
-</tr>
-<tr>
-<td>Cores/Node (Schedulable)</td>
-<td>28c (48c - High-memory node)</td>
-</tr>
-<tr>
-<td>Total Cores</td>
-<td>11528*</td>
-</tr>
-<tr>
-<td>Processor Speed</td>
-<td>2.3GHz (2.4GHz - Broadwell CPUs)</td>
-</tr>
-<tr>
-<td>Memory Per Node</td>
-<td>192GB (2TB - High-memory node)</td>
-</tr>
-<tr>
-<td>Accelerators</td>
-<td>46 NVIDIA P100 (16GB)</td>
-</tr>
-<tr>
-<td><code>/tmp</code></td>
-<td>~840 GB spinning<br><code>/tmp</code> is part of root filesystem</td>
-</tr>
-<tr>
-<td>HPL Rmax (TFlop/s)</td>
-<td>382</td>
-</tr>
-<tr>
-<td>OS</td>
-<td>CentOS 7</td>
-</tr>
-<tr>
-<td>Interconnect</td>
-<td>FDR Infiniband for node-node<br>10 Gb Ethernet node-storage</td>
-</tr>
-<tr>
-<td>* Includes high-memory and GPU node CPU</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<p><div style="float: right; width: 0px; height: 100px"></div>
-<div style="float: right; clear: right"><img width="300" src="home/images/elgato_jones.jpg"></div></p>
-<p>Implemented at the start of 2014, ElGato has been reprovisioned with CentOS 7 and new compilers and libraries. From July 2021 it has been using Slurm for job submission. ElGato is our smallest cluster with 130 standard nodes each with 16 CPUs. Purchased by an NSF MRI grant by researchers in Astronomy and SISTA.</p>
-<table>
-<thead>
-<tr>
-<th>ElGato Technical Specifications</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Model</td>
-<td>IBM System X iDataPlex dx360 M4</td>
-</tr>
-<tr>
-<td>Year Purchased</td>
-<td>2013</td>
-</tr>
-<tr>
-<td>Node Count</td>
-<td>131</td>
-</tr>
-<tr>
-<td>Total System Memory (TB)</td>
-<td>26TB</td>
-</tr>
-<tr>
-<td>Processors</td>
-<td>2x Xeon E5-2650v2 8-core (Ivy Bridge)</td>
-</tr>
-<tr>
-<td>Cores/Node (Schedulable)</td>
-<td>16c</td>
-</tr>
-<tr>
-<td>Total Cores</td>
-<td>2160*</td>
-</tr>
-<tr>
-<td>Processor Speed</td>
-<td>2.66GHz</td>
-</tr>
-<tr>
-<td>Memory Per Node</td>
-<td>256GB - GPU nodes<br>64GB - CPU-only nodes</td>
-</tr>
-<tr>
-<td>Accelerators</td>
-<td></td>
-</tr>
-<tr>
-<td><code>/tmp</code></td>
-<td>~840 GB spinning<br><code>/tmp</code> is part of root filesystem</td>
-</tr>
-<tr>
-<td>HPL Rmax (TFlop/s)</td>
-<td>46</td>
-</tr>
-<tr>
-<td>OS</td>
-<td>CentOS 7</td>
-</tr>
-<tr>
-<td>Interconnect</td>
-<td>FDR Inifinband</td>
-</tr>
-<tr>
-<td>* Includes high-memory and GPU node CPU</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div style="float: right; width: 0px; height: 100px"></div>
-<div style="float: right; clear: right"><img width="300" src="home/images/HypersonicTravel.jpg"></div>
-
-<h2 id="highlighted-research">Highlighted Research</h2>
-<p><strong>Faster Speeds Need Faster Computation</strong></p>
-<p><strong>Hypersonic Travel</strong></p>
-<p>Professors Christoph Hader, Hermann Fasel, and their team are exploring the use of our GPUs to optimize Navier-Stokes codes for simulating the flow field around hypersonic vehicles traveling at size times the speed of sound (Mach 6) or more. </p>
-<p>In the image to the right, instantaneous flow structures obtained from a DNS for a flared cone at Mach 6 are visualized using the Q-isocontours colored with instantaneous temperature disturbance values. The small scales towards the end of the computational domain indicate the regions where the boundary layer is turbulent. </p>
-<h2 id="hpc-data-center-tour">HPC Data Center Tour</h2>
-<p>You may not get to see the actual supercomputers where your work is done, but you can watch this tour. Note how loud it is in the room. The video does not convey the temperature of the room, but there are no warm areas. As you will hear explained, the cooling is done with chilled water.</p>
-<p><center><iframe src="https://www.youtube.com/embed/JOJ8RO4tLcc" allowfullscreen width=600 height="400"></iframe></center></p>
-<p><br> <hr></p>
-<div style="text-align: center; color: dark grey; font-size: 12px;">
-    We respectfully acknowledge the University of Arizona is on the land and territories of Indigenous peoples. Today, Arizona is home to 22 federally recognized tribes, with Tucson being home to the O'odham and the Yaqui. Committed to diversity and inclusion, the University strives to build sustainable relationships with sovereign Native Nations and Indigenous communities through education offerings, partnerships, and community service.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-                
               </article>
             </div>
           
@@ -2579,88 +2961,6 @@
         </div>
         
       </main>
-      
-        <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-        
-          
-          <a href="policies/acceptable_use/" class="md-footer__link md-footer__link--next" aria-label="Next: Acceptable Use">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Acceptable Use
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-</div>
-      
-        <div class="md-social">
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://www.youtube.com/@universityofarizonauitsres7597" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
-    </a>
-  
-    
-    
-    
-    
-    <a href="mailto:hpc-consult@list.arizona.edu" target="_blank" rel="noopener" title="" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15c.81 0 1.5-.3 2.11-.89.59-.61.89-1.3.89-2.11 0-.81-.3-1.5-.89-2.11C13.5 9.3 12.81 9 12 9c-.81 0-1.5.3-2.11.89C9.3 10.5 9 11.19 9 12c0 .81.3 1.5.89 2.11.61.59 1.3.89 2.11.89m0-13c2.75 0 5.1 1 7.05 2.95C21 6.9 22 9.25 22 12v1.45c0 1-.35 1.85-1 2.55-.7.67-1.5 1-2.5 1-1.2 0-2.19-.5-2.94-1.5-1 1-2.18 1.5-3.56 1.5-1.37 0-2.55-.5-3.54-1.46C7.5 14.55 7 13.38 7 12c0-1.37.5-2.55 1.46-3.54C9.45 7.5 10.63 7 12 7c1.38 0 2.55.5 3.54 1.46C16.5 9.45 17 10.63 17 12v1.45c0 .41.16.77.46 1.08.3.31.65.47 1.04.47.42 0 .77-.16 1.07-.47.3-.31.43-.67.43-1.08V12c0-2.19-.77-4.07-2.35-5.65S14.19 4 12 4c-2.19 0-4.07.77-5.65 2.35S4 9.81 4 12c0 2.19.77 4.07 2.35 5.65S9.81 20 12 20h5v2h-5c-2.75 0-5.1-1-7.05-2.95C3 17.1 2 14.75 2 12s1-5.1 2.95-7.05C6.9 3 9.25 2 12 2Z"/></svg>
-    </a>
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://uarizona.service-now.com/sp?id=sc_cat_item&sys_id=2983102adbd23c109627d90d689619c6&sysparm_category=84d3d1acdbc8f4109627d90d6896191f" target="_blank" rel="noopener" title="uarizona.service-now.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.58 16.8 12 14.5l-3.58 2.3 1.08-4.12L6.21 10l4.25-.26L12 5.8l1.54 3.94 4.25.26-3.29 2.68M20 12a2 2 0 0 1 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2 2 2 0 0 1-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 1-2-2Z"/></svg>
-    </a>
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://github.com/UA-ResearchComputing-HPC/ua-researchcomputing-hpc.github.io" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
-    </a>
-  
-</div>
-      
-    </div>
-  </div>
-</footer>
       
     </div>
     <div class="md-dialog" data-md-component="dialog">
