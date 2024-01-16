@@ -3,7 +3,7 @@
 ## Overview
 
 Open OnDemand, which is an NSF-funded open-source HPC portal, is available for users and provides web browser access for interfacing with HPC. 
-<center>[Open OnDemand](https://ood.hpc.arizona.edu/pun/sys/dashboard){ .md-button .md-button--primary }</center>
+[Open OnDemand](https://ood.hpc.arizona.edu/pun/sys/dashboard){ .md-button .md-button--primary }
 
 ## Command Line Access
 

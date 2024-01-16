@@ -56,10 +56,6 @@ nav:
                 - Basic GNU Parallel Job: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_gnu_parallel_job/index.md
                 - Array Job Using GNU Parallel: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_and_gnu_parallel/index.md
     
-
-
-
-
   - User Support and Training:
     - FAQs: 
         - Account Access: support_and_training/faqs/account_access/index.md 
@@ -69,6 +65,7 @@ nav:
         - Storage: support_and_training/faqs/storage/index.md 
         - Open OnDemand Issues: support_and_training/faqs/open_on_demand_issues/index.md 
         - Secure Services: support_and_training/faqs/secure_services/index.md 
+    - Consulting Services: support_and_training/consulting_services/index.md
     - Workshops: 
         - Intro to HPC: support_and_training/workshops/intro_to_hpc/index.md
         - Intro to Machine Learning on HPC: support_and_training/workshops/intro_to_machine_learning/index.md
@@ -77,7 +74,7 @@ nav:
         - Intro to Linux: support_and_training/workshops/intro_to_linux/index.md
         - Intro to Visualization: support_and_training/workshops/intro_to_visualization/index.md
         - Data Management Workshops: support_and_training/workshops/data_management_workshops/index.md
-    - Consulting Services: support_and_training/consulting_services/index.md
+    - Best Practices: support_and_training/best_practices/index.md
     - Glossary: support_and_training/glossary/index.md
     - Grants: support_and_training/grants/index.md
     - Community and External Resources: support_and_training/external_resources/index.md
@@ -117,6 +114,7 @@ extra_css:
 theme:
   name: material
   logo: assets/images/favicon.ico
+  custom_dir: docs/overrides
   favicon: assets/images/favicon.ico
   palette:
     primary: custom
