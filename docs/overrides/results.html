@@ -1,0 +1,50 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Main site header with buttons and descriptions -->
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+      <div class="tx-hero">
+        <div class="tx-hero__content">
+          <h1> User Publications </h1>
+          <p>Our users do some really cool stuff! Check out the list below for publications that were made possible by UArizona's HPC systems.
+          <br>
+          Have you used our HPC for your published research? Let us know and we'll add you to the list!</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                {% if config.copyright %}
+                <div class="md-footer-copyright__highlight">
+                    {{ config.copyright }}
+                </div>
+                {% endif %}
+                University of Arizona Research Computing
+            </div>
+            {% block social %}
+            {% include "partials/social.html" %}
+            {% endblock %}
+        </div>
+    </div>
+</footer>
+{% endblock %}

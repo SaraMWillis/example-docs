@@ -78,7 +78,7 @@ nav:
     - Glossary: support_and_training/glossary/index.md
     - Grants: support_and_training/grants/index.md
     - Community and External Resources: support_and_training/external_resources/index.md
-
+  - Results: results/index.html
 
 markdown_extensions:
   - attr_list
