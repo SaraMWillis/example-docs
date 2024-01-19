@@ -4,524 +4,14 @@
 {% block tabs %}
 {{ super() }}
 
-<style>
-
-    .md-main {
-        flex-grow: 0
-    }
-
-    .md-main__inner {
-        display: flex;
-        height: 100%;
-    }
-
-    .tx-container {
-        position: relative;
-        padding-top: .0rem;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.2)), url('home/images/AdobeStock_87909563.jpg') center center fixed;
-        background-size: cover;
-        color: #fff; /* Set text color to be visible on the gradient overlay */
-    }
-    
-    h2 {
-      font-size: 36px; /* Adjust the font size as needed */
-      font-family: inherit;
-    }
-
-
-    .body-paragraph {
-      font-size: 14px; /* Adjust the font size as needed */
-      font-family: inherit;
-      padding: 0 150px;
-      width: 100%;
-      padding-bottom: 20px;
-    }
-    
-    div.fadeMe {
-        opacity:    0.5; 
-        background: #000; 
-        width:      100%;
-        height:     100%; 
-        z-index:    10;
-        top:        0; 
-        left:       0; 
-        position:   fixed; 
-    }
-    .tx-hero {
-        margin: 32px 2.8rem;
-        color: var(--md-primary-bg-color);
-        justify-content: center;
-    }
-
-    .tx-hero h1 {
-        margin-bottom: 1rem;
-        color: currentColor;
-        font-weight: 700
-    }
-
-    .tx-hero__content {
-        padding-bottom: 1rem;
-        margin: 0 auto;
-    }
-
-    .tx-hero__image{
-        width:17rem;
-        height:17rem;
-        order:1;
-        padding-right: 2.5rem;
-    }
-
-    .tx-hero .md-button {
-        margin-top: .5rem;
-        margin-right: .5rem;
-        color: var(--md-primary-bg-color)
-    }
-
-    .tx-hero .md-button--primary {
-        background-color: var(--md-primary-bg-color);
-        color: hsla(280deg, 37%, 48%, 1);
-        border-color: var(--md-primary-bg-color)
-    }
-
-    .tx-hero .md-button:focus,
-    .tx-hero .md-button:hover {
-        background-color: var(--md-accent-fg-color);
-        color: var(--md-default-bg-color);
-        border-color: var(--md-accent-fg-color)
-    }
-
-    .feature-item h2 svg {
-        height: 30px;
-        float: left;
-        margin-right: 10px;
-        transform: translateY(10%);
-    }
-
-    .top-hr {
-        margin-top: 42px;
-    }
-
-    .feature-item {
-        font-family: inherit;
-        font-weight: 300;
-        box-sizing: border-box;
-        padding: 0 15px;
-        word-break: break-word
-    }
-
-    .feature-item h2 {
-        color: #333;
-        font-weight: 300;
-        font-size: 25px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: normal;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        font-family: inherit;
-    }
-
-    .feature-item p {
-        font-size: 16px;
-        font-family: inherit;
-        line-height: 1.8em;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        color: #111;
-        margin: 0 0 10px;
-        display: block;
-    }
-
-    @media screen and (max-width:30em) {
-        .tx-hero h1 {
-            font-size: 1.4rem
-        }
-    }
-
-    @media screen and (min-width:60em) {
-        .md-sidebar--secondary {
-            display: none
-        }
-
-        .tx-hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tx-hero__content {
-            max-width: 22rem;
-            margin-top: 3.5rem;
-            margin-bottom: 3.5rem;
-            margin-left: 1.0rem;
-            margin-right: 4.0rem;
-            align-items: center;
-        }
-    }
-
-    @media screen and (min-width:76.25em) {
-        .md-sidebar--primary {
-            display: none
-        }
-
-        .top-hr {
-            width: 100%;
-            display: flex;
-            max-width: 61rem;
-            margin-right: auto;
-            margin-left: auto;
-            padding: 0 .2rem;
-        }
-
-        .bottom-hr {
-            margin-top: 10px;
-            width: 100%;
-            display: flex;
-            max-width: 61rem;
-            margin-right: auto;
-            margin-left: auto;
-            padding: 0 .2rem;
-        }
-
-        .feature-item {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .feature-item:hover {
-            background-color: #526cfe47;
-            border-radius: 3px;
-        }
-    }
-
-    .hr {
-        border-bottom: 1px solid #eee;
-        width: 100%;
-        margin: 20px 0;
-    }
-
-    .text-center {
-        text-align: center;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 15px;
-        font-family: inherit;
-        font-size: 23px;
-        font-weight: 300;
-        padding-bottom: 10px;
-    }
-
-    .logos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-flow: row wrap;
-        margin: 0 auto;
-    }
-
-    .logos img {
-        flex: 1 1 auto;
-        padding: 25px;
-        max-height: 130px;
-        vertical-align: middle;
-    }
-
-    .hr-logos {
-        margin-top: 0;
-        margin-bottom: 30px;
-    }
-
-    .md-footer-meta__inner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 1.0rem;
-        padding-left: 10%; 
-        padding-right: 10%;
-        font-size: 12px;
-        font-family: inherit;
-        color: "#717171";
-    }
-
-    .md-footer-social {
-        padding-top: 20px;
-    }
-    
-    * {box-sizing:border-box}
-
-    /* Slideshow container */
-    .slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-    padding-top: 20px;
-    overflow: auto;
-    }
-
-    /* Hide the images by default */
-    .mySlides {
-    display: none;
-    }
-
-    /* Next & previous buttons */
-    .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    }
-
-    /* Position the "next button" to the right */
-    .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-    }
-
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
 
     
-    /* Caption text box */
-    .text-box {
-        position: absolute;
-        top: 20%; /* Center vertically */
-        left: 33.33%; /* Adjust as needed for alignment */
-        width: 63%; ; /* Adjust as needed for width */
-        background-color: rgba(241, 241, 241, 0.93);
-        padding: 20px;
-        padding-right: 40px;
-        box-sizing: border-box;
-        font-size: 13px;
-        font-family: inherit;
-        font-color: "#00266E";
-        display: flex;
-        flex-direction: column;
-        height: auto; 
-        word-wrap: break-word;
-        max-width: 100%;
-    }
-    
-    /* Heading text styling */
-    .heading {
-        color: #fff;
-        font-size: 24px; /* Adjust the font size as needed */
-        font-family: inherit;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    /* Number text (1/3 etc) */
-    .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-    }
-
-    /* The dots/bullets/indicators */
-    .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-    }
-
-    .active, .dot:hover {
-    background-color: #717171;
-    }
-
-    /* Fading animation */
-    .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-    }
-
-    @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-    }
-    
-    .demobox {
-        background-color: #cfc ;
-        padding: 10px ;
-        border: 1px solid green ;
-    } 
-    
-    .hero-section {
-      padding: 20px 10%;
-      padding-bottom: 60px;
-      border: none;
-    }
-
-    .our-mission {
-      background-color: #00266E;
-      color: #f6f7fb;
-    }
-    
-    .quick-links {
-      background-color: #f8f8f8;
-      color: #212121;
-      font-family: inherit;
-    }
-    
-    .quick-links-button {
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-    }
-    
-    .button1 {
-        background-color: white; 
-        color: black; 
-        border: 2px solid #EF4056;
-    }
-    
-    .button1:hover {
-        background-color: #EF4056;
-        color: white;
-    }
-    
-    
-    .hero-section h2 {
-      font-size: 38px;
-      font-family: inherit;
-      line-height: normal;
-      font-weight: 600;
-      
-    }
-    
-    .hero-section h3 {
-      font-size: 25px;
-      font-family: inherit;
-      line-height: normal;
-      font-weight: 600;
-    }
-    
-    .hero-section p {
-        font-size: 16px; /* Adjust the size as needed */
-        font-family: inherit;
-
-    }
-    
-    .card-container {
-      display: flex; /* Set the container as a flex container */
-      justify-content: center; /* Center cards horizontally */
-      overflow-x: auto; /* Add horizontal scrollbar if necessary */
-    }
-    .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    margin: 10px;
-    flex: 1; /* Allow flex item to shrink and grow, but don't allow it to shrink below its intrinsic width */
-    min-width: 100px; /* Set a minimum width for the card */
-    max-width: 300px; /* Set a maximum width for the card */
-    }
-    
-    .card img {
-      width: 100%; /* Make the image span the entire width of the card */
-      max-width: 100%;
-      padding-top: 10px;
-    }
-    
-    .container h4 {
-      font-size: 19px;
-      font-family: inherit;
-      max-width: 100%;
-    }
-
-    .container p {
-      font-size: 16px;
-      font-family: inherit;
-      max-width: 100%;
-    }
-
-    .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
-
-    .container {
-        padding: 2px 16px;
-        padding-top: 10px;
-        position: relative;
-    }
-    
-    .video-container {
-      max-width: 800px;
-      width: 100%;
-      padding-top: 40%; /* Adjust the padding-top to set the aspect ratio */
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .video-container iframe {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    
-    .research-container {
-        display: grid;
-        align-items: center; 
-        justify-content: center;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 10px;
-        margin: 0 auto;
-        max-width: 1200px;
-    }
-    
-    .research-container text{
-        font-size: 16px;
-        font-family: inherit;
-    }
-    
-    .research-container h3{
-        font-size: 24px;
-        font-family: inherit;
-    }
-    
-    .research-container h4{
-        font-size: 18px;
-        font-family: inherit;
-    }
-    
-    
-</style>
-
-<!-- Main site Entry button descriptions -->
+<!-- Main site header with buttons and descriptions -->
 <section class="tx-container">
     <div class="md-grid md-typeset">
       <div class="tx-hero">
-
         <div class="tx-hero__content">
           <h1> UArizona HPC Services </h1>
           <p>The University of Arizona offers free high performance computing resources in the Research Data Center (RDC), a state-of-the-art facility that hosts large computer clusters. Scientific research relies upon such systems to analyze massive amounts of collected data.</p>
@@ -537,6 +27,7 @@
 </section>
 
 
+<!-- Blue hero section with our mission statement -->
 <div class="hero-section our-mission">
   <h2>Our Mission</h2>
   <div>
@@ -546,6 +37,8 @@
   </div>
 </div>
 
+
+<!-- News section. Contains cards with information on them -->
 <center>
 <h2> News </h2>
 
@@ -581,6 +74,26 @@
 </div>
 </center>
 
+
+
+<!-- Testing a section for calendar information -->
+<div class="hero-section quick-links">
+    <h2>Calendar</h2>
+    <div class="card" style="max-width:70%">
+        <div class="container">
+            <h4>Intro to HPC Workshop</h4>
+            <p>Date: October 27, 2024 @ 10:00-12:00pm (MST)<br>Location: Online<br>Registration: (link)</p>
+        </div>
+    </div>
+    <div class="card" style="max-width:70%">
+        <div class="container">
+            <h4>Intro to Fooing and also Barring</h4>
+            <p>Date: October 28, 2024 @ 11:00-1:00pm (MST)<br>Location: Baz<br>Registration: (link)</p>
+        </div>
+    </div>
+</div>
+
+<!-- Split section, picture of research on the left, description on the right -->
 <center><h2>Highlighted Research</h2></center>
 
 <div class="research-container">
@@ -589,29 +102,33 @@
     </div>
         <div class="text">
         <h3>Faster Speeds Need Faster Computation</h3>
-        <h4>Hypersonic Travel</h4><br>
-        <text> Professors Christoph Hader, Hermann Fasel, and their team are exploring the use of our GPUs to optimize Navier-Stokes codes for simulating the flow field around hypersonic vehicles traveling at size times the speed of sound (Mach 6) or more. <br><br>
-        In the image to the right, instantaneous flow structures obtained from a DNS for a flared cone at Mach 6 are visualized using the Q-isocontours colored with instantaneous temperature disturbance values. The small scales towards the end of the computational domain indicate the regions where the boundary layer is turbulent. </text>
+        <h4>Hypersonic Travel</h4>
+        <p> Professors Christoph Hader, Hermann Fasel, and their team are exploring the use of our GPUs to optimize Navier-Stokes codes for simulating the flow field around hypersonic vehicles traveling at size times the speed of sound (Mach 6) or more. <br><br>
+        In the image to the right, instantaneous flow structures obtained from a DNS for a flared cone at Mach 6 are visualized using the Q-isocontours colored with instantaneous temperature disturbance values. The small scales towards the end of the computational domain indicate the regions where the boundary layer is turbulent. </p>
         </div>
 </div>
 
 
+
+<!-- Quick links section. Grey background with a few buttons -->
 <div class="hero-section quick-links">
   <center><h2>Quick Links</h2></center>
     <center>
     <a href="https://ood.hpc.arizona.edu" title="Open OnDemand" class="quick-links-button button1">
-        Open OnDemand<br><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+        Open OnDemand<br><img src="/home/images/ood_icon.png" style="width:30px;">
     </a>
     <a href="https://portal.hpc.arizona.edu" title="HPC User Portal" class="quick-links-button button1">
-        User Portal<br><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+        User Portal<br><img src="/home/images/user_portal_icon.png" style="width:30px;">
     </a>
     <a href="https://www.youtube.com/@universityofarizonauitsres7597" title="Training Videos" class="quick-links-button button1">
-        Training Videos<br><svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
+        Training Videos<br><img src="/home/images/youtube_icon.png" style="width:30px;">
     </a>
     </center>
 </div>
 
 
+
+<!-- A slideshow that shows our clusters with information about each -->
 <center><h2>Our Clusters</h2></center>
  <!-- Slideshow container -->
 <div class="slideshow-container">
@@ -679,6 +196,9 @@
 
 <script src="script.js"></script>
 
+
+
+<!-- Youtube HPC data center tour -->
 <center>
 <h2>HPC Data Center Tour</h2>
 <p class="body-paragraph">You may not get to see the actual supercomputers where your work is done, but you can watch this tour. Note how loud it is in the room. The video does not convey the temperature of the room, but there are no warm areas. As you will hear explained, the cooling is done with chilled water.</p>
@@ -690,17 +210,23 @@
 </center>
 
 
+
+<!-- Line to divide the footer -->
 <div class="top-hr">
     <div class="hr">
     </div>
 </div>
 
 
+
+<!-- Footer with land acknowledgement -->
 <footer>
 
-<div class="md-footer-meta__inner">
+<div class="md-footer-land-acknowledgement">
     <center>
+    <i>
     We respectfully acknowledge the University of Arizona is on the land and territories of Indigenous peoples. Today, Arizona is home to 22 federally recognized tribes, with Tucson being home to the O'odham and the Yaqui. Committed to diversity and inclusion, the University strives to build sustainable relationships with sovereign Native Nations and Indigenous communities through education offerings, partnerships, and community service.
+    </i>
     <center>
 </div>
 
@@ -709,4 +235,23 @@
 
 {% endblock %}
 {% block content %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block footer %}
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                {% if config.copyright %}
+                <div class="md-footer-copyright__highlight">
+                    {{ config.copyright }}
+                </div>
+                {% endif %}
+                University of Arizona Research Computing
+            </div>
+            {% block social %}
+            {% include "partials/social.html" %}
+            {% endblock %}
+        </div>
+    </div>
+</footer>
+{% endblock %}
