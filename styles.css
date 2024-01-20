@@ -7,6 +7,10 @@
 }
 
 /* General attributes of the page */
+body {
+    font-family: "Roboto", mono;
+}
+
 
 h1 {
     font-size: 1.4rem
