@@ -13,9 +13,9 @@
 
 ## Storage Option Summary
 
-||Purpose|Capacity|Cost|Restricted Data|Access|Duration|Backup|
+||Purpose|<div style="width:120px">Capacity</div>|Cost|Restricted Data|Access|Duration|Backup|
 |-|-|-|-|-|-|-|-|
-|Primary HPC Storage|Research data. Supports compute. Directly attached to HPC.|```/home 50GB```<br>```/groups 500GB```<br>```/xdisk 20TB```|Free|Not for restricted data|Directly mounted on HPC. Also uses Globus and DTNs.|Long term. Aligns with HPC purchase cycle.|No|
+|Primary HPC Storage|Research data. Supports compute. Directly attached to HPC.|```/home```: 50GB<br>```/groups```: 500GB<br>```/xdisk```: 20TB|Free|Not for restricted data|Directly mounted on HPC. Also uses Globus and DTNs.|Long term. Aligns with HPC purchase cycle.|No|
 |R-DAS|Research Desktop Attached Storage - SMB shares|5TB|Free|Not for restricted data|Mounted to workstations as shares|Long term|No|
 |Rental Storage|Research data. Large datasets. Typically for staging to HPC|Rented per Terabyte per year|Rental rate: $47.35 per TB per year|Not for restricted data|Uses Globus and DTNs. Copy data to Primary|Long term. Aligns with HPC purchase cycle|No|
 |Tier 2|Typically research data. Unused data is archived|15GB to TBs|Tier-based system. First 1TB of active data and archival data are free. Active data > 1TB is paid.|Not for restricted data|Uses Globus and AWS command line interface|Typically long term since use of Glacier is free and slow|Archival|

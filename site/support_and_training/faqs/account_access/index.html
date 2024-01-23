@@ -35,19 +35,8 @@
 
     
     
-<script>
-var gtmId = 'GTM-TQPKQK7';
-if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1')) {
-  gtmId = 'GTM-XXX'
-}
-(function(w,d,s,l,i){
-  w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer', gtmId);
-</script>
-
+      
+    
     
       
         
@@ -321,6 +310,23 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
 
     
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../results/index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Results
+
+      </a>
+    </li>
   
 
       
@@ -2255,6 +2261,26 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../results/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2271,48 +2297,23 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
 <h1 id="account-access">Account Access</h1>
-<details class="question">
-<summary>How do I create an account?</summary>
-<p>A step by step guide is available in our <a href="/registration_and_access/account_creation/">Account Creation</a> page.</p>
-</details>
-<details class="question">
-<summary>Why can't I log in?</summary>
-<p>There are many reasons you may have having issues logging in. A list of possible reasons may include:</p>
-<ul>
-<li>You haven't <a href="/registration_and_access/account_creation/">created an account</a> yet. </li>
-<li>Your account <a href="/registration_and_access/account_creation/">isn't sponsored</a> yet.</li>
-<li>You aren't using two-factor authentication (NetID+).</li>
-<li>Have you just created an account? It can take between 15 minutes to an hour for the system register your account. Waiting may resolve the issue.</li>
-<li>Are you using the correct hostname? Try <code>ssh your_netid@hpc.arizona.edu</code>.</li>
-<li>Are you trying to log in with PuTTY? Make sure you're only using your NetID as your username and not <code>your_netid@hpc.arizona.edu</code>.</li>
-<li>You've entered your password incorrectly too many times. After multiple failed password entries, the system will place a 60 minute ban on your account for security reasons. </li>
-<li>Are you having trouble logging into Open OnDemand? Check our <a href="/support_and_training/faqs/open_on_demand_issues/">OnDemand FAQs</a> for solutions to common problems. </li>
-</ul>
-</details>
-<details class="question">
-<summary>Why can't I enter my password in my terminal?</summary>
-<p>Linux systems do not display character strokes when entering a password which can make it look like the SSH client is frozen. Even though it doesn't appear that anything is happening, the system is still logging your input. To proceed, type your password at the prompt and press enter.</p>
-</details>
-<details class="question">
-<summary>Why am I getting permission denied when I try to log in?</summary>
-<p>You need an HPC account - see our <a href="/registration_and_access/account_creation/">Account Creation</a> page for details. Once you've successfully created an account, you'll need to wait a little while to log in.</p>
-</details>
-<details class="question">
-<summary>Why am I getting the message 'incorrect password' when I try to log in?</summary>
-<ul>
-<li>Ensure you are entering the correct password. Sometimes typing your password into a plain text file and copying/pasting it into the terminal can help.</li>
-<li>You need to wait about 15 minutes after your account is approved for the account to be available.</li>
-<li>You must enroll in NetID+. Depending on the application you use to log in, you may not get the typical NetID/DUO menu of options, or an error message indicating this is your problem. </li>
-</ul>
-</details>
-<details class="question">
-<summary>I've forgotten my password, how can I reset it?</summary>
-<p>HPC uses the same NetID login credentials as all UArizona services. If you need to reset your NetID password, you can do so using the NetID portal: <a href="https://netid-portal.iam.arizona.edu/">https://netid-portal.iam.arizona.edu/</a></p>
-</details>
-<details class="question">
-<summary>I'm leaving the university/not affiliated with the university. Can I maintain/receive access to HPC?</summary>
-<p>Yes, if you are a former university affiliate or campus collaborator participating in research, you may register as a <a href="https://it.arizona.edu/service/designated-campus-colleague-accounts?_gl=1*8jrsev*_ga*MTU3NjA0NTk5LjE3MDQ0ODk5ODg.*_ga_7PV3540XS3*MTcwNDQ5MTg2My4yLjEuMTcwNDQ5MjE5Ny41Ny4wLjA.">Designated Campus Colleague (DCC)</a>. Once your DCC status has been approved, you will receive a NetID+ which you may use to <a href="/registration_and_access/account_creation/">create an HPC Account</a>. If you already have an HPC Account, no further action is required.</p>
-</details>
+<p><link rel="stylesheet" href="../../../overrides/animated_dropdown.css"></p>
+<html>
+
+
+<button class="collapsible">How do I create an account?</button>
+<div class="content">
+  <p>A step by step guide is available in our <a href="../../../registration_and_access/account_creation/">Account Creation</a> page. </p>
+</div>
+
+
+<button class="collapsible">Open Collapsible</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<script src="../../../overrides/animated_dropdown.js"></script>
+</html>
 
 
 
@@ -2406,7 +2407,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     
       <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../overrides/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

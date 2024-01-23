@@ -8,8 +8,9 @@
 
 /* General attributes of the page */
 body {
-    font-family: "Arial", sans-serif;
+    font-family: "Roboto", mono;
 }
+
 
 h1 {
     font-size: 1.4rem
@@ -505,6 +506,5 @@ div.fadeMe {
     max-width: 1200px;
 }
     
-
 
     

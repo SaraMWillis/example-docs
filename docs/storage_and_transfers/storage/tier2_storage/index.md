@@ -6,6 +6,9 @@ AWS storage is organized in buckets. One S3 intelligent tiering bucket is suppor
 
 ## Data Lifecycle
 
+!!! danger
+    Because AWS is set up for automatic archiving, files are moved into tiers where restore requests need to be submitted for each individual file that needs to be downloaded after a period of time. We **strongly** recommend archiving directories (.zip, .tar.gz files, etc) prior to moving them to AWS. This will significantly speed up your data transfers as well as reduce the complexity of file restorations. If you transfer hundreds or thousands of files to AWS, restore requests may take days or weeks to submit. 
+
 !!! warning "Small files"
     Warning: Very small files (less than 128KB ) are not subject to intelligent tiering and are not migrated to Glacier/Deep Glacier. This means they are permanently stored in the paid storage class. If you have many small files, we recommend making archives of your directories (.tar.gz, .zip, etc) prior to uploading them to AWS. This will also reduce transfer times significantly. 
 

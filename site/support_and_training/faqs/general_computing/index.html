@@ -35,19 +35,8 @@
 
     
     
-<script>
-var gtmId = 'GTM-TQPKQK7';
-if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1')) {
-  gtmId = 'GTM-XXX'
-}
-(function(w,d,s,l,i){
-  w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer', gtmId);
-</script>
-
+      
+    
     
       
         
@@ -321,6 +310,23 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
 
     
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../results/index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Results
+
+      </a>
+    </li>
   
 
       
@@ -2255,6 +2261,26 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../results/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2271,35 +2297,57 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
 <h1 id="general-computing">General Computing</h1>
-<details class="question">
-<summary>Why aren't common commands working?</summary>
-<p>There may be a few reasons for this. First, make sure your shell is set to Bash. If your shell is not set to Bash, contact our consultants so that they can reset it for you.</p>
-<p>If your shell is set to bash, double-check that you haven't changed, overwritten, or aliased anything important either your ~/.bashrc or ~/.bash_profile. E.g., unsetting your <code>PATH</code>, aliasing <code>.</code>, and so on will corrupt your environment and prevent you from interacting with HPC normally. </p>
-</details>
-<details class="question">
-<summary>Why is my terminal glitching (e.g. <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-a">A</kbd></span> puts me in the middle of my command prompt)?</summary>
-<p>When you log into HPC, the variable <code>$COMMAND_PROMPT</code> is set to display your current cluster (e.g. <code>(puma)</code>). Sometimes this can cause formatting problems. If you'd prefer to modify your <code>$PS1</code> (command prompt variable) instead, you can add the following to your <code>~/.bashrc</code>:
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PROMPT_COMMAND</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-a<span class="w"> </span>-r<span class="w"> </span>/usr/local/bin/slurm-selector.sh<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="nv">SavePS1</span><span class="o">=</span><span class="si">${</span><span class="nv">PS1</span><span class="si">}</span>
-<span class="nv">Cur_Cluster</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span><span class="w"> </span><span class="si">${</span><span class="nv">PROMPT_COMMAND</span><span class="si">}</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="k">)</span>
-<span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">Cur_Cluster</span><span class="si">}${</span><span class="nv">SavePS1</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">unset</span><span class="w"> </span>PROMPT_COMMAND
-<span class="k">for</span><span class="w"> </span>c<span class="w"> </span><span class="k">in</span><span class="w"> </span>puma<span class="w"> </span>ocelote<span class="w"> </span>elgato<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="nb">alias</span><span class="w"> </span><span class="si">${</span><span class="nv">c</span><span class="si">}</span><span class="o">=</span><span class="s2">&quot;PS1=\&quot;(</span><span class="si">${</span><span class="nv">c</span><span class="si">}</span><span class="s2">) </span><span class="si">${</span><span class="nv">SavePS1</span><span class="si">}</span><span class="s2">\&quot;; . /usr/local/bin/slurm-selector.sh </span><span class="si">${</span><span class="nv">c</span><span class="si">}</span><span class="s2">; unset PROMPT_COMMAND&quot;</span>
-<span class="k">done</span>
-<span class="nb">unset</span><span class="w"> </span>Cur_Cluster<span class="w"> </span>SavePS1
-<span class="k">fi</span>
-</code></pre></div></p>
-</details>
-<details class="question">
-<summary>What are dot files and what is a <code>~/.bashrc</code>?</summary>
-<p>Files that start with a dot, i.e. a <code>.</code>, are hidden when executing <code>ls</code> without additional options. If you use <code>ls -la</code>, that will show you all the files that exist, both standard and hidden. Dot files are generally important configuration files so it's important to be careful with their contents and deleting them. </p>
-<p>Your bashrc is a specific dot file that lives in your home directory (<code>~</code> is just shorthand for your home) and defines your environment every time you log in. Any commands you add to that file will be run whenever you access the system. This means, if you have common aliases you like to use, paths you like exported in your environment, etc., these can be added to your bashrc to avoid the headache of having to define them in every session.</p>
-<p>A word of caution. Be careful with the contents of this file. Some things to avoid:</p>
-<p>Don't alias important Linux commands. For example, the character <code>.</code> is a shortcut for source. If you do something like add alias <code>.="echo foo"</code> to your bashrc, you will lose basic functionality in the terminal, e.g., access to modules, virtual environments, etc. </p>
-<p>Do not recursively source your configuration files. For example, if you add <code>source ~/.bashrc</code> or source <code>~/.bash_profile</code> to your bashrc, then you will enter an infinite sourcing loop. This means, if you try to log in, your terminal will freeze for a moment before your access is denied. 
-Be careful with echoes. If you use CLI tools for data transfer, e.g. <code>scp</code> or <code>sftp</code>, they may require a "silent" terminal. If you're trying to initiate transfers and are getting the error "Received message too long", check your bashrc to make sure you aren't printing anything to the terminal. </p>
-</details>
+<p><link rel="stylesheet" href="../../../overrides/animated_dropdown.css">
+<link rel="stylesheet" href="../../../overrides/prism.css"></p>
+<html>
+
+<button class="collapsible">Why aren't common commands working?</button>
+<div class="content">
+  <p>There may be a few reasons for this. First, make sure your shell is set to Bash. If your shell is not set to Bash, contact our consultants so that they can reset it for you.
+  <br>
+  If your shell is set to bash, double-check that you haven't changed, overwritten, or aliased anything important either your <code>~/.bashrc</code> or <code>~/.bash_profile</code>. E.g., unsetting your <code>PATH</code>, aliasing <code>.</code>, and so on will corrupt your environment and prevent you from interacting with HPC normally. 
+  </p>
+</div>
+
+<button class="collapsible">Why is my terminal glitching (e.g. <kbd>Ctrl</kbd>+<kbd>a</kbd> puts me in the middle of my command prompt)?</button>
+<div class="content">
+  <p>When you log into HPC, the variable <code>$COMMAND_PROMPT</code> is set to display your current cluster (e.g. <code>(puma)</code>). Sometimes this can cause formatting problems. If you'd prefer to modify your <code>$PS1</code> (command prompt variable) instead, you can add the following to your <code>~/.bashrc</code>:
+  <br>
+  <pre><code class="language-bash">if [ -n "${PROMPT_COMMAND}" -a -r /usr/local/bin/slurm-selector.sh ]; then
+  SavePS1=${PS1}
+  Cur_Cluster=$(eval ${PROMPT_COMMAND} 2>/dev/null)
+  PS1="${Cur_Cluster}${SavePS1}"
+  unset PROMPT_COMMAND
+  for c in puma ocelote elgato; do
+    alias ${c}="PS1=\"(${c}) ${SavePS1}\"; . /usr/local/bin/slurm-selector.sh ${c}; unset PROMPT_COMMAND"
+  done
+  unset Cur_Cluster SavePS1
+fi
+  </code></pre>
+  </p>
+</div>
+
+<button class="collapsible">What are dot files and what is a <code>~/.bashrc</code>?</button>
+<div class="content">
+  <p>Files that start with a dot, i.e. a <code>.</code>, are hidden when executing <code>ls</code> without additional options. If you use <code>ls -la</code>, that will show you all the files that exist, both standard and hidden. Dot files are generally important configuration files so it's important to be careful with their contents and deleting them. 
+  <br>
+  Your bashrc is a specific dot file that lives in your home directory (<code>~</code> is just shorthand for your home) and defines your environment every time you log in. Any commands you add to that file will be run whenever you access the system. This means, if you have common aliases you like to use, paths you like exported in your environment, etc., these can be added to your bashrc to avoid the headache of having to define them in every session.
+  <br>
+  <b>A word of caution.</b> Be careful with the contents of this file. Some things to avoid:
+  <br><br>
+    &ensp;1. Don't alias important Linux commands. For example, the character <code>.</code> is a shortcut for source. If you do something like add alias <code>.="echo foo"</code> to your bashrc, you will lose basic functionality in the terminal, e.g., access to modules, virtual environments, etc. 
+    <br>
+    &ensp;2. Do not recursively source your configuration files. For example, if you add <code>source ~/.bashrc</code> or <code>source ~/.bash_profile</code> to your bashrc, then you will enter an infinite sourcing loop. This means when you try to log in, your terminal will freeze for a moment before your access is denied. 
+    <br>
+    &ensp;3. Be careful with echoes. If you use CLI tools for data transfer, e.g. <code>scp</code> or <code>sftp</code>, they may require a "silent" terminal. If you're trying to initiate transfers and are getting the error "Received message too long", check your bashrc to make sure you aren't printing anything to the terminal. 
+  </p>
+</div>
+
+
+<script src="../../../overrides/animated_dropdown.js"></script>
+<script src="../../../overrides/prism.js"></script>
+<html>
+</html>
 
 
 
@@ -2393,7 +2441,7 @@ Be careful with echoes. If you use CLI tools for data transfer, e.g. <code>scp</
     
       <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../overrides/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
