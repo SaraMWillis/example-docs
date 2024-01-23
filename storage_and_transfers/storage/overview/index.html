@@ -35,8 +35,19 @@
 
     
     
-      
-    
+<script>
+var gtmId = 'GTM-TQPKQK7';
+if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1')) {
+  gtmId = 'GTM-XXX'
+}
+(function(w,d,s,l,i){
+  w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', gtmId);
+</script>
+
     
       
         
@@ -2373,7 +2384,7 @@
 <tr>
 <th></th>
 <th>Purpose</th>
-<th>Capacity</th>
+<th><div style="width:120px">Capacity</div></th>
 <th>Cost</th>
 <th>Restricted Data</th>
 <th>Access</th>
@@ -2385,7 +2396,7 @@
 <tr>
 <td>Primary HPC Storage</td>
 <td>Research data. Supports compute. Directly attached to HPC.</td>
-<td><code>/home 50GB</code><br><code>/groups 500GB</code><br><code>/xdisk 20TB</code></td>
+<td><code>/home</code>: 50GB<br><code>/groups</code>: 500GB<br><code>/xdisk</code>: 20TB</td>
 <td>Free</td>
 <td>Not for restricted data</td>
 <td>Directly mounted on HPC. Also uses Globus and DTNs.</td>

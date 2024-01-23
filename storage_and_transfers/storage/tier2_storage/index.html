@@ -35,8 +35,19 @@
 
     
     
-      
-    
+<script>
+var gtmId = 'GTM-TQPKQK7';
+if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1')) {
+  gtmId = 'GTM-XXX'
+}
+(function(w,d,s,l,i){
+  w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', gtmId);
+</script>
+
     
       
         
@@ -2417,6 +2428,10 @@
 <p>Research Technologies in partnership with UITS has implemented an AWS rental storage solution. This AWS option is called Tier 2 which differs from Tier 1, the primary storage that is directly connected to the HPC clusters. Tier 1 is very fast, very expensive, and immediately available for active analyses. Tier 2 is intended for data not immediately undergoing active analyses and for backups (highly encouraged!). Researchers can use the software Globus to move data to Tier 2, and can also move data from other sources (called endpoints) like Google Drive. The data in Tier 2 will not be mounted on HPC, and so Globus will be used to move it back to Tier 1 if needed.</p>
 <p>AWS storage is organized in buckets. One S3 intelligent tiering bucket is supported per KFS account. A PI could sponsor multiple buckets by submitting separate requests each with a unique KFS number, and then provide permissions as they see fit.  Note this is different from Google Drive where anyone could create one.</p>
 <h2 id="data-lifecycle">Data Lifecycle</h2>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Because AWS is set up for automatic archiving, files are moved into tiers where restore requests need to be submitted for each individual file that needs to be downloaded after a period of time. We <strong>strongly</strong> recommend archiving directories (.zip, .tar.gz files, etc) prior to moving them to AWS. This will significantly speed up your data transfers as well as reduce the complexity of file restorations. If you transfer hundreds or thousands of files to AWS, restore requests may take days or weeks to submit. </p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Small files</p>
 <p>Warning: Very small files (less than 128KB ) are not subject to intelligent tiering and are not migrated to Glacier/Deep Glacier. This means they are permanently stored in the paid storage class. If you have many small files, we recommend making archives of your directories (.tar.gz, .zip, etc) prior to uploading them to AWS. This will also reduce transfer times significantly. </p>
