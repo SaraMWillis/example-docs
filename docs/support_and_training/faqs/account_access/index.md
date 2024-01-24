@@ -1,7 +1,7 @@
 # Account Access
 
-<link rel="stylesheet" href="../../../overrides/animated_dropdown.css">
-<link rel="stylesheet" href="../../../overrides/spacing.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/animated_dropdown.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/spacing.css">
 
 <html>
 
@@ -14,7 +14,15 @@
 
 <button class="collapsible">Why can't I log in?</button>
 <div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <p>There are many reasons you may be having issues logging in. A possible list of reasons may include:
+    <ul>
+        <li>You haven't <a href="../../../registration_and_access/account_creation/">created an account</a> yet or you have not yet been sponsored.</li>
+        <li>You aren't using two-factor authentication (NetID+).</li>
+        <li>You need to wait 15 minutes. If you just created your account, it takes time before you can log in.</li>
+        <li>You're trying to connect using ssh <code>netid@login.hpc.arizona.edu</code>. This will not work. Instead, use: <code>ssh netid@hpc.arizona.edu</code>.</li>
+        <li>You're using <code>netid@hpc.arizona.edu</code> or <code>netid@email.arizona.edu</code> as your username in PuTTY. Instead, use only your NetID.</li>
+        <li>You've entered your password incorrectly too many times. After multiple failed password entries, the system will place a 60 minute ban on your account for security reasons. Your account will automatically unlock after 60 minutes. Attempting to log in before your account unlocks will reset the timer. </li>
+    </ul></p>
 </div>
 
 <button class="collapsible">Why can't I enter my password in my terminal?</button>
@@ -64,5 +72,5 @@
 </div>
 
 <div class="vertical-space"></div>
-<script src="../../../overrides/animated_dropdown.js"></script>
+<script src="../../../assets/javascripts/animated_dropdown.js"></script>
 </html>

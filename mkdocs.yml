@@ -1,7 +1,6 @@
 site_name: UArizona HPC Documentation
 
 nav:
-  - Home: index.md
   - Policies:
     - Acceptable Use: policies/acceptable_use/index.md
     - Acknowledgements: policies/acknowledgements/index.md
@@ -37,35 +36,42 @@ nav:
 
   - Running Jobs:
     - Overview: running_jobs/overview/index.md
+    - Compute Resources: running_jobs/compute_resources/index.md
     - Time Allocations: running_jobs/allocations/index.md
     - Job Limits: running_jobs/job_limits/index.md
-    - Compute Resources: running_jobs/compute_resources/index.md
     - Open OnDemand: running_jobs/open_on_demand/index.md
-    - Interactive Jobs: running_jobs/interactive_jobs/index.md
-    - Batch Jobs:
-        - Quick Start: running_jobs/batch_jobs/quick_start/index.md
-        - Slurm Documentation: running_jobs/batch_jobs/slurm_documentation/index.md
-        - Example Batch Jobs: 
-            - General Examples: 
-                - Using a Pipefail: running_jobs/batch_jobs/example_batch_jobs/general_examples/pipefail/index.md
-                - Job Dependencies: running_jobs/batch_jobs/example_batch_jobs/general_examples/job_dependencies/index.md
-            - Array and Parallel Examples: 
-                - Basic Array Job: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_array/index.md
-                - Array Jobs with Text Filenames: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_filenames/index.md
-                - Array Jobs with Multiple Input Parameters: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_parameters/index.md
-                - Basic GNU Parallel Job: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_gnu_parallel_job/index.md
-                - Array Job Using GNU Parallel: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_and_gnu_parallel/index.md
+    - Slurm Jobs:
+        - Quick Start: running_jobs/slurm_jobs/quick_start/index.md
+        - Slurm Documentation: running_jobs/slurm_jobs/slurm_documentation/index.md
+        - Interactive Jobs: running_jobs/slurm_jobs/interactive_jobs/index.md
+        - Batch Jobs:
+            - Example Batch Jobs: 
+                - General Examples: 
+                    - Using a Pipefail: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/general_examples/pipefail/index.md
+                    - Job Dependencies: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/general_examples/job_dependencies/index.md
+                - Array and Parallel Examples: 
+                    - Basic Array Job: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_array/index.md
+                    - Array Jobs with Text Filenames: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_filenames/index.md
+                    - Array Jobs with Multiple Input Parameters: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_parameters/index.md
+                    - Basic GNU Parallel Job: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_gnu_parallel_job/index.md
+                    - Array Job Using GNU Parallel: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_and_gnu_parallel/index.md
     
   - User Support and Training:
+    - Consulting Services: support_and_training/consulting_services/index.md
     - FAQs: 
         - Account Access: support_and_training/faqs/account_access/index.md 
+        - Data Transfers: support_and_training/faqs/data_transfers/index.md
         - General Computing: support_and_training/faqs/general_computing/index.md 
         - Jobs and Scheduling: support_and_training/faqs/jobs_and_scheduling/index.md 
-        - Software and Modules: support_and_training/faqs/software_and_modules/index.md 
-        - Storage: support_and_training/faqs/storage/index.md 
         - Open OnDemand Issues: support_and_training/faqs/open_on_demand_issues/index.md 
         - Secure Services: support_and_training/faqs/secure_services/index.md 
-    - Consulting Services: support_and_training/consulting_services/index.md
+        - Software and Modules: support_and_training/faqs/software_and_modules/index.md 
+        - Storage: 
+            - HPC Storage: support_and_training/faqs/storage/hpc/index.md
+            - Rental Storage: support_and_training/faqs/storage/rental/index.md
+            - R-DAS Storage: support_and_training/faqs/storage/rdas/index.md
+            - Tier 2 AWS Storage: support_and_training/faqs/storage/aws/index.md
+        
     - Workshops: 
         - Intro to HPC: support_and_training/workshops/intro_to_hpc/index.md
         - Intro to Machine Learning on HPC: support_and_training/workshops/intro_to_machine_learning/index.md
