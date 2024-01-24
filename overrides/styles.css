@@ -1,5 +1,5 @@
 /* styles.css (main stylesheet) */
-@import "buttons.css";
+@import "../assets/javascripts/buttons.css";
 
 
 @media screen and (max-width: 600px) {
@@ -8,7 +8,7 @@
 
 /* General attributes of the page */
 body {
-    font-family: "Arial", sans-serif;
+    font-family: "Roboto", mono;
 }
 
 h1 {
