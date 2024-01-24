@@ -10,7 +10,7 @@ Faculty members will receive a PI Account which is different from the Sponsored 
 The process of getting registered for an HPC account varies depending on your affiliation with the University. Take a look at the list below to determine how you should register:
 
 <html>
-<link rel="stylesheet" href="../../../overrides/animated_dropdown.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/animated_dropdown.css">
 
 <button class="collapsible">I'm a faculty member/principal investigator (PI)</button>
 <div class="content">
@@ -53,5 +53,5 @@ The process of getting registered for an HPC account varies depending on your af
     </p>
 </div>
 
-<script src="../../../overrides/animated_dropdown.js"></script>
+<script src="../../../assets/javascripts/animated_dropdown.js"></script>
 </html>
