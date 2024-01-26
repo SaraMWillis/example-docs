@@ -1254,6 +1254,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Specifications
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2639,6 +2648,103 @@
 <p><strong>Possible Problems You Might Encounter</strong></p>
 <p>Be careful when using <code>--mem-per-cpu ratio</code>. If you use a higher value than a standard node ratio, you may inadvertently wind up in queue for a high memory node. On Puma there are three of these machines available for standard jobs and only one on Ocelote. This means the wait times are frequently longer than those for standard nodes. If you notice your job is in queue much longer than you would expect, check your job using job-history to ensure the memory ratio looks correct.
 Stick to using <code>--ntasks=N</code> and <code>--cpus-per-task=M</code> to request <span class="arithmatex">\(N × M\)</span> CPUs. Using the flag <code>-c</code> N to request CPUs has been found to cause problems with memory requests and may inadvertently limit you to ~4MB of total memory.</p>
+<h2 id="technical-specifications">Technical Specifications</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ElGato</th>
+<th>Ocelote</th>
+<th>Puma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>IBM System X iDataPlex dx360 M4</td>
+<td>Lenovo NeXtScale nx360 M5</td>
+<td>Penguin Altus XE2242</td>
+</tr>
+<tr>
+<td>Year Purchased</td>
+<td>2013</td>
+<td>2016 (2018 P100 nodes)</td>
+<td>2020</td>
+</tr>
+<tr>
+<td>Node Count</td>
+<td>131</td>
+<td>400</td>
+<td>236 CPU-only<br>8 GPU<br>2 High-memory</td>
+</tr>
+<tr>
+<td>Total System Memory</td>
+<td>26TB</td>
+<td>82.6TB</td>
+<td>128TB</td>
+</tr>
+<tr>
+<td>Processors</td>
+<td>2x Xeon E5-2650v2 8-core (Ivy Bridge)</td>
+<td>2x Xeon E5-2695v3 14-core (Haswell)<br>2x Xeon E5-2695v4 14-core (Broadwell)<br>4x Xeon E7-4850v2 12-core (Ivy Bridge)<br></td>
+<td>2x AMD EPYC 7642 48-core (Rome)</td>
+</tr>
+<tr>
+<td>Cores/Node (Schedulable)</td>
+<td>16c</td>
+<td>28c (48c - High-memory node)</td>
+<td>94c</td>
+</tr>
+<tr>
+<td>Total Cores</td>
+<td>2160*</td>
+<td>11528*</td>
+<td>23616</td>
+</tr>
+<tr>
+<td>Processor Speed</td>
+<td>2.66GHz</td>
+<td>2.3GHz (2.4GHz - Broadwell CPUs)</td>
+<td>2.4GHz</td>
+</tr>
+<tr>
+<td>Memory/Node</td>
+<td>256GB - GPU nodes<br>64GB - CPU-only nodes</td>
+<td>192GB (2TB - High-memory node)</td>
+<td>512GB (3TB - High-memory nodes)</td>
+</tr>
+<tr>
+<td>Accelerators</td>
+<td></td>
+<td>46 NVIDIA P100 (16GB)</td>
+<td>29 NVIDIA V100S</td>
+</tr>
+<tr>
+<td><code>/tmp</code></td>
+<td>~840 GB spinning</td>
+<td>~840 GB spinning</td>
+<td>~1440 TB NVMe</td>
+</tr>
+<tr>
+<td>HPL Rmax (TFlop/s)</td>
+<td>46</td>
+<td>382</td>
+<td></td>
+</tr>
+<tr>
+<td>OS</td>
+<td>CentOS 7</td>
+<td>CentOS 7</td>
+<td>CentOS 7</td>
+</tr>
+<tr>
+<td>Interconnect</td>
+<td>FDR Inifinband</td>
+<td>FDR Infiniband for node-node<br>10 Gb Ethernet node-storage</td>
+<td>1x 25Gb/s Ethernet RDMA (RoCEv2)<br>1x 25Gb/s Ethernet to storage</td>
+</tr>
+</tbody>
+</table>
 <div class="footnote">
 <hr />
 <ol>

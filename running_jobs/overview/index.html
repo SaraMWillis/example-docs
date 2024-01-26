@@ -1179,6 +1179,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1188,6 +1199,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's a job?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-slurmwhat-is-a-job-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Slurm/What is a job scheduler?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#am-i-charged-for-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Am I charged for jobs?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-compute-resources-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      What compute resources are available?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2421,7 +2487,15 @@
 
 
 <h1 id="overview">Overview</h1>
-<p>A job is an allocation of resources assigned to an user for a fixed amount of time. It can be <a href="../interactive_jobs/index.md">interactive</a> (happens in real time) or <a href="../batch_jobs/index.md">batch</a> (a script scheduled for execution at a later time). We use <a href="https://slurm.schedmd.com/">Slurm</a>, an open source, fault-tolerant, and highly scalable cluster manager and job scheduler, to manage our cluster resources and schedule jobs. You can interact with Slurm from one of the login nodes, to start an interactive job or submit a batch job.</p>
+<p>If you're just getting started on an HPC system, you may be wondering how you run your work. The answer is with Slurm jobs. </p>
+<h2 id="whats-a-job">What's a job?</h2>
+<p>A job is an allocation of resources assigned to an user for a fixed amount of time. Resources include CPUs, GPUs, memory, and nodes (physical computers). Jobs can be run <a href="../slurm_jobs/interactive_jobs">interactively on the command line</a>, interactively through an <a href="../open_on_demand">Open OnDemand application</a>, or <a href="../slurm_jobs/batch_jobs">in batch</a> (a script scheduled for execution at a later time). </p>
+<h2 id="what-is-slurmwhat-is-a-job-scheduler">What is Slurm/What is a job scheduler?</h2>
+<p>Resources are available to the entire HPC community at UArizona, so careful coordination of who gets what when is critical. That's where a job scheduler comes in. A job scheduler is software that takes resource requests from users, coordinates them, and starts jobs when space becomes available. We use the scheduler <a href="https://slurm.schedmd.com/">Slurm</a>, an open source, fault-tolerant, and highly scalable cluster manager and job scheduler, to manage our cluster resources and schedule jobs. You can interact with Slurm from one of the login nodes to start an interactive job or submit a batch job.</p>
+<h2 id="am-i-charged-for-jobs">Am I charged for jobs?</h2>
+<p>Every group gets a free monthly allocation of CPU hours to spend on their compute. See our section on <a href="../allocations">Time Allocations</a> for detailed information.</p>
+<h2 id="what-compute-resources-are-available">What compute resources are available?</h2>
+<p>We have three clusters available for use. See <a href="../compute_resources">Compute Resources</a> for the specifics on what's available on each. </p>
 
 
 

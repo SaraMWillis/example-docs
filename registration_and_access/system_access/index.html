@@ -703,6 +703,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#system-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#web-access" class="md-nav__link">
     <span class="md-ellipsis">
       Web Access
@@ -2529,14 +2538,21 @@
 
 
 <h1 id="system-access">System Access</h1>
+<p><link rel="stylesheet" href="../../../assets/stylesheets/animated_dropdown.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/spacing.css"></p>
+<!-- how to create a dropdown
+
+<button class="collapsible">How do I create an account?</button>
+<div class="content">
+  <p>A step by step guide is available in our <a href="../../../registration_and_access/account_creation/">Account Creation</a> page. </p>
+</div>
+
+-->
+
 <h2 id="overview">Overview</h2>
-<details class="tip">
-<summary>Comprehensive tutorial available</summary>
-<p>A comprehensive walkthrough of this process is in our <a href="/tutorials_and_training/quick_start">quick start guide</a>. </p>
-</details>
-<p><img src="images/cluster_diagram.png" alt="cluster-diagram" width="80%"/></p>
 <p>Logging into the HPC supercomputers starts with your UArizona NetID and password with two-factor authentication enabled. This page is intended to provide you with instructions on getting terminal access to the system from your specific OS, how to log into the system from our web interface (Open OnDemand), how to set up X11 (image) forwarding, and how to configure your account to allow for a password-less login with SSH keys.</p>
-<p>If you experience any problems, refer to our <a href="support_and_training/faqs/account_access/">FAQ page</a> which provides some solutions to common problems.</p>
+<h2 id="system-setup">System Setup</h2>
+<p><center><img src="images/cluster_diagram.png" alt="cluster-diagram" width="80%"/></center></p>
 <h2 id="web-access">Web Access</h2>
 <p><a class="md-button" href="https://ood.hpc.arizona.edu">Open OnDemand</a></p>
 <div class="admonition example">
@@ -2776,6 +2792,7 @@ $<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>
 </div>
 <h3 id="using-ssh-keys-for-file-transfers">Using SSH Keys for file transfers</h3>
 <p>Note that SSH Keys can also be used to avoid entering a password and 2nd factor when transferring files to to the cluster via the file transfer node (<code>filexfer.hpc.arizona.edu</code>) using command line programs like <code>scp</code> or <code>sftp</code>.  Follow the steps above (2-4 under the Mac and Linux instructions), except use <code>filexfer.hpc.arizona.edu</code> instead of <code>hpc.arizona.edu</code>. Note that you only need to generate the keys in Step 1 once. The same <code>~/.ssh/id_rsa.pub</code> file may be used to identify yourself to multiple hosts.</p>
+<script src="../../../assets/javascripts/animated_dropdown.js"></script>
 
 
 
