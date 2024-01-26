@@ -38,7 +38,7 @@ nav:
     - Overview: running_jobs/overview/index.md
     - Compute Resources: running_jobs/compute_resources/index.md
     - Time Allocations: running_jobs/allocations/index.md
-    - Job Limits: running_jobs/job_limits/index.md
+    - Job Limits and Considerations: running_jobs/job_limits/index.md
     - Open OnDemand: running_jobs/open_on_demand/index.md
     - Slurm Jobs:
         - Quick Start: running_jobs/slurm_jobs/quick_start/index.md
