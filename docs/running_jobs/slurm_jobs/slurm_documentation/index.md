@@ -1,6 +1,6 @@
 # Slurm Documentation
 
-This page includes important system commands, batch job directives, environment variables, reason codes, among others to help you get started. For more detailed information 
+This page includes important system commands, batch job directives, environment variables, reason codes, among others to serve as a reference. For more detailed information 
 
 [Official SchedMD User Documentation](https://slurm.schedmd.com/documentation.html){ .md-button .md-button--primary }
 

@@ -59,5 +59,23 @@ For example, if you request 1 CPU and 470G of memory on Puma, the system will au
 Be careful when using ```--mem-per-cpu ratio```. If you use a higher value than a standard node ratio, you may inadvertently wind up in queue for a high memory node. On Puma there are three of these machines available for standard jobs and only one on Ocelote. This means the wait times are frequently longer than those for standard nodes. If you notice your job is in queue much longer than you would expect, check your job using job-history to ensure the memory ratio looks correct.
 Stick to using ```--ntasks=N``` and ```--cpus-per-task=M``` to request $N × M$ CPUs. Using the flag ```-c``` N to request CPUs has been found to cause problems with memory requests and may inadvertently limit you to ~4MB of total memory.
 
+## Technical Specifications
+
+| | ElGato | Ocelote | Puma |
+|-|-|-|-|
+|Model|IBM System X iDataPlex dx360 M4|Lenovo NeXtScale nx360 M5|Penguin Altus XE2242|
+|Year Purchased|2013|2016 (2018 P100 nodes)|2020|
+|Node Count|131|400|236 CPU-only<br>8 GPU<br>2 High-memory|
+|Total System Memory|26TB|82.6TB|128TB|
+|Processors|2x Xeon E5-2650v2 8-core (Ivy Bridge)|2x Xeon E5-2695v3 14-core (Haswell)<br>2x Xeon E5-2695v4 14-core (Broadwell)<br>4x Xeon E7-4850v2 12-core (Ivy Bridge)<br>|2x AMD EPYC 7642 48-core (Rome)|
+|Cores/Node (Schedulable)|16c|28c (48c - High-memory node)|94c|
+|Total Cores|2160*|11528*|23616|
+|Processor Speed|2.66GHz|2.3GHz (2.4GHz - Broadwell CPUs)|2.4GHz|
+|Memory/Node|256GB - GPU nodes<br>64GB - CPU-only nodes|192GB (2TB - High-memory node)|	512GB (3TB - High-memory nodes)|
+|Accelerators||46 NVIDIA P100 (16GB)|29 NVIDIA V100S|
+|```/tmp```|~840 GB spinning|~840 GB spinning|~1440 TB NVMe|
+|HPL Rmax (TFlop/s)|46|382||
+|OS|CentOS 7|CentOS 7|CentOS 7|
+|Interconnect|FDR Inifinband|FDR Infiniband for node-node<br>10 Gb Ethernet node-storage|1x 25Gb/s Ethernet RDMA (RoCEv2)<br>1x 25Gb/s Ethernet to storage|
 
 [^1]: Where $1\leq N \leq 4$ 

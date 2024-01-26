@@ -1,19 +1,32 @@
 # System Access
 
+<link rel="stylesheet" href="../../../assets/stylesheets/animated_dropdown.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/spacing.css">
+
+<!-- how to create a dropdown
+
+<button class="collapsible">How do I create an account?</button>
+<div class="content">
+  <p>A step by step guide is available in our <a href="../../../registration_and_access/account_creation/">Account Creation</a> page. </p>
+</div>
+
+-->
+
 ## Overview
-
-??? tip "Comprehensive tutorial available"
-    A comprehensive walkthrough of this process is in our [quick start guide](/tutorials_and_training/quick_start). 
-
-<img src="images/cluster_diagram.png" alt="cluster-diagram" width="80%"/>
 
 Logging into the HPC supercomputers starts with your UArizona NetID and password with two-factor authentication enabled. This page is intended to provide you with instructions on getting terminal access to the system from your specific OS, how to log into the system from our web interface (Open OnDemand), how to set up X11 (image) forwarding, and how to configure your account to allow for a password-less login with SSH keys.
 
-If you experience any problems, refer to our [FAQ page](support_and_training/faqs/account_access/) which provides some solutions to common problems.
+
+## System Setup
+
+
+<center><img src="images/cluster_diagram.png" alt="cluster-diagram" width="80%"/></center>
+
 
 ## Web Access
 
 [Open OnDemand](https://ood.hpc.arizona.edu){ .md-button }
+
 
 !!! example "OnDemand Options"
     === "Browser Terminal"
@@ -47,6 +60,7 @@ If you experience any problems, refer to our [FAQ page](support_and_training/faq
 
 
 ## Command Line Access
+
 
 ???+ tip "Credentials"
      To log into HPC, you will need NetID+ enabled, an HPC account, and internet access. Because we require Duo-authentication to access the system, no VPN is required. 
@@ -238,3 +252,6 @@ The Bastion Host uses two-factor authentication and will, by default, prompt you
 ### Using SSH Keys for file transfers
 
 Note that SSH Keys can also be used to avoid entering a password and 2nd factor when transferring files to to the cluster via the file transfer node (```filexfer.hpc.arizona.edu```) using command line programs like ```scp``` or ```sftp```.  Follow the steps above (2-4 under the Mac and Linux instructions), except use ```filexfer.hpc.arizona.edu``` instead of ```hpc.arizona.edu```. Note that you only need to generate the keys in Step 1 once. The same ```~/.ssh/id_rsa.pub``` file may be used to identify yourself to multiple hosts.
+
+
+<script src="../../../assets/javascripts/animated_dropdown.js"></script>

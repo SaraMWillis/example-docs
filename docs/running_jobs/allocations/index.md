@@ -28,7 +28,7 @@ Allocations are refreshed on the first day of each month. Unused hours from the 
 
 ## How to Use Your Allocation
 
-To use your allocation, you will include your account and partition information as a [Slurm directive in your batch script](running_jobs/batch_jobs/slurm_documentation). 
+To use your allocation, you will include your account and partition information as a [Slurm directive in your batch script](../slurm_jobs/slurm_documentation). 
 
 === "Standard Hours"
     To use your group's standard hours, include the following in your batch script, replacing ```<PI GROUP>``` with your own group's name:
