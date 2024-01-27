@@ -50,6 +50,23 @@ p {
     color: #fff; /* Set text color to be visible on the gradient overlay */
 }
 
+.results-tx-container {
+    position: relative;
+    padding-top: .0rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.2)), url('../results/images/astro_tech.jpg') center center fixed;
+    background-size: cover;
+    color: #fff; /* Set text color to be visible on the gradient overlay */
+}
+
+.news-tx-container {
+    position: relative;
+    padding-top: .0rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('assets/images/home/chip.jpg') center center fixed;
+    background-blend-mode: normal; /* Set the blend mode */
+    background-size: cover;
+    color: #000; /* Set text color to be visible on the gradient overlay */
+}
+
 .resources-tx-container {
     position: relative;
     padding-top: .0rem;
@@ -463,6 +480,7 @@ div.fadeMe {
     flex: 1; /* Allow flex item to shrink and grow, but don't allow it to shrink below its intrinsic width */
     min-width: 100px; /* Set a minimum width for the card */
     max-width: 300px; /* Set a maximum width for the card */
+    background: #ffffff ;
 }
 
 .calendar_card {

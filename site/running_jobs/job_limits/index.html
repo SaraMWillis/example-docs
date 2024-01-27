@@ -21,7 +21,7 @@
     
     
       
-        <title>Job Limits - UArizona HPC Documentation</title>
+        <title>Job Limits and Considerations - UArizona HPC Documentation</title>
       
     
     
@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#job-limits-and-considerations" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Job Limits
+              Job Limits and Considerations
             
           </span>
         </div>
@@ -1234,16 +1239,57 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Job Limits and Considerations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Job Limits
+    Job Limits and Considerations
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#job-memory-and-cpu-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Memory and CPU Count
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2413,9 +2459,20 @@
                   
 
 
-  <h1>Job Limits</h1>
+<h1 id="job-limits-and-considerations">Job Limits and Considerations</h1>
+<h2 id="job-memory-and-cpu-count">Job Memory and CPU Count</h2>
+<div style="float: right; width: 0px; height: 100px"></div>
+<div style="float: right; clear: right"><iframe width="420" height="280" src="https://www.youtube.com/embed/_dpbUqZ7rRk" allowfullscreen></iframe></div>
 
-
+<p><strong>Job Memory and CPU Count are Correlated</strong></p>
+<p>The memory your job is allocated is dependent on the number of CPUs you request.</p>
+<p>For example, on Puma standard nodes, you get 5G for each CPU you request. This means a standard job using 4 CPUs gets 5G/CPU × 4 CPUs = 20G of total memory. Each node has its own memory ratio that's dependent on its total memory ÷ total number of CPUs. A reference for all the node types, the memory ratios, and how to request each can be found in the Node Types/Example Resource Requests section above.</p>
+<p><strong>What Happens if My Memory and CPU Requests Don't Match?</strong></p>
+<p>Our systems are configured to try to help when your memory request does not match your CPU count.</p>
+<p>For example, if you request 1 CPU and 470G of memory on Puma, the system will automatically scale up your CPU count to 94 to ensure that you get your full memory requirements. This does not go the other way, so if you request less memory than would be provided by your CPU count, no adjustments are made. If you omit the <code>--memory</code> flag entirely, the system will use the memory ratio for the standard nodes on that cluster.</p>
+<p><strong>Possible Problems You Might Encounter</strong></p>
+<p>Be careful when using <code>--mem-per-cpu ratio</code>. If you use a higher value than a standard node ratio, you may inadvertently wind up in queue for a high memory node. On Puma there are three of these machines available for standard jobs and only one on Ocelote. This means the wait times are frequently longer than those for standard nodes. If you notice your job is in queue much longer than you would expect, check your job using job-history to ensure the memory ratio looks correct.
+Stick to using <code>--ntasks=N</code> and <code>--cpus-per-task=M</code> to request <span class="arithmatex">\(N × M\)</span> CPUs. Using the flag <code>-c</code> N to request CPUs has been found to cause problems with memory requests and may inadvertently limit you to ~4MB of total memory.</p>
 
 
 
