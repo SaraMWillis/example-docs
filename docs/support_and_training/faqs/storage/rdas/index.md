@@ -5,9 +5,6 @@
 
 <html>
 
-<h2>HPC High Performance Storage</h2>
-<h3>General Storage</h3>
-
 <!-- General format for HTML 
 <button class="collapsible">Question goes here</button>
 <div class="content">

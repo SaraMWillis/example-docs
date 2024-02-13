@@ -170,42 +170,69 @@ cd /xdisk/pi_netid/netid
 </div>
 
 <!-- Why am I getting "xdisk: command not found"? -->
-<button class="collapsible">Question goes here</button>
+<button class="collapsible">Why am I getting "xdisk: command not found"?</button>
 <div class="content">
   <p>
-      Answer goes here
+      If you're getting errors using xdisk commands in a terminal session, check that you are on a login node. If you are on the bastion host (hostname: gatekeeper), are in an interactive session, or are on the filexfer node, you won't be able to check or modify your xdisk. When you are on a login node, your terminal prompt should show the hostname junonia or wentletrap. You can also check your hostname using the command <code>hostname</code>
   </p>
 </div>
 
 <!-- Why am I getting errors when trying to extend my allocation? -->
-<button class="collapsible">Question goes here</button>
+<button class="collapsible">Why am I getting errors when trying to extend my allocation?</button>
 <div class="content">
   <p>
-      Answer goes here
+      If you're trying to extend your group's allocation but are seeing something like:
+      <pre><code>
+(puma) [netid@junonia ~]$ xdisk -c expire -d 1
+invalid request_days: 1
+      </code></pre>
+      for every value you enter, your xdisk has likely reached its maximum time limit. To check, have a delegate or PI go to <a href="portal.hpc.arizona.edu">portal.hpc.arizona.edu</a>, click <b>Manage XDISK</b>, and look at the box next to Duration. If you see 300, your allocation cannot be extended further.
+
+    If your allocation is at its limit, you will need to back up your data to external storage (e.g., a local machine, lab server, or cloud service). Once your xdisk has been removed (either by expiring or through manual deletion), you can immediately create a new allocation and restore your data. Detailed xdisk information can be found on our <a href="../../../../storage_and_transfers/storage/hpc_storage/">HPC High Performance Storage</a> page. You may also want to look at our page on <a href="../../../../storage_and_transfers/transfers/overview/">Transferring Data</a>.
   </p>
 </div>
 
 <!-- Can we keep our xdisk allocation for more than 300 days?  -->
-<button class="collapsible">Question goes here</button>
+<button class="collapsible">Can we keep our xdisk allocation for more than 300 days?</button>
 <div class="content">
   <p>
-      Answer goes here
+      No, once an xdisk has reached its time limit it will expire. It's a good idea to start preparing for this early by making frequent backups and paying attention to xdisk expiration emails. 
   </p>
 </div>
 
 <!-- What happens when our xdisk allocation expires?  -->
-<button class="collapsible">Question goes here</button>
+<button class="collapsible">What happens when our xdisk allocation expires?</button>
 <div class="content">
   <p>
-      Answer goes here
+      Once an xdisk expires, all the associated data are deleted. Deleted data are non-retrievable since HPC is not backed up. It's advised to keep frequent backups of your data on different platforms, for example a local hard drive or a cloud-based service, or (even better) both! Check our <a href="../../../../storage_and_transfers/storage/hpc_storage/">Storage documentation</a> for more information on alternative storage offerings.
   </p>
 </div>
 
 <!-- What's the best way to backup/transfer our data before our xdisk expires?  -->
-<button class="collapsible">Question goes here</button>
+<button class="collapsible">What's the best way to backup/transfer our data before our xdisk expires?</button>
 <div class="content">
   <p>
-      Answer goes here
+      Before your group's xdisk expires, you'll want to make an external backup of anything you need to keep. External storage options include personal computers, lab servers, external hard drives, or cloud services such as AWS. 
+
+    If you're moving large quantities of data, Globus is a great option. We have instructions in our <a href="../../../../storage_and_transfers/transfers/globus/">Globus documentation</a> for setting up and using this software.
+
+    We strongly recommend making archives (.tar, .zip, files etc.) of large directories prior to transferring them off the system. In general, transfer software struggles with moving many small files and performs much more efficiently moving fewer large files. You will get the better transfer speeds (sometimes by orders of magnitude) if you compress your files prior to transferring them. This can be done on our filexfer node which is designed for large file management operations (hostname: filexfer.hpc.arizona.edu). 
+  </p>
+</div>
+
+<!-- Once our xdisk expires, can we request a new one?  -->
+<button class="collapsible">Once our xdisk expires, can we request a new one?</button>
+<div class="content">
+  <p>
+      Yes, a new xdisk may be requested immediately after the old partition expires. Data, however, may not be transferred directly from the old partition to the new one. 
+  </p>
+</div>
+
+<!-- Can a PI have more than one xdisk active at a time?  -->
+<button class="collapsible">Can a PI have more than one xdisk active at a time?</button>
+<div class="content">
+  <p>
+      No, only one xdisk may be active per PI at a given time. 
   </p>
 </div>
 

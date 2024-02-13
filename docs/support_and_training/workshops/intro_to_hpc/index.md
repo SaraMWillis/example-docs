@@ -7,15 +7,11 @@ We encourage you to take training course to help you get started on using HPC re
 ## PDF 
 
 
-<!DOCTYPE html> 
-<html> 
-<body> 
+<center>
         <object data="files/IntroToHPC.Fall2023.pdf" 
                 width="800"
                 height="500"> 
         </object> 
-</body> 
-</html>
 </center>
 
 ## Video Recording
@@ -23,3 +19,13 @@ We encourage you to take training course to help you get started on using HPC re
 <iframe width="600" height="450" src="https://www.youtube.com/embed/xlgL6u1jkVI" allowfullscreen></iframe>
 
 ## Interactive Guide
+
+### System Basics
+
+=== Local Terminal
+    === Mac/Linux
+    
+    === Windows
+=== Open OnDemand
+
+### Working on the Command Line

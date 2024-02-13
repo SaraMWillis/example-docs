@@ -1,7 +1,6 @@
 # General Computing
 
 <link rel="stylesheet" href="../../../overrides/animated_dropdown.css">
-<link rel="stylesheet" href="../../../overrides/prism.css">
 <link rel="stylesheet" href="../../../overrides/spacing.css">
 
 <html>
@@ -18,7 +17,7 @@
 <div class="content">
   <p>When you log into HPC, the variable <code>$COMMAND_PROMPT</code> is set to display your current cluster (e.g. <code>(puma)</code>). Sometimes this can cause formatting problems. If you'd prefer to modify your <code>$PS1</code> (command prompt variable) instead, you can add the following to your <code>~/.bashrc</code>:
   <br>
-  <pre><code class="language-bash">if [ -n "${PROMPT_COMMAND}" -a -r /usr/local/bin/slurm-selector.sh ]; then
+  <pre><code>if [ -n "${PROMPT_COMMAND}" -a -r /usr/local/bin/slurm-selector.sh ]; then
   SavePS1=${PS1}
   Cur_Cluster=$(eval ${PROMPT_COMMAND} 2>/dev/null)
   PS1="${Cur_Cluster}${SavePS1}"
@@ -50,6 +49,6 @@ fi
 
 <div class="vertical-space"></div>
 <script src="../../../overrides/animated_dropdown.js"></script>
-<script src="../../../overrides/prism.js"></script>
+
 
 </html>

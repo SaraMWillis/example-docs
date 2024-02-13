@@ -12,9 +12,28 @@ nav:
   - Registration and Access:
     - Account Creation: registration_and_access/account_creation/index.md
     - Account Deletion: registration_and_access/account_deletion/index.md
-    - Group Management: registration_and_access/group_management/index.md
-    - System Access: registration_and_access/system_access/index.md
+    - Group Management: 
+        - Overview: registration_and_access/group_management/overview/index.md
+        - Research Groups: registration_and_access/group_management/research_groups/index.md
+        - Class Groups: registration_and_access/group_management/class_groups/index.md
+        - Delegating Group Management Rights: registration_and_access/group_management/delegating_group_management_rights/index.md
+    - System Access: 
+        - Overview: registration_and_access/system_access/overview/index.md
+        - Web Access: registration_and_access/system_access/web_access/index.md
+        - Command Line Access: registration_and_access/system_access/command_line_access/index.md
+        - X11 Forwarding: registration_and_access/system_access/x11_forwarding/index.md
+        - SSH Keys: registration_and_access/system_access/ssh_keys/index.md
     - VPN : registration_and_access/vpn/index.md
+  - Quick Start: 
+    - Overview: quick_start/overview/index.md
+    - What is HPC?: quick_start/supercomputing_in_plain_english/index.md
+    - System Structure: quick_start/system_structure/index.md
+    - Logging In: quick_start/logging_in/index.md
+    - Allocations: quick_start/allocations/index.md
+    - Software: quick_start/software/index.md
+    - Interactive Jobs: quick_start/interactive_jobs/index.md
+    - Batch Jobs: quick_start/batch_jobs/index.md
+    
   - Storage and Transfers:
     - Storage:
       - Overview: storage_and_transfers/storage/overview/index.md
@@ -22,6 +41,15 @@ nav:
       - Rental Storage: storage_and_transfers/storage/rental_storage/index.md
       - RDAS Storage: storage_and_transfers/storage/rdas_storage/index.md
       - Tier2 AWS Storage: storage_and_transfers/storage/tier2_storage/index.md
+    - Transfers:
+      - Overview: storage_and_transfers/transfers/overview/index.md
+      - Globus: storage_and_transfers/transfers/globus/index.md
+      - FTP/LFTP/SFTP: storage_and_transfers/transfers/sftp_ftp_lftp/index.md
+      - SCP: storage_and_transfers/transfers/scp/index.md
+      - rsync: storage_and_transfers/transfers/rsync/index.md
+      - rclone: storage_and_transfers/transfers/rclone/index.md
+      - Cyberduck: storage_and_transfers/transfers/cyberduck/index.md
+      - iRods: storage_and_transfers/transfers/irods/index.md
 
   - Software:
     - Overview: software/overview/index.md
@@ -38,43 +66,42 @@ nav:
     - Overview: running_jobs/overview/index.md
     - Compute Resources: running_jobs/compute_resources/index.md
     - Time Allocations: running_jobs/allocations/index.md
-    - Job Limits and Considerations: running_jobs/job_limits/index.md
+    - Job Limits: running_jobs/job_limits/index.md
     - Open OnDemand: running_jobs/open_on_demand/index.md
-    - Slurm Jobs:
-        - Quick Start: running_jobs/slurm_jobs/quick_start/index.md
-        - Slurm Documentation: running_jobs/slurm_jobs/slurm_documentation/index.md
-        - Interactive Jobs: running_jobs/slurm_jobs/interactive_jobs/index.md
-        - Batch Jobs:
-            - Example Batch Jobs: 
-                - General Examples: 
-                    - Using a Pipefail: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/general_examples/pipefail/index.md
-                    - Job Dependencies: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/general_examples/job_dependencies/index.md
-                - Array and Parallel Examples: 
-                    - Basic Array Job: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_array/index.md
-                    - Array Jobs with Text Filenames: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_filenames/index.md
-                    - Array Jobs with Multiple Input Parameters: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_parameters/index.md
-                    - Basic GNU Parallel Job: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_gnu_parallel_job/index.md
-                    - Array Job Using GNU Parallel: running_jobs/slurm_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_and_gnu_parallel/index.md
+    - Interactive Jobs: running_jobs/interactive_jobs/index.md
+    - Batch Jobs:
+        - Quick Start: running_jobs/batch_jobs/quick_start/index.md
+        - Slurm Documentation: running_jobs/batch_jobs/slurm_documentation/index.md
+        - Example Batch Jobs: 
+            - General Examples: 
+                - Using a Pipefail: running_jobs/batch_jobs/example_batch_jobs/general_examples/pipefail/index.md
+                - Job Dependencies: running_jobs/batch_jobs/example_batch_jobs/general_examples/job_dependencies/index.md
+            - Array and Parallel Examples: 
+                - Basic Array Job: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_array/index.md
+                - Array Jobs with Text Filenames: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_filenames/index.md
+                - Array Jobs with Multiple Input Parameters: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_parameters/index.md
+                - Basic GNU Parallel Job: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_gnu_parallel_job/index.md
+                - Array Job Using GNU Parallel: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_and_gnu_parallel/index.md
     
   - User Support and Training:
-    - Consulting Services: support_and_training/consulting_services/index.md
     - FAQs: 
         - Account Access: support_and_training/faqs/account_access/index.md 
-        - Data Transfers: support_and_training/faqs/data_transfers/index.md
         - General Computing: support_and_training/faqs/general_computing/index.md 
         - Jobs and Scheduling: support_and_training/faqs/jobs_and_scheduling/index.md 
-        - Open OnDemand Issues: support_and_training/faqs/open_on_demand_issues/index.md 
-        - Secure Services: support_and_training/faqs/secure_services/index.md 
         - Software and Modules: support_and_training/faqs/software_and_modules/index.md 
-        - Storage: 
+        - Storage:
             - HPC Storage: support_and_training/faqs/storage/hpc/index.md
             - Rental Storage: support_and_training/faqs/storage/rental/index.md
             - R-DAS Storage: support_and_training/faqs/storage/rdas/index.md
             - Tier 2 AWS Storage: support_and_training/faqs/storage/aws/index.md
-        
+        - Open OnDemand Issues: support_and_training/faqs/open_on_demand_issues/index.md 
+        - Secure Services: support_and_training/faqs/secure_services/index.md 
+    - Consulting Services: support_and_training/consulting_services/index.md
     - Workshops: 
         - Intro to HPC: support_and_training/workshops/intro_to_hpc/index.md
-        - Intro to Machine Learning on HPC: support_and_training/workshops/intro_to_machine_learning/index.md
+        - Intro to Machine Learning on HPC: 
+            - Python: support_and_training/workshops/intro_to_machine_learning/python/index.md
+            - R: support_and_training/workshops/intro_to_machine_learning/R/index.md
         - Intro to Parallel Computing: support_and_training/workshops/intro_to_parallel_computing/index.md
         - Intro to Containers: support_and_training/workshops/intro_to_containers/index.md
         - Intro to Linux: support_and_training/workshops/intro_to_linux/index.md
@@ -84,7 +111,9 @@ nav:
     - Glossary: support_and_training/glossary/index.md
     - Grants: support_and_training/grants/index.md
     - Community and External Resources: support_and_training/external_resources/index.md
-  - Results: results/index.html
+    
+  - Results: results/index.md
+
 
 markdown_extensions:
   - attr_list
@@ -108,8 +137,10 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - footnotes
+  - pymdownx.critic
+  
 extra_javascript:
-  - overrides/mathjax.js
+  - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
  
@@ -138,6 +169,7 @@ theme:
     - content.tabs.link
     - content.tooltips
     - content.code.copy
+    - navigation.top
     
 extra:
   generator: false
@@ -157,4 +189,3 @@ extra:
     - icon: material/account
       link: https://portal.hpc.arizona.edu/portal/
       name: User portal
-

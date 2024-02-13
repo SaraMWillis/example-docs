@@ -4,7 +4,7 @@
 ???+ warning "Module availability"
     Software modules are not available on the login nodes. To access them, you will need to connect to a compute either via an interactive session or batch job.
 
-Software packages are available as modules and are accessible from the compute nodes{ title="Important information" } of any of our three clusters. A list of installed software can be seen by clicking the link below, but may not be as current as using the module avail command (more information under Module Commands).
+Software packages are available as [modules](../modules) and are accessible from the compute nodes of any of our three clusters. 
 
 ## Policies
 ### Academic/Free Software

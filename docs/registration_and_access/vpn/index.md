@@ -34,32 +34,32 @@ You will find the following VPN services useful for accessing some of the resour
         
     OpenConnect VPN is available for Windows, Mac and Linux distributions, however installation on Windows can be difficult. On Windows, you might have a better experience with Cisco Secure Client (see GUI). You can find more information on platforms supported by OpenConnect from the [project website](https://www.infradead.org/openconnect/platforms.html). Select your operating system from the list below to view installation instructions:
         
-    !!! example "Choose your operating system for instructions on installing OpenConnect"
-        === "Mac"
-            Install with the Homebrew package manager: ```brew install openconnect```
+
+    === "Mac"
+        Install with the Homebrew package manager: ```brew install openconnect```
                 
-        === "Linux"
-            Follow the instructions from [Open Build Service](https://software.opensuse.org/download.html?project=home%3Abluca%3Aopenconnect%3Arelease&;package=openconnect) for your distribution.
+    === "Linux"
+        Follow the instructions from [Open Build Service](https://software.opensuse.org/download.html?project=home%3Abluca%3Aopenconnect%3Arelease&;package=openconnect) for your distribution.
                 
     Once you have OpenConnect installed, you can connect to UArizona VPNs using the following:
         
-    !!! example "Choose the your VPN"
-        === "UA SSL VPN"
-            1. Open your terminal
-            2. Enter ```sudo openconnect vpn.arizona.edu```
-            3. A prompt will appear asking you to choose a VPN ```GROUP```. Enter ```1```.
-            4. A prompt will appear asking you for your Username. Enter your UArizona NetID.
-            5. A prompt will appear asking for your Password. Enter your UArizona NetID password. 
-            6. A second prompt will appear asking for your Password. Enter the NetID+ method you selected when you enrolled. 
-                1. If you selected the Push method, then enter ```push```.
-                2. If you selected the SMS method, enter ```sms```. If you do this, it will show that the login has failed and will ask you to reenter your Username, Password, and NetID+ method. For Username and Password do the same as before. For NetID+ method, enter the SMS passcode you received.
-                3. If you selected the Passcode method, then enter your passcode. 
-        === "UA HPC VPN"
-            1. Open your terminal
-            2. Enter ```sudo openconnect vpn.hpc.arizona.edu```
-            4. A prompt will appear asking you for your Username. Enter your UArizona NetID.
-            5. A prompt will appear asking for your Password. Enter your UArizona NetID password. 
-            6. A second prompt will appear asking for your Password. Enter the NetID+ method you selected when you enrolled. 
-                1. If you selected the Push method, then enter ```push```.
-                2. If you selected the SMS method, enter ```sms```. If you do this, the prompt will appear again. Enter the SMS passcode that you received. 
-                3. If you selected the Passcode method, then enter your passcode.         
+    
+    === "UA SSL VPN"
+        1. Open your terminal
+        2. Enter ```sudo openconnect vpn.arizona.edu```
+        3. A prompt will appear asking you to choose a VPN ```GROUP```. Enter ```1```.
+        4. A prompt will appear asking you for your Username. Enter your UArizona NetID.
+        5. A prompt will appear asking for your Password. Enter your UArizona NetID password. 
+        6. A second prompt will appear asking for your Password. Enter the NetID+ method you selected when you enrolled. 
+            1. If you selected the Push method, then enter ```push```.
+            2. If you selected the SMS method, enter ```sms```. If you do this, it will show that the login has failed and will ask you to reenter your Username, Password, and NetID+ method. For Username and Password do the same as before. For NetID+ method, enter the SMS passcode you received.
+            3. If you selected the Passcode method, then enter your passcode. 
+    === "UA HPC VPN"
+        1. Open your terminal
+        2. Enter ```sudo openconnect vpn.hpc.arizona.edu```
+        3. A prompt will appear asking you for your Username. Enter your UArizona NetID.
+        4. A prompt will appear asking for your Password. Enter your UArizona NetID password. 
+        5. A second prompt will appear asking for your Password. Enter the NetID+ method you selected when you enrolled. 
+            1. If you selected the Push method, then enter ```push```.
+            2. If you selected the SMS method, enter ```sms```. If you do this, the prompt will appear again. Enter the SMS passcode that you received. 
+            3. If you selected the Passcode method, then enter your passcode.         

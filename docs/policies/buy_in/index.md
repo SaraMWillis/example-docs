@@ -1,9 +1,5 @@
 # Buy-in
 
-??? info "RFP Notice"
-    We have published an RFP (Request for Proposal) which is our competitive process for buying a new supercomputer.  This new supercomputer will be a supplement to Puma.  We also plan on keeping Ocelote for a while, though probably in a reduced state because we need the space and power.
-
-    The RFP closes at the end of July 2023.  We will evaluate the proposals and select a winner in October most likely.  At that time we will know exactly what the pricing will be for the next cycle of buy-in purchasing. 
 
 ## Overview
 The University of Arizona's High Performance Computing (HPC) clusters are servers (computing nodes) and associated high performance storage. There are additional nodes to meet specific needs like high amounts of memory or GPUs. All UA research faculty can sign up for free monthly allocation (following these directions). For researchers who need compute resource beyond the free standard allocation, and who have funding available, we encourage 'buy-in' of additional compute nodes.
