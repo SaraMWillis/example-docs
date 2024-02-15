@@ -1043,6 +1043,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../common_misconceptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Misconceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../logging_in/" class="md-nav__link">
         
   
@@ -1154,16 +1175,58 @@
         <li class="md-nav__item">
   <a href="#what-is-a-batch-job" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a Batch Job
+      What is a Batch Job?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-misconceptions" class="md-nav__link">
+  <a href="#creating-a-batch-script" class="md-nav__link">
     <span class="md-ellipsis">
-      Common misconceptions
+      Creating a Batch Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a Batch Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-python-script-to-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Python Script to Run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-batch-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating the Batch Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-your-batch-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submitting Your Batch Job
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
     </span>
   </a>
   
@@ -3120,28 +3183,117 @@
 
 <p><link rel="stylesheet" href="../../assets/stylesheets/buttons.css"></p>
 <h1 id="batch-jobs">Batch Jobs</h1>
-<h2 id="what-is-a-batch-job">What is a Batch Job</h2>
-<p>Batch jobs are the real meat and potatoes of HPC. They are a way of submitting work to run on a cluster without the need to be physically present. They are essentially blueprints that the scheduler interprets and uses to determine: </p>
+<h2 id="what-is-a-batch-job">What is a Batch Job?</h2>
+<p>Batch jobs are the real meat and potatoes of HPC. They are a way of submitting work to run on a cluster without the need to be physically present. They are essentially blueprints that the scheduler uses to determine what interpreter to use, the resources you need, and the instructions to run your job. </p>
+<p>Because you do not need to be physically present while your work is running, you can log out of the system, turn off you computer and your work will not be interrupted. Additionally, it enables you to submit tens, hundreds, or even thousands of jobs to run simultaneously which can help you get a tremendous amount of work done!</p>
+<p>The basic layout of a batch script is fairly straight forward. It is a plain text file that is divided into three sections:</p>
+<p><center></p>
+<html>
+<table cellspacing="0" cellpadding="0" >
+    <tr>
+        <td style="background-color: #d7fbff;"><pre>#!/bin/bash</pre></td>
+    </tr>
+    <tr>
+        <td style="background-color: #e6fff2;"><pre>#SBATCH --option=value</pre></td>
+    </tr>
+    <tr>
+        <td style="background-color: #feffe6;"><pre>[code here]</pre></td>
+    </tr>
+</table>
+</html>
+<p></center></p>
 <ol>
-<li>What interpreter to use </li>
-<li>The resources you need </li>
-<li>The instructions to run your job</li>
+<li>The first section will always be the line <code>#!/bin/bash</code>. This is called a "shebang" and tells the system to interpret your file as a bash script. Our HPC systems use bash for all our environments, so it should be used in your scripts to get the most consistent, predictable results.</li>
+<li>The next section will have multiple lines, all of which start with <code>#SBATCH</code>. These lines are interpreted as directives by the scheduler and are how you request resources on the compute nodes, set your output filenames, set your job name, request emails, etc. A list of directives is shown in our <a href="../../running_jobs/batch_jobs/slurm_documentation/#slurm-batch-job-directives">Running Jobs documentation</a>.</li>
+<li>The last section in your script is a set of bash commands that tells the system how to run your analyses. This includes any module load commands you'd need to run to access your software, software commands to execute your analyses, directory changes, etc. 
+Let's try writing a bash script now.</li>
 </ol>
-<p>Because you do not need to be physically present while your work is running, you can log out of the system, turn off you computer and your work will not be interrupted. It also enables you to submit tens, hundreds, or even thousands of jobs to run simultaneously. </p>
-<h2 id="common-misconceptions">Common misconceptions</h2>
-<p>Before we go through the process of writing and submitting our first batch job, let's quickly cover some common misconceptions that new users often have about using a supercomputer.</p>
-<details class="failure">
-<summary><strong>If I move my code to HPC, it will automatically run faster</strong></summary>
-<p>You might be surprised to learn that if you move code from a local computer to a supercomputer, it will not automatically run faster and may even run <em>slower</em>. This is because the power of a supercomputer comes from the sheer number of resources available (compute nodes, CPUs, GPUs, etc.) and not the clockspeed of the processors themselves. Performance boosts come from optimizing your code to make use of the resources available. An example of this is parallelizing your code. </p>
-</details>
-<details class="failure">
-<summary><strong>If I allocate more CPUs to my job, my software will use them</strong></summary>
-<p>Most software needs to be designed to use multiple CPUs as part of its execution. You will need to ensure your software has the capability to make use of multiple CPUs for it to be able to take advantage of additional hardware.</p>
-</details>
-<details class="failure">
-<summary><strong>If I allocate more nodes (physical computers) to my job, my software will use them</strong></summary>
-<p>Similar to above, software must be designed to be able to take advantage of additional computers when they are allocated to your job. Most often, this is using something like MPI. If your software is not MPI-enabled, it cannot use more than one computer as part of its analyses, even if it is using something like multiprocessing to make use of multiple CPUs. </p>
-</details>
+<h2 id="creating-a-batch-script">Creating a Batch Script</h2>
+<h3 id="creating-a-python-script-to-run">Creating a Python Script to Run</h3>
+<p>Let's start by creating a simple Python script that we'll run in batch. Start by creating a hello_world directory in your home (using <code>mkdir</code>) and a text file (using <code>touch</code>):
+<div class="highlight"><pre><span></span><code>mkdir ~/hello_world &amp;&amp; cd ~/hello_world
+touch hello_world.py
+</code></pre></div>
+Now, open the file in your favorite text editor. We'll use nano in this example if you're unfamiliar with using an editor on the command line.</p>
+<div class="highlight"><pre><span></span><code>nano hello_world.py
+</code></pre></div>
+<p>With your file open, add the contents:</p>
+<div class="highlight"><pre><span></span><code>import os
+
+hostname = os.uname()[1]
+print(&quot;Hello world! I&#39;m running on hostname %s&quot;%hostname)
+</code></pre></div>
+<p>Then save and exit. To do this in nano, type <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span>, select <span class="keys"><kbd class="key-y">Y</kbd></span> to save, and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm your filename.</p>
+<h3 id="creating-the-batch-script">Creating the Batch Script</h3>
+<p>Now, let's create a new file called hello_world.slurm. This will be our batch script.
+<div class="highlight"><pre><span></span><code>touch hello_world.slurm
+</code></pre></div></p>
+<p>Open this in your favorite text editor or using the nano commands you used previously and enter the contents shown below. Make sure to replace <code>&lt;PI GROUP&gt;</code> next to <code>--account=</code> with the group name you found with <code>va</code> in the <a href="../interactive_jobs/">Accessing Compute Nodes</a> section. Do not include the <code>&lt;</code> or <code>&gt;</code> in your group name.</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+# --------------------------------------------------------------
+### PART 1: Requests resources to run your job.
+# --------------------------------------------------------------
+### Optional. Set the job name
+#SBATCH --job-name=hello_world
+### Optional. Set the output filename.
+### SLURM reads %x as the job name and %j as the job ID
+#SBATCH --output=%x-%j.out
+### REQUIRED. Specify the PI group for this job. Replace &lt;PI GROUP&gt; with your own group.
+#SBATCH --account=&lt;PI GROUP&gt;
+### REQUIRED. Set the partition for your job. This is a job queue
+#SBATCH --partition=standard
+### REQUIRED. Set the number of nodes
+#SBATCH --nodes=1
+### REQUIRED. Set the number of CPUs that will be used for this job. 
+#SBATCH --ntasks=1
+### REQUIRED. Set the memory required for this job.
+#SBATCH --mem-per-cpu=5gb
+### REQUIRED. Specify the time required for this job, hhh:mm:ss
+#SBATCH --time=00:01:00
+
+# --------------------------------------------------------------
+### PART 2: Executes bash commands to run your job
+# --------------------------------------------------------------
+### Load required modules/libraries if needed
+module load python/3.9
+
+### change to your script’s directory
+cd ~/hello_world
+
+### Run your work
+python3 hello_world.py
+sleep 30
+</code></pre></div>
+<p>Then save and exit. </p>
+<h2 id="submitting-your-batch-job">Submitting Your Batch Job</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In this tutorial, we are submitting our job from an interactive session on a compute node. You may also submit jobs from a login node. You do not need to stay connected to the compute node for your batch job to run.</p>
+</div>
+<p>The next step is to submit your job request to the scheduler. To do this, you’ll use the command <code>sbatch</code>. This will place your job in line for execution and will return a job ID. This job ID can be used to check your job’s status with <code>squeue</code>, cancel your job with <code>scancel</code>, and get your job’s history with <code>job-history</code>. A more comprehensive look at job commands can be found in our <a href="../../running_jobs/batch_jobs/slurm_documentation/#uarizona-system-commands">Slurm documentation</a>. </p>
+<p>Let’s submit our script and check its status (substitute your own job ID below where relevant):</p>
+<div class="highlight"><pre><span></span><code>[netid@gpu66 hello_world]$ sbatch hello_world.slurm
+Submitted batch job 807387
+[netid@gpu66 hello_world]$ squeue --job 807387
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+            807387  standard hello_wo    netid PD       0:06      1 gpu66
+</code></pre></div>
+<p>The command <code>squeue</code> gives us detailed information about our batch jobs while they're in queue or running. Under <code>ST</code> you can check the state of your job. In this case, it's pending (<code>PD</code>) which means it's waiting in line with other jobs. Once the job starts running, it's state will change to <code>R</code>, and when the job has completed running, <code>squeue</code> will return a blank line. </p>
+<p>Once your job completes, you should see an output file in the directory where you submitted the batch script. This output file captures anything that would have been printed to the terminal if you had run it interactively. </p>
+<p>In this example, we specified our output filename with:
+<div class="highlight"><pre><span></span><code>### SLURM reads %x as the job name and %j as the job ID
+#SBATCH --output=%x-%j.out
+</code></pre></div></p>
+<p>so our output file will be named <code>hello_world-807387.out</code>. Let's check the contents
+<div class="highlight"><pre><span></span><code>[netid@gpu66 hello_world]$ cat hello_world-807387.out
+Hello world! I&#39;m running on hostname gpu67.elgato.hpc.arizona.edu
+[netid@gpu66 hello_world]$
+</code></pre></div></p>
+<p>Note that the hostname in this run is different from the hostname of the computer we're connected to. This is because it's a separate job from our interactive session and so may run on any other applicable machines on the cluster.</p>
+<h2 id="additional-resources">Additional Resources</h2>
+<p>That's it! You've now successfully run both a batch and interactive job on HPC. To continue learning about HPC, our online documentation has a lot more information that can help get you started. For example <a href="../../support_and_training/faqs/account_access/">FAQs</a>, information on <a href="../../storage_and_transfers/storage/hpc_storage/">HPC storage</a>, and <a href="../../storage_and_transfers/transfers/overview/">file transfers</a>.</p>
+<p>Other great resources include: virtual office hours every Wednesday from 2:00-4:00pm, consultation services offered through ServiceNow, an examples Github page with sample jobs, and a YouTube channel with training videos. </p>
 <p><a href="../software"><button class="left-button">&#x25C0; Software</button></a></p>
 
 
