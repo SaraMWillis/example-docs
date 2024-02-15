@@ -95,8 +95,58 @@
 </section>
 
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="wrap">
+        <div id="dir-control-left" class="dir-control"><i class="fa fa-angle-left fa-5x" aria-hidden="true"></i>
+</div>
+        <div id="slider">
+            <div class="slide slide1">
+                <div class="slide-content">
+    
+                    <span><center><h2>Puma</h2></center>
+                    <p>Implemented in the middle of 2020, Puma is the biggest cat yet. Similar to Ocelote, it has standard CPU nodes (with 94 cores and 512 GB of memory per node), GPU nodes (with Nvidia V100) and two high-memory nodes (3 TB). Local scratch storage increased to ~1.4 TB. Puma runs on CentOS 7.
+                    <br><br>
+                    As is the case for our other supercomputers, we use the RFP process to get the best value for our financial resources, that meet our technical requirements. This time Penguin Computing one with AMD processors. This is tremendously valuable as each node comes with:<br>
+                            &ensp;- Two AMD Zen2 48 core processors<br>
+                            &ensp;- 512GB RAM<br>
+                            &ensp;- 25Gb path to storage<br>
+                            &ensp;- 25Gb path to other nodes for MPI<br>
+                            &ensp;- 2TB internal NVME disk (largely available as /tmp)<br>
+                            &ensp;- Qumulo all flash storage array for shared filesystems<br>
+                            &ensp;- Two large memory nodes with 3TB memory and the same processors and memory as the other nodes<br>
+                            &ensp;- Six nodes with four Nvidia V100S GPU's each <br>
+                    </p>
+                    </span>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="slide-content">
+                    <span><center><h2>Ocelote</h2></center>
+                    <p>Ocelote arrived in 2016. Lenovo's Nextscale M5 technology was the winner of the RFP mainly on price, performance and meeting our specific requirements. Ocelote has one large memory node with 2TB of memory and 46 nodes with Nvidia P100 GPUs for GPU-accelerated workflows. This cluster is actually the next generation of the IBM cluster we call ElGato. Lenovo purchased IBM's Intel server line in 2015.<br><br>
+                    In 2021, Ocelote's operating system was upgraded from CentOS6 to CentOS7 and was configured to use SLURM, like Puma. It will continue until it is either too expensive to maintain or it is replaced by something else.<br>
+                        &ensp;- Intel Haswell V3 28 core processors<br>
+                        &ensp;- 192GB RAM per node<br>
+                        &ensp;- FDR infiniband for fast MPI interconnect<br>
+                        &ensp;- Qumulo all flash storage array (all HPC storage is integrated into one array)<br>
+                        &ensp;- One large memory node with 2TB RAM,  Intel Ivy Bridge V2 48 cores<br>
+                        &ensp;- 46 nodes with Nvidia P100 GPU's<br>
+                    </p>
+                    </span>
+                </div>
+            </div>
+            <div class="slide slide3">
+                <div class="slide-content">
+                    <span><center><h1>ElGato</h1></center>
+                    <p>Implemented at the start of 2014, ElGato has been reprovisioned with CentOS 7 and new compilers and libraries. From July 2021 it has been using Slurm for job submission. ElGato is our smallest cluster with 130 standard nodes each with 16 CPUs. Purchased by an NSF MRI grant by researchers in Astronomy and SISTA.</p>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div id="dir-control-right" class="dir-control"><i class="fa fa-angle-right fa-5x" aria-hidden="true"></i>
+</div>
+</div>
 
-
+<script src="assets/javascripts/slideshow.js"></script>
 
 
 
@@ -142,56 +192,7 @@
 
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="wrap">
-        <div id="dir-control-left" class="dir-control"><i class="fa fa-angle-left fa-5x" aria-hidden="true"></i>
-</div>
-        <div id="slider">
-            <div class="slide slide1">
-                <div class="slide-content">
-    
-                    <span><center><h1>Puma</h1></center>
-                    <p>Implemented in the middle of 2020, Puma is the biggest cat yet. Similar to Ocelote, it has standard CPU nodes (with 94 cores and 512 GB of memory per node), GPU nodes (with Nvidia V100) and two high-memory nodes (3 TB). Local scratch storage increased to ~1.4 TB. Puma runs on CentOS 7.
-                    <br><br>
-                    As is the case for our other supercomputers, we use the RFP process to get the best value for our financial resources, that meet our technical requirements. This time Penguin Computing one with AMD processors. This is tremendously valuable as each node comes with:<br>
-                            &ensp;- Two AMD Zen2 48 core processors<br>
-                            &ensp;- 512GB RAM<br>
-                            &ensp;- 25Gb path to storage<br>
-                            &ensp;- 25Gb path to other nodes for MPI<br>
-                            &ensp;- 2TB internal NVME disk (largely available as /tmp)<br>
-                            &ensp;- Qumulo all flash storage array for shared filesystems<br>
-                            &ensp;- Two large memory nodes with 3TB memory and the same processors and memory as the other nodes<br>
-                            &ensp;- Six nodes with four Nvidia V100S GPU's each <br>
-                    </p>
-                    </span>
-                </div>
-            </div>
-            <div class="slide slide2">
-                <div class="slide-content">
-                    <span><span><center><h1>Ocelote</h1></center></span>
-                    <p>Ocelote arrived in 2016. Lenovo's Nextscale M5 technology was the winner of the RFP mainly on price, performance and meeting our specific requirements. Ocelote has one large memory node with 2TB of memory and 46 nodes with Nvidia P100 GPUs for GPU-accelerated workflows. This cluster is actually the next generation of the IBM cluster we call ElGato. Lenovo purchased IBM's Intel server line in 2015.<br><br>
-                    In 2021, Ocelote's operating system was upgraded from CentOS6 to CentOS7 and was configured to use SLURM, like Puma. It will continue until it is either too expensive to maintain or it is replaced by something else.<br>
-                        &ensp;- Intel Haswell V3 28 core processors<br>
-                        &ensp;- 192GB RAM per node<br>
-                        &ensp;- FDR infiniband for fast MPI interconnect<br>
-                        &ensp;- Qumulo all flash storage array (all HPC storage is integrated into one array)<br>
-                        &ensp;- One large memory node with 2TB RAM,  Intel Ivy Bridge V2 48 cores<br>
-                        &ensp;- 46 nodes with Nvidia P100 GPU's<br>
-                    </p>
-                </div>
-            </div>
-            <div class="slide slide3">
-                <div class="slide-content">
-                    <span><span><center><h1>ElGato</h1></center></span>
-                    <p>Implemented at the start of 2014, ElGato has been reprovisioned with CentOS 7 and new compilers and libraries. From July 2021 it has been using Slurm for job submission. ElGato is our smallest cluster with 130 standard nodes each with 16 CPUs. Purchased by an NSF MRI grant by researchers in Astronomy and SISTA.</p>
-                </div>
-            </div>
-        </div>
-        <div id="dir-control-right" class="dir-control"><i class="fa fa-angle-right fa-5x" aria-hidden="true"></i>
-</div>
-    </div>
 
-<script src="../assets/javascripts/slideshow.js"></script>
 
 
 
@@ -211,9 +212,9 @@
 
 
 <!-- Footer with land acknowledgement -->
-<footer>
+<footer >
 
-<div class="md-footer-land-acknowledgement">
+<div class="md-footer-land-acknowledgement" >
     <center>
     <i>
     We respectfully acknowledge the University of Arizona is on the land and territories of Indigenous peoples. Today, Arizona is home to 22 federally recognized tribes, with Tucson being home to the O'odham and the Yaqui. Committed to diversity and inclusion, the University strives to build sustainable relationships with sovereign Native Nations and Indigenous communities through education offerings, partnerships, and community service.
@@ -226,6 +227,7 @@
 
 {% endblock %}
 {% block content %}{% endblock %}
+
 {% block footer %}
 <footer class="md-footer">
     <div class="md-footer-meta md-typeset">
@@ -237,7 +239,7 @@
                     {{ config.copyright }}
                 </div>
                 {% endif %}
-                University of Arizona Research Computing
+
             </div>
             {% block social %}
             {% include "partials/social.html" %}

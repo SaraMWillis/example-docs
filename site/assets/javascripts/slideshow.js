@@ -1,28 +1,63 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+document.addEventListener('DOMContentLoaded', function(){
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+var slideImages = document.querySelectorAll('.slide'),
+    dirRight = document.getElementById('dir-control-right'),
+    dirLeft = document.getElementById('dir-control-left'),
+    current = 0;
+//if javascript is on apply styling
+function jsActive(){
+    for(var i = 0; i < slideImages.length; i++){
+        slideImages[i].classList.add('slider-active');
+    }  
+}
+// Clear images
+function reset(){
+    for(var i = 0; i < slideImages.length; i++){
+        slideImages[i].classList.remove('slide-is-active');
+    }
+}
+//init slider
+function startSlide(){
+    reset();
+    slideImages[0].classList.add('slide-is-active');
+    setTimeout(function() {
+        for(var i = 0; i < slideImages.length; i++){
+            slideImages[i].classList.add('slide-transition');
+        }
+    }, 20);
+        
+
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+//slide lft
+function slideLeft(){
+    reset();
+    slideImages[current - 1].classList.add('slide-is-active');
+    current--;
+}
+//slide right
+function slideRight(){
+    reset();
+    slideImages[current + 1].classList.add('slide-is-active');
+    current++;
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-} 
+dirLeft.addEventListener('click', function(){
+    if(current === 0){
+        current = slideImages.length;
+    }
+    slideLeft();
+})
+
+dirRight.addEventListener('click', function(){
+    if(current === slideImages.length-1){
+        current = -1;
+    }
+    slideRight();
+})
+//apply styling
+jsActive();
+startSlide();
+
+
+});
