@@ -6,8 +6,8 @@ A virtual private network (VPN) is a mechanism for creating a secure connection 
 
 You will find the following VPN services useful for accessing some of the resources offered by the Research and Discovery Technologies:
 
-* UA SSL VPN (vpn.arizona.edu): If you are not connected to the UA campus network you will need to connect to this VPN to access R-DAS.
-* UA HPC VPN (vpn.hpc.arizona.edu): You will need to connect to this VPN to use graphical applications that need X11 forwarding with the HPC clusters.
+* UA SSL VPN (```vpn.arizona.edu```): If you are not connected to the UA campus network you will need to connect to this VPN to access R-DAS.
+* UA HPC VPN (```vpn.hpc.arizona.edu```): You will need to connect to this VPN to use graphical applications that need X11 forwarding with the HPC clusters.
 
 
 ## Instructions for Connecting

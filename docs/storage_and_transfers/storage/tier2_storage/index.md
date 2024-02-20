@@ -12,7 +12,11 @@ AWS storage is organized in buckets. One S3 intelligent tiering bucket is suppor
 !!! warning "Small files"
     Warning: Very small files (less than 128KB ) are not subject to intelligent tiering and are not migrated to Glacier/Deep Glacier. This means they are permanently stored in the paid storage class. If you have many small files, we recommend making archives of your directories (.tar.gz, .zip, etc) prior to uploading them to AWS. This will also reduce transfer times significantly. 
 
-Tier 2 AWS buckets use intelligent tiering to determine the archival status of files. When data are first uploaded to a group's bucket, they are in the standard access class. This essentially means they are stored on higher performant storage and are available for immediate download. After three months of inactivity[^1], data are automatically migrated to Glacier storage. This is less performant and data are no longer instantly downloadable. Users will need to request a restore before downloading their files. Restore requests can be submitted either in the user portal or using a command line tool available on our compute nodes (more details below).
+Tier 2 AWS buckets use intelligent tiering to determine the archival status of files. When data are first uploaded to a group's bucket, they are in the standard access class. This essentially means they are stored on higher performant storage and are available for immediate download. After three months of inactivity(1), data are automatically migrated to Glacier storage. This is less performant and data are no longer instantly downloadable. Users will need to request a restore before downloading their files. Restore requests can be submitted either in the user portal or using a command line tool available on our compute nodes (more details below).
+{ .annotate }
+
+1.  Activity in this context means the user has interacted with the file in some way, e.g. by downloading. 
+
 
 After three months of inactivity in the Glacier access tier, data are automatically migrated to Deep Glacier. Deep Glacier is tape storage and requires a restore request to be submitted to download files, similar to Glacier. Deep Glacier restore requests typically take more time than Glacier files. 
 
@@ -52,7 +56,10 @@ First, log into the [User Portal](https://portal.hpc.arizona.edu/portal/) and na
 
 <img src="images/request_tier2_storage.png" style="width:500px;">
 
-This will open a web form. Add your KFS number under **KFS Number**[^3] and the email address for the Department's financial contact under **Business contact email**. There will also be two optional fields: **Subaccount** and **Project**. These are used for tagging/reporting purposes in KFS billing. You can safely leave these entries blank if you're not sure what they are. Once you have completed the form, click **Send request**. The KFS number can be obtained from the same financial contact.
+This will open a web form. Add your KFS number under **KFS Number**(1) and the email address for the Department's financial contact under **Business contact email**. There will also be two optional fields: **Subaccount** and **Project**. These are used for tagging/reporting purposes in KFS billing. You can safely leave these entries blank if you're not sure what they are. Once you have completed the form, click **Send request**. The KFS number can be obtained from the same financial contact.
+{ .annotate }
+
+1.  A KFS number is used for accounting purposes and used by your Department's finance specialist. If you do not know your KFS number, contact your department's financial office. 
 
 <img src="images/create.png" style="width:500px;">
 
@@ -143,6 +150,5 @@ The time it takes for an object to be retrieved is dependent on its storage clas
     The ```--restore``` flag can be used to either restore a file or a full directory. 
 
 
-[^1]: Activity in this context means the user has interacted with the file in some way, e.g. by downloading. 
 [^2]: More up-to-date pricing information can be found on [AWS's website](https://aws.amazon.com/s3/pricing/?nc=sn&loc=4).
-[^3]: A KFS number is used for accounting purposes and used by your Department's finance specialist. If you do not know your KFS number, contact your department's financial office. 
+

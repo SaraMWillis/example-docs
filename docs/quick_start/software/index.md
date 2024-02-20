@@ -31,7 +31,7 @@ That's where batch jobs come in.
 
 <html>
 <div class="button-container">
-    <a href="../interactive_jobs"><button class="left-button">&#x25C0; Interactive Jobs</button></a>
+    <a href="../interactive_jobs"><button class="left-button">&#x25C0; Accessing Compute Nodes</button></a>
     <a href="../batch_jobs/"><button class="right-button">Batch Jobs &#x25B6;</button></a>
 </div>
 </html>

@@ -43,7 +43,7 @@ After you type ```shell``` on the bastion host, you're connected to a computer c
 
 We have two of these available and you will be assigned one at random. If you run the ```hostname``` command as you did on the bastion host, you should see either ```wentletrap``` or ```junonia```. 
 
-A login node is a shared workspace designed for managing files, writing scripts, submitting and monitoring jobs, viewing system resources, and selecting your target cluster. These are small machines and have minimal computational capabilities and very little software installed. They are not the place where computational work is done so users should not run their analyses, compile their software, or perform computationally intensive work in this location. Instead, analyses should be performed on a compute node. A compute node can be accessed in an interactive job. 
+A login node is a shared workspace with minimal computational capabilities and very little software installed. They are not the place where computational work is done so users should not run their analyses, compile their software, or perform computationally intensive work in this location. Instead, they are meant for activities such as managing files, writing scripts, submitting and monitoring jobs, and viewing system resources.
 
 
 
@@ -51,6 +51,6 @@ A login node is a shared workspace designed for managing files, writing scripts,
 <html>
 <div class="button-container">
     <a href="../common_misconceptions"><button class="left-button">&#x25C0; Common Misconceptions</button></a>
-    <a href="../interactive_jobs"><button class="right-button">Interactive Jobs &#x25B6;</button></a>
+    <a href="../storage_and_transfers"><button class="right-button">Storage and Transfers &#x25B6;</button></a>
 </div>
 </html>

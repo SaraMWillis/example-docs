@@ -1,3 +1,8 @@
+---
+hide: 
+  - toc
+---
+
 # Intro to HPC 
 
 ## About
@@ -16,11 +21,17 @@ We encourage you to take training course to help you get started on using HPC re
 
 ## Video Recording
 
-<iframe width="600" height="450" src="https://www.youtube.com/embed/xlgL6u1jkVI" allowfullscreen></iframe>
+<center><iframe width="600" height="450" src="https://www.youtube.com/embed/xlgL6u1jkVI" allowfullscreen></iframe></center>
+
+<hr> 
 
 ## Interactive Guide
 
-### System Basics
+
+
+## System Basics 
+
+### Logging In
 
 === Local Terminal
     === Mac/Linux
@@ -29,3 +40,31 @@ We encourage you to take training course to help you get started on using HPC re
 === Open OnDemand
 
 ### Working on the Command Line
+
+## Transferring Files
+
+## Submitting a Batch Job
+
+### Accessing Workshop Files
+
+### Submissions Script Details
+
+### Submitting Your Job
+
+### Job Output
+
+## Interactive Vs. Batch
+
+## Accessing Software
+
+### Command Line
+
+### Open OnDemand
+
+## Testing Your Knowledge
+
+## Getting Help
+
+## Community Events
+
+
