@@ -589,6 +589,12 @@ body, #slider, .wrap, .slide-content{
     
 }
 
+@media (max-width: 900px) {
+    .slide-content{
+        width: 100vw;
+    }
+}
+
 .slide-content p {
     font-size: 14px;
     line-height: 1.3;

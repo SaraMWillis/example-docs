@@ -109,3 +109,22 @@
     border: 2px solid #001C48; /* Add thinner border */
     z-index: -2; /* Move the pseudo-element further behind */
 }
+
+/* Media query for screens smaller than or equal to 900px */
+@media (max-width: 900px) {
+    .events-section {
+        flex-direction: column; /* Stack columns vertically */
+        height: auto;
+        align-items: stretch; /* Stretch columns to match height */
+    }
+
+    .left-column,
+    .right-column {
+        flex: 1; /* Each column occupies full width */
+    }
+    .right-column {
+        overflow: visible; /* Allow content to extend beyond the column */
+        height: auto;
+        align-items: stretch; /* Stretch columns to match height */
+    }
+}
