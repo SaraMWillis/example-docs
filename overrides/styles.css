@@ -475,10 +475,11 @@ div.fadeMe {
     max-width: 300px; /* Set a maximum width for the card */
 }
 
-/* Media query for screens smaller than 600px (typical mobile devices) */
-@media (max-width: 600px) {
+/* Media query for screens smaller than or equal to 600px */
+@media (max-width: 900px) {
     .card {
         flex-basis: calc(50% - 20px); /* Two cards per row with margin included */
+        max-width: calc(50% - 20px); /* Adjusting max-width for smaller screens */
     }
 }
 
