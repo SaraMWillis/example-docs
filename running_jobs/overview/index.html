@@ -2366,28 +2366,7 @@
         
   
   <span class="md-ellipsis">
-    Using Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/containers/containers_tutorials/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Containers Tutorials
+    Running Containers
   </span>
   
 
@@ -3971,10 +3950,15 @@
 <h1 id="overview">Overview</h1>
 <p>The HPC is a shared system, and its resources are in high demand. Computational work must be run on dedicated compute resources. These resources are granted to each user for a limited time per session, and sessions are organized by <a href="https://slurm.schedmd.com/">Slurm</a>, an open source, fault-tolerant, and highly scalable cluster manager and task scheduler. Users can interact  with Slurm from one of the login nodes to start an interactive job or submit a batch job..</p>
 <details class="warning" open="open">
-<summary>Login Nodes</summary>
-<p>Do not run intensive programs or calculations on the Login Nodes. These are shared nodes that are not intended for computation. Instead, please request computing resources by following the directions in these pages. </p>
+<summary>No Jobs on Login Nodes!</summary>
+<p><strong><em>Do not</em></strong> run intensive tasks on the Login Nodes. These are shared nodes that are not intended for computation. Instead, please request computing resources by following the directions in these pages. Tasks run on the login nodes that impact usability will be identified and cancelled by HPC infrastructure without warning. </p>
 </details>
-<p>Below is a FAQ that includes answers to common questions and misconceptions about running jobs on HPC. Many of these are general information about HPC systems, but some contain information specific to the UA HPC. We recommend reviewing this FAQ whether you are a new user getting started on our system, or an experienced user returning to our documentation.</p>
+<p>If you are new to the UA HPC system, or to HPC systems in general, we recommend reviewing the following pages before getting into the details of running jobs.</p>
+<ul>
+<li><a href="../../quick_start">HPC Quick Start</a></li>
+<li><a href="../compute_resources">Compute Resources</a></li>
+</ul>
+<p>Below is a FAQ that includes answers to common questions and misconceptions about running jobs on HPC. Some are general information about HPC systems, but some contain information specific to the UA HPC. We recommend reviewing this FAQ whether you are a new user getting started on our system, or an experienced user returning to our documentation.</p>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <html>
 <link rel="stylesheet" href="../../assets/stylesheets/animated_dropdown.css">
@@ -3986,9 +3970,57 @@
     </p>
 </div>
 
-<button class="collapsible">Button</button>
+<button class="collapsible">How much am I charged for a job?</button>
+<div class="content">
+    <p>Each PI group is given a free monthly allocation of CPU hours on each cluster (see <a href="../allocations">Time Allocations</a> for more information). The amount charged to this allocation is equal to the number of CPUs used for a job multiplied by its total run time in hours. 
+    <br>
+    </p>
+</div>
+
+<button class="collapsible">How many jobs can I run?</button>
+<div class="content">
+    <p>There is no hard limit on the exact number of jobs that can be submitted by a user. However, if you intend to submit a large number of jobs, especially if they are similar, they should be submitted as <i>array jobs</i>. See ??? for more information.
+    <br>
+    </p>
+</div>
+
+<button class="collapsible">How much memory can I request?</button>
+<div class="content">
+    <p>The total amount of memory assigned to a job depends on the number of CPUs assigned to a job. Memory is physically mounted to the CPUs, so there is a fixed amount available to the job equal to the memory of a single CPU multiplied by the number of CPUs. More information is available <a href="../compute_resources/#job-memory-and-cpu-count">here</a>.
+    <br>
+    </p>
+</div>
+
+<button class="collapsible">What are the technical specifications of the clusters?</button>
+<div class="content">
+    <p>We have three clusters available for use: Puma, Ocelote, and El Gato. See <a href="../compute_resources">Compute Resources</a> for details on each.
+    <br>
+    </p>
+</div>
+
+<button class="collapsible">I submitted a job request, but it isn't running yet. Why?</button>
+<div class="content">
+    <p>As mentioned above, job requests go to our task scheduler, Slurm, which manages all incoming job requests and determines the optimal order to run them in order to maximize the efficiency of the system. The amount of wait time for your job depends on the number and size of jobs before your job in the queue; the amount of compute resources requested by your job; and the requested wall time for your job. Variation in wait times is a natural consequence of this system. Typically, our most advanced cluster -- Puma -- experiences longer wait times due to increased usage. Smaller or interactive jobs are recommended to run on either Ocelote or El Gato. 
+    <br>
+    </p>
+</div>
+
+<button class="collapsible">Why is my job running slower on the HPC than on my laptop??</button>
 <div class="content">
     <p>text
+    <br>
+    </p>
+</div>
+
+<button class="collapsible">I need XYZ software to run my analysis, can you install it for me?</button>
+<div class="content">
+    <p>First, check our list of installed software by accessing an interactive terminal session with the "interactive" command, then running "module avail" or "module avail &ltsearch-term&gt". If you see your desired software there, you can load it by running "module load &ltsoftware&gt". If you do not see your desired software package there, then there are two options. (1) You can attempt to install the software for yourself in one of your own directories, or (2) you can request HPC Consult to install the software as a system module.
+    <br>
+    </p>
+    <p> Many programs can be installed with option 1 by users without root privileges, especially packages that are available via package managers like Pip, Conda, and CRAN. Most software like this does not make sense to install as a system module since it is generally easy to install on a per-user basis. Please attempt to install such packages by following our [GUIDE]. Other software that is not available through package managers might be able to be installed by downloading and compiling the source code in one of your folders. The complexity of this process varies greatly from software to software, so if you run into any trouble while doing this, feel free to contact HPC Consulting for support. 
+    <br>
+    </p>
+    <p> In order for software to be installed as a system module, it must be [<i>hrm idk, insert reasons here</i>]
     <br>
     </p>
 </div>

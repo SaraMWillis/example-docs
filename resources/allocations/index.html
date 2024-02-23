@@ -2435,28 +2435,7 @@
         
   
   <span class="md-ellipsis">
-    Using Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/containers/containers_tutorials/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Containers Tutorials
+    Running Containers
   </span>
   
 
@@ -3987,12 +3966,13 @@
 
 
 <h1 id="time-allocations">Time Allocations</h1>
-<p>All University of Arizona Principal Investigators (PIs; aka Faculty) that register for access to the UA High Performance Computing (HPC) receive these free allocations on the HPC machines which is shared among all members of their team. Currently all PIs receive:</p>
+<p>All University of Arizona Principal Investigators (PIs; typically faculty) that register for access to the UA High Performance Computing (HPC) receive free standard allocations on the HPC machines which is shared among all members of their team and refreshed on a monthly basis. All PIs receive a standard allocation in addition to the windfall partition. </p>
 <table>
 <thead>
 <tr>
 <th>HPC Cluster</th>
-<th>Standard Allocation Time per Month per PI</th>
+<th>Standard</th>
+<th>High-Priority</th>
 <th>Windfall</th>
 </tr>
 </thead>
@@ -4000,20 +3980,35 @@
 <tr>
 <td>Puma</td>
 <td>100,000 CPU Hours</td>
-<td>Unlimited but can be pre-empted</td>
+<td>+</td>
+<td>Unlimited*</td>
 </tr>
 <tr>
 <td>Ocelote</td>
 <td>70,000 CPU Hours</td>
-<td>Unlimited but can be pre-empted</td>
+<td>n/a</td>
+<td>Unlimited*</td>
 </tr>
 <tr>
 <td>Elgato</td>
 <td>7,000 CPU Hours</td>
-<td>Unlimited but can be pre-empted</td>
+<td>n/a</td>
+<td>Unlimited*</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition question">
+<p class="admonition-title">+ Can I use the high-priority partition?</p>
+<p>High-priority allocations are available to PIs who participated in the <a href="/policies/buy_in">buy-in process</a> when purchasing the Puma cluster. Currently, there is no active buy-in process, but researchers will be notified when it becomes available again.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">* Windfall jobs are pre-emptable</p>
+<p>Windfall is a partition available to jobs that enables them to run <em>without charging any standard allocation</em>, but it also <strong>reduces their priority</strong>, meaning that standard and high-priority jobs can 'pre-empt' a currently running windfall job, effectively placing it back in the queue. The purpose of windfall is to ensure that the clusters are busy at all times, and to allow researchers additional compute while increasing the efficiency of the system.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Special Projects</p>
+<p>In addition to the resources listed above, each PI is eligible to apply for a <a href="/policies/special_projects/">Special Project</a> allocation, which provides an additional pool of standard hours to the group for a limited amount of time. See the linked page for more information.</p>
+</div>
 <h2 id="how-allocations-are-charged">How Allocations are Charged</h2>
 <p>The number of CPU hours a job consumes is determined by <strong>the number of CPUs it is allocated multiplied by its requested walltime</strong>. When a job is submitted, the CPU hours it requires are automatically deducted from the account. If the job ends early, the unused hours are automatically refunded.</p>
 <p>For example, a job requesting 50 CPUs for 10 hours will be charged 500 CPU hours. When the job is submitted, all 500 CPU hours are deducted from the user's account, however, if the job only runs for 5 hours and then completes, the unused 250 hours would be refunded.</p>
@@ -4025,26 +4020,23 @@
 <p>This accounting is the same regardless of which type of node you request. Standard, GPU, and high memory nodes are all charged using the same model and use the same allocation pool. If you find you are being charged for more CPUs that you are specifying in your submission script, it may be an issue with your job's memory request.</p>
 <p>Allocations are refreshed on the first day of each month. Unused hours from the previous month do not roll over.</p>
 <h2 id="how-to-use-your-allocation">How to Use Your Allocation</h2>
-<p>To use your allocation, you will include your account and partition information as a <a href="running_jobs/batch_jobs/slurm_documentation">Slurm directive in your batch script</a>. </p>
+<p>Slurm uses the 'partition' <a href="running_jobs/batch_jobs/slurm_documentation">directive</a> to determine which allocation to charge. When using any partition other than windfall, the account associated with the allocation must be specified. Non-standard partitions including high-priority and special projects must also specify a 'qos' (quality of service) directive. An example of each use case is shown below. </p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standard Hours</label><label for="__tabbed_1_2">Windfall Hours</label><label for="__tabbed_1_3">High Priority Hours</label><label for="__tabbed_1_4">Qualified Hours</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>To use your group's standard hours, include the following in your batch script, replacing <code>&lt;PI GROUP&gt;</code> with your own group's name:
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --account=&lt;PI GROUP&gt;</span>
 <span class="c1">#SBATCH --partition=standard</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>To use preemptible Windfall hours, include the following in your batch script (do not include the <code>--account</code> directive):
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --partition=windfall</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>If your group has <a href="/policies/buy_in">purchased compute resources</a>, you will have access to a high priority allocation. To use these hours, an additional <code>--qos</code> flag must be supplied. Use the following syntax, replacing <code>&lt;PI GROUP&gt;</code> with your own group's name:
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --account=&lt;PI GROUP&gt;</span>
 <span class="c1">#SBATCH --partition=high_priority</span>
 <span class="c1">#SBATCH --qos=user_qos_&lt;PI GROUP&gt;</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>If your group has requested a temporary allocation increase via <a href="/policies/special_project">a special project</a>, you may use these hours by supplying an additional <code>--qos</code> flag. Use the following syntax, replacing <code>&lt;PI GROUP&gt;</code> with your own group's name:

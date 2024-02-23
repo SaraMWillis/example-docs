@@ -1727,15 +1727,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#faqs" class="md-nav__link">
-    <span class="md-ellipsis">
-      FAQs
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2466,28 +2457,7 @@
         
   
   <span class="md-ellipsis">
-    Using Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/containers/containers_tutorials/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Containers Tutorials
+    Running Containers
   </span>
   
 
@@ -4092,8 +4062,77 @@
 <p class="admonition-title">Choose your connection method</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">GUI</label><label for="__tabbed_3_2">CLI</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-<div class="tabbed-block"></div>
+<div class="tabbed-block">
+<p>On a desktop environment, such as MATE, GNOME, KDE, you can mount your R-DAS allocation as a local drive with the corresponding file manager (Caja on MATE, GNOME Files, Dolphin on KDE). On HPC, you can use a <a href="../../../running_jobs/open_on_demand/">virtual desktop</a>.</p>
+<ol>
+<li>
+<p class="annotate">Open the file manager (Caja, GNOME Files, Dolphin)(1).</p>
+<ol>
+<li>On the HPC Interactive Desktop's MATE desktop environment, you can launch Caja by clicking the file drawer like icon in the top bar, or by selecting Applications &gt; System Tools &gt; Caja.</li>
+</ol>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-l">L</kbd></span>. This makes the location bar editable.</p>
+</li>
+<li>
+<p>Enter <code>smb://rdas.hpc.arizona.edu</code> in the location bar, and press ++Enter++.</p>
+<p><img src="images/rdas_smb_linux_gui.png" width=500px></p>
+</li>
+<li>
+<p>A few moments later a window opens, prompting for your <strong>Username</strong> (<code>BLUECAT\</code> followed by your UA NetID) and <strong>Password</strong> (UA NetID password). After entering the details, select <strong>Connect</strong> (on other file managers this may be <strong>OK</strong>). Some file managers, such as Caja and GNOME Files, also have a <strong>Domain</strong> field, whereas others, like Dolphin, do not. Either way, you do not need to modify its default value.</p>
+<p><img src="images/rdas_password_linux_gui.png" width=300px></p>
+</li>
+<li>
+<p>Select the allocation named after your group from the list of allocations displayed.</p>
+<p><img src="images/windows_shares_linux_gui.png" width=400px></p>
+</li>
+<li>
+<p>On some file managers, such as Dolphin, you can right away access your allocation by double clicking on it. On others, such as Caja and GNOME Files, double clicking on it will open another window prompting for your <strong>Username</strong> (<code>BLUECAT\</code> followed by your UA NetID) and <strong>Password</strong> (UA NetID password). Select <strong>Connect as user</strong>, enter the details, and select <strong>Connect</strong>. Your allocation will be mounted as a local drive.</p>
+<p><img src="images/connect_as_user_linux_gui.png" width=400px></p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>You can interactively browse your R-DAS allocation with <code>smbclient</code>:
+<div class="highlight"><pre><span></span><code>smbclient \\\\rdas.hpc.arizona.edu\\&lt;share&gt; -U BLUECAT\\&lt;username&gt;
+</code></pre></div></p>
+<p>The <code>&lt;share&gt;</code> is the PI group that you belong to, and <code>&lt;username&gt;</code> is your UA NetID. The command will prompt for a password where you will enter your UA NetID password. This will start an <code>smb</code> shell. For example:</p>
+<div class="highlight"><pre><span></span><code>~ $ smbclient \\\\rdas.hpc.arizona.edu\\sohampal -U BLUECAT\\sohampal
+Password for [BLUECAT\sohampal]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt;
+</code></pre></div>
+<p>Try <code>help</code> to get a list of possible commands:</p>
+<div class="highlight"><pre><span></span><code>smb: \&gt; help
+?              allinfo        altname        archive        backup        
+blocksize      cancel         case_sensitive cd             chmod         
+chown          close          del            deltree        dir           
+du             echo           exit           get            getfacl  
+. . .
+</code></pre></div>
+<p>Use the <code>-L</code> flag to get the list of shares on the Array. For example:</p>
+<div class="highlight"><pre><span></span><code>smbclient -L \\\\rdas.hpc.arizona.edu -U BLUECAT\\sohampal
+Password for [BLUECAT\sohampal]:
+
+Sharename       Type      Comment
+---------       ----      -------
+Q$              Disk      Default root share for SRVSVC.
+ipc$            IPC       Named Pipes
+upgrade         Disk      for qumulo upgrades
+tmerritt        Disk      Desktop share for tmerritt created on 09/12/2023 12:24 PM
+. . .
+</code></pre></div>
+<p>Any command that you can run interactively from the smb shell, you can also run non-interactively with the <code>-c</code> flag. For example, to list the files and directories in your share, run:
+<div class="highlight"><pre><span></span><code>smbclient \\\\rdas.hpc.arizona.edu\\&lt;share&gt; -U BLUECAT\\&lt;username&gt; -c &#39;ls&#39;
+</code></pre></div>
+You can also combine multiple commands with <code>;</code>. For example to list the contents in a directory in your share, run:
+<div class="highlight"><pre><span></span><code>smbclient \\\\rdas.hpc.arizona.edu\\&lt;share&gt; -U BLUECAT\\&lt;username&gt; -c &#39;cd &lt;directory&gt;;ls&#39;
+</code></pre></div>
+To copy a file from your local system to your R-DAS share use <code>put</code>, and from your R-DAS share to your local system use <code>get</code>:
+<div class="highlight"><pre><span></span><code>smbclient \\\\rdas.hpc.arizona.edu\\&lt;share&gt; -U BLUECAT\\&lt;username&gt; -c &#39;put &lt;file&gt;&#39;
+</code></pre></div>
+To learn more about smbclient, run <a href="https://www.samba.org/samba/docs/current/man-html/smbclient.1.html"><code>man smbclient</code></a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -4118,12 +4157,27 @@
 </li>
 </ol>
 </div>
-<div class="tabbed-block"></div>
+<div class="tabbed-block">
+<p>If you are on Windows, you can mount your R-DAS allocation as a local drive with the following steps:</p>
+<ol>
+<li>Open Windows Explorer.</li>
+<li>
+<p>Enter <code>\\rdas.hpc.arizona.edu</code> in the location bar, and press <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
+<p><img src="images/rdas-screenshot-windows.png" width=800px></p>
+</li>
+<li>
+<p>A few moments later a window will open, prompting for your <strong>Username</strong> (<code>BLUECAT\</code> followed by your UA NetID) and <strong>Password</strong> (UA NetID password). After entering the details, select <strong>OK</strong>.</p>
+<p><img src="images/network_credentials_windows.png" width=300px></p>
+</li>
+<li>
+<p>Select the allocation named after your group from the list of allocations displayed. You can directly open the allocation by double-clicking on it, or mount it by right clicking on it and selecting <strong>Map network drive</strong>.</p>
+<p><img src="images/rdas-screenshot-windows2.png" width=800px></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
-<h2 id="faqs">FAQs</h2>
-<p>For any questions about R-DAS, see our <a href="support_and_training/faqs/storage/">Storage FAQs page</a> for some common issues. </p>
+</div>
 
 
 

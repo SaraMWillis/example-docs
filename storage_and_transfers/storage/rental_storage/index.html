@@ -1748,6 +1748,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#checking-your-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking Your Usage
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2499,28 +2508,7 @@
         
   
   <span class="md-ellipsis">
-    Using Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/containers/containers_tutorials/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Containers Tutorials
+    Running Containers
   </span>
   
 
@@ -4114,6 +4102,34 @@ Connection<span class="w"> </span>to<span class="w"> </span>filexfer.hpc.arizona
 </li>
 </ol>
 <h2 id="resizing-your-allocation">Resizing Your Allocation</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Resizing allocations up to 20TB can be done the user portal. For allocations larger than 20TB, contact our consulting team for help.</p>
+</div>
+<p>Your rental allocation can be resized through the user portal by navigating to the <strong>Storage</strong> tab and selecting <strong>Modify Rental Quota</strong> under the <strong>Rental Storage</strong> heading.</p>
+<p><img src="images/resize_rental_allocation.png" width=400px></p>
+<h2 id="checking-your-usage">Checking Your Usage</h2>
+<p>You can check your allocation's size and current usage either through the user portal or on the command line.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">User Portal</label><label for="__tabbed_1_2">Command Line</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>In the <a href="https://portal.hpc.arizona.edu/portal/">user portal</a>, navigate to the <strong>Storage</strong> tab and select <strong>Check Rental Quota</strong> from under the <strong>Rental Storage</strong> heading</p>
+<p><img src="images/check_rental_quota.png" width=500px></p>
+</div>
+<div class="tabbed-block">
+<p>From an HPC login node, enter the command <code>uquota</code>, for example:
+<div class="highlight"><pre><span></span><code>[user@local_machine ~]$$ ssh netid@hpc.arizona.edu
+[netid@gatekeeper ~]$ shell
+(puma) [netid@wentletrap ~]$ uquota
+                                        used  soft limit  hard limit
+/groups/pi                                163.4G      500.0G      500.0G
+/home                                      13.2G       50.0G       50.0G
+/rental/pi                                 11.8G      931.3G      931.3G
+/xdisk/pi                                   9.0T        9.9T        9.9T
+</code></pre></div></p>
+</div>
+</div>
+</div>
 
 
 

@@ -21,7 +21,7 @@
     
     
       
-        <title>Using Containers - UArizona HPC Documentation</title>
+        <title>Running Containers - UArizona HPC Documentation</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using Containers
+              Running Containers
             
           </span>
         </div>
@@ -2379,7 +2379,7 @@
           
   
   <span class="md-ellipsis">
-    Using Containers
+    Running Containers
   </span>
   
 
@@ -2390,7 +2390,7 @@
         
   
   <span class="md-ellipsis">
-    Using Containers
+    Running Containers
   </span>
   
 
@@ -2418,12 +2418,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Running Apptainer Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apptainer-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      apptainer run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apptainer-exec" class="md-nav__link">
+    <span class="md-ellipsis">
+      apptainer exec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apptainer-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      apptainer shell
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#apptainer-nvidia-and-gpus" class="md-nav__link">
+  <a href="#apptainer-and-gpus" class="md-nav__link">
     <span class="md-ellipsis">
-      Apptainer, Nvidia, and GPUs
+      Apptainer and GPUs
     </span>
   </a>
   
@@ -2433,27 +2466,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../containers_tutorials/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Containers Tutorials
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -3980,35 +3992,50 @@
 
 
 <h1 id="using-containers">Using Containers</h1>
-<p>Apptainer can be used to execute your workflows in various ways. Running a prepackaged workflow embedded in the image, executing commands within the container's environment, or starting an interactive instance.</p>
 <h2 id="running-apptainer-images">Running Apptainer Images</h2>
-<table>
-<thead>
-<tr>
-<th><div style="width:200px;">Command</div></th>
-<th><div style="width:200px;">Function</div></th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>apptainer run</code></td>
-<td>Run without arguments. This executes a predefined workflow embedded in the image.</td>
-<td><code>apptainer run app.sif</code></td>
-</tr>
-<tr>
-<td><code>apptainer exec &lt;commands&gt;</code></td>
-<td>Invokes <code>&lt;commands&gt;</code> from inside the container environment.</td>
-<td><code>apptainer exec app.sif python3 script.py</code></td>
-</tr>
-<tr>
-<td><code>apptainer shell</code></td>
-<td>Starts an interactive session within the container's environment. Optimal for testing and debugging.</td>
-<td><code>apptainer shell app.sif</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="apptainer-nvidia-and-gpus">Apptainer, Nvidia, and GPUs</h2>
+<p>Apptainer can be used to execute your workflows in various ways: running a prepackaged workflow embedded in the image, executing commands within the container's environment, or starting an interactive instance.</p>
+<h3 id="apptainer-run">apptainer run</h3>
+<p><code>apptainer run</code> is used without any arguments and executes a predefined workflow embedded in the image. The general syntax is: </p>
+<div class="highlight"><pre><span></span><code>apptainer run &lt;img&gt;.sif
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>[netid@cpu38 run_example]$ apptainer run lolcow.sif 
+ _______________________________________
+/ You get along very well with everyone \
+\ except animals and people.            /
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</code></pre></div>
+<h3 id="apptainer-exec">apptainer exec</h3>
+<p>Apptainer exec instantiates your image and invokes a command from inside the container's environment. The general syntax is</p>
+<div class="highlight"><pre><span></span><code>apptainer exec app.sif &lt;commands&gt; 
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>[netid@cpu38 run_example]$ singularity exec /contrib/singularity/nvidia/nvidia-tensorflow-2.6.0.sif python3 -c &quot;import tensorflow as tf; print(tf.__version__)&quot;
+2.6.2
+</code></pre></div>
+<h3 id="apptainer-shell">apptainer shell</h3>
+<p>Apptainer shell starts an interactive session within the container's environment. This is optimal for testing, debugging, or using any sort of graphical interface installed in your image. The general syntax is</p>
+<div class="highlight"><pre><span></span><code>apptainer shell app.sif
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>[netid@cpu38 run_example]$ apptainer shell /contrib/singularity/nvidia/nvidia-tensorflow-2.6.0.sif
+Singularity&gt; python3
+Python 3.8.10 (default, Sep 28 2021, 16:10:42) 
+[GCC 9.3.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import tensorflow as tf
+&gt;&gt;&gt; tf.__version__
+&#39;2.6.2&#39;
+</code></pre></div>
+<h2 id="apptainer-and-gpus">Apptainer and GPUs</h2>
+<p>If you're using Apptainer to execute workflows that require a GPU, you'll need to add the additional flag <code>--nv</code> to your Apptainer command. For example:</p>
+<div class="highlight"><pre><span></span><code>apptainer exec --nv &lt;container&gt; &lt;commands&gt;
+</code></pre></div>
 
 
 

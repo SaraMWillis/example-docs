@@ -2354,6 +2354,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Building Containers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2363,6 +2374,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bootstrapping-off-a-local-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bootstrapping off a Local Image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootstrapping-off-a-docker-hub-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bootstrapping off a Docker Hub Image
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2380,28 +2428,7 @@
         
   
   <span class="md-ellipsis">
-    Using Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../containers_tutorials/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Containers Tutorials
+    Running Containers
   </span>
   
 
@@ -3938,8 +3965,60 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For detailed information on Apptainer recipes, see </p>
+<p>For detailed information on Apptainer recipes, see <a href="https://apptainer.org/docs/user/main/cli/apptainer_build.html">Apptainer's official documentation</a>.</p>
 </div>
+<p>Apptainer Build is a tool that allows you to create containers. With Apptainer Build, you can package your application and its dependencies into a single unit, making it easier to deploy and share across different computing environments. Two useful options are to build your container by bootstraping off a container hosted locally on HPC or bootstrapping off an existing container hosted on Dockerhub. We'll cover both of cases below.</p>
+<h2 id="bootstrapping-off-a-local-image">Bootstrapping off a Local Image</h2>
+<p>One common case users run into is using a python container hosted on HPC but needing additional packages installed in the image. To do this, it's possible to bootstrap off the local image and pip-install a new package in a section called <code>%post</code> which is executed during build time. </p>
+<p>For example, say we want to use the HPC container nvidia-tensorflow-2.6.0.sif located in <code>/contrib/singularity/nvidia/</code> but we need it to have the package astropy installed which is currently missing. We can create a recipe file that takes this image, bootstraps off it, and pip-installs astropy. Our recipe file would look like the following:</p>
+<div class="highlight"><pre><span></span><code>Bootstrap: localimage
+From: /contrib/singularity/nvidia/nvidia-tensorflow-2.6.0.sif
+
+%post
+  pip install astropy
+</code></pre></div>
+<p>We'll call this recipe file something descriptive, e.g. tf2.6-astropy.recipe. Then, to build, all we need to do is use the syntax <code>apptainer build &lt;local_image_name&gt;.sif &lt;recipe_file&gt;</code>. In this case:</p>
+<div class="highlight"><pre><span></span><code>[netid@cpu43 build_example]$ apptainer build tf2.6-astropy.sif tf2.6-astropy.recipe 
+INFO:    User not listed in /etc/subuid, trying root-mapped namespace
+INFO:    The %post section will be run under fakeroot
+INFO:    Starting build...
+INFO:    Verifying bootstrap image /contrib/singularity/nvidia/nvidia-tensorflow-2.6.0.sif
+. . .
+INFO:    Creating SIF file...
+INFO:    Build complete: tf2.6-astropy.sif
+[sarawillis@cpu43 build_example]$ 
+</code></pre></div>
+<h2 id="bootstrapping-off-a-docker-hub-image">Bootstrapping off a Docker Hub Image</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Not sure how to install your own software? Check our our section on <a href="../../user_installations/">User Installations</a>.</p>
+</div>
+<p>Bootstrapping off Ubuntu images is a great way to create a very customizable container where you can install your own software. Instead of pulling an Ubuntu image (see: <a href="../pulling_containers/">Pulling Containers</a> for a tip on how to find an Ubuntu image), we can bootstrap directly off the image in our recipe file. </p>
+<p>Let's say as an example, we want to install python 3.11 with a custom library. We can create a recipe file called python3.11_astropy.recipe:</p>
+<div class="highlight"><pre><span></span><code>Bootstrap: docker
+From: ubuntu:22.04
+
+%post 
+  apt update -y
+  apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y 
+  wget https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tgz
+  tar -xf Python-3.11.3.tgz
+  cd Python-3.11.3
+  ./configure --enable-optimizations
+  make 
+  make altinstall
+  python3.11 -m pip install astropy
+</code></pre></div>
+<p>And building using 
+<div class="highlight"><pre><span></span><code>[netid@cpu38 pull_example]$ apptainer build python3.11_astropy.sif python3.11_astropy.recipe 
+INFO:    User not listed in /etc/subuid, trying root-mapped namespace
+INFO:    The %post section will be run under fakeroot
+INFO:    Starting build...
+. . .
+INFO:    Creating SIF file...
+INFO:    Build complete: python3.11_astropy.sif
+[sarawillis@cpu38 pull_example]$ 
+</code></pre></div></p>
 
 
 
