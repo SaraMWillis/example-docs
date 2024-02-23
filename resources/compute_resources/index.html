@@ -1733,11 +1733,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage_and_transfers/transfers/globus/" class="md-nav__link">
+      <a href="../../storage_and_transfers/transfers/cyberduck/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Globus
+    Cyberduck
   </span>
   
 
@@ -1775,11 +1775,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage_and_transfers/transfers/scp/" class="md-nav__link">
+      <a href="../../storage_and_transfers/transfers/globus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SCP
+    Globus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage_and_transfers/transfers/irods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iRods
   </span>
   
 
@@ -1838,32 +1859,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage_and_transfers/transfers/cyberduck/" class="md-nav__link">
+      <a href="../../storage_and_transfers/transfers/scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cyberduck
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../storage_and_transfers/transfers/irods/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    iRods
+    SCP
   </span>
   
 
@@ -2055,6 +2055,69 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../software/popular_software/gaussian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaussian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/popular_software/matlab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matlab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/popular_software/perl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -2065,10 +2128,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_5_1" id="__nav_6_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5_4" id="__nav_6_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2079,8 +2142,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_4">
             <span class="md-nav__icon md-icon"></span>
             Python and Anaconda
           </label>
@@ -2148,48 +2211,6 @@
   
   <span class="md-ellipsis">
     R
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/popular_software/matlab/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Matlab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/popular_software/perl/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Perl
   </span>
   
 
@@ -3891,7 +3912,6 @@
 
 
 <h1 id="compute-resources">Compute Resources</h1>
-<h2 id="compute-resources-available-by-cluster">Compute Resources Available by Cluster</h2>
 <p>Before submitting a Slurm script, you must know (or at least have a general idea) of the resources needed for your job. This will tell you which type of node to request, how much memory, and other useful information that can be provided to the system via your batch script. A detailed list of Slurm batch flags are included below. </p>
 <p><strong>Node Types</strong></p>
 <table>
@@ -4048,19 +4068,6 @@
 </div>
 </div>
 </div>
-<h2 id="job-memory-and-cpu-count">Job Memory and CPU Count</h2>
-<div style="float: right; width: 0px; height: 100px"></div>
-<div style="float: right; clear: right"><iframe width="420" height="280" src="https://www.youtube.com/embed/_dpbUqZ7rRk" allowfullscreen></iframe></div>
-
-<p><strong>Job Memory and CPU Count are Correlated</strong></p>
-<p>The memory your job is allocated is dependent on the number of CPUs you request.</p>
-<p>For example, on Puma standard nodes, you get 5G for each CPU you request. This means a standard job using 4 CPUs gets 5G/CPU × 4 CPUs = 20G of total memory. Each node has its own memory ratio that's dependent on its total memory ÷ total number of CPUs. A reference for all the node types, the memory ratios, and how to request each can be found in the Node Types/Example Resource Requests section above.</p>
-<p><strong>What Happens if My Memory and CPU Requests Don't Match?</strong></p>
-<p>Our systems are configured to try to help when your memory request does not match your CPU count.</p>
-<p>For example, if you request 1 CPU and 470G of memory on Puma, the system will automatically scale up your CPU count to 94 to ensure that you get your full memory requirements. This does not go the other way, so if you request less memory than would be provided by your CPU count, no adjustments are made. If you omit the <code>--memory</code> flag entirely, the system will use the memory ratio for the standard nodes on that cluster.</p>
-<p><strong>Possible Problems You Might Encounter</strong></p>
-<p>Be careful when using <code>--mem-per-cpu ratio</code>. If you use a higher value than a standard node ratio, you may inadvertently wind up in queue for a high memory node. On Puma there are three of these machines available for standard jobs and only one on Ocelote. This means the wait times are frequently longer than those for standard nodes. If you notice your job is in queue much longer than you would expect, check your job using job-history to ensure the memory ratio looks correct.
-Stick to using <code>--ntasks=N</code> and <code>--cpus-per-task=M</code> to request <span class="arithmatex">\(N × M\)</span> CPUs. Using the flag <code>-c</code> N to request CPUs has been found to cause problems with memory requests and may inadvertently limit you to ~4MB of total memory.</p>
 <div class="footnote">
 <hr />
 <ol>

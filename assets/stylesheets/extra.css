@@ -8,3 +8,6 @@
     font-size: 16px;
   }
 
+  .md-nav--secondary {
+    background-color: #f8f8f8; /* Set your desired background color */
+}

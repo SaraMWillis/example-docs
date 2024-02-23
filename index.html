@@ -383,7 +383,7 @@
           <a href="registration_and_access/account_creation/" title="Account Creation" class="md-button md-button--primary">
             Register for Access
           </a>
-          <a href="quick_start" title="Quick Start " class="md-button">
+          <a href="quick_start/overview" title="Quick Start " class="md-button">
             Quick Start
           </a>
         </div>
@@ -446,7 +446,7 @@
       <div class="resources-tx-hero">
           <h1 align=right> Available Resources </h1>
           <h3 align=right> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg> Compute</h3>
-          <p align=right>UArizona HPC systems are available to all university faculty, staff, undergraduate and graduate students, postdocs, and designated campus colleagues (DCCs) at no cost. Researchers have access to <a href="running_jobs/compute_resources/">compute resources on our three clusters</a> Puma, Ocelote, and ElGato located in our data center. Presently each research group is provided with a <a href="running_jobs/allocations/">free standard monthly allocation</a> on each: 100,000 CPU-hours on Puma, 70,000 CPU-hours on Ocelote, and 7,000 CPU-hours on ElGato.</p>
+          <p align=right>UArizona HPC systems are available to all university faculty, staff, undergraduate and graduate students, postdocs, and designated campus colleagues (DCCs) at no cost. Researchers have access to <a href="resources/compute_resources/compute_resources">compute resources on our three clusters</a> Puma, Ocelote, and ElGato located in our data center. Presently each research group is provided with a <a href="resources/allocations/">free standard monthly allocation</a> on each: 100,000 CPU-hours on Puma, 70,000 CPU-hours on Ocelote, and 7,000 CPU-hours on ElGato.</p>
           <center><hr width="40%"></center>
           <h3 align=left><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="18" height="18"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 112.5V422.3c0 18 10.1 35 27 41.3c87 32.5 174 10.3 261-11.9c79.8-20.3 159.6-40.7 239.3-18.9c23 6.3 48.7-9.5 48.7-33.4V89.7c0-18-10.1-35-27-41.3C462 15.9 375 38.1 288 60.3C208.2 80.6 128.4 100.9 48.7 79.1C25.6 72.8 0 88.6 0 112.5zM288 352c-44.2 0-80-43-80-96s35.8-96 80-96s80 43 80 96s-35.8 96-80 96zM64 352c35.3 0 64 28.7 64 64H64V352zm64-208c0 35.3-28.7 64-64 64V144h64zM512 304v64H448c0-35.3 28.7-64 64-64zM448 96h64v64c-35.3 0-64-28.7-64-64z"/></svg> Funding Sources </h3>
           <p align=left>UArizona HPC systems are funded through the <a href="http://research.arizona.edu/">UArizona Research Office (RII)</a> and CIO/UITS (Chief Information Officer, and University Information Technology Services). Staff is funded to administer the systems and provide <a href="support_and_training/consulting_services/">consulting services</a> (no charge) for all researchers.</p>
@@ -583,13 +583,14 @@
             </div>
         </div>
 
+
     </div>
 </section>
 
 
 <!-- Split section, picture of research on the left, description on the right -->
 
-<div class="research-container">
+<div class="research-container" >
     <div class="image">
         <img src="assets/images/home/HypersonicTravel.jpg" style="width:100%;">
     </div>
@@ -619,9 +620,6 @@
 
 
 <!-- Footer with land acknowledgement -->
-
-
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -1989,11 +1987,11 @@
   
   
     <li class="md-nav__item">
-      <a href="storage_and_transfers/transfers/globus/" class="md-nav__link">
+      <a href="storage_and_transfers/transfers/cyberduck/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Globus
+    Cyberduck
   </span>
   
 
@@ -2031,11 +2029,32 @@
   
   
     <li class="md-nav__item">
-      <a href="storage_and_transfers/transfers/scp/" class="md-nav__link">
+      <a href="storage_and_transfers/transfers/globus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SCP
+    Globus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="storage_and_transfers/transfers/irods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iRods
   </span>
   
 
@@ -2094,32 +2113,11 @@
   
   
     <li class="md-nav__item">
-      <a href="storage_and_transfers/transfers/cyberduck/" class="md-nav__link">
+      <a href="storage_and_transfers/transfers/scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cyberduck
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="storage_and_transfers/transfers/irods/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    iRods
+    SCP
   </span>
   
 
@@ -2311,6 +2309,69 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="software/popular_software/gaussian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaussian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software/popular_software/matlab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matlab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software/popular_software/perl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -2321,10 +2382,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_5_1" id="__nav_6_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5_4" id="__nav_6_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2335,8 +2396,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_4">
             <span class="md-nav__icon md-icon"></span>
             Python and Anaconda
           </label>
@@ -2404,48 +2465,6 @@
   
   <span class="md-ellipsis">
     R
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="software/popular_software/matlab/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Matlab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="software/popular_software/perl/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Perl
   </span>
   
 
@@ -4143,7 +4162,6 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-
               </article>
             </div>
           

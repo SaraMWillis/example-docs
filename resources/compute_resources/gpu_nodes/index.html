@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gpu-nodes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -748,6 +753,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GPU Nodes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -758,6 +776,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resources-by-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources by Cluster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA Modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openacc" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenACC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mig-multi-instance-gpu-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      MIG (Multi-Instance GPU) Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MIG (Multi-Instance GPU) Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-mig-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using MIG Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using MIG Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Jobs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-ondemand-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open OnDemand Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-terminal-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Terminal Jobs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1746,11 +1876,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../storage_and_transfers/transfers/globus/" class="md-nav__link">
+      <a href="../../../storage_and_transfers/transfers/cyberduck/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Globus
+    Cyberduck
   </span>
   
 
@@ -1788,11 +1918,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../storage_and_transfers/transfers/scp/" class="md-nav__link">
+      <a href="../../../storage_and_transfers/transfers/globus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SCP
+    Globus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../storage_and_transfers/transfers/irods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iRods
   </span>
   
 
@@ -1851,32 +2002,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../storage_and_transfers/transfers/cyberduck/" class="md-nav__link">
+      <a href="../../../storage_and_transfers/transfers/scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cyberduck
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../storage_and_transfers/transfers/irods/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    iRods
+    SCP
   </span>
   
 
@@ -2068,6 +2198,69 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../software/popular_software/gaussian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaussian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/popular_software/matlab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matlab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/popular_software/perl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -2078,10 +2271,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_5_1" id="__nav_6_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5_4" id="__nav_6_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2092,8 +2285,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_4">
             <span class="md-nav__icon md-icon"></span>
             Python and Anaconda
           </label>
@@ -2161,48 +2354,6 @@
   
   <span class="md-ellipsis">
     R
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/popular_software/matlab/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Matlab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/popular_software/perl/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Perl
   </span>
   
 
@@ -3903,9 +4054,51 @@
                   
 
 
-  <h1>GPU Nodes</h1>
-
-
+<h1 id="gpu-nodes">GPU Nodes</h1>
+<h2 id="resources-by-cluster">Resources by Cluster</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Puma</label><label for="__tabbed_1_2">Ocelote</label><label for="__tabbed_1_3">ElGato</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img src="images/v100_info.jpg" width=400px style="float: right; margin: 5px;">
+Puma has a different arrangement for GPU nodes than Ocelote and ElGato. Whereas the older clusters have one GPU per node, Puma has four. This has a financial advantage for providing GPU's with lower overall cost, and a technical advantage of allowing jobs that can use multiple GPU's to run faster than spanning multiple nodes.  This capability comes from using a newer operating system.  </p>
+<p>Each node has four Nvidia V100S model GPUs. They are provisioned with 32GB memory compared to 16GB on the P100's.  </p>
+</div>
+<div class="tabbed-block">
+<p><img src="images/p100_info.png" width=400px style="float: right; margin: 5px;">
+Ocelote has 46 compute nodes with Nvidia P100 GPUs that are available to researchers on campus. The limitation is a maximum of 10 concurrent jobs. Previously, one node with a V100 was available, but it has since been replaced with a P100. Tasks which require multiple GPUs must either request multiple nodes on Ocelote, or use Puma's GPU nodes.</p>
+</div>
+<div class="tabbed-block">
+<p>ElGato has no GPU nodes. During the quarterly maintenance cycle on April 27, 2022 the ElGato K20s and Ocelote K80s were removed due to no longer being supported by Nvidia.</p>
+</div>
+</div>
+</div>
+<h2 id="cuda-modules">CUDA Modules</h2>
+<h2 id="openacc">OpenACC</h2>
+<h2 id="mig-multi-instance-gpu-resources">MIG (Multi-Instance GPU) Resources</h2>
+<h3 id="overview">Overview</h3>
+<p>The Four A100 GPUs on Puma Node r5u13n1 are each subdivided into 3 smaller virtual GPUs using the Nvidia MIG (Multi-Instance GPU) method.  Each of these MIG slices allows the use of 20 GB of GPU memory.  The vast majority of jobs run on Puma in 2023 used less than this amount of GPU memory.  The  12 MIG GPUs  will increase overall GPU availability on Puma by freeing the 32 GB V100 GPUs for users requiring larger amounts of GPU memory.</p>
+<p>Jobs requesting MIG resources will ideally be scheduled more quickly than those requesting the standard V100 GPUs, so MIG resources should be preferred when sufficient.</p>
+<p>A limitation is that only one MIG slice can be addressed by a single application, so MIG slices are not  appropriate for jobs utilizing multiple GPUs.</p>
+<h3 id="using-mig-resources">Using MIG Resources</h3>
+<p>The addition of the MIG devices to the SLURM queues will have a number of impacts, and some users may need to make changes to submissions to ensure proper functioning of analyses.</p>
+<h4 id="batch-jobs">Batch Jobs</h4>
+<p>Typically, in batch scripts <span class="arithmatex">\(N\)</span> GPUs are requested by including the Slurm directive</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --gres=gpu:N
+</code></pre></div>
+<p>With the inclusion of MIG GPU resources, the GPU resources allocated by the above directive may be either MIG slices or V100 GPUs, depending on which resources are available. </p>
+<p>To explicitly request a V100, use the directive:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH  --gres=gpu:volta:N
+</code></pre></div>
+<p>To explicitly request a MIG slice, use the directive:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb                                                               
+</code></pre></div>
+<h4 id="open-ondemand-applications">Open OnDemand Applications</h4>
+<p>The Open on Demand job request form includes a dropdown menu that allows the choice of appropriate GPU resources.  On Puma these include selections for 1-4 V100 GPUs or a MIG slice(One A100 20GB GPU), as seen here:</p>
+<p><img src="images/mig_ood_select.png" width=500px></p>
+<h4 id="interactive-terminal-jobs">Interactive Terminal Jobs</h4>
+<p>The command “interactive” does not currently allow the selection of MIG resources, but a MIG slice can be requested with an salloc command similar to this:</p>
+<div class="highlight"><pre><span></span><code>salloc --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb --job-name=interactive --mem-per-cpu=#GB --nodes=1 --ntasks=# --time=### --partition=&lt;partition name&gt;  --account=&lt;account name&gt;
+</code></pre></div>
 
 
 
