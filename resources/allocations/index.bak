@@ -28,38 +28,9 @@ Allocations are refreshed on the first day of each month. Unused hours from the 
 
 ## How to Use Your Allocation
 
-To use your allocation, you will include your account and partition information as a [Slurm directive in your batch script](running_jobs/batch_jobs/slurm_documentation). 
+To use your allocation, you will include your account and partition information as a [Slurm directive in your batch script](../running_jobs/job_scheduling/partition_requests/)). 
 
-=== "Standard Hours"
-    To use your group's standard hours, include the following in your batch script, replacing ```<PI GROUP>``` with your own group's name:
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=standard
-    ```
-
-=== "Windfall Hours"
-    To use preemptible Windfall hours, include the following in your batch script (do not include the ```--account``` directive):
-    ```bash
-    #SBATCH --partition=windfall
-    ```
-
-=== "High Priority Hours"
-    If your group has [purchased compute resources](/policies/buy_in), you will have access to a high priority allocation. To use these hours, an additional ```--qos``` flag must be supplied. Use the following syntax, replacing ```<PI GROUP>``` with your own group's name:
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=high_priority
-    #SBATCH --qos=user_qos_<PI GROUP>
-    ```
-
-=== "Qualified Hours"
-    If your group has requested a temporary allocation increase via [a special project](/policies/special_project), you may use these hours by supplying an additional ```--qos``` flag. Use the following syntax, replacing ```<PI GROUP>``` with your own group's name:
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=standard
-    #SBATCH --qos=qual_qos_<PI GROUP>
-    ```
     
-
 ## How to Find Your Remaining Allocation
 
 To view your [allocation's used, unused, and encumbered hours](/support_and_training/glossary/ "For information on terminology, see our glossary"), use the command ```va``` in a terminal. For example:
