@@ -2,6 +2,13 @@
 {% extends "base.html" %}
 
 
+{#
+    Jinja2 uses "{# ... #}" as comment blocks. Below is a sample announcement that's been commented-out. Remove the brackets to add an announcement header to the docs
+#}
 
+
+{% block announce %}
+ <p style="font-size: 14px;"><b>Increased Monthly Allocations!</b><br>Beginning on March 1st, 2024, the monthly allocation for each group will be increased to <b>150,000 CPU Hours on Puma</b> (previously 100,000), and <b>100,000 CPU hours on Ocelote</b> (previously 70,000).</p>
+{% endblock %}
 
 

@@ -14,7 +14,7 @@ In the window that opens, select **Open Connection**
 
 This will give you a number of options to choose from.
 
-## Connection Options
+## Some Connection Options 
 
 === "HPC"
     To connect to HPC, select **SFTP (SSH File Transfer Protocol)** from the top dropdown, enter ```filexfer.hpc.arizona.edu``` under **Server**, and your university credentials under **Username** and **Password**.

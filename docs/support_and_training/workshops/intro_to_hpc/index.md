@@ -1,70 +1,33 @@
 ---
-hide: 
-  - toc
+title: Intro to HPC
 ---
 
-# Intro to HPC 
+<!-- I'm going to use heading html tags rather than markdown to keep 
+     them from rendering in the table of contents. It winds up being too much
+     in the sidebar, I think -->
 
-## About
-
-We encourage you to take training course to help you get started on using HPC resources. If you have recently started, you might learn there is a better way, or there are capabilities you are not taking advantage of. Either attend the workshops which are held once each semester or view the video attached below. We can also bring these to department meetings.
-
-## PDF 
+<link rel="stylesheet" href="/assets/stylesheets/embedded_files.css">
 
 
-<center>
+<h1>Presentation PDF</h1>
+
+<html> 
+    <div class="pdf-container">
         <object data="files/IntroToHPC.Fall2023.pdf" 
-                width="800"
-                height="500"> 
+                width="100%"
+                height=100%;> 
         </object> 
+    </div>
+</html>
 </center>
 
-## Video Recording
+<hr>
 
-<center><iframe width="600" height="450" src="https://www.youtube.com/embed/xlgL6u1jkVI" allowfullscreen></iframe></center>
-
+<h1>Video Recording</h1>
+<html>
+<div class="pdf-container">
+    <center><iframe width=100% height=100% src="https://www.youtube.com/embed/xlgL6u1jkVI" allowfullscreen></iframe></center>
+</div>
+</html>
 <hr> 
-
-## Interactive Guide
-
-
-
-## System Basics 
-
-### Logging In
-
-=== Local Terminal
-    === Mac/Linux
-    
-    === Windows
-=== Open OnDemand
-
-### Working on the Command Line
-
-## Transferring Files
-
-## Submitting a Batch Job
-
-### Accessing Workshop Files
-
-### Submissions Script Details
-
-### Submitting Your Job
-
-### Job Output
-
-## Interactive Vs. Batch
-
-## Accessing Software
-
-### Command Line
-
-### Open OnDemand
-
-## Testing Your Knowledge
-
-## Getting Help
-
-## Community Events
-
 

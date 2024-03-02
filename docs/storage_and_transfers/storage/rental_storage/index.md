@@ -77,4 +77,33 @@ Connection to filexfer.hpc.arizona.edu closed.
 
 
 ## Resizing Your Allocation
+
+!!! warning
+    Resizing allocations up to 20TB can be done the user portal. For allocations larger than 20TB, contact our consulting team for help.
+
+Your rental allocation can be resized through the user portal by navigating to the **Storage** tab and selecting **Modify Rental Quota** under the **Rental Storage** heading.
+
+<img src="images/resize_rental_allocation.png" width=400px>
     
+
+## Checking Your Usage
+
+You can check your allocation's size and current usage either through the user portal or on the command line.
+
+=== "User Portal"
+    In the [user portal](https://portal.hpc.arizona.edu/portal/), navigate to the **Storage** tab and select **Check Rental Quota** from under the **Rental Storage** heading
+
+    <img src="images/check_rental_quota.png" width=500px>
+
+=== "Command Line"
+    From an HPC login node, enter the command ```uquota```, for example:
+    ```
+    [user@local_machine ~]$$ ssh netid@hpc.arizona.edu
+    [netid@gatekeeper ~]$ shell
+    (puma) [netid@wentletrap ~]$ uquota
+                                            used  soft limit  hard limit
+    /groups/pi                                163.4G      500.0G      500.0G
+    /home                                      13.2G       50.0G       50.0G
+    /rental/pi                                 11.8G      931.3G      931.3G
+    /xdisk/pi                                   9.0T        9.9T        9.9T
+    ```

@@ -116,7 +116,7 @@ You'll also notice that your session has been assigned a job number (in the abov
 
 <html>
 <div class="button-container">
-    <a href="../storage_and_transfers/"><button class="left-button">&#x25C0; Storage and Transfers</button></a>
-    <a href="../software"><button class="right-button">Accessing Software &#x25B6;</button></a>
+    <a href="../storage_and_transfers/"><button class="left-button"></button></a>
+    <a href="../software"><button class="right-button"></button></a>
 </div>
 </html>

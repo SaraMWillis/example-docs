@@ -45,6 +45,7 @@ nav:
     - Batch Jobs: quick_start/batch_jobs/index.md
     
   - Storage and Transfers:
+    - Best Practices: storage_and_transfers/best_practices/index.md
     - Storage:
       - Overview: storage_and_transfers/storage/overview/index.md
       - HPC Storage: 
@@ -56,13 +57,13 @@ nav:
       - Tier2 AWS Storage: storage_and_transfers/storage/tier2_storage/index.md
     - Transfers:
       - Overview: storage_and_transfers/transfers/overview/index.md
-      - Globus: storage_and_transfers/transfers/globus/index.md
+      - Cyberduck: storage_and_transfers/transfers/cyberduck/index.md
       - FTP/LFTP/SFTP: storage_and_transfers/transfers/sftp_ftp_lftp/index.md
-      - SCP: storage_and_transfers/transfers/scp/index.md
+      - Globus: storage_and_transfers/transfers/globus/index.md
+      - iRods: storage_and_transfers/transfers/irods/index.md
       - rsync: storage_and_transfers/transfers/rsync/index.md
       - rclone: storage_and_transfers/transfers/rclone/index.md
-      - Cyberduck: storage_and_transfers/transfers/cyberduck/index.md
-      - iRods: storage_and_transfers/transfers/irods/index.md
+      - SCP: storage_and_transfers/transfers/scp/index.md
 
   - Software:
     - Overview: software/overview/index.md
@@ -70,45 +71,49 @@ nav:
     - User Installation Help: software/user_installations/index.md
     - Common Datasets: software/common_datasets/index.md
     - Popular Software:
+      - Gaussian: software/popular_software/gaussian/index.md
+      - Matlab: software/popular_software/matlab/index.md
+      - Perl: software/popular_software/perl/index.md
       - Python and Anaconda: 
         - Python: software/popular_software/python_and_anaconda/python/index.md
         - Anaconda: software/popular_software/python_and_anaconda/anaconda/index.md
       - R: software/popular_software/R/index.md
-      - Matlab: software/popular_software/matlab/index.md
-      - Perl: software/popular_software/perl/index.md
       - VSCode Remote Connection: software/popular_software/vscode_remote_connection/index.md
     - Containers: 
       - What are Containers: software/containers/what_are_containers/index.md
       - Containers on HPC: software/containers/containers_on_hpc/index.md
       - Pulling Containers: software/containers/pulling_containers/index.md
       - Building Containers: software/containers/building_containers/index.md
-      - Using Containers: software/containers/using_containers/index.md
-      - Containers Tutorials: software/containers/containers_tutorials/index.md
+      - Running Containers: software/containers/using_containers/index.md
 
   - Running Jobs:
     - Overview: running_jobs/overview/index.md
-    - Best Practices: running_jobs/best_practices/index.md
     - Job Limits: running_jobs/job_limits/index.md
-    - Open OnDemand:
-      - Overview:  running_jobs/open_on_demand/overview/index.md
-      - File Browser: running_jobs/open_on_demand/file_browser/index.md
-      - Shell Access: running_jobs/open_on_demand/shell_access/index.md
-      - Job Viewer and Composer: running_jobs/open_on_demand/job_viewer_and_composer/index.md
-      - Graphical Applications: running_jobs/open_on_demand/graphical_applications/index.md
+    - CPUs and Memory: running_jobs/cpus_and_memory/index.md
+    - System Commands: running_jobs/system_commands/index.md
+
+    #- Job Scheduling Guide: 
+    #  - Slurm Overview: running_jobs/job_scheduling/slurm_overview/index.md
+    #  - Slurm Reference: running_jobs/job_scheduling/slurm_reference/index.md
+    #  - Using Your Allocation: running_jobs/job_scheduling/partition_requests/index.md
+    #  - GPUs: running_jobs/job_scheduling/gpus/index.md
+    - Open OnDemand/Graphical Jobs: running_jobs/open_on_demand/index.md
     - Interactive Jobs: running_jobs/interactive_jobs/index.md
-    - Batch Jobs: 
-        - Slurm Documentation: running_jobs/batch_jobs/slurm_documentation/index.md
-        - Example Batch Jobs: 
-            - General Examples: 
-                - Using a Pipefail: running_jobs/batch_jobs/example_batch_jobs/general_examples/pipefail/index.md
-                - Job Dependencies: running_jobs/batch_jobs/example_batch_jobs/general_examples/job_dependencies/index.md
-            - Array and Parallel Examples: 
-                - Basic Array Job: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_array/index.md
-                - Array Jobs with Text Filenames: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_filenames/index.md
-                - Array Jobs with Multiple Input Parameters: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_read_parameters/index.md
-                - Basic GNU Parallel Job: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/basic_gnu_parallel_job/index.md
-                - Array Job Using GNU Parallel: running_jobs/batch_jobs/example_batch_jobs/array_and_parallel_examples/array_and_gnu_parallel/index.md
-    
+    - Batch Jobs:
+      - Intro to Batch: running_jobs/batch_jobs/intro/index.md
+      - Batch Directives: running_jobs/batch_jobs/batch_directives/index.md
+      - Submitting and Managing Jobs: running_jobs/batch_jobs/managing/index.md
+      - Slurm Cheat Sheet: running_jobs/batch_jobs/slurm_reference/index.md
+      - Example Batch Jobs:
+        - Using a Pipefail: running_jobs/batch_jobs/examples/pipefail/index.md
+        - Job Dependencies: running_jobs/batch_jobs/examples/job_dependencies/index.md
+        - Basic Array Job: running_jobs/batch_jobs/examples/basic_array/index.md
+        - Array Jobs with Text Filenames: running_jobs/batch_jobs/examples/array_read_filenames/index.md
+        - Array Jobs with Multiple Input Parameters: running_jobs/batch_jobs/examples/array_read_parameters/index.md
+        - Basic GNU Parallel Job: running_jobs/batch_jobs/examples/basic_gnu_parallel_job/index.md
+        - Array Job Using GNU Parallel: running_jobs/batch_jobs/examples/array_and_gnu_parallel/index.md
+    - Parallelization: running_jobs/parallelization/index.md
+
   - Support:
     - Consulting Services: support_and_training/consulting_services/index.md
     - FAQs: 
@@ -135,8 +140,10 @@ nav:
         - Data Management Workshops: support_and_training/workshops/data_management_workshops/index.md
     - Best Practices: support_and_training/best_practices/index.md
     - Glossary: support_and_training/glossary/index.md
+    - Linux Cheat Sheet: support_and_training/cheat_sheet/index.md
     - Grants: support_and_training/grants/index.md
     - Community and External Resources: support_and_training/external_resources/index.md
+    
 
   - Secure Services:
     - Overview: secure_hpc/overview/index.md
@@ -203,6 +210,7 @@ theme:
     - content.tooltips
     - content.code.copy
     - navigation.top
+    - announce.dismiss
     
 extra:
   generator: false

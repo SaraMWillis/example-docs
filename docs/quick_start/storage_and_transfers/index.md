@@ -21,7 +21,7 @@ Now that we're on the login nodes and know where our files are, it's time to acc
 
 <html>
 <div class="button-container">
-    <a href="../logging_in/"><button class="left-button">&#x25C0; Logging In</button></a>
-    <a href="../interactive_jobs"><button class="right-button">Accessing Compute Nodes &#x25B6;</button></a>
+    <a href="../logging_in/"><button class="left-button"></button></a>
+    <a href="../interactive_jobs"><button class="right-button"></button></a>
 </div>
 </html>

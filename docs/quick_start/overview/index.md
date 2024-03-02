@@ -18,7 +18,7 @@ By the end of this quick start, you should know:
 6. How to run a job
 
 <html>
-<a href="../supercomputing_in_plain_english"><button class="right-button" style="float: right;">What is HPC? &#x25B6;</button></a>
+<a href="../supercomputing_in_plain_english"><button class="right-button" style="float: right;"></button></a>
 </html>
 
 <br>

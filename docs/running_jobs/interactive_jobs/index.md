@@ -2,7 +2,24 @@
 
 ## Overview
 
-Interactive sessions are a way to gain access to a compute node from the command line. This is useful for checking available modules, testing submission scripts, compiling software, and running programs in real time. When you are on a login node, you can request a session by simply entering: ```interactive```. For example:
+Interactive sessions are a way to gain access to a compute node from the command line. This is useful for [checking and using available modules](../../software/modules/), testing [submission scripts](../batch_jobs/int), debugging code, compiling software, and running programs in real time. 
+
+The term "interactive session" typically refers to jobs run from within the command line on a terminal client. Opening a terminal in an interactive graphical desktop is also equivalent, but these sessions are fixed to the resources allocated to that OOD session. As you'll see below, one has more control over their resources when requesting an interactive session via SSH on a terminal client.
+
+Notice in the example above how the command prompt changes once your session starts. When you're on a login node, your prompt will show ```junonia``` or ```wentletrap```. Once you're in an interactive session, you'll see the name of the compute node you're connected to. In the above example, this is ```i16n1```.
+
+
+## How to Request an Interactive Session
+
+### Clusters 
+
+An interactive session can be requested on any of our three clusters: El Gato, Ocelote, and Puma. Since the request to start an interactive session is processed by Slurm, these jobs will be subject to the same wait times as batch jobs. Since Puma is typically busy with high traffic throughput, it is not recommended to request an interactive session on this cluster unless specific resources are needed and longer wait times are acceptable to the user. 
+
+### The ```interactive``` Command
+
+When you are on a login node, you can request an interactive session on a compute node. We have a built-in shortcut command that will allow you to quickly and easily request a session by simply entering: ```interactive```
+
+The ```interactive``` command is essentially a convenient wrapper for a Slurm command called ```salloc```. This can be thought of as similar to the sbatch command, but for interactive jobs rather than (batch jobs)[../batch_jobs/intro]. When you request a session using interactive, the full salloc command being executed will be displayed for reference.
 
 ```bash
 (ocelote) [netid@junonia ~]$ interactive
@@ -19,7 +36,17 @@ salloc: Nodes i16n1 are ready for job
 
 Notice in the example above how the command prompt changes once your session starts. When you're on a login node, your prompt will show "junonia" or "wentletrap". Once you're in an interactive session, you'll see the name of the compute node you're connected to. 
 
-## Customizing Your Resources
+If no options are supplied to the command interactive, your job will automatically run using the windfall partition for one hour using one CPU. To use the standard partition, include the flag "-a" followed by your group's name. To see all the customization options:
+
+```bash
+(ocelote) [netid@junonia ~]$ interactive -h
+Usage: /usr/local/bin/interactive [-x] [-g] [-N nodes] [-m memory per core] [-n ncpus per node] [-Q optional qos] [-t hh::mm:ss] [-a account to charge]
+```
+
+You may also create your own salloc commands using any desired [SLURM directives](../batch_jobs/slurm_reference) for maximum customization.
+
+
+### Customizing Your Resources
 
 The command ```interactive``` when run without any arguments will allocate you a windfall session using one CPU for one hour which isn't ideal for most use cases. You can modify this by including additional flags. To see the available options, you can use the help flag ```-h```
 
@@ -29,29 +56,22 @@ Usage: /usr/local/bin/interactive [-x] [-g] [-N nodes] [-m memory per core] [-n 
 ```
 The values can be combined and each mean the following:
 
-|Flag|Explanation|<div style="width:150px">Example</div>|
+|Flag|Explanation|<div style="width:200px">Example</div>|
 |-|-|-|
 |```-a```|This is followed by your group's name and will switch you to using the standard partition. This is highly recommended to keep your sessions from being interrupted and to help them start faster|```-a my_group```|
 |```-t```|The amount of time to reserve for your job in the format ```hhh:mm:ss```|```-t 05:00:00```|
 |```-n```|Total number of tasks (CPUs) to allocate to your job. By default, this will be on a single node|```-n 16```|
 |```-N```|Total number of nodes (physical computers) to allocate to your job|```-N 2```|
-|```-m```|Total amount of memory **per CPU**. See [Compute Resources](/running_jobs/compute_resources/#compute-resources-available-by-cluster) for more information and potential complications|```-m 5gb```|
-|```Q```|Used to add a qos to access high priority or qualified hours. Only for groups with buy-in/special project hours|```-Q user_qos_pi_netid```|
+|```-m```|Total amount of memory {==per CPU==}. See [CPUs and Memory](../cpus_and_memory/) for more information and potential complications|```-m 5gb```|
+|```Q```|Used to add a qos to access high priority or qualified hours. Only for groups with [buy-in/special project hours](../../resources/allocations/)|```-Q user_qos_pi_netid```|
 |```-g```|Request a GPU. This flag takes no arguments. If you want to request more than one GPU in an interactive session, you can use [salloc](/running_jobs/batch_jobs/slurm_documentation/) directly|```-q```|
 |```-x```|Enable [X11 forwarding](/registration_and_access/system_access/#x11-forwarding). This flag takes no arguments.|```-x```|
 
-You may also create your own salloc commands using any desired Slurm directives for maximum customization.
+You may also create your own [salloc](https://slurm.schedmd.com/salloc.html) commands using any desired Slurm directives for maximum customization.
 
 
-## Tips and Tricks for Faster Sessions
+## Software
 
-* **Switch to ElGato** 
-    
-    This cluster shares the same operating system, software, and file system as Puma so often your workflows are portable across clusters. Ocelote and ElGato standard nodes have 28 and 16 CPUs, respectively, and are often less utilized than Puma meaning much shorter wait times. Before you run the interactive command, type elgato to switch.
-    
-* **Use the account flag**
-    
-    By default, ```interactive``` will request a session using the windfall partition. Windfall is lower priority than standard and so these types of jobs take longer to get through the queue. If you include the account flag, that will switch your partition to standard. An example of this type of request:
-    ```bash
-    interactive -a YOUR_GROUP
-    ```
+Once an interactive session has been activated, your session is now being run on a compute node. This means that not only do you have more computing power available compared to the login node, but you also have access to all of the software installed on HPC. To view and interactive with software installed on the system, use the [module commands](../../software/modules/). 
+
+In this mode, only text-based command-line software can be used. To use graphical software, please see our page on [GUI Jobs](../open_on_demand). 

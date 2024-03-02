@@ -1,12 +1,23 @@
 # Time Allocations
 
-All University of Arizona Principal Investigators (PIs; aka Faculty) that register for access to the UA High Performance Computing (HPC) receive these free allocations on the HPC machines which is shared among all members of their team. Currently all PIs receive:
+All University of Arizona Principal Investigators (PIs; typically faculty) that register for access to the UA High Performance Computing (HPC) receive free standard allocations on the HPC machines which is shared among all members of their team and refreshed on a monthly basis. All PIs receive a standard allocation in addition to the windfall partition. 
 
-|HPC Cluster|Standard Allocation Time per Month per PI|Windfall|
-|-|-|-|
-|Puma|100,000 CPU Hours|Unlimited but can be pre-empted|
-|Ocelote|70,000 CPU Hours|Unlimited but can be pre-empted|
-|Elgato|7,000 CPU Hours|Unlimited but can be pre-empted|
+
+|HPC Cluster|Standard Partition|High-Priority Partition|Windfall Partition|
+|-|-|-|-|
+|Puma|100,000 CPU Hours|Group Dependent+|Unlimited* |
+|Ocelote|70,000 CPU Hours|n/a|Unlimited* |
+|Elgato|7,000 CPU Hours|n/a|Unlimited* |
+
+!!! question "+ Can I use the high-priority partition?"
+    High-priority allocations are available to PIs who participated in the [buy-in process](/policies/buy_in) when purchasing the Puma cluster. Currently, there is no active buy-in process, but researchers will be notified when it becomes available again.
+
+!!! warning "* Windfall jobs are pre-emptable"
+    Windfall is a partition available to jobs that enables them to run *without charging any standard allocation*, but it also **reduces their priority**, meaning that standard and high-priority jobs can 'pre-empt' a currently running windfall job, effectively placing it back in the queue. The purpose of windfall is to ensure that the clusters are busy at all times, and to allow researchers additional compute while increasing the efficiency of the system.
+
+!!! example "Special Projects"
+    In addition to the resources listed above, each PI is eligible to apply for a [Special Project](/policies/special_projects/) allocation, which provides an additional pool of standard hours to the group for a limited amount of time. See the linked page for more information.
+
 
 ## How Allocations are Charged
 
@@ -28,23 +39,23 @@ Allocations are refreshed on the first day of each month. Unused hours from the 
 
 ## How to Use Your Allocation
 
-To use your allocation, you will include your account and partition information as a [Slurm directive in your batch script](running_jobs/batch_jobs/slurm_documentation). 
+Your allocation 
+
+
+
 
 === "Standard Hours"
-    To use your group's standard hours, include the following in your batch script, replacing ```<PI GROUP>``` with your own group's name:
     ```bash
     #SBATCH --account=<PI GROUP>
     #SBATCH --partition=standard
     ```
 
 === "Windfall Hours"
-    To use preemptible Windfall hours, include the following in your batch script (do not include the ```--account``` directive):
     ```bash
     #SBATCH --partition=windfall
     ```
 
 === "High Priority Hours"
-    If your group has [purchased compute resources](/policies/buy_in), you will have access to a high priority allocation. To use these hours, an additional ```--qos``` flag must be supplied. Use the following syntax, replacing ```<PI GROUP>``` with your own group's name:
     ```bash
     #SBATCH --account=<PI GROUP>
     #SBATCH --partition=high_priority

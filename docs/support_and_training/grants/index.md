@@ -1,3 +1,6 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/assets/stylesheets/embedded_files.css">
+
 # Grant Resources
 
 ## Overview 
@@ -30,14 +33,17 @@ You might consider these scenarios:
 <center>
 [Click here to download .docx version](files/University_Arizona_Cyberinfrastructure_Report.docx){ .md-button .md-button--primary }
 
-<!DOCTYPE html> 
+
 <html> 
-<body> 
+    <div class="pdf-container">
         <object data="files/University_Arizona_Cyberinfrastructure_Report.pdf" 
-                width="800"
-                height="500"> 
+                width="100%"
+                height=100%;> 
+        <p>It appears you don't have a PDF plugin for this browser.
+             <a href="files/University_Arizona_Cyberinfrastructure_Report.pdf">Click here to download the PDF file.</a>
+        </p>
         </object> 
-</body> 
+    </div>
 </html>
 </center>
 

@@ -109,4 +109,4 @@ That's it! You've now successfully run both a batch and interactive job on HPC. 
 Other great resources include: [virtual office hours every Wednesday](../../support_and_training/consulting_services/#office-hours) from 2:00-4:00pm, consultation services offered through ServiceNow, an examples Github page with sample jobs, and a YouTube channel with training videos. 
 
 
-<a href="../software"><button class="left-button">&#x25C0; Software</button></a>
+<a href="../software"><button class="left-button"></button></a>

@@ -27,7 +27,7 @@ You may also have experience with being frustrated with a job's runtime. What ha
 
 <html>
 <div class="button-container">
-    <a href="../overview"><button class="left-button">&#x25C0; Overview</button></a>
-    <a href="../common_misconceptions"><button class="right-button">Common Misconceptions &#x25B6;</button></a>
+    <a href="../overview"><button class="left-button"></button></a>
+    <a href="../common_misconceptions"><button class="right-button"></button></a>
 </div>
 </html>

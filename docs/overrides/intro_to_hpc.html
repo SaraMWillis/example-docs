@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../overrides/styles.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/results.css">
+
+
+<!-- Main site header with buttons and descriptions -->
+<section class="results-tx-container">
+    <div class="md-grid md-typeset">
+      <div class="tx-hero">
+        <div class="tx-hero__content">
+          <h1> Intro to HPC </h1>
+          <p>We encourage you to take training course to help you get started on using HPC resources. If you have recently started, you might learn there is a better way, or there are capabilities you are not taking advantage of. Either attend the workshops which are held once each semester or view the video attached below. We can also bring these to department meetings.</p>
+
+        </div>
+      </div>
+    </div>
+</section>
+
+<h1>PDF of the Presentation</h1>
+<center>
+    <object data="files/IntroToHPC.Fall2023.pdf" 
+            width="800"
+            height="500"> 
+    </object> 
+</center>
+
+<h1>Video Recording</h1>
+<center><iframe width="600" height="450" src="https://www.youtube.com/embed/xlgL6u1jkVI" allowfullscreen></center>
+
+<h1>Interactive Materials</h1>
+
+
+
+
+
+
+{% endblock %}
+{% block content %}{% endblock %}
+
+{% block footer %}
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                {% if config.copyright %}
+                <div class="md-footer-copyright__highlight">
+                    {{ config.copyright }}
+                </div>
+                {% endif %}
+
+            </div>
+            {% block social %}
+            {% include "partials/social.html" %}
+            {% endblock %}
+        </div>
+    </div>
+</footer>
+{% endblock %}

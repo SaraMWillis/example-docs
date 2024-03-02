@@ -19,7 +19,7 @@ Similar to above, software must be designed to be able to take advantage of addi
 
 <html>
 <div class="button-container">
-    <a href="../supercomputing_in_plain_english"><button class="left-button">&#x25C0; What is HPC?</button></a>
-    <a href="../logging_in"><button class="right-button">Logging In &#x25B6;</button></a>
+    <a href="../supercomputing_in_plain_english"><button class="left-button"></button></a>
+    <a href="../logging_in"><button class="right-button"></button></a>
 </div>
 </html>
