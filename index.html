@@ -261,7 +261,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="storage_and_transfers/best_practices/" class="md-tabs__link">
+        <a href="storage_and_transfers/overview/" class="md-tabs__link">
           
   
   Storage and Transfers
@@ -417,13 +417,6 @@
 
 <div class="card-container">
     <div class="card">
-        <img src="assets/images/home/apptainer.png" style="width:200px">
-            <div class="container">
-                <h4><b>Singularity Update</b></h4> 
-                <p>Singularity has been renamed Apptainer as the project is brought into the Linux Foundation. An alias exists so that you can continue to invoke singularity. Local builds are now possible in many cases and remote builds with Sylabs are no longer supported</p> 
-            </div>
-    </div>
-    <div class="card">
         <img src="assets/images/home/terminal.png" style="width:200px">
             <div class="container">
                 <h4><b>Faster Interactive Sessions</b></h4> 
@@ -438,10 +431,17 @@
             </div>
     </div>
     <div class="card">
-        <img src="assets/images/home/puma.jpg" style="width:200px">
+        <img src="assets/images/home/puma-logo.jpg" style="width:200px">
             <div class="container">
                 <h4><b>Puma News</b></h4> 
-                <p>Last year we increased the standard allocation.  From the end of April 2022 the standard allocation of CPU hours is increased from 70,000 to 100,000. </p> 
+                <p>Last year we increased the standard allocation. From the beginning of March 2024 the standard allocation of CPU hours is increased from 100,000 to 150,000. </p> 
+            </div>
+    </div>
+    <div class="card">
+        <img src="assets/images/home/MIG.jpg" style="width:200px">
+            <div class="container">
+                <h4><b>New MIG Resources</b></h4> 
+                <p><a href="../resources/compute_resources/">MIG resources</a> entered the queues on Feb 26, 2024. The 12 MIG GPUs will increase overall GPU availability on Puma by freeing the 32 GB V100 GPUs for users requiring larger amounts of GPU memory. Note: some batch scripts will need updates to work properly.</p> 
             </div>
     </div>
 </div>
@@ -524,76 +524,146 @@
 
 
 
-<!-- Testing a section for calendar information 
-<div class="hero-section quick-links">
-    <h2>Calendar</h2>
-    <div class="card" style="max-width:70%">
-        <div class="container">
-            <h4>Intro to HPC Workshop</h4>
-            <p>Date: October 27, 2024 @ 10:00-12:00pm (MST)<br>Location: Online<br>Registration: (link)</p>
-        </div>
-    </div>
-    <div class="card" style="max-width:70%">
-        <div class="container">
-            <h4>Intro to Fooing and also Barring</h4>
-            <p>Date: October 28, 2024 @ 11:00-1:00pm (MST)<br>Location: Baz<br>Registration: (link)</p>
-        </div>
-    </div>
-</div>
--->
+<!-- General Calendar Formatting:
 
-<!-- Testing a different way of displaying calendar information-->
-
-
-
-
-
-<section class="events-section">
-    <div class="left-column">
-        <div class="content-container">
-        <h1><center>Upcoming Events</center></h2>
-        <p>Every semester, we host training workshops on topics ranging from intro to HPC, to machine learning, to parallel computing, and beyond.</p>
-        </div>
-    </div>
-    <div class="right-column">
-        <div class="event-card">
-            <div class="event-date">
-                <div class="date-number">1</div>
-                <div class="date-month">Mar</div>
-            </div>
-            <div class="event-details">
-                <h3>Intro to HPC</h3>
-                <p>Get started learning how to use our HPC in this interactive workshop.</p>
-                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_bm7ZXolJAWC58vY"> <button class="register-button">Register</button></a>
-            </div>
-        </div>
         <div class="event-card">
             <div class="event-date">
                 <div class="date-number">6</div>
                 <div class="date-month">Mar</div>
             </div>
             <div class="event-details">
-                <h3>Data Management on HPC</h3>
-                <p>Learn about managing your data on UA's HPC cluster. Co-sponsored with University Libraries. Virtual only.
-                </p>
+                <h3><a href="../support_and_training/workshops/data_management_workshops/">Data Management on HPC</a></h3>
+
                 <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+
+                <div class="event-time">
+                    <span class="event-time-text">10:00am-11:30am</span>
+                </div>
+
+                <div class="event-location">
+                    <span class="event-location-text">Virtual</span>
+                </div>
+
             </div>
         </div>
+-->
+
+
+
+
+
+
+<!-- Events Section -->
+<section class="events-section">
+
+    <div class="left-column">
+        <div class="content-container">
+            <h1><center>Upcoming Events</center></h2>
+            <p>Every semester, we host training workshops on topics ranging from intro to HPC, to machine learning, to parallel computing, and beyond.</p>
+        </div>
+    </div>
+    <!-- The right column has all the cards to display information about individual events -->
+    <div class="right-column">
+
+
         <div class="event-card">
             <div class="event-date">
-                <div class="date-number">1</div>
+                <div class="date-number">6</div>
                 <div class="date-month">Mar</div>
             </div>
             <div class="event-details">
-                <h3>Parallel Computing on HPC</h3>
-                <p>The best way to take advantage of our clusters is to use the parallel capabilities.  This can mean using all the cores on each compute node or combining several nodes with MPI.  This workshop will give you a quick view of the concepts and how we implement them.</p>
-                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_efDQs1qL0UohjaC"> <button class="register-button">Register</button></a>
+                <h3><a href="../support_and_training/workshops/data_management_workshops/">Data Management on HPC</a></h3>
+
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+
+                <div class="event-time">
+                    <span class="event-time-text">10:00am-11:30am</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Virtual</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">12</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="../support_and_training/workshops/intro_to_machine_learning/python/">ML with Python on HPC</a></h3>
+                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_bxEn1i3wDQq1fCe"> <button class="register-button">Register</button></a>
+                <div class="event-time">
+                    <span class="event-time-text">10:00am-11:00am</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Main Library; CATalyst B254</span>
+                </div>
+           
+            </div>
+        </div> 
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">12</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="../support_and_training/workshops/intro_to_machine_learning/R/">ML with RStudio on HPC</a></h3>
+                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_9GFWerEhZcZQwuy"> <button class="register-button">Register</button></a>
+                <div class="event-time">
+                    <span class="event-time-text">11:00am-12:00pm</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Main Library; CATalyst B254</span>
+                </div>
+           
+            </div>
+        </div> 
+
+
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">14</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="../support_and_training/workshops/data_management_workshops/">Parallel Computing on HPC </a></h3>
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+                <div class="event-time">
+                    <span class="event-time-text">10:00am-11:30am</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Main Library; CATalyst B252</span>
+                </div>             
             </div>
         </div>
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">14</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="../support_and_training/workshops/data_management_workshops/">Visualization on HPC</a></h3>
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+                <div class="event-time">
+                    <span class="event-time-text">11:00am-12:00pm</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Main Library; CATalyst B252</span>
+                </div>
+           
+            </div>
+        </div> 
+
 
 
     </div>
 </section>
+
+
 
 
 <!-- Split section, picture of research on the left, description on the right -->
@@ -919,45 +989,8 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Compute Resources
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            Compute Resources
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="resources/compute_resources/compute_resources/" class="md-nav__link">
+      <a href="resources/compute_resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,56 +999,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="resources/compute_resources/job_memory_and_cpu_count/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Memory vs. CPU Count
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="resources/compute_resources/gpu_nodes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GPU Nodes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1137,52 +1120,15 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="registration_and_access/group_management/" class="md-nav__link">
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     Group Management
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            Group Management
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registration_and_access/group_management/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
       </a>
     </li>
   
@@ -1196,215 +1142,15 @@
   
   
     <li class="md-nav__item">
-      <a href="registration_and_access/group_management/research_groups/" class="md-nav__link">
+      <a href="registration_and_access/system_access/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Research Groups
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registration_and_access/group_management/class_groups/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Class Groups
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registration_and_access/group_management/delegating_group_management_rights/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Delegating Group Management Rights
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     System Access
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            System Access
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registration_and_access/system_access/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registration_and_access/system_access/web_access/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Web Access
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registration_and_access/system_access/command_line_access/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Command Line Access
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registration_and_access/system_access/x11_forwarding/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    X11 Forwarding
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registration_and_access/system_access/ssh_keys/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SSH Keys
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1625,27 +1371,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quick_start/batch_jobs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Batch Jobs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1700,11 +1425,11 @@
   
   
     <li class="md-nav__item">
-      <a href="storage_and_transfers/best_practices/" class="md-nav__link">
+      <a href="storage_and_transfers/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Best Practices
+    Overview
   </span>
   
 
@@ -1778,103 +1503,16 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="storage_and_transfers/storage/hpc_storage/" class="md-nav__link">
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     HPC Storage
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            HPC Storage
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="storage_and_transfers/storage/hpc_storage/storage_summary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Storage Summary
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="storage_and_transfers/storage/hpc_storage/checking_your_usage/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Checking Your Usage
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="storage_and_transfers/storage/hpc_storage/xdisk/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    xdisk
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -2000,6 +1638,27 @@
   
   <span class="md-ellipsis">
     Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="storage_and_transfers/transfers/open_on_demand/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open OnDemand
   </span>
   
 
@@ -2799,27 +2458,6 @@
   
   
     <li class="md-nav__item">
-      <a href="running_jobs/system_commands/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    System Commands
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="running_jobs/open_on_demand/" class="md-nav__link">
         
   
@@ -2871,10 +2509,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2885,8 +2523,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
             <span class="md-nav__icon md-icon"></span>
             Batch Jobs
           </label>
@@ -2941,11 +2579,11 @@
   
   
     <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/managing/" class="md-nav__link">
+      <a href="running_jobs/batch_jobs/environment_variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Submitting and Managing Jobs
+    Environment Variables
   </span>
   
 
@@ -2962,11 +2600,32 @@
   
   
     <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/slurm_reference/" class="md-nav__link">
+      <a href="running_jobs/batch_jobs/array_jobs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Slurm Cheat Sheet
+    Array Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="running_jobs/batch_jobs/managing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submitting Jobs
   </span>
   
 
@@ -2992,10 +2651,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_7_5" id="__nav_7_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7_6_6" id="__nav_7_6_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3006,8 +2665,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6_6">
             <span class="md-nav__icon md-icon"></span>
             Example Batch Jobs
           </label>
@@ -3171,6 +2830,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="running_jobs/system_commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring Jobs and Resources
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3392,124 +3072,16 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="support_and_training/faqs/storage/" class="md-nav__link">
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_8_2_5" id="__nav_8_2_5_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     Storage
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2_5">
-            <span class="md-nav__icon md-icon"></span>
-            Storage
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="support_and_training/faqs/storage/hpc/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    HPC Storage
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="support_and_training/faqs/storage/rental/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Rental Storage
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="support_and_training/faqs/storage/rdas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    R-DAS Storage
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="support_and_training/faqs/storage/aws/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tier 2 AWS Storage
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -3738,7 +3310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support_and_training/workshops/intro_to_containers/index.md" class="md-nav__link">
+      <a href="support_and_training/workshops/intro_to_containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3759,7 +3331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support_and_training/workshops/intro_to_linux/index.md" class="md-nav__link">
+      <a href="support_and_training/workshops/intro_to_linux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3780,7 +3352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support_and_training/workshops/intro_to_visualization/index.md" class="md-nav__link">
+      <a href="support_and_training/workshops/intro_to_visualization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3801,7 +3373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support_and_training/workshops/data_management_workshops/index.md" class="md-nav__link">
+      <a href="support_and_training/workshops/data_management_workshops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3818,27 +3390,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="support_and_training/best_practices/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Best Practices
-  </span>
-  
-
-      </a>
     </li>
   
 
