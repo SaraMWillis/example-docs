@@ -13,9 +13,9 @@ By the end of this quick start, you should know:
 1. What HPC is
 2. How HPC is structured
 3. How to log in
-4. How jobs are charged
+4. How to access computational resources
 5. How to access software
-6. How to run a job
+
 
 <html>
 <a href="../supercomputing_in_plain_english"><button class="right-button" style="float: right;"></button></a>

@@ -1,4 +1,4 @@
-# HPC High Performance Storage
+# HPC Storage 
 
 ## Overview
 
@@ -10,8 +10,6 @@ The University’s Research Data Center provides data storage for active analysi
 
 The storage is mounted as a filesystem and all the clusters have access to the same filesystems.
 
-## Storage Summary
-
 Every user has access to individual and shared storage on the system where they can host data for active analyses. A summary of these locations is shown below:
 
 |<div style="width:120px">Path</div>|Description|<div style="width:120px">Quota</div>|Duration|
@@ -20,6 +18,7 @@ Every user has access to individual and shared storage on the system where they 
 |```/groups/pi_netid```|A communal storage allocation provided for every research group|500gb|Accessible for the duration of a PI's account|
 |```/xdisk/pi_netid```|Temporary communal storage available for every group on request. See xdisk section below for details.|200gb-20tb|Up to 300 days|
 |```/tmp```|Local storage available on individual compute nodes.|$<$ 800GB to 1.4TB|Only accessible for the duration of a job's run.|
+
 
 ## Checking Your Storage Usage
 
@@ -37,10 +36,11 @@ Every user has access to individual and shared storage on the system where they 
     You can check your storage allocation through our [online user portal](https://portal.hpc.arizona.edu/portal/) by navigating to the Storage tab and clicking Check Disk Quotas:
     
     <img src="images/check_storage_quota.png" style="width:450px;">
-    
-    
-## xdisk
 
+
+
+## xdisk
+ 
 ### What is xdisk?
 
 xdisk is a temporary storage allocation available to all PIs and offers up to 20 TB of usable space for their group for up to 300 days. PIs may only have one active xdisk at a time.
@@ -103,4 +103,3 @@ xdisk is a locally written utility for PI's to create, delete, resize, and expir
 |Extend xdisk Expiration Date|```xdisk -c expire -d [days]```|```$ xdisk -c expire -d 15```<br>```Your extension of 15 days was successfully processed```|
 |Resize an xdisk Allocation|```xdisk -c size -m [size in gb]```|```$ # Assuming an initial xdisk allocation size of 200 gb```<br>```$ xdisk -c size -m 200```<br>```XDISK on host: ericidle.hpc.arizona.edu```<br>```Your resize to 400GB was successful```<br>```$ xdisk -c size -m -100```<br>```XDISK on host: ericidle.hpc.arizona.edu```<br>```Your resize to 300GB was successful```|
 |Delete an xdisk Allocation|```xdisk -c delete```|```$ xdisk -c delete```<br>```Your delete request has been processed```|
-

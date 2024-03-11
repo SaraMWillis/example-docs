@@ -2,11 +2,25 @@
 
 # Logging In and System Layout
 
+
+## Logging In
+
 !!! tip 
     If you experience any issues during the login process, [see our FAQs for common problems](../../support_and_training/faqs/account_access/).
 
-HPC systems can sometimes feel a little like a complicated black box and it can be a challenge to know exactly where you are and what the structure looks like. In this section, we'll give you an idea of how the system is laid out so you understand exactly where you are at each stage of the login process and what activities are performed where. 
+There are two main methods to access the HPC system
 
+1. **Open OnDemand**
+
+	This is a browser-based application that provides users with a graphical interface to access the HPC filesystem, run software that requires a graphical component, or access an interactive desktop environment. The login portal for OOD uses the familiar U of A login screen. HPC accounts are tied to university accounts, so your standard net ID and password (i.e. the one used for your email).
+
+2. **Terminal**
+
+	The terminal is a text-based command interpreter provided by the operating system on your local machine. Mac and Linux users can access the "Secure SHell" (SSH) command by default, and Windows users will either have to use the [Linux subsystem for Windows](https://learn.microsoft.com/en-us/windows/wsl/install), or a program called [PuTTY](https://www.putty.org/). Using these tools, users can access a command-line environment on the HPC, which can be used to manage files, write code, install software, and submit jobs. See our [Bash Cheat Sheet](../../support_and_training/cheat_sheet) for an overview of common commands.
+
+## System Layout
+
+HPC systems can sometimes feel a little like a complicated black box and it can be a challenge to know exactly where you are and what the structure looks like. In this section, we'll give you an idea of how the system is laid out so you understand exactly where you are at each stage of the login process and what activities are performed where. 
 
 ### The bastion host
 

@@ -12,26 +12,14 @@ nav:
     
   - Resources:
     - Allocations: resources/allocations/index.md
-    - Compute Resources: 
-      - Compute Resources: resources/compute_resources/compute_resources/index.md
-      - Memory vs. CPU Count: resources/compute_resources/job_memory_and_cpu_count/index.md
-      - GPU Nodes: resources/compute_resources/gpu_nodes/index.md
+    - Compute Resources: resources/compute_resources/index.md
     - Research Data Center: resources/data_center/index.md
 
   - Access:
     - Account Creation: registration_and_access/account_creation/index.md
     - Account Deletion: registration_and_access/account_deletion/index.md
-    - Group Management: 
-        - Overview: registration_and_access/group_management/overview/index.md
-        - Research Groups: registration_and_access/group_management/research_groups/index.md
-        - Class Groups: registration_and_access/group_management/class_groups/index.md
-        - Delegating Group Management Rights: registration_and_access/group_management/delegating_group_management_rights/index.md
-    - System Access: 
-        - Overview: registration_and_access/system_access/overview/index.md
-        - Web Access: registration_and_access/system_access/web_access/index.md
-        - Command Line Access: registration_and_access/system_access/command_line_access/index.md
-        - X11 Forwarding: registration_and_access/system_access/x11_forwarding/index.md
-        - SSH Keys: registration_and_access/system_access/ssh_keys/index.md
+    - Group Management: registration_and_access/group_management/index.md
+    - System Access: registration_and_access/system_access/index.md
     - VPN : registration_and_access/vpn/index.md
 
   - Quick Start: 
@@ -42,21 +30,19 @@ nav:
     - Storage and Transfers: quick_start/storage_and_transfers/index.md
     - Accessing Compute Nodes: quick_start/interactive_jobs/index.md
     - Software: quick_start/software/index.md
-    - Batch Jobs: quick_start/batch_jobs/index.md
+    #- Batch Jobs: quick_start/batch_jobs/index.md
     
   - Storage and Transfers:
-    - Best Practices: storage_and_transfers/best_practices/index.md
+    - Overview: storage_and_transfers/overview/index.md
     - Storage:
       - Overview: storage_and_transfers/storage/overview/index.md
-      - HPC Storage: 
-        - Storage Summary: storage_and_transfers/storage/hpc_storage/storage_summary/index.md
-        - Checking Your Usage: storage_and_transfers/storage/hpc_storage/checking_your_usage/index.md
-        - xdisk: storage_and_transfers/storage/hpc_storage/xdisk/index.md
+      - HPC Storage: storage_and_transfers/storage/hpc_storage/index.md
       - Rental Storage: storage_and_transfers/storage/rental_storage/index.md
       - RDAS Storage: storage_and_transfers/storage/rdas_storage/index.md
       - Tier2 AWS Storage: storage_and_transfers/storage/tier2_storage/index.md
     - Transfers:
       - Overview: storage_and_transfers/transfers/overview/index.md
+      - Open OnDemand: storage_and_transfers/transfers/open_on_demand/index.md
       - Cyberduck: storage_and_transfers/transfers/cyberduck/index.md
       - FTP/LFTP/SFTP: storage_and_transfers/transfers/sftp_ftp_lftp/index.md
       - Globus: storage_and_transfers/transfers/globus/index.md
@@ -90,7 +76,6 @@ nav:
     - Overview: running_jobs/overview/index.md
     - Job Limits: running_jobs/job_limits/index.md
     - CPUs and Memory: running_jobs/cpus_and_memory/index.md
-    - System Commands: running_jobs/system_commands/index.md
 
     #- Job Scheduling Guide: 
     #  - Slurm Overview: running_jobs/job_scheduling/slurm_overview/index.md
@@ -102,8 +87,10 @@ nav:
     - Batch Jobs:
       - Intro to Batch: running_jobs/batch_jobs/intro/index.md
       - Batch Directives: running_jobs/batch_jobs/batch_directives/index.md
-      - Submitting and Managing Jobs: running_jobs/batch_jobs/managing/index.md
-      - Slurm Cheat Sheet: running_jobs/batch_jobs/slurm_reference/index.md
+      - Environment Variables: running_jobs/batch_jobs/environment_variables/index.md
+      - Array Jobs: running_jobs/batch_jobs/array_jobs/index.md
+      - Submitting Jobs: running_jobs/batch_jobs/managing/index.md
+      #- Slurm Cheat Sheet: running_jobs/batch_jobs/slurm_reference/index.md
       - Example Batch Jobs:
         - Using a Pipefail: running_jobs/batch_jobs/examples/pipefail/index.md
         - Job Dependencies: running_jobs/batch_jobs/examples/job_dependencies/index.md
@@ -112,7 +99,9 @@ nav:
         - Array Jobs with Multiple Input Parameters: running_jobs/batch_jobs/examples/array_read_parameters/index.md
         - Basic GNU Parallel Job: running_jobs/batch_jobs/examples/basic_gnu_parallel_job/index.md
         - Array Job Using GNU Parallel: running_jobs/batch_jobs/examples/array_and_gnu_parallel/index.md
+    - Monitoring Jobs and Resources: running_jobs/system_commands/index.md
     - Parallelization: running_jobs/parallelization/index.md
+
 
   - Support:
     - Consulting Services: support_and_training/consulting_services/index.md
@@ -121,11 +110,8 @@ nav:
         - General Computing: support_and_training/faqs/general_computing/index.md 
         - Jobs and Scheduling: support_and_training/faqs/jobs_and_scheduling/index.md 
         - Software and Modules: support_and_training/faqs/software_and_modules/index.md 
-        - Storage:
-            - HPC Storage: support_and_training/faqs/storage/hpc/index.md
-            - Rental Storage: support_and_training/faqs/storage/rental/index.md
-            - R-DAS Storage: support_and_training/faqs/storage/rdas/index.md
-            - Tier 2 AWS Storage: support_and_training/faqs/storage/aws/index.md
+        - Storage: support_and_training/faqs/storage/index.md
+      
         - Open OnDemand Issues: support_and_training/faqs/open_on_demand_issues/index.md 
         - Secure Services: support_and_training/faqs/secure_services/index.md 
     - Workshops: 
@@ -138,7 +124,6 @@ nav:
         - Intro to Linux: support_and_training/workshops/intro_to_linux/index.md
         - Intro to Visualization: support_and_training/workshops/intro_to_visualization/index.md
         - Data Management Workshops: support_and_training/workshops/data_management_workshops/index.md
-    - Best Practices: support_and_training/best_practices/index.md
     - Glossary: support_and_training/glossary/index.md
     - Linux Cheat Sheet: support_and_training/cheat_sheet/index.md
     - Grants: support_and_training/grants/index.md
@@ -186,7 +171,6 @@ extra_javascript:
  
 extra_css:
     - assets/stylesheets/extra.css
- 
 
 theme:
   name: material
@@ -211,7 +195,8 @@ theme:
     - content.code.copy
     - navigation.top
     - announce.dismiss
-    
+
+
 extra:
   generator: false
   social:

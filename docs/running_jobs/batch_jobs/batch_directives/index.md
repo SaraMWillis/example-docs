@@ -3,67 +3,70 @@
 !!! tip
     For a full list of directives, see [Slurm's official documentation](https://slurm.schedmd.com/sbatch.html).
 
-The topmost section of a batch script always contains the [Slurm Directives](https://slurm.schedmd.com/ "slurm.schedmd.com"), which specify the resource requests for your job, which the scheduler then parses in order to allocate CPUs, memory, walltime, etc.
+The first section of a batch script always contains the [Slurm Directives](https://slurm.schedmd.com/ "slurm.schedmd.com"), which specify the resource requests for your job. The scheduler parses these in order to allocate CPUs, memory, walltime, etc. to your job request.
 
-Below are important directives to include in any script that will control the resources you're allocated and your job's priority:
+Below are important as well as optional directives to include in any script:
  
 ## Partitions
-
-!!! warning "Limited Availability"
-    <mark>The **high-priority** and **qualified partitions** are **limited access**.</mark> High-priority is only available to PI groups which participated in the Puma [buy-in](../../../policies/buy_in/) process, which has since concluded. Qualified is available to PI groups which have been granted [special projects](../../../policies/special_projects/). 
 
 There are four available partitions on the UArizona HPC. With the exception of Windfall, these consume your monthly allocation. See our [allocations documentation](../../../resources/allocations/) for more information on each. The syntax to request each of the following is shown below:
 
 
-|Partition|Priority|Account|QOS|Cost|Slurm|
-|-|-|-|-|-|-|
-|Standard|normal|required|n/a|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=standard</code></pre>|
-|Windfall|low|exclude|n/a|none|<pre><code>#SBATCH --partition=windfall</code></pre>|
-|High Priority|high|required|required|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=high_priority<br>#SBATCH --qos=user_qos_&lt;PI GROUP&gt;</code></pre>|
-|Qualified|normal|required|required|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=standard<br>#SBATCH --qos=qual_qos_&lt;PI GROUP&gt;</code></pre>|
+|Partition|Availability|Priority|Account|QOS|Cost|Slurm|
+|-|-|-|-|-|-|-|
+|Standard|all groups|normal|required|n/a|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=standard</code></pre>|
+|Windfall|all groups|low|n/a|n/a|none|<pre><code>#SBATCH --partition=windfall</code></pre>|
+|High Priority|[buy-in groups](../../../policies/buy_in/)|high|required|required|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=high_priority<br>#SBATCH --qos=user_qos_&lt;PI GROUP&gt;</code></pre>|
+|Qualified|[groups granted special projects](../../../policies/special_projects/)|normal|required|required|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=standard<br>#SBATCH --qos=qual_qos_&lt;PI GROUP&gt;</code></pre>|
+
+
 
 ## Nodes
 
-!!! danger
-    In order for your job to make use of more than one node, it must be able to make use of something like MPI. If your application is non-MPI enabled, always set ```--nodes=1```
+???+ danger
+    In order for your job to make use of more than one node, it must be able to make use of something like MPI. If your application is not MPI-enabled, always set ```--nodes=1```
 
-The term nodes is synonymous with the number of physical computers allocated to your job. The syntax to allocate ```N``` nodes to a job is:
+The term nodes is synonymous with the number of physical computers allocated to your job. The syntax to allocate ```<N>``` nodes to a job is:
 
 ```
-#SBATCH --nodes=N
+#SBATCH --nodes=<N>
 ```
 
 ## CPUs
 
 Each job must specify the number of CPUs they need for their application with the ```--ntasks``` directive.  This can be done in one of two ways:
 
-1. If your application is making use of MPI or is executing simultaneous distinct processes, you can request ```N``` CPUs with
+1. If your application is making use of MPI or is executing simultaneous distinct processes, you can request ```<N>``` CPUs with
 
     ```bash
-    #SBATCH --ntasks=N
+    #SBATCH --ntasks=<N>
     ```
 
-2. If you are using a multithreaded application, then you can request ```N``` CPUs with:
+2. If you are using a multithreaded application, then you can request ```<N>``` CPUs with:
     ```bash
     #SBATCH --ntasks=1
-    #SBATCH --cpus-per-task=N
+    #SBATCH --cpus-per-task=<N>
     ```
 
 ## Memory and High Memory Nodes
 
 !!! tip
     More detailed information on memory and CPU requests can be found on our [CPUs and Memory page](../../cpus_and_memory/).
+    
+!!! warning
+    If you exclude "gb" from your memory request, Slurm will default to mb
 
 Memory is an optional flag. By default, the scheduler will allocate you the [standard CPU/memory ratio](../../cpus_and_memory/) available on the cluster. 
 
-Memory can either be requested with the ```--mem``` or ```--mem-per-cpu``` flags. The ```--mem``` flag indicates the amount of {==Memory per **node**==} to allocate to your job and *not* the total memory. If you are running multi-node MPI jobs with this flag, the total amount of memory you will receive will be ```mem```$\times$```nodes```
+Memory can either be requested with the ```--mem``` or ```--mem-per-cpu``` flags. The ```--mem``` flag indicates the amount of {==Memory per **node**==} to allocate to your job. If you are running multi-node MPI jobs with this flag, the total amount of memory you will receive will be ```mem```$\times$```nodes```
 
+The general syntax for requesting ```<N>gb``` of memory per node is
 ```
-#SBATCH --mem=Ngb
+#SBATCH --mem=<N>gb
 ```
-or
+or, to request ```<N>gb``` of memory per CPU:
 ```
-#SBATCH --mem-per-cpu=Ngb
+#SBATCH --mem-per-cpu=<N>gb
 ```
 
 **High Memory Node Requests**
@@ -76,11 +79,18 @@ To request a high memory node, you will need the additional flag ```--constraint
 |Puma|<pre><code>#SBATCH --mem-per-cpu=32gb<br>#SBATCH --constraint=high_mem</code></pre>|
 
 
+## Time
+
+The syntax for requesting time for your job is ```HHH:MM:SS``` or ```DD-HHH:MM:SS```. The maximum amount of time that can be requested is detailed in [Job Limits](../../job_limits/).
+
+```
+#SBATCH --time=HHH:MM:SS
+```
 
 
-## GPUs (Optional)
+## GPUs
 
-For an overview of the GPU resources available on each cluster, see our [resources documentation](../../../resources/compute_resources/gpu_nodes/). 
+GPUs are an optional resource that may be requested with the ```--gres``` directive. For an overview of the specific GPU resources available on each cluster, see our [resources documentation](../../../resources/compute_resources/gpu_nodes/). 
 
 <table>
   <colgroup>
@@ -103,8 +113,8 @@ For an overview of the GPU resources available on each cluster, see our [resourc
     <td>Target one A100 MIG slice.</td>
   </tr>
   <tr>
-    <td><code>#SBATCH --gres=gpu:N</code></td>
-    <td>Request <code>N</code> V100 GPUs. Up to four may be requested on a node.</td>
+    <td><code>#SBATCH --gres=gpu:volta:N</code></td>
+    <td>Request <code>N</code> V100 GPUs where 1&le;<code>N</code>&le;4</td>
   </tr>
   <tr>
     <td>Ocelote</td>
@@ -112,14 +122,33 @@ For an overview of the GPU resources available on each cluster, see our [resourc
     <td>Request 1 Pascal GPU (p100)</td>
 </table>
 
-## Time
 
-The syntax for requesting time for your job is HHH:MM:SS or DD-HHH:MM:SS
+## Job Arrays 
 
+Array jobs in SLURM allow users to submit multiple similar tasks as a single job. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. 
+
+
+## Output Filenames
+
+The default output filename for a slurm job is ```slurm-<jobid>.out```. If desired, this can be customized using the directives
 ```
-#SBATCH --time=HHH:MM:SS
+#SBATCH -o output_filename.out
+#SBATCH -e output_filename.err
 ```
 
+Filenames take patterns that allow for job information substitution. A list of filename patterns is shown below. 
+
+|Variable|Meaning|Example Slurm Directive(s)|Sample Output|
+|-|-|-|-|
+|```%A```|A job array's main job ID|```#SBATCH --array=1-2```<br>```#SBATCH -o %A.out```<br>```#SBATCH --open-mode=append```|```12345.out```|
+|```%a```|A job array's index number|```#SBATCH --array=1-2```<br>```#SBATCH -o %A_%a.out```|```12345_1.out```<br>```12345_2.out```|
+|```%J```|Job ID plus [stepid](https://slurm.schedmd.com/sattach.html)|```#SBATCH -o %J.out```|```12345.out```|
+|```%j```|Job ID|```#SBATCH -o %j.out```|```12345.out```|
+|```%N```|Hostname of the first compute node allocated to the job|```#SBATCH -o %N.out```|```r1u11n1.out```|
+|```%u```|Username|```#SBATCH -o %u.out```|```netid.out```|
+|```%x```|Job name|```#SBATCH --job-name=JobName```<br>```#SBATCH -o %x.out```|```JobName.out```|
+
+[^1]: Groups and users are subject to limitations on resource usage. For more information, see [job limits](/running_jobs/job_limits/).
 
 
 ## Additional Directives

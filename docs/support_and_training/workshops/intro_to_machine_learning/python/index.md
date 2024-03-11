@@ -1,17 +1,30 @@
+<link rel="stylesheet" href="/assets/stylesheets/embedded_files.css">
 # Intro to Machine Learning in Python
 
 This short training class provides a brief introduction to key concepts of machine learning.  The short lecture will be followed by two hands-on examples that emphasize running a Jupyter notebook on the HPC supercomputers. For the in-person workshop you can stick around and use this as a consulting session.
 
 ## PDF 
 
-
-
-<center><object data="files/Intro_to_AI_ML.pdf" width="800" height="500"></object> </center>
+<center>
+[Click here to download PDF](files/Intro_to_AI_ML.pdf){ .md-button }
+</center>
 
 
 ## Video Presentation
 
-<center><iframe width="800" height="500" src="videos/ML-HPC.mp4" allowfullscreen></iframe></center>
+**Will upload once on YouTube**
+
+<!-- MP4s are too large to store in git repos. Need to upload to youtube. 
+This hasn't been done, so I'll put the formatting below to prepare
+
+<div class="auto-resizable-iframe">
+  <div>
+    <iframe frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/<ID HERE>"></iframe>
+  </div>
+</div>
+
+-->
+
 
 
 ## Hands On Content
@@ -72,7 +85,7 @@ Once you've clicked Launch, you'll see a file navigator. This is your home direc
 #### Running Code
 To run Python code in a notebook, enter your commands into a cell and click ```Run```. To add a new cell, click the ```+``` in the upper left. 
 
-<img src="cell.png" alt="cell" width="800"/>
+<img src="images/cell.png" alt="cell" width="800"/>
 
 --------------
 
@@ -327,4 +340,6 @@ Try making changes and see how it affects the classification accuracy.
 
 For a more in-depth Neural Network example that is run as a batch submission instead of through Jupyter, see this page:
 
-[Image Classification](https://ua-researchcomputing-hpc.github.io/Machine-Learning-Examples/Image-Classification-with-PyTorch/)
+<center>
+[Image Classification](https://ua-researchcomputing-hpc.github.io/Machine-Learning-Examples/Image-Classification-with-PyTorch/){ .md-button }
+</center>

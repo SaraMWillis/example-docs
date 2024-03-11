@@ -1,7 +1,7 @@
 # General Computing
 
-<link rel="stylesheet" href="../../../overrides/animated_dropdown.css">
-<link rel="stylesheet" href="../../../overrides/spacing.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/animated_dropdown.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/spacing.css">
 
 <html>
 
@@ -48,7 +48,7 @@ fi
 </div>
 
 <div class="vertical-space"></div>
-<script src="../../../overrides/animated_dropdown.js"></script>
+<script src="../../../assets/javascripts/animated_dropdown.js"></script>
 
 
 </html>

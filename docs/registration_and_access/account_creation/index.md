@@ -53,5 +53,5 @@ The process of getting registered for an HPC account varies depending on your af
     </p>
 </div>
 
-<script src="../../overrides/animated_dropdown.js"></script>
+<script src="../../assets/javascripts/animated_dropdown.js"></script>
 </html>

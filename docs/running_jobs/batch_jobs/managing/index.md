@@ -1,61 +1,34 @@
-## Overview
+# Submitting Batch Jobs
 
-It may be helpful to get information about queued, running, or previous jobs. There are several functionalities within Slurm that can help with this process. Note that all of the following commands are contextual to the current cluster. To view commands on a different cluster, type the name of that cluster, and then run the command. 
+## Submitting a Job
 
-## Submitting Your Batch Job
+To submit a batch job to the scheduler, use the command ```sbatch```. This will place your job in line for execution and will return a job ID that you can use to [track and monitor your job](../../system_commands/). 
 
-To submit your batch job, use the command ```sbatch```. For example:
+As an example:
 
 ```
-sbatch myscript.slurm
+[netid@gpu66 hello_world]$ sbatch hello_world.slurm
+Submitted batch job 807387
+[netid@gpu66 hello_world]$ squeue --job 807387
+             JOBID PARTITION     NAME     USER ST       TIME  NODES
+            807387  standard hello_wo    netid PD       0:06      1 
 ```
 
-This will put your job in queue to be executed on a compute node once space opens up. An output file will be created with your job's output in the same directory where you submitted your job. 
+The command ```squeue``` gives us detailed information about our batch jobs while they're in queue or running. Under ```ST``` you can check the state of your job. In this case, it's pending (```PD```) which means it's waiting in line with other jobs. Once the job starts running, it's state will change to ```R```, and when the job has completed running, ```squeue``` will return a blank line. 
 
-## View Queued & Running Jobs
 
-To see jobs that are in the queue or currently running on the current cluster, use ```squeue```. Note that this command will not show jobs that have finished via completion, cancellation, or any other reason. 
 
-|```squeue``` command|Behavior|
-|-|-|
-|```squeue```|See all queued and running jobs on the cluster|
-|```squeue --me```| See all your queued and running jobs|
-|```squeue --job=$JOBID```|Check the status of a queued or running job|
 
-## Cancel a Job
+## Submitting Multiple Jobs
+Frequently, users need to submit multiple, related jobs. It may be tempting to do this using a bash loop but there are several drawbacks to this method which are discussed under [Best Practices under Running Jobs](../../overview/#jobs). 
 
-To  cancel a queued or running job, use ```scancel $JOBID```
+The best way to submit related jobs is to use job arrays. Jobs arrays allow users to submit multiple related jobs using a single script and single ```sbatch``` command. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. See [Array Jobs](../array_jobs/) for specifics on how to submit these sorts of workflows.
 
-## Previous Jobs
-Users may want to review details of past jobs, or to study their performance to improve future jobs. The following commands may help:
 
-- ```sacct```
 
-    Slurm's native account history command. Check [Slurm's official documentation](https://slurm.schedmd.com/sacct.html) for usage information.
+## Output Files
 
-- ```past-jobs```
-    A custom command unique to UArizona's systems. 
+Once your job completes, you should see an output file {==in the directory where you submitted the batch script==}. This output file captures anything that would have been printed to the terminal if you had run it interactively. By default, output filenames will be ```slurm-<jobid>.out```(1). In the example above, this translates to filename ```slurm-807387.out```. 
+{ .annotate }
 
-    ```
-    (puma) [netid@junonia ~]$ past-jobs -h
-
-    Usage
-    ------------------------------------------------------------------------------
-    Command: past-jobs
-    Retrieves user's past job IDs. Defaults to jobs submitted on current day.
-    If -d N included, where N is an integer, retrieves jobs run in last N days
-
-    Usage: past-jobs [-h|--help] [-d N|--days=N]
-    Example: past-jobs -d 2
-
-    ------------------------------------------------------------------------------
-    ```
-
-- ```job-history```
-
-    Retrieve accounting information from queued, running, or pending jobs. Usage: ```job-history $JOBID```
-
-- ```seff```
-
-    Retrieve usage information from a completed job. This will give efficiency statistics on CPU and memory usage. Only accurate for completed jobs. 
-
+1.  Custom output filenames can be set with [batch directives](../batch_directives/).

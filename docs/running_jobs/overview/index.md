@@ -1,19 +1,46 @@
 # Overview
 
-<h2>Jobs on HPC</h2>
-!!! tip
-    If you are new to the UA HPC system, or to HPC systems in general, we recommend reviewing our [quick start guide](../quick_start) before getting into the details of running jobs.
-
 The HPC is a shared system, and its resources are in high demand. Computational work must be run as jobs on dedicated compute resources. These resources are granted to each user for a limited time per session, and sessions are organized by [Slurm](https://slurm.schedmd.com/), an open source, fault-tolerant, and highly scalable cluster manager and task scheduler. Users can interact with Slurm from one of the login nodes to start an [interactive job](../interactive_jobs/) or [submit a batch job](../batch_jobs/intro/). 
 
-???+ warning "No Jobs on Login Nodes!"
-    ***Do not*** run intensive tasks on the Login Nodes. These are shared nodes that are not intended for computation. Instead, please run your computations or compilations on compute nodes through an interactive session or batch job, as described in this section of the documentation. 
+## Materials to Get Started
 
-    Tasks run on the login nodes that impact usability will be identified and cancelled by HPC infrastructure without warning. 
+If you are new to the UA HPC system, or to HPC systems in general, we recommend reviewing our [quick start guide](../quick_start) before getting into the details of running jobs. You may also want to take a look at our workshops which cover topics including [introduction to HPC](../../support_and_training/workshops/intro_to_hpc/), [parallel computing](../../support_and_training/workshops/intro_to_parallel_computing/), [containers](../../support_and_training/workshops/intro_to_containers/), among other topics. 
+
+
+
+
+## Best Practices
+
+### Login Nodes
+
+A login node serves as a staging area where you can perform housekeeping work, edit scripts, and submit job requests for execution on one/some of the cluster’s compute nodes. It is important to know that **the login nodes are not the location where scripts are run**. Heavy computation on the login nodes slows the system down for all users and will not give you the resources or performance you need. It should also be stressed that software is not available on the login nodes. 
+
+Tasks run on the login nodes that impact usability will be identified and cancelled by HPC infrastructure without warning. 
+
+
+### Jobs
+
+1. **Don't ask for more time than you really need.**
+    The scheduler will have an easier time finding a slot for the 2 hours you need rather than the 48 hours you request.  When you run a job it will report back on the time used which you can use as a reference for future jobs. However don't cut the time too tight.  If something like shared I/O activity slows it down and you run out of time, the job will fail.
+
+2. **Test your submission scripts.**
+    Start small. You can use an [interactive session](../interactive_jobs/) to help build your script and run tests in real time.
+
+3. **Respect memory limits.** 
+    If your application needs more memory than is available, your job could fail and leave the node in a state that requires manual intervention.
+
+4. **Do not run scripts automating a large number of job submissions.** 
+    Executing large numbers of job submissions in rapid succession (e.g. in a scripted loop) can overload the system's scheduler and cause problems with overall system performance. A better alternative is to submit job arrays.
+
+5. **Hyperthreading is turned off.**  
+    Running multiple threads per core is generally not productive.  MKL is an exception to that if it is relevant to you.
+
+6. **Open OnDemand Usage**
+    Please be mindful of other users' needs and avoid monopolizing resources for extended periods when they are not actively being utilized. This ensures fair access for all members of our community and promotes a collaborative environment.
+
+## Frequently Asked Questions 
 
 Below is a FAQ that includes answers to common questions and misconceptions about running jobs on HPC. Some are general information about HPC systems, but some contain information specific to the UA HPC. We recommend reviewing this FAQ whether you are a new user getting started on our system, or an experienced user returning to our documentation.
-
-<h2> Frequently Asked Questions </h2>
 
 <html>
 <link rel="stylesheet" href="../../assets/stylesheets/animated_dropdown.css">

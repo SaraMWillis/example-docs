@@ -2,18 +2,18 @@
 
 ## Overview
 
-Interactive sessions are a way to gain access to a compute node from the command line. This is useful for [checking and using available modules](../../software/modules/), testing [submission scripts](../batch_jobs/int), debugging code, compiling software, and running programs in real time. 
+Interactive sessions are a way to gain access to a compute node from the command line. This is useful for [checking and using available software modules](../../software/modules/), testing [submission scripts](../batch_jobs/int), debugging code, compiling software, and running programs in real time. 
 
-The term "interactive session" typically refers to jobs run from within the command line on a terminal client. Opening a terminal in an interactive graphical desktop is also equivalent, but these sessions are fixed to the resources allocated to that OOD session. As you'll see below, one has more control over their resources when requesting an interactive session via SSH on a terminal client.
+The term "interactive session" in this context refers to jobs run from within the command line on a terminal client. Opening a terminal in an [interactive graphical desktop](../open_on_demand/) is also equivalent, but these sessions are fixed to the resources allocated to that OOD session. As you'll see below, one has more control over their resources when requesting an interactive session via SSH on a terminal client.
 
-Notice in the example above how the command prompt changes once your session starts. When you're on a login node, your prompt will show ```junonia``` or ```wentletrap```. Once you're in an interactive session, you'll see the name of the compute node you're connected to. In the above example, this is ```i16n1```.
+## Clusters 
+
+An interactive session can be requested on any of our three clusters: El Gato, Ocelote, and Puma. Since the request to start an interactive session is processed by Slurm, these jobs will be subject to the same wait times as batch jobs. Since Puma is typically busy with high traffic throughput, it is not recommended to request an interactive session on this cluster unless specific resources are needed and longer wait times are acceptable to the user. 
 
 
 ## How to Request an Interactive Session
 
-### Clusters 
 
-An interactive session can be requested on any of our three clusters: El Gato, Ocelote, and Puma. Since the request to start an interactive session is processed by Slurm, these jobs will be subject to the same wait times as batch jobs. Since Puma is typically busy with high traffic throughput, it is not recommended to request an interactive session on this cluster unless specific resources are needed and longer wait times are acceptable to the user. 
 
 ### The ```interactive``` Command
 
@@ -46,7 +46,7 @@ Usage: /usr/local/bin/interactive [-x] [-g] [-N nodes] [-m memory per core] [-n 
 You may also create your own salloc commands using any desired [SLURM directives](../batch_jobs/slurm_reference) for maximum customization.
 
 
-### Customizing Your Resources
+**Customizing Your Resources**
 
 The command ```interactive``` when run without any arguments will allocate you a windfall session using one CPU for one hour which isn't ideal for most use cases. You can modify this by including additional flags. To see the available options, you can use the help flag ```-h```
 
@@ -64,14 +64,29 @@ The values can be combined and each mean the following:
 |```-N```|Total number of nodes (physical computers) to allocate to your job|```-N 2```|
 |```-m```|Total amount of memory {==per CPU==}. See [CPUs and Memory](../cpus_and_memory/) for more information and potential complications|```-m 5gb```|
 |```Q```|Used to add a qos to access high priority or qualified hours. Only for groups with [buy-in/special project hours](../../resources/allocations/)|```-Q user_qos_pi_netid```|
-|```-g```|Request a GPU. This flag takes no arguments. If you want to request more than one GPU in an interactive session, you can use [salloc](/running_jobs/batch_jobs/slurm_documentation/) directly|```-q```|
+|```-g```|Request one GPU. This flag takes no arguments. On Puma, you may be allocated **either** a v100 **or** [a MIG slice](../../resources/compute_resources/#mig-multi-instance-gpu-resources). If you want more control over your resources, you can use salloc directly using [GPU batch directives](../batch_jobs/batch_directives/#gpus)|```-q```|
 |```-x```|Enable [X11 forwarding](/registration_and_access/system_access/#x11-forwarding). This flag takes no arguments.|```-x```|
 
 You may also create your own [salloc](https://slurm.schedmd.com/salloc.html) commands using any desired Slurm directives for maximum customization.
 
+### Using ```salloc``` Directly
 
-## Software
+The command ```interactive``` is a wrapper for the Slurm command ```salloc``` with more limited options. If ```interactive``` is insufficient to meet you resource requirements (e.g., if you need to request more than one GPU or a GPU MIG slice), you can use ```salloc``` directly to further customize your job. 
 
-Once an interactive session has been activated, your session is now being run on a compute node. This means that not only do you have more computing power available compared to the login node, but you also have access to all of the software installed on HPC. To view and interactive with software installed on the system, use the [module commands](../../software/modules/). 
+The command ```salloc``` expects [Slurm directives](../batch_jobs/batch_directives/) as input arguments that it uses to customize your interactive session. For comprehensive documentation on using ```salloc```, see [Slurm's official documentation](https://slurm.schedmd.com/salloc.html).
 
-In this mode, only text-based command-line software can be used. To use graphical software, please see our page on [GUI Jobs](../open_on_demand). 
+**Simple Example**
+
+```
+salloc --account=<YOUR_GROUP> --partition=standard --nodes=1 --ntasks=1 --time=1:00:00 --job-name=interactive
+```
+
+**Multi-GPU Example (Puma)**
+```
+salloc --account=<YOUR_GROUP> --partition=standard --nodes=1 --ntasks=1 --time=1:00:00 --job-name=multi-gpu --gres=gpu:volta:2
+```
+
+**GPU MIG Slice Example**
+```
+salloc --account=<YOUR_GROUP> --partition=standard --nodes=1 --ntasks=1 --time=1:00:00 --job-name=mig-gpu --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb
+```

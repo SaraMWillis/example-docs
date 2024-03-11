@@ -89,11 +89,11 @@ First, select the desired application from Interactive Apps. This will take you 
 
 |Field|Description|Example|
 |-|-|-|
-|Cluster|Select which cluster to submit the job request to.	|ElGato|
+|Cluster|Select which cluster to submit the job request to.	|Puma|
 |Run Time|	The maximum number of hours the job can run. Please note that the maximum possible run time is 10 days (240 hours). Values higher than this will be tagged QOSMaxWallDurationPerJobLimit and prevented from running.| 4|
 |Core Count on a single node| The number of CPUs needed. This affects the amount of memory your job is allocated. The maximum that can be requested is dependent on which cluster you choose. | 16|
-|Memory per core|The amount of memory needed per core. The amount that can be requested is dependent on which cluster you choose and your desired node type. Warning: if you request more than is available on a standard node, you may be allocated a high memory node. The wait times for these machines can be significantly longer.|4|
-|GPUs required|The number of GPUs needed for your job, if any. This field may be left blank or set to 0 if no GPU is desired. Up to 4 may be requested on a single Puma node, 1 may be requested on Ocelote, and 0 on ElGato.|1|
+|Memory per core|The amount of [memory needed per core](../cpus_and_memory/). The amount that can be requested is dependent on which cluster you choose and your desired node type. Warning: if you request more than is available on a standard node, you may be allocated a high memory node. The wait times for these machines can be significantly longer.|5|
+|GPUs required|[The number and type of GPUs](../../resources/compute_resources/#gpu-nodes) needed for your job, if any. |One A100 20GB GPU|
 |PI Group|Your accounting group. If you do not know your group name, you can either check in the user portal, or can run va on the command line. If the group you entered does not exist, you will receive an error "sg: group 'foo' does not exist"|your-group|
 |Queue| The queue, or partition, to use. Standard is the most common. If your group has buy-in hours, you may use High Priority.|Standard|
 

@@ -46,13 +46,6 @@
 
 <div class="card-container">
     <div class="card">
-        <img src="assets/images/home/apptainer.png" style="width:200px">
-            <div class="container">
-                <h4><b>Singularity Update</b></h4> 
-                <p>Singularity has been renamed Apptainer as the project is brought into the Linux Foundation. An alias exists so that you can continue to invoke singularity. Local builds are now possible in many cases and remote builds with Sylabs are no longer supported</p> 
-            </div>
-    </div>
-    <div class="card">
         <img src="assets/images/home/terminal.png" style="width:200px">
             <div class="container">
                 <h4><b>Faster Interactive Sessions</b></h4> 
@@ -67,10 +60,17 @@
             </div>
     </div>
     <div class="card">
-        <img src="assets/images/home/puma.jpg" style="width:200px">
+        <img src="assets/images/home/puma-logo.jpg" style="width:200px">
             <div class="container">
                 <h4><b>Puma News</b></h4> 
-                <p>Last year we increased the standard allocation.  From the end of April 2022 the standard allocation of CPU hours is increased from 70,000 to 100,000. </p> 
+                <p>Last year we increased the standard allocation. From the beginning of March 2024 the standard allocation of CPU hours is increased from 100,000 to 150,000. </p> 
+            </div>
+    </div>
+    <div class="card">
+        <img src="assets/images/home/MIG.jpg" style="width:200px">
+            <div class="container">
+                <h4><b>New MIG Resources</b></h4> 
+                <p><a href="../resources/compute_resources/">MIG resources</a> entered the queues on Feb 26, 2024. The 12 MIG GPUs will increase overall GPU availability on Puma by freeing the 32 GB V100 GPUs for users requiring larger amounts of GPU memory. Note: some batch scripts will need updates to work properly.</p> 
             </div>
     </div>
 </div>
@@ -153,76 +153,146 @@
 
 
 
-<!-- Testing a section for calendar information 
-<div class="hero-section quick-links">
-    <h2>Calendar</h2>
-    <div class="card" style="max-width:70%">
-        <div class="container">
-            <h4>Intro to HPC Workshop</h4>
-            <p>Date: October 27, 2024 @ 10:00-12:00pm (MST)<br>Location: Online<br>Registration: (link)</p>
-        </div>
-    </div>
-    <div class="card" style="max-width:70%">
-        <div class="container">
-            <h4>Intro to Fooing and also Barring</h4>
-            <p>Date: October 28, 2024 @ 11:00-1:00pm (MST)<br>Location: Baz<br>Registration: (link)</p>
-        </div>
-    </div>
-</div>
--->
+<!-- General Calendar Formatting:
 
-<!-- Testing a different way of displaying calendar information-->
-
-
-
-
-
-<section class="events-section">
-    <div class="left-column">
-        <div class="content-container">
-        <h1><center>Upcoming Events</center></h2>
-        <p>Every semester, we host training workshops on topics ranging from intro to HPC, to machine learning, to parallel computing, and beyond.</p>
-        </div>
-    </div>
-    <div class="right-column">
-        <div class="event-card">
-            <div class="event-date">
-                <div class="date-number">1</div>
-                <div class="date-month">Mar</div>
-            </div>
-            <div class="event-details">
-                <h3>Intro to HPC</h3>
-                <p>Get started learning how to use our HPC in this interactive workshop.</p>
-                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_bm7ZXolJAWC58vY"> <button class="register-button">Register</button></a>
-            </div>
-        </div>
         <div class="event-card">
             <div class="event-date">
                 <div class="date-number">6</div>
                 <div class="date-month">Mar</div>
             </div>
             <div class="event-details">
-                <h3>Data Management on HPC</h3>
-                <p>Learn about managing your data on UA's HPC cluster. Co-sponsored with University Libraries. Virtual only.
-                </p>
+                <h3><a href="../support_and_training/workshops/data_management_workshops/">Data Management on HPC</a></h3>
+
                 <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+
+                <div class="event-time">
+                    <span class="event-time-text">10:00am-11:30am</span>
+                </div>
+
+                <div class="event-location">
+                    <span class="event-location-text">Virtual</span>
+                </div>
+
             </div>
         </div>
+-->
+
+
+
+
+
+
+<!-- Events Section -->
+<section class="events-section">
+
+    <div class="left-column">
+        <div class="content-container">
+            <h1><center>Upcoming Events</center></h2>
+            <p>Every semester, we host training workshops on topics ranging from intro to HPC, to machine learning, to parallel computing, and beyond.</p>
+        </div>
+    </div>
+    <!-- The right column has all the cards to display information about individual events -->
+    <div class="right-column">
+
+
         <div class="event-card">
             <div class="event-date">
-                <div class="date-number">1</div>
+                <div class="date-number">6</div>
                 <div class="date-month">Mar</div>
             </div>
             <div class="event-details">
-                <h3>Parallel Computing on HPC</h3>
-                <p>The best way to take advantage of our clusters is to use the parallel capabilities.  This can mean using all the cores on each compute node or combining several nodes with MPI.  This workshop will give you a quick view of the concepts and how we implement them.</p>
-                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_efDQs1qL0UohjaC"> <button class="register-button">Register</button></a>
+                <h3><a href="../support_and_training/workshops/data_management_workshops/">Data Management on HPC</a></h3>
+
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+
+                <div class="event-time">
+                    <span class="event-time-text">10:00am-11:30am</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Virtual</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">12</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="../support_and_training/workshops/intro_to_machine_learning/python/">ML with Python on HPC</a></h3>
+                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_bxEn1i3wDQq1fCe"> <button class="register-button">Register</button></a>
+                <div class="event-time">
+                    <span class="event-time-text">10:00am-11:00am</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Main Library; CATalyst B254</span>
+                </div>
+           
+            </div>
+        </div> 
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">12</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="../support_and_training/workshops/intro_to_machine_learning/R/">ML with RStudio on HPC</a></h3>
+                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_9GFWerEhZcZQwuy"> <button class="register-button">Register</button></a>
+                <div class="event-time">
+                    <span class="event-time-text">11:00am-12:00pm</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Main Library; CATalyst B254</span>
+                </div>
+           
+            </div>
+        </div> 
+
+
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">14</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="../support_and_training/workshops/data_management_workshops/">Parallel Computing on HPC </a></h3>
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+                <div class="event-time">
+                    <span class="event-time-text">10:00am-11:30am</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Main Library; CATalyst B252</span>
+                </div>             
             </div>
         </div>
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">14</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="../support_and_training/workshops/data_management_workshops/">Visualization on HPC</a></h3>
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+                <div class="event-time">
+                    <span class="event-time-text">11:00am-12:00pm</span>
+                </div>
+                <div class="event-location">
+                    <span class="event-location-text">Main Library; CATalyst B252</span>
+                </div>
+           
+            </div>
+        </div> 
+
 
 
     </div>
 </section>
+
+
 
 
 <!-- Split section, picture of research on the left, description on the right -->

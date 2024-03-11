@@ -2,7 +2,7 @@
 
 
 
-# Compute Nodes and Interactive Jobs 
+# Accessing Compute Nodes
 
 ### The Compute Nodes
 
@@ -61,8 +61,6 @@ This shows you the various shortcuts you can use to connect to the different clu
 (elgato) [user@wentletrap ~]$ 
 ```
 
-Now that you've switched clusters, you're ready to try running some work. 
-
 ### Job Charging
 
 Before you connect to a compute node, let's quickly cover job charges. 
@@ -108,10 +106,25 @@ cpu39.elgato.hpc.arizona.edu
 
 You'll notice once your job starts that your command line prompt changes to display the name of the compute node. If you run hostname, this should match your command line prompt and show you the name of the compute node you're connected to. in my case, I'm connected to the ElGato compute node ```cpu39```.
 
-You'll also notice that your session has been assigned a job number (in the above, you can see this as ```Granted job allocation 1800857```). A job number is assigned to every job on the system and is used to keep track of job statistics and metrics. This is especially useful for batch jobs which we will cover in a few sections. 
+You'll also notice that your session has been assigned a job number (in the above, you can see this as ```Granted job allocation 1800857```). A job number is assigned to every job on the system and is used to keep track of job statistics and metrics. 
+
+Since you're in an interactive session, you now have exclusive access to the resources you've reserved which means you can do things like use software to develop, test, run, and debug your code. Interactive sessions are optimal for these sorts of actions. However, you might run into problems executing your analyses if:
+
+* Your session times out due to inactivity
+* Your internet connection gets disrupted
+* Your computer gets closed or turned off
+* You want to run more than one job at a time
+
+That's where batch jobs come in. 
 
 
+## Batch Jobs
 
+Batch jobs are the real meat and potatoes of HPC. In contrast to interactive jobs, batch jobs are a way of submitting work to run on a compute node without the need to be physically present. Batch jobs are essentially special text files that act as blueprints that the scheduler uses to determine the resources you need and the commands needed to run your job. 
+
+Because you do not need to be physically present while your work is running, you can log out of the system, turn off you computer and your work will not be interrupted. Additionally, it enables you to submit tens, hundreds, or even thousands of jobs to run simultaneously which can help you get a tremendous amount of work done.
+
+We won't cover the specifics of running batch jobs in this section. Instead, see [Intro to Batch Jobs](../../running_jobs/batch_jobs/intro/) for an in-depth explanation and walkthrough. 
 
 
 <html>
