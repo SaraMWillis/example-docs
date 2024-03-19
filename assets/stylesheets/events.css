@@ -24,35 +24,39 @@
     display: flex;
     flex-direction: column; 
     justify-content: center; 
+    align-items: center; /* Center items horizontally */
 }
 
 
 .event-card {
     display: flex;
     margin-bottom: 20px;
+    width: 100%;
     border: 1px solid #ccc;
     #height: 140px;
     background-color:white;
-    max-width: 900px;
+    max-width: 800px;
 }
 
 .event-date {
     flex: 1;
     background-color: #001C48; /* Dark background color for the date */
     color: #fff;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .date-number {
-    font-size: 3em;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .date-month {
-    font-size: 1.8em;
+    font-size: 18px;
 }
 
 .event-details {
@@ -66,7 +70,8 @@
 }
 
 .event-details a {
-    color: black;
+    color: #001C48;
+    font-weight: bold;
 }
 
 .event-details a:hover {
@@ -76,24 +81,33 @@
 
 .event-details p {
     margin-bottom: 0;
+    font-size: 14px;
+}
+
+.event-registration {
+
+    padding-right: 30px;
+    padding-top: 30px;
 }
 
 .register-button {
-    background-color: #E2E9EB; /* Button color */
-    color: black;
+    background-color: #001C48; /* Button color */
+    color: white;
     border: none;
     padding: 5px 10px;
     margin-left: 10px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d='M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM504 312V248H440c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V136c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H552v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: 15px; /* Adjust size as needed */
     background-position: 5px center; /* Adjust position as needed */
-    padding-left: 25px; /* Add padding to leave space for the SVG */
     height: 30px;
     cursor: pointer;
-    border-radius: 50px;
+    font-size: 14px;
     display: inline; 
     float:left;
+}
+
+.register-button .svg-icon {
+    fill: white; /* Set the fill color of the SVG to white */
 }
 
 .register-button:hover {
@@ -104,6 +118,8 @@
     border: 4px solid #001C48; /* Add thick blue border */
     padding: 20px; /* Add padding to create space between the text and the border */
     position: relative; /* Position relative to allow positioning of pseudo-elements */
+
+    max-width: 800px;
 }
 
 .content-container::before,
@@ -178,10 +194,9 @@
 }
 
 
-/* Media query for screens smaller than or equal to 900px */
+/* Media query for screens smaller than or equal to 900px 
 @media (max-width: 900px) {
     .events-section {
-        flex-direction: column; /* Stack columns vertically */
         justify-content: space-between;
         flex-shrink: 0;
         flex-grow: 1;
@@ -199,7 +214,37 @@
 
 
 
+}
+*/
 
+/* This can be used when no upcoming events are scheduled. */
+.no-events {
+    background-color: white;
+    padding: 20px; /* Add padding to create space between the text and the border */
+    position: relative; /* Position relative to allow positioning of pseudo-elements */
+    width: 70%;
+    text-align: center;
+    border-color: #1E5288;
+    border: 1px solid #1E5288; /* Add thick blue border */
 
 }
 
+.no-events::before,
+.no-events::after {
+    content: ''; /* Add content to the pseudo-elements */
+    position: absolute; /* Position absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.no-events::before {
+    border: 4px solid #001C48; /* Add thicker border */
+    z-index: -1; /* Move the pseudo-element behind the text */
+}
+
+.no-events::after {
+    border: 2px solid #001C48; /* Add thinner border */
+    z-index: -2; /* Move the pseudo-element further behind */
+}
