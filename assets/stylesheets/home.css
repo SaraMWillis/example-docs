@@ -61,7 +61,7 @@ p {
 .results-tx-container {
     position: relative;
     padding-top: .0rem;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.2)), url('../results/images/astro_tech.jpg') center center fixed;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.2)), url('../../results/images/astro_tech.jpg') center center fixed;
     background-size: cover;
     color: #fff; /* Set text color to be visible on the gradient overlay */
 } 
@@ -574,9 +574,9 @@ body, #slider, .wrap, .slide-content{
     transition: all 0s;
 }
 
-.slide1{background-image: url('/assets/images/home/puma.png');}
-.slide2{background-image: url('/assets/images/home/cables.png');}
-.slide3{background-image: url('/assets/images/home/HPC_0.png');}
+.slide1{background-image: url('../images/home/puma.png');}
+.slide2{background-image: url('../images/home/cables.png');}
+.slide3{background-image: url('../images/home/HPC_0.png');}
 
 .slide-content{
     display:flex;
