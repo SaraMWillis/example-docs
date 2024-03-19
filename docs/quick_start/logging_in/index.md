@@ -2,13 +2,15 @@
 
 # Logging In and System Layout
 
+??? warning "Account creation is necessary to log in"
+    If you have not yet done so, you will need to register for an account to log in. See <a href="../../registration_and_access/account_creation/" target="_blank">our registration documentation</a> for steps. 
 
 ## Logging In
 
 !!! tip 
     If you experience any issues during the login process, [see our FAQs for common problems](../../support_and_training/faqs/account_access/).
 
-There are two main methods to access the HPC system
+Once you've succesfully registered for an HPC account, you're ready to log in. There are two main methods to access the HPC system
 
 1. **Open OnDemand**
 
@@ -64,7 +66,7 @@ A login node is a shared workspace with minimal computational capabilities and v
 
 <html>
 <div class="button-container">
-    <a href="../common_misconceptions"><button class="left-button"></button></a>
+    <a href="../common_misconceptions/"><button class="left-button"></button></a>
     <a href="../storage_and_transfers"><button class="right-button"></button></a>
 </div>
 </html>

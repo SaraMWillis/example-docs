@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/assets/stylesheets/embedded_files.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/embedded_files.css">
 
 # Intro to HPC Workshop Materials
 

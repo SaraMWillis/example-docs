@@ -12,16 +12,16 @@ Software packages are available as modules and are accessible from the compute n
 
 |Command | Description|
 |-|-|
-|```module avail```| Display all the software and versions installed on the system|
-|```module avail <module_name>```|Display all installed versions of the software ```<module_name>```|
-|```module list```|Display the software you have loaded in your environment|
-|```module whatis <module_name>```|Displays some descriptive information about a specific module|
-|```module show <module_name>```|Displays system variables that are set/modified when loading module ```<module_name>```|
-|```module load <module_name>```|Load a software module in your environment|
-|```module unload <module_name>```|Unload a specific software package from your environment|
-|```module swap <module_name>/<version1> <module_name>/<version2>```| Switch versions of a software module|
-|```module purge```| Unload all the software modules from your environment|
-|```module help```| Display a help menu for the module command|
+|<pre><code>module avail</code></pre>| Display all the software and versions installed on the system|
+|<pre><code>module avail &#60;module_name></code></pre>|Display all installed versions of the software ```<module_name>```|
+|<pre><code>module list</code></pre>|Display the software you have loaded in your environment|
+|<pre><code>module whatis &#60;module_name&#62;</code></pre>|Displays some descriptive information about a specific module|
+|<pre><code>module show &#60;module_name&#62;</code></pre>|Displays system variables that are set/modified when loading module ```<module_name>```|
+|<pre><code>module load &#60;module_name&#62;</code></pre>|Load a software module in your environment|
+|<pre><code>module unload &#60;module_name&#62;</code></pre>|Unload a specific software package from your environment|
+|<pre><code>module swap &#60;module_name&#62;/&#60;version1&#62; &#60;module_name&#62;/&#60;version2&#62;</code></pre>| Switch versions of a software module|
+|<pre><code>module purge</code></pre>| Unload all the software modules from your environment|
+|<pre><code>module help</code></pre>| Display a help menu for the module command|
 
 ### Example
 ```
@@ -50,11 +50,11 @@ Puma, Ocelote, and El Gato all run CentOS7 and have the following compilers avai
 
 |Compiler|Version|Module Command|
 |-|-|-|
-|Intel|2020.1|```module load intel/2020.1```|
-|Intel|2020.4|```module load intel/2020.4```|
-|gcc|5.4.0|```module load gnu/5.4.0```|
-|gcc|7.3.0|```module load gnu7/7.3.0```|
-|gcc|8.3.0|```module load gnu8/8.3.0 # Loaded by default```|
+|Intel|2020.1|<pre><code>module load intel/2020.1</code></pre>|
+|Intel|2020.4|<pre><code>module load intel/2020.4</code></pre>|
+|gcc|5.4.0|<pre><code>module load gnu/5.4.0</code></pre>|
+|gcc|7.3.0|<pre><code>module load gnu7/7.3.0</code></pre>|
+|gcc|8.3.0|<pre><code>module load gnu8/8.3.0 # Loaded by default</code></pre>|
 
 ## Installing additional software
 

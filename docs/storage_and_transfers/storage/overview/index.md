@@ -11,6 +11,27 @@
     3. Backups (highly encouraged!)
 5. Data that require HIPAA-compliance can be stored on Soteria (currently in the pilot phase).
 
+
+<center>
+``` mermaid
+graph LR
+  A[My data are...] --> B{Controlled?}
+  B-->|Yes| C{HIPAA?};
+  C-->|Yes| D[<a href="../../../resources/secure_hpc/overview/">Soteria</a>];
+  C-->|No| E[Unsupported];
+  B-->|No| F{Archival?}
+  F-->|Yes| G[<a href="../../storage/tier2_storage/">AWS Tier 2<br>Storage</a>]
+  F-->|No| H{Need<br>HPC<br>access?}
+  H-->|Yes| I{Under<br>20TB?}
+  I-->|Yes| J[<a href="../../storage/hpc_storage/">HPC Storage</a>]
+  I-->|No| K[<a href="../../storage/rental_storage/">Rental Storage</a>]
+  H-->|No| L{Under<br>5 TB?}
+  L-->|No| K
+  L-->|Yes| M[<a href="../../storage/rdas_storage/">R-DAS Storage</a>]
+```
+</center>
+
+
 ## Storage Option Summary
 
 ||Purpose|<div style="width:120px">Capacity</div>|Cost|Restricted Data|Access|Duration|Backup|
@@ -23,6 +44,7 @@
 |Soteria HIPAA|Secure data enclave|Individual requests|Free upon qualification|Restricted data; HIPAA, ePHI|HIPAA training required, followed by request process|Long term|No|
 |Box|General Data|50gb|Free|Not for restricted data|Browser|Long term|No|
 |Google Drive|General data|15gb|Free. Google rates for amounts > 15gb|Not for restricted data|Browser|Unlimited usage expires March 1, 2023|No|
+
 
 
 ## NIH Data Management and Sharing Policy

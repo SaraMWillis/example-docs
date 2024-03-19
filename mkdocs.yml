@@ -1,6 +1,16 @@
 site_name: UArizona HPC Documentation
 
 nav:
+
+  - Quick Start: 
+    - Overview: quick_start/overview/index.md
+    - What is HPC?: quick_start/supercomputing_in_plain_english/index.md
+    - Common Misconceptions: quick_start/common_misconceptions/index.md
+    - Logging In: quick_start/logging_in/index.md
+    - Storage and Transfers: quick_start/storage_and_transfers/index.md
+    - Accessing Compute Nodes: quick_start/accessing_compute/index.md
+    - Software: quick_start/software/index.md
+
   - Policies:
     - Acceptable Use: policies/acceptable_use/index.md
     - Acknowledgements: policies/acknowledgements/index.md
@@ -14,6 +24,11 @@ nav:
     - Allocations: resources/allocations/index.md
     - Compute Resources: resources/compute_resources/index.md
     - Research Data Center: resources/data_center/index.md
+    - Secure Services:
+      - Overview: resources/secure_hpc/overview/index.md
+      - Prerequisites: resources/secure_hpc/prerequisites/index.md
+      - Access: resources/secure_hpc/access/index.md
+      - Storage and Transfers: resources/secure_hpc/storage_and_transfers/index.md
 
   - Access:
     - Account Creation: registration_and_access/account_creation/index.md
@@ -21,16 +36,6 @@ nav:
     - Group Management: registration_and_access/group_management/index.md
     - System Access: registration_and_access/system_access/index.md
     - VPN : registration_and_access/vpn/index.md
-
-  - Quick Start: 
-    - Overview: quick_start/overview/index.md
-    - What is HPC?: quick_start/supercomputing_in_plain_english/index.md
-    - Common Misconceptions: quick_start/common_misconceptions/index.md
-    - Logging In: quick_start/logging_in/index.md
-    - Storage and Transfers: quick_start/storage_and_transfers/index.md
-    - Accessing Compute Nodes: quick_start/interactive_jobs/index.md
-    - Software: quick_start/software/index.md
-    #- Batch Jobs: quick_start/batch_jobs/index.md
     
   - Storage and Transfers:
     - Overview: storage_and_transfers/overview/index.md
@@ -54,7 +59,7 @@ nav:
   - Software:
     - Overview: software/overview/index.md
     - Modules: software/modules/index.md
-    - User Installation Help: software/user_installations/index.md
+    - User Installations: software/user_installations/index.md
     - Common Datasets: software/common_datasets/index.md
     - Popular Software:
       - Gaussian: software/popular_software/gaussian/index.md
@@ -89,17 +94,20 @@ nav:
       - Batch Directives: running_jobs/batch_jobs/batch_directives/index.md
       - Environment Variables: running_jobs/batch_jobs/environment_variables/index.md
       - Array Jobs: running_jobs/batch_jobs/array_jobs/index.md
-      - Submitting Jobs: running_jobs/batch_jobs/managing/index.md
+      - Submitting Jobs: running_jobs/batch_jobs/submitting_jobs/index.md
       #- Slurm Cheat Sheet: running_jobs/batch_jobs/slurm_reference/index.md
-      - Example Batch Jobs:
-        - Using a Pipefail: running_jobs/batch_jobs/examples/pipefail/index.md
-        - Job Dependencies: running_jobs/batch_jobs/examples/job_dependencies/index.md
-        - Basic Array Job: running_jobs/batch_jobs/examples/basic_array/index.md
-        - Array Jobs with Text Filenames: running_jobs/batch_jobs/examples/array_read_filenames/index.md
-        - Array Jobs with Multiple Input Parameters: running_jobs/batch_jobs/examples/array_read_parameters/index.md
-        - Basic GNU Parallel Job: running_jobs/batch_jobs/examples/basic_gnu_parallel_job/index.md
-        - Array Job Using GNU Parallel: running_jobs/batch_jobs/examples/array_and_gnu_parallel/index.md
-    - Monitoring Jobs and Resources: running_jobs/system_commands/index.md
+    #- Example Batch Jobs:
+    #   - Array Jobs:
+    #      - Basic Array Job: running_jobs/example_batch_jobs/array_jobs/basic_array/index.md
+    #      - Array Jobs with Text Filenames: running_jobs/example_batch_jobs/array_jobs/array_read_filenames/index.md
+    #      - Array Jobs with Multiple Input Parameters: running_jobs/example_batch_jobs/array_jobs/array_read_parameters/index.md
+    #   - General Examples:
+    #      - Using a Pipefail: running_jobs/example_batch_jobs/general_examples/pipefail/index.md
+    #      - Job Dependencies: running_jobs/example_batch_jobs/general_examples/job_dependencies/index.md
+    #      
+    #   - Basic GNU Parallel Job: running_jobs/example_batch_jobs/basic_gnu_parallel_job/index.md
+    #   - Array Job Using GNU Parallel: running_jobs/example_batch_jobs/array_and_gnu_parallel/index.md
+    - Monitoring Jobs and Resources: running_jobs/monitoring_jobs_and_resources/index.md
     - Parallelization: running_jobs/parallelization/index.md
 
 
@@ -111,10 +119,11 @@ nav:
         - Jobs and Scheduling: support_and_training/faqs/jobs_and_scheduling/index.md 
         - Software and Modules: support_and_training/faqs/software_and_modules/index.md 
         - Storage: support_and_training/faqs/storage/index.md
-      
         - Open OnDemand Issues: support_and_training/faqs/open_on_demand_issues/index.md 
         - Secure Services: support_and_training/faqs/secure_services/index.md 
+        
     - Workshops: 
+        - Events Calendar: support_and_training/workshops/events_calendar/index.md
         - Intro to HPC: support_and_training/workshops/intro_to_hpc/index.md
         - Intro to Machine Learning on HPC: 
             - Python: support_and_training/workshops/intro_to_machine_learning/python/index.md
@@ -128,13 +137,6 @@ nav:
     - Linux Cheat Sheet: support_and_training/cheat_sheet/index.md
     - Grants: support_and_training/grants/index.md
     - Community and External Resources: support_and_training/external_resources/index.md
-    
-
-  - Secure Services:
-    - Overview: secure_hpc/overview/index.md
-    - Prerequisites: secure_hpc/prerequisites/index.md
-    - Access: secure_hpc/access/index.md
-    - Storage and Transfers: secure_hpc/storage_and_transfers/index.md
 
   - Results: results/index.md
   
@@ -163,6 +165,8 @@ markdown_extensions:
       generic: true
   - footnotes
   - pymdownx.critic
+  - pymdownx.tasklist:
+      custom_checkbox: true
   
 extra_javascript:
   - assets/javascripts/mathjax.js

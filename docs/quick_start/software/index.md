@@ -32,6 +32,6 @@ Other great resources include: [virtual office hours every Wednesday](../../supp
 
 <html>
 <div class="button-container">
-    <a href="../interactive_jobs"><button class="left-button"></button></a>
+    <a href="../accessing_compute"><button class="left-button"></button></a>
 </div>
 </html>

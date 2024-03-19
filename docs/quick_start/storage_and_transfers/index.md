@@ -3,6 +3,10 @@
 
 When you first access a login node, you're located in your home directory. This is a space with a 50GB limit and is accessible to only you. The files you store here are housed on a large storage array and are accessible anywhere you are on the system except the bastion host. 
 
+!!! warning "Do not overfill your home directory"
+
+    If the storage usage of your home directory meets or exceeds the 50 GB limit, you may experience trouble logging in! This is because the system needs to create a file to log your access sessions, and it will be unable to do so if there is no additional storage space. You should still be able to manage your files as described below. 
+
 <center><img src="images/filexfer.png" style="height: 300px;"></center>
 
 To store your files in your home, you will need to transfer them to the system. Small files can most easily be transferred to/from HPC using our web interface [Open OnDemand](https://ood.hpc.arizona.edu/). In the upper-left you'll see a dropdown called Files where you can select Home Directory. 
@@ -13,7 +17,7 @@ On the following page, select "Upload" to open a window where you can drag/drop 
 
 <center><img src="images/file_upload.png" style="width: 600px;" ></center>
 
-For larger files, we have a designated file transfer node. Comprehensive instructions for alternative methods for file transfers can be found on [our data transfer page](../../storage_and_transfers/transfers/overview/). 
+For larger files, we have a designated **Data Transfer Node** (DTN). Comprehensive instructions for alternative methods for file transfers can be found on [our data transfer page](../../storage_and_transfers/transfers/overview/). 
 
 With larger files comes the need for more storage. If you find your home is insufficient to store your data, group allocations are available. See our [storage documentation](../../storage_and_transfers/storage/hpc_storage/) for details on options that are available. 
 
@@ -22,6 +26,6 @@ Now that we're on the login nodes and know where our files are, it's time to acc
 <html>
 <div class="button-container">
     <a href="../logging_in/"><button class="left-button"></button></a>
-    <a href="../interactive_jobs"><button class="right-button"></button></a>
+    <a href="../accessing_compute"><button class="right-button"></button></a>
 </div>
 </html>

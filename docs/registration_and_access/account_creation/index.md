@@ -10,7 +10,7 @@ Faculty members will receive a PI Account which is different from the Sponsored 
 The process of getting registered for an HPC account varies depending on your affiliation with the University. Take a look at the list below to determine how you should register:
 
 <html>
-<link rel="stylesheet" href="../../overrides/animated_dropdown.css">
+<link rel="stylesheet" href="../../assets/stylesheets/animated_dropdown.css">
 
 <button class="collapsible">I'm a faculty member/principal investigator (PI)</button>
 <div class="content">
@@ -49,7 +49,7 @@ The process of getting registered for an HPC account varies depending on your af
 <button class="collapsible">I'm not affiliated with the university</button>
 <div class="content"> 
     <p>
-    HPC systems are restricted to those with valid university credentials and are not available for general public use. However, if you are not officially affiliated with the university but are actively collaborating with university members, you may register for <a href="https://it.arizona.edu/service/designated-campus-colleague-accounts">Designated Campus Colleague (DCC) status</a>. This is done through human resources and provides collaborators with active UArizona credentials. Once your DCC status is approved, you may request sponsorship from a university faculty member. For instructions on this process, see the section above.
+    HPC systems are restricted to those with valid university credentials and are not available for general public use. However, if you are not officially affiliated with the university but are actively collaborating with university members, you may register for <a href="https://it.arizona.edu/service/designated-campus-colleague-accounts">Designated Campus Colleague (DCC) status</a>. This is done through human resources and provides collaborators with active UArizona credentials. Once your DCC status is approved, you may request sponsorship from a university faculty member (see the section above).
     </p>
 </div>
 

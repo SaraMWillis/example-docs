@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/assets/stylesheets/embedded_files.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/embedded_files.css">
 # Data Management Workshops
 
 Learn about managing your data on UA's HPC cluster. Co-sponsored with University Libraries. Virtual only

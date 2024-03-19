@@ -11,14 +11,14 @@ If you are new to the UA HPC system, or to HPC systems in general, we recommend 
 
 ## Best Practices
 
-### Login Nodes
+<h3>Login Nodes</h3>
 
 A login node serves as a staging area where you can perform housekeeping work, edit scripts, and submit job requests for execution on one/some of the cluster’s compute nodes. It is important to know that **the login nodes are not the location where scripts are run**. Heavy computation on the login nodes slows the system down for all users and will not give you the resources or performance you need. It should also be stressed that software is not available on the login nodes. 
 
 Tasks run on the login nodes that impact usability will be identified and cancelled by HPC infrastructure without warning. 
 
 
-### Jobs
+<h3>Jobs</h3>
 
 1. **Don't ask for more time than you really need.**
     The scheduler will have an easier time finding a slot for the 2 hours you need rather than the 48 hours you request.  When you run a job it will report back on the time used which you can use as a reference for future jobs. However don't cut the time too tight.  If something like shared I/O activity slows it down and you run out of time, the job will fail.

@@ -5,8 +5,8 @@ All University of Arizona Principal Investigators (PIs; typically faculty) that 
 
 |HPC Cluster|Standard Partition|High-Priority Partition|Windfall Partition|
 |-|-|-|-|
-|Puma|100,000 CPU Hours|Group Dependent+|Unlimited* |
-|Ocelote|70,000 CPU Hours|n/a|Unlimited* |
+|Puma|150,000 CPU Hours|Group Dependent+|Unlimited* |
+|Ocelote|100,000 CPU Hours|n/a|Unlimited* |
 |Elgato|7,000 CPU Hours|n/a|Unlimited* |
 
 !!! question "+ Can I use the high-priority partition?"

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/assets/stylesheets/embedded_files.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/embedded_files.css">
 # Introduction to Parallel Computing
 
 <h1>Presentation PDF</h1>

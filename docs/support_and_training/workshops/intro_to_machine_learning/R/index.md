@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../../../../assets/stylesheets/embedded_files.css">
+
 # Machine Learning in R
 
 ## Training Documents

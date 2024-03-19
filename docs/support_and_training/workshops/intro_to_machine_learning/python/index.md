@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/assets/stylesheets/embedded_files.css">
+<link rel="stylesheet" href="../../../../assets/stylesheets/embedded_files.css">
 # Intro to Machine Learning in Python
 
 This short training class provides a brief introduction to key concepts of machine learning.  The short lecture will be followed by two hands-on examples that emphasize running a Jupyter notebook on the HPC supercomputers. For the in-person workshop you can stick around and use this as a consulting session.
