@@ -45,7 +45,7 @@ p {
 .tx-container {
     position: relative;
     padding-top: .0rem;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.2)), url('/assets/images/home/AdobeStock_87909563.jpg') center center fixed;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.2)), url('../images/home/AdobeStock_87909563.jpg') center center fixed;
     background-size: cover;
     color: #fff; /* Set text color to be visible on the gradient overlay */
 }
@@ -53,7 +53,7 @@ p {
 .resources-tx-container {
     position: relative;
     padding-top: .0rem;
-    background: linear-gradient(to bottom, rgba(226, 233, 235, 0.9), rgba(226, 233, 235, 2)), url('/assets/images/home/HPC-Photo_0.jpg') center center fixed;
+    background: linear-gradient(to bottom, rgba(226, 233, 235, 0.9), rgba(226, 233, 235, 2)), url('../images/home/HPC-Photo_0.jpg') center center fixed;
     background-size: cover;
     color: #000 ; /* Set text color to be visible on the gradient overlay */
 }
