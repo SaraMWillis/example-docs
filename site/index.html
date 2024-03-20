@@ -189,6 +189,24 @@
     
     
       <li class="md-tabs__item">
+        <a href="quick_start/overview/" class="md-tabs__link">
+          
+  
+  Quick Start
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="policies/acceptable_use/" class="md-tabs__link">
           
   
@@ -229,24 +247,6 @@
           
   
   Access
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="quick_start/overview/" class="md-tabs__link">
-          
-  
-  Quick Start
 
         </a>
       </li>
@@ -330,24 +330,6 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="secure_hpc/overview/" class="md-tabs__link">
-          
-  
-  Secure Services
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
     <li class="md-tabs__item">
       <a href="results/" class="md-tabs__link">
         
@@ -376,9 +358,8 @@
       
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/stylesheets/home.css">
 <link rel="stylesheet" href="assets/stylesheets/events.css">
-
 
     
 <!-- Main site header with buttons and descriptions -->
@@ -521,6 +502,147 @@
 <script src="assets/javascripts/slideshow.js"></script>
 
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="assets/stylesheets/events.css">
+<link rel="stylesheet" href="../../../assets/stylesheets/events.css">
+
+<!--
+    Events page. This is broadcast to both the home page and to Workshops under Support and Training.
+
+    Tips:
+        1. Stick with the general formatting to use the uniform tiles.
+        2. When putting in links, use absolute links and *not* relative links. This is because
+           the relative links will break for one page or another (since this page is showing up
+           in two locations.)
+        3. When there are no upcoming events use: <COME UP WITH SOLUTION HERE>
+
+Formatting:
+
+<section class="events-section">
+
+    <div class="left-column">
+        <div class="content-container">
+            <h1><center>Upcoming Events</center></h2>
+            <p>Every semester, we host training workshops on topics ranging from intro to HPC, to machine learning, to parallel computing, and beyond.</p>
+        </div>
+    </div>
+    <div class="right-column">
+ 
+        <.........CARD CONTENT HERE.........>
+
+    </div>
+</section>
+
+All you need to worry about is the card content:
+
+<.........CARD CONTENT FORMATTING BELOW.........>
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">DAY</div>
+                <div class="date-month">THREE LETTER MONTH NAME</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="ABSOLUTE PATH TO WORKSHOP PAGE">WORKSHOP NAME</a></h3>
+                <p>TIME &#x25cf LOCATION</p>
+            </div>
+            <div class="event-registration">
+                <a href="REGISTRATION LINK"> <button class="register-button">Register</button></a>
+            </div>
+        </div>
+
+-->
+
+<!-- Events Section -->
+<section class="events-section">
+
+    <div class="left-column">
+        <div class="content-container">
+            <h1><center>Upcoming Events</center></h2>
+            <p>Every semester, we host training workshops on topics ranging from intro to HPC, to machine learning, to parallel computing, and beyond.</p>
+        </div>
+    </div>
+    <!-- The right column has all the cards to display information about individual events -->
+    <div class="right-column">
+
+        
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">6</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="/support_and_training/workshops/data_management_workshops/">Data Management on HPC</a></h3>
+                <p>10:00am-11:00am &#x25cf Virtual Workshop</p>
+            </div>
+            <div class="event-registration">
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+            </div>
+        </div>
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">12</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="/support_and_training/workshops/intro_to_machine_learning/python/">ML with Python on HPC</a></h3>
+                <p>10:00am-11:00am &#x25cf Main Library; CATalyst B254</p>
+            </div>
+            <div class="event-registration">
+                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_bxEn1i3wDQq1fCe"> <button class="register-button">Register</button></a>
+            </div>
+        </div> 
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">12</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="/support_and_training/workshops/intro_to_machine_learning/R/">ML with RStudio on HPC</a></h3>
+                <p>11:00am-12:00pm &#x25cf Main Library; CATalyst B254</p>
+            </div>
+            <div class="event-registration">
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+            </div>
+        </div> 
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">14</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="/support_and_training/workshops/data_management_workshops/">Parallel Computing on HPC </a></h3>
+                <p>10:00am-11:00am &#x25cf Main Library; CATalyst B252</p>
+            </div>
+            <div class="event-registration">
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="date-number">14</div>
+                <div class="date-month">Mar</div>
+            </div>
+            <div class="event-details">
+                <h3><a href="/support_and_training/workshops/data_management_workshops/">Visualization on HPC</a></h3>
+                <p>10:00am-11:00am &#x25cf Main Library; CATalyst B252</p>
+            </div>
+            <div class="event-registration">
+                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
+            </div>
+        </div> 
+
+    <!--
+    <div class="no-events">
+        <p>No workshops scheduled. Check back later.</p>
+    </div>
+    </div>
+    -->
+</section>
 
 
 
@@ -549,119 +671,6 @@
 -->
 
 
-
-
-
-
-<!-- Events Section -->
-<section class="events-section">
-
-    <div class="left-column">
-        <div class="content-container">
-            <h1><center>Upcoming Events</center></h2>
-            <p>Every semester, we host training workshops on topics ranging from intro to HPC, to machine learning, to parallel computing, and beyond.</p>
-        </div>
-    </div>
-    <!-- The right column has all the cards to display information about individual events -->
-    <div class="right-column">
-
-
-        <div class="event-card">
-            <div class="event-date">
-                <div class="date-number">6</div>
-                <div class="date-month">Mar</div>
-            </div>
-            <div class="event-details">
-                <h3><a href="../support_and_training/workshops/data_management_workshops/">Data Management on HPC</a></h3>
-
-                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
-
-                <div class="event-time">
-                    <span class="event-time-text">10:00am-11:30am</span>
-                </div>
-                <div class="event-location">
-                    <span class="event-location-text">Virtual</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="event-card">
-            <div class="event-date">
-                <div class="date-number">12</div>
-                <div class="date-month">Mar</div>
-            </div>
-            <div class="event-details">
-                <h3><a href="../support_and_training/workshops/intro_to_machine_learning/python/">ML with Python on HPC</a></h3>
-                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_bxEn1i3wDQq1fCe"> <button class="register-button">Register</button></a>
-                <div class="event-time">
-                    <span class="event-time-text">10:00am-11:00am</span>
-                </div>
-                <div class="event-location">
-                    <span class="event-location-text">Main Library; CATalyst B254</span>
-                </div>
-           
-            </div>
-        </div> 
-
-        <div class="event-card">
-            <div class="event-date">
-                <div class="date-number">12</div>
-                <div class="date-month">Mar</div>
-            </div>
-            <div class="event-details">
-                <h3><a href="../support_and_training/workshops/intro_to_machine_learning/R/">ML with RStudio on HPC</a></h3>
-                <a href="https://uarizona.co1.qualtrics.com/jfe/form/SV_9GFWerEhZcZQwuy"> <button class="register-button">Register</button></a>
-                <div class="event-time">
-                    <span class="event-time-text">11:00am-12:00pm</span>
-                </div>
-                <div class="event-location">
-                    <span class="event-location-text">Main Library; CATalyst B254</span>
-                </div>
-           
-            </div>
-        </div> 
-
-
-
-        <div class="event-card">
-            <div class="event-date">
-                <div class="date-number">14</div>
-                <div class="date-month">Mar</div>
-            </div>
-            <div class="event-details">
-                <h3><a href="../support_and_training/workshops/data_management_workshops/">Parallel Computing on HPC </a></h3>
-                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
-                <div class="event-time">
-                    <span class="event-time-text">10:00am-11:30am</span>
-                </div>
-                <div class="event-location">
-                    <span class="event-location-text">Main Library; CATalyst B252</span>
-                </div>             
-            </div>
-        </div>
-
-        <div class="event-card">
-            <div class="event-date">
-                <div class="date-number">14</div>
-                <div class="date-month">Mar</div>
-            </div>
-            <div class="event-details">
-                <h3><a href="../support_and_training/workshops/data_management_workshops/">Visualization on HPC</a></h3>
-                <a href="https://libcal.library.arizona.edu/event/12060506"> <button class="register-button">Register</button></a>
-                <div class="event-time">
-                    <span class="event-time-text">11:00am-12:00pm</span>
-                </div>
-                <div class="event-location">
-                    <span class="event-location-text">Main Library; CATalyst B252</span>
-                </div>
-           
-            </div>
-        </div> 
-
-
-
-    </div>
-</section>
 
 
 
@@ -754,7 +763,7 @@
             
   
   <span class="md-ellipsis">
-    Policies
+    Quick Start
   </span>
   
 
@@ -763,6 +772,200 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Quick Start
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quick_start/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quick_start/supercomputing_in_plain_english/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is HPC?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quick_start/common_misconceptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Misconceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quick_start/logging_in/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logging In
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quick_start/storage_and_transfers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage and Transfers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quick_start/accessing_compute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing Compute Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quick_start/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Policies
           </label>
@@ -941,10 +1144,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -955,8 +1158,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Resources
           </label>
@@ -1025,6 +1228,135 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Secure Services
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Secure Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/secure_hpc/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/secure_hpc/prerequisites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prerequisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/secure_hpc/access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/secure_hpc/storage_and_transfers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage and Transfers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1051,10 +1383,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1065,8 +1397,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Access
           </label>
@@ -1168,200 +1500,6 @@
   
   <span class="md-ellipsis">
     VPN
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Quick Start
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Quick Start
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quick_start/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quick_start/supercomputing_in_plain_english/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    What is HPC?
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quick_start/common_misconceptions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Common Misconceptions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quick_start/logging_in/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Logging In
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quick_start/storage_and_transfers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Storage and Transfers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quick_start/interactive_jobs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Accessing Compute Nodes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quick_start/software/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Software
   </span>
   
 
@@ -1923,7 +2061,7 @@
         
   
   <span class="md-ellipsis">
-    User Installation Help
+    User Installations
   </span>
   
 
@@ -2621,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/managing/" class="md-nav__link">
+      <a href="running_jobs/batch_jobs/submitting_jobs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2635,198 +2773,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_6_6" id="__nav_7_6_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Example Batch Jobs
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            Example Batch Jobs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/examples/pipefail/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using a Pipefail
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/examples/job_dependencies/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Job Dependencies
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/examples/basic_array/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic Array Job
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/examples/array_read_filenames/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Array Jobs with Text Filenames
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/examples/array_read_parameters/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Array Jobs with Multiple Input Parameters
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/examples/basic_gnu_parallel_job/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic GNU Parallel Job
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="running_jobs/batch_jobs/examples/array_and_gnu_parallel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Array Job Using GNU Parallel
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2842,7 +2788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="running_jobs/system_commands/" class="md-nav__link">
+      <a href="running_jobs/monitoring_jobs_and_resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3181,6 +3127,27 @@
   
   
     <li class="md-nav__item">
+      <a href="support_and_training/workshops/events_calendar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events Calendar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="support_and_training/workshops/intro_to_hpc/" class="md-nav__link">
         
   
@@ -3211,10 +3178,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3225,8 +3192,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_3">
             <span class="md-nav__icon md-icon"></span>
             Intro to Machine Learning on HPC
           </label>
@@ -3470,137 +3437,6 @@
   
   <span class="md-ellipsis">
     Community and External Resources
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Secure Services
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
-            <span class="md-nav__icon md-icon"></span>
-            Secure Services
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="secure_hpc/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="secure_hpc/prerequisites/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Prerequisites
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="secure_hpc/access/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Access
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="secure_hpc/storage_and_transfers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Storage and Transfers
   </span>
   
 
