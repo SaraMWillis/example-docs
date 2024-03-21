@@ -88,23 +88,23 @@ Files are transferred to shared data storage and not to the bastion node, login 
         <td>rclone has recently announced they have an <a href="https://rclone.org/gui/">experimental GUI</a>.</td>
     </tr>
     <tr>
-        <td>rclone</td>
+        <td>Cyberduck</td>
         <td>&#x2705;</td>
         <td>&#x2705;</td>
-        <td>&#x274C;</td>
-        <td>&#x274C;</td>
-        <td>&#x274C;</td>
-        <td>&#x274C;</td>
+        <td>&#x2705;</td>
+        <td>&#x2705;</td>
+        <td>&#x2705;</td>
+        <td>&#x2705;</td>
         <td></td>
     </tr>
     <tr>
-        <td>rclone</td>
+        <td>iRODS</td>
         <td>&#x2705;</td>
         <td>&#x2705;</td>
-        <td>&#x2705;</td>
-        <td>&#x2705;</td>
-        <td>&#x2705;</td>
-        <td>&#x2705;</td>
+        <td>&#x274C;</td>
+        <td>&#x274C;</td>
+        <td>&#x274C;</td>
+        <td>&#x274C;</td>
         <td></td>
     </tr>
 </table>

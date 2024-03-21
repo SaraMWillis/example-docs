@@ -12,6 +12,7 @@ You might consider these scenarios:
 1. **Run proof-of-concept on the HPC clusters**
 
     Compute time and storage are free on a moderate scale so no funding is needed to test and develop code, workflows, and methodologies for grants.
+
 2. **Run the funded compute on the HPC clusters** 
 
     Using our buy-in model, the compute part of the funding can complement the existing compute resources and reduce personnel costs.
@@ -63,4 +64,4 @@ The White House Office of Science and Technology Policy (OSTP) released a policy
 
 The Library has created a [summary table of public access plans](https://data.library.arizona.edu/data-management/data-management-plans/funding-agencies-requirements) for all of the 19 federal funding agencies that fall under the OSTP memo.
 
-The University offers other resources for grant applications here: [https://rgw.arizona.edu/development/proposal-development/external-grant-writing-resources](https://rgw.arizona.edu/development/proposal-development/external-grant-writing-resources)
+The University offers other resources for grant applications here: [https://research.arizona.edu/development/training-grants-resources](https://research.arizona.edu/development/training-grants-resources)

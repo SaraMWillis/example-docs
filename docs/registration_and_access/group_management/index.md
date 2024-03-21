@@ -9,7 +9,7 @@ HPC groups are ways for faculty members to manage file permissions, job allocati
 
 ## Research Groups
 
-If you are a faculty member who has [registered for an HPC account](/registration_and_access/account_creation), a research group with your UArizona NetID name has automatically been created for you. This group has [an allocation of CPU hours](/running_jobs/allocations) associated with it as well as [communal storage for your data](/storage_and_transfers/storage/hpc_storage).
+If you are a faculty member who has [registered for an HPC account](../account_creation), a research group named after your UArizona NetID has been automatically created for you. This group has [an allocation of CPU hours](../../resources/allocations) associated with it as well as [communal storage for your data](../../storage_and_transfers/storage/hpc_storage).
 
 ### Adding Members
 

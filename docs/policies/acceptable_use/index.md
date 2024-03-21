@@ -2,7 +2,7 @@
 
 High Performance Computing (HPC) facility users are responsible for [complying with all University policies](https://policy.arizona.edu/information-technology/acceptable-use-computers-and-networks-policy).
 
-The supercomputers represent a unique resource for the campus community. These computers have special characteristics that are not found, or are of limited availability, on other central computers, including parallel processing, large memory, and a Linux operating system. The allocation of High Performance Computing (HPC) resources requires close supervision by those charged with management of these resources.  
+The supercomputers represent a unique resource for the campus community. These computers have special characteristics that are not found, or are of limited availability, on other central computers, including parallel processing, large memory, and a Linux operating system. The UArizona HPC resources require close supervision by those charged with management of these resources.  
 
 ## Controlled Data
 UArizona HPC does not provide support for any type of controlled data. No controlled data (HIPAA, EAR, FERPA, PII, CUI, ITAR, etc.) can be analysed or stored on any HPC storage.
@@ -18,4 +18,4 @@ Please [contact our HPC consultants](/support_and_training/consulting_services) 
 
 ## Access for Research and Limited Access for Instruction
 
-As described in the **'Sales Tax Exemption'** section above, most of the HPC systems are limited to research applications as defined in [Section B-14 of ARS Statute 42-5061](http://www.azleg.state.az.us/ars/42/05061.htm) by the Arizona Legislature. All users are expected to use these resources accordingly and to use the [U-System](https://it.arizona.edu/u-system) or other computing systems for non-research purposes.
+As described in the **'Sales Tax Exemption'** section above, most of the HPC systems are limited to research applications as defined in [Section B-14 of ARS Statute 42-5061](http://www.azleg.state.az.us/ars/42/05061.htm) by the Arizona Legislature. All users are expected to use these resources accordingly and to use other computing systems for non-research purposes.

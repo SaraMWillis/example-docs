@@ -9,12 +9,13 @@ In the cheat sheet below, we offer some basics as a reference. We also highly su
 ## Shell Basics
 
 ### Shortcuts
-Shortcuts are used as standins 
+Shortcuts can be used as standins for system locations, avoiding the need for full paths. A few examples:
+
 |Shortcut|Description|
 |-|-|
 |```~```|Your home directory|
 |```.```|Your working directory|
-|```..``` One directory above your working directory|
+|```..```|One directory above your working directory|
 
 ### Commands
 

@@ -2,7 +2,15 @@
 
 ## Group Allocations
 
-All University of Arizona Principal Investigators (PIs; typically faculty) that register for access to the UA High Performance Computing (HPC) receive free standard allocations on the HPC machines which is shared among all members of their team and refreshed on a monthly basis. All PIs receive a standard allocation in addition to the windfall partition. A breakdown of the allocations available on the system and their usage is shown below:
+All University of Arizona Principal Investigators (PIs; typically faculty) that register for access to the UA High Performance Computing (HPC) receive free standard allocations on the HPC machines which is shared among all members of their team and refreshed on a monthly basis. All PIs receive a standard allocation in addition to the windfall partition. A breakdown of the allocations available on the system and their usage is shown below. 
+
+!!! Warning "High Priority"
+
+    Please note that the High Priority partition is only available to PI groups who participated in the [buy-in process](/policies/buy_in) for Puma. PIs will be notified if another buy-in session becomes available
+
+!!! Example "Qualified Hours"
+
+    Qualified Hours are only available to groups which have been awarded a special project. See [this page](/policies/special_projects/ "special projects") for information on how to apply. 
 
 === "Standard Hours"
     Every group receives a free allocation of standard hours that refreshes on the first day of each month. 
@@ -29,11 +37,8 @@ All University of Arizona Principal Investigators (PIs; typically faculty) that 
 
 
 === "High Priority Hours"
-        
-
-    High-priority allocations are available to PIs who participated in the [buy-in process](/policies/buy_in) when purchasing the Puma cluster. The size of the allocation is dependent on the resources purchased. 
     
-    High priority allocations provide access to an additional pool of purchased compute nodes and increase the priority of jobs such that they start faster than standard jobs.
+    High priority allocations provide access to an additional pool of purchased compute nodes and increase the priority of jobs such that they start faster than standard jobs. Please check with your PI to ensure that your group has access before including these directives in your jobs.
     
     In batch jobs, standard hours can be used with the directives:
 

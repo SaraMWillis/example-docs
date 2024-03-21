@@ -34,115 +34,115 @@ A program where little effort is involved in separating the code into parallel t
 
 This refers to any hours in your allocation that are reserved by running jobs. When you submit a job, any hours that it requires are moved to the "encumbered" category. As soon as your job ends, unused hours will be refunded and used hours will permanently be deducted from your monthly allotment. 
 
-<br>
+<hr>
 
 **GPU**
 
 A graphical processing unit, a specialized type of CPU derived from a graphics card. Effectively has hundreds of small cores. For certain tasks (those that can be effectively parallelized), a GPU is much faster than a general-purpose CPU.
 
-<br> 
+<hr> 
 
 **Head node**
 
 The head node is for managing the cluster and is not available to users.
 
-<br>
+<hr>
 
 **HPC**
 
 High performance computing. Implies a program too large for, or that takes too long on, a laptop or workstation. Also HTC (high throughput computing) similar but oriented to processing many small compute jobs.
 
-<br>
+<hr>
 
 **Hyperthreading**
 
 Intel processors (in this case "cores") have hyper-threading which can make one core look like two; but it does not add compute capacity in most HPC cases, so we turn it off.
 
-<br>
+<hr>
 
 **Login node**
 
 A cluster node accessible to users and dedicated to logins, editing, moving data, submitting jobs.  
 
-<br>
+<hr>
 
 **MPI computing**
 
 Message passing interface, software standard used for most programs that use distributed memory. MPI calls lower-level functions, either networking or shared memory. On a cluster that means it can run transparently either on one node or multiple nodes. MPI has multiple implementations (OpenMPI, MVAPICH, OpenMPI or Intel MPI) that must be used consistently to both compile and run an MPI program.
 
-<br>
+<hr>
 
 **Network bandwidth**
 
 The amount of data that can be moved over a network per second. For FDR Infiniband on Ocelote that is 56Gbps (Giga bits per second)
 
-<br>
+<hr>
 
 **Network latency**
 
 In HPC terms, it is usually the delay in the network for messages being passed from one node to another.  This is optimized by a hardware technology called RDMA (Remote Direct Memory Access)
 
-<br>
+<hr>
 
 **Node (aka compute node)**
 
 A single computer in a box, functionally similar to a desktop computer but typically more powerful and packaged for rackmount in a datacenter. Usually two CPU sockets or four sockets with very large memory vs. one socket for a desktop. Ocelote standard nodes have 28 cores and 192GB memory.
 
-<br>
+<hr>
 
 **Parallel Programming**
 
 A program that is either multi-tasking (like MPI) or multi-threaded (like OpenMP) or both, in order to effectively use more cores and more nodes and get more computing done. May be either shared-memory or distributed-memory. Unlike a serial program.
 
-<br>
+<hr>
 
 **Parallel Scaling**
 
 The efficiency of a parallel program, usually defined as the parallel speedup of the program divided by the number of cores occupied. Speedup is defined as the serial run time divided by the parallel run time. Usually parallel computing introduces overhead, and scaling is less than 1 (or 100%).  In most cases, scaling starts at 1 on 1 core (by definition) and decreases as more cores are added, until some point is reached at which adding more cores adds overhead and makes the program slower.
 
-<br>
+<hr>
 
 **Scheduler/HPC scheduler**
 
 A program that maintains a list of batch jobs to be executed on a cluster, ranks them in some priority order, and executes batch jobs on compute nodes as they become available. It tries to keep the cluster from being overloaded or idle. Puma, Ocelote, and ElGato use SLURM.
 
-<br>
+<hr>
 
 **Scratch storage**
 
 A temporary file system, designed for speed rather than reliability, and the first tier in the storage hierarchy. On Ocelote and ElGato these are internal SATA disks and referenced as ```/tmp```.
 
-<br>
+<hr>
 
 **Shared memory computing**
 
 A program that runs multiple tasks or software threads, each of which sees the same available memory available from the operating system, and shares that memory using one of the multiple shared memory/multi-threading communication methods (OpenMP, pthreads, POSIX shm, MPI over shared memory, etc.). Shared memory programs cannot run across multiple nodes. Implies a limit (a little less than the amount of memory in the node) to the memory size of the running program.
 
-<br>
+<hr>
 
 **Single-threaded computing**
 
 A software program that cannot take advantage of multi-threading because it was written without multi-threading support. Essentially can use only one core on one node regardless of the number of cores available. Multiple single-threaded programs can be run on a single node on multiple cores.
 
-<br>
+<hr>
 
 **SSD**
 
 Solid state disk, memory chips packaged with an interface that appears to the computer to be a disk drive. Faster than rotating disk drives and still more expensive, though decreasing in price over time.
 
-<br>
+<hr>
 
 **Storage hierarchy**
 
 Each tier of storage is larger and slower than the preceding tier. The first is data in the processor including the processor cache.  The next tier is memory.  Page or swap is an extension of memory but is very inefficient since it actually writes to disk. You should next consider ```/tmp``` which is the local disk on each node.  You have no access to ```/tmp``` once the job ends.  Shared storage is all of ```/home```, ```/groups/PI```, and ```/xdisk```, and is the slowest.
 
-<br>
+<hr>
 
 **Supercomputer**
 
 A large and powerful cluster. We currently have three: Puma, Ocelote, and ElGato.
 
-<br>
+<hr>
 
 **VM or virtual machine**
 

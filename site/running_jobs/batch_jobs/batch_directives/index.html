@@ -579,6 +579,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_start/external_resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2134,6 +2155,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software/unsupported/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unsupported Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2401,9 +2443,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#partitions" class="md-nav__link">
+  <a href="#allocations-and-partitions" class="md-nav__link">
     <span class="md-ellipsis">
-      Partitions
+      Allocations and Partitions
     </span>
   </a>
   
@@ -2686,6 +2728,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../support_and_training/people/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support Staff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -2696,10 +2759,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2710,8 +2773,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
             <span class="md-nav__icon md-icon"></span>
             FAQs
           </label>
@@ -2888,10 +2951,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
         
           
-          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2902,8 +2965,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
             <span class="md-nav__icon md-icon"></span>
             Workshops
           </label>
@@ -2967,10 +3030,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_4_3" id="__nav_8_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2981,8 +3044,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_3">
             <span class="md-nav__icon md-icon"></span>
             Intro to Machine Learning on HPC
           </label>
@@ -3284,59 +3347,37 @@
 </div>
 <p>The first section of a batch script always contains the <a href="https://slurm.schedmd.com/" title="slurm.schedmd.com">Slurm Directives</a>, which specify the resource requests for your job. The scheduler parses these in order to allocate CPUs, memory, walltime, etc. to your job request.</p>
 <p>Below are important as well as optional directives to include in any script:</p>
-<h2 id="partitions">Partitions</h2>
+<h2 id="allocations-and-partitions">Allocations and Partitions</h2>
 <p>There are four available partitions on the UArizona HPC. With the exception of Windfall, these consume your monthly allocation. See our <a href="../../../resources/allocations/">allocations documentation</a> for more information on each. The syntax to request each of the following is shown below:</p>
-<table>
-<thead>
-<tr>
-<th>Partition</th>
-<th>Availability</th>
-<th>Priority</th>
-<th>Account</th>
-<th>QOS</th>
-<th>Cost</th>
-<th>Slurm</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Standard</td>
-<td>all groups</td>
-<td>normal</td>
-<td>required</td>
-<td>n/a</td>
-<td>normal</td>
-<td><pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=standard</code></pre></td>
-</tr>
-<tr>
-<td>Windfall</td>
-<td>all groups</td>
-<td>low</td>
-<td>n/a</td>
-<td>n/a</td>
-<td>none</td>
-<td><pre><code>#SBATCH --partition=windfall</code></pre></td>
-</tr>
-<tr>
-<td>High Priority</td>
-<td><a href="../../../policies/buy_in/">buy-in groups</a></td>
-<td>high</td>
-<td>required</td>
-<td>required</td>
-<td>normal</td>
-<td><pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=high_priority<br>#SBATCH --qos=user_qos_&lt;PI GROUP&gt;</code></pre></td>
-</tr>
-<tr>
-<td>Qualified</td>
-<td><a href="../../../policies/special_projects/">groups granted special projects</a></td>
-<td>normal</td>
-<td>required</td>
-<td>required</td>
-<td>normal</td>
-<td><pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=standard<br>#SBATCH --qos=qual_qos_&lt;PI GROUP&gt;</code></pre></td>
-</tr>
-</tbody>
-</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standard</label><label for="__tabbed_1_2">Windfall</label><label for="__tabbed_1_3">High Priority</label><label for="__tabbed_1_4">Qualified</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The standard allocation is available to all groups and is refreshed on a monthly basis. Substitute your own group's name in for <code>&lt;PI GROUP&gt;</code>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --account=&lt;PI GROUP&gt;</span>
+<span class="c1">#SBATCH --partition=standard</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>The windfall partition is available to all users and does not consume any monthly hours. However, it is lower priority than the standard and high priority partitions (meaning these jobs are slower to start) and may be preempted (interrupted and restarted) if the resources are required by jobs using higher priority hours. To use the windfall partition, exclude the <code>--account</code> flag.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --partition=windfall</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>High priority hours give access to buy-in nodes and are higher priority than the standard partition. These hours are only available to <a href="../../../policies/buy_in/">buy-in groups</a>. To use high priority hours, an additional <code>--qos</code> flag is needed. Use the following syntax, replacing <code>&lt;PI GROUP&gt;</code> with your own group's name:
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --account=&lt;PI GROUP&gt;</span>
+<span class="c1">#SBATCH --partition=high_priority</span>
+<span class="c1">#SBATCH --qos=user_qos_&lt;PI GROUP&gt;</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>If your group has requested a temporary standard allocation increase via <a href="/policies/special_project">a special project</a>, you may use these hours by supplying an additional <code>--qos</code> flag. Use the following syntax, replacing <code>&lt;PI GROUP&gt;</code> with your own group's name:
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --account=&lt;PI GROUP&gt;</span>
+<span class="c1">#SBATCH --partition=standard</span>
+<span class="c1">#SBATCH --qos=qual_qos_&lt;PI GROUP&gt;</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
 <h2 id="nodes">Nodes</h2>
 <details class="danger" open="open">
 <summary>Danger</summary>
@@ -3367,14 +3408,14 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you exclude "gb" from your memory request, Slurm will default to mb</p>
+<p>If you exclude <code>gb</code> from your memory request, Slurm will default to mb</p>
 </div>
 <p>Memory is an optional flag. By default, the scheduler will allocate you the <a href="../../cpus_and_memory/">standard CPU/memory ratio</a> available on the cluster. </p>
 <p>Memory can either be requested with the <code>--mem</code> or <code>--mem-per-cpu</code> flags. The <code>--mem</code> flag indicates the amount of <mark class="critic">Memory per <strong>node</strong></mark> to allocate to your job. If you are running multi-node MPI jobs with this flag, the total amount of memory you will receive will be <code>mem</code><span class="arithmatex">\(\times\)</span><code>nodes</code></p>
-<p>The general syntax for requesting <code>&lt;N&gt;gb</code> of memory per node is
+<p>The general syntax for requesting <code>&lt;N&gt;</code> GB of memory per node is
 <div class="highlight"><pre><span></span><code>#SBATCH --mem=&lt;N&gt;gb
 </code></pre></div>
-or, to request <code>&lt;N&gt;gb</code> of memory per CPU:
+or, to request <code>&lt;N&gt;</code> GB of memory per CPU:
 <div class="highlight"><pre><span></span><code>#SBATCH --mem-per-cpu=&lt;N&gt;gb
 </code></pre></div></p>
 <p><strong>High Memory Node Requests</strong></p>
@@ -3417,7 +3458,7 @@ or, to request <code>&lt;N&gt;gb</code> of memory per CPU:
   <tr>
     <td rowspan=3  style="vertical-align: middle;">Puma</td>
     <td><code>#SBATCH --gres=gpu:1</code></td>
-    <td>Request a single GPU. This will either target one Volta GPU (v100) or one A100 MIG slice, depending on availability. Only one GPU should be selected with this method to avoid being allocated multiple MIG slices.</td>
+    <td>Request a single GPU. This will either target one Volta GPU (v100) or one <a href="../../../resources/compute_resources/#mig-multi-instance-gpu-resources">A100 MIG slice</a>, depending on availability. Only one GPU should be selected with this method to avoid being allocated multiple MIG slices.</td>
   </tr>
   <tr>
     <td><code>#SBATCH --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb</code></td>
@@ -3434,7 +3475,11 @@ or, to request <code>&lt;N&gt;gb</code> of memory per CPU:
 </table>
 
 <h2 id="job-arrays">Job Arrays</h2>
-<p>Array jobs in SLURM allow users to submit multiple similar tasks as a single job. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. </p>
+<p>Array jobs in SLURM allow users to submit multiple similar tasks as a single job. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. The flag for submitting array jobs is:</p>
+<p><div class="highlight"><pre><span></span><code>#SBATCH --array=&lt;N&gt;-&lt;M&gt;
+</code></pre></div>
+where <code>&lt;N&gt;</code> and <code>&lt;M&gt;</code> are integers. </p>
+<p>For detailed information on job arrays, see our <a href="../array_jobs/">job array tutorial</a>.</p>
 <h2 id="output-filenames">Output Filenames</h2>
 <p>The default output filename for a slurm job is <code>slurm-&lt;jobid&gt;.out</code>. If desired, this can be customized using the directives
 <div class="highlight"><pre><span></span><code>#SBATCH -o output_filename.out
@@ -3540,7 +3585,7 @@ or, to request <code>&lt;N&gt;gb</code> of memory per CPU:
 </table>
 <h2 id="examples-and-explanations">Examples and Explanations</h2>
 <p>The below examples are <em>complete</em> sections of Slurm directives that will produce valid requests. Other directives can be added (like output files), but they are not strictly necessary to submit a valid request. For simplicity, the Puma cluster is assumed when discussing memory and GPU resources. Note that these examples do not include the shebang <code>#!bin/bash</code> statement, which should be at the top of <em>every</em> slurm script. Also, note that the order of directives does not matter.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Single CPU</label><label for="__tabbed_1_2">Single Node</label><label for="__tabbed_1_3">Single GPU Node</label><label for="__tabbed_1_4">Multi-Node</label><label for="__tabbed_1_5">High-Memory Node</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Single CPU</label><label for="__tabbed_2_2">Single Node</label><label for="__tabbed_2_3">Single GPU Node</label><label for="__tabbed_2_4">Multi-Node</label><label for="__tabbed_2_5">High-Memory Node</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>#SBATCH --job-name=hello_world

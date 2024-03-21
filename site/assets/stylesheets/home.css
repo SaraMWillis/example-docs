@@ -368,7 +368,7 @@ div.fadeMe {
     box-sizing: border-box;
     font-size: 13px;
     font-family: inherit;
-    font-color: "#00266E";
+    color: #00266E;
     display: flex;
     flex-direction: column;
     height: auto; 
@@ -651,4 +651,3 @@ body, #slider, .wrap, .slide-content{
 .slide-transition{
     transition: all .5s ease-in-out;
 }
-    

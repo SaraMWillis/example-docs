@@ -9,37 +9,15 @@ Below are important as well as optional directives to include in any script:
  
 ## Allocations and Partitions
 
-There are four available partitions on the UArizona HPC. With the exception of Windfall, these consume your monthly allocation. See our [allocations documentation](../../../resources/allocations/) for more information on each. The syntax to request each of the following is shown below:
+There are four available partitions on the UArizona HPC. With the exception of Windfall, these consume your monthly allocation. See our [allocations documentation](../../../resources/allocations/) for more detailed information on each. The syntax to request each of the following is shown below:
 
-=== "Standard"
-    The standard allocation is available to all groups and is refreshed on a monthly basis. Substitute your own group's name in for ```<PI GROUP>```
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=standard
-    ```
+|Partition|Request Syntax|Comments|
+|-|-|-|
+|Standard|<pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=standard</code></pre>||
+|Windfall|<pre><code>#SBATCH --partition=windfall</code></pre>|Unlimited access. Preemptible|
+|High Priority|<pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=high_priority<br>#SBATCH --qos=user_qos_&#60;PI GROUP&#62;</code></pre>|Only available to <a href="../../../policies/buy_in/">buy-in groups</a>.|
+|Qualified|<pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=standard<br>#SBATCH --qos=qual_qos_&#60;PI GROUP&#62;</code></pre>|Available to groups with an activate [special project](../../../policies/special_projects/).|
 
-=== "Windfall"
-    The windfall partition is available to all users and does not consume any monthly hours. However, it is lower priority than the standard and high priority partitions (meaning these jobs are slower to start) and may be preempted (interrupted and restarted) if the resources are required by jobs using higher priority hours. To use the windfall partition, exclude the ```--account``` flag.
-
-    ```bash
-    #SBATCH --partition=windfall
-    ```
-
-=== "High Priority"
-    High priority hours give access to buy-in nodes and are higher priority than the standard partition. These hours are only available to [buy-in groups](../../../policies/buy_in/). To use high priority hours, an additional ```--qos``` flag is needed. Use the following syntax, replacing ```<PI GROUP>``` with your own group's name:
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=high_priority
-    #SBATCH --qos=user_qos_<PI GROUP>
-    ```
-
-=== "Qualified"
-    If your group has requested a temporary standard allocation increase via [a special project](/policies/special_project), you may use these hours by supplying an additional ```--qos``` flag. Use the following syntax, replacing ```<PI GROUP>``` with your own group's name:
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=standard
-    #SBATCH --qos=qual_qos_<PI GROUP>
-    ```
 
 
 
@@ -127,20 +105,20 @@ GPUs are an optional resource that may be requested with the ```--gres``` direct
   </tr>
   <tr>
     <td rowspan=3  style="vertical-align: middle;">Puma</td>
-    <td><code>#SBATCH --gres=gpu:1</code></td>
+    <td><pre><code>#SBATCH --gres=gpu:1</code></pre></td>
     <td>Request a single GPU. This will either target one Volta GPU (v100) or one <a href="../../../resources/compute_resources/#mig-multi-instance-gpu-resources">A100 MIG slice</a>, depending on availability. Only one GPU should be selected with this method to avoid being allocated multiple MIG slices.</td>
   </tr>
   <tr>
-    <td><code>#SBATCH --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb</code></td>
+    <td><pre><code>#SBATCH --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb</code></pre></td>
     <td>Target one A100 MIG slice.</td>
   </tr>
   <tr>
-    <td><code>#SBATCH --gres=gpu:volta:N</code></td>
+    <td><pre><code>#SBATCH --gres=gpu:volta:N</code></code></td>
     <td>Request <code>N</code> V100 GPUs where 1&le;<code>N</code>&le;4</td>
   </tr>
   <tr>
     <td>Ocelote</td>
-    <td><code>#SBATCH --gres=gpu:1</code></td>
+    <td><pre><code>#SBATCH --gres=gpu:1</code></pre></td>
     <td>Request 1 Pascal GPU (p100)</td>
 </table>
 
@@ -168,13 +146,13 @@ Filenames take patterns that allow for job information substitution. A list of f
 
 |Variable|Meaning|Example Slurm Directive(s)|Sample Output|
 |-|-|-|-|
-|```%A```|A job array's main job ID|```#SBATCH --array=1-2```<br>```#SBATCH -o %A.out```<br>```#SBATCH --open-mode=append```|```12345.out```|
-|```%a```|A job array's index number|```#SBATCH --array=1-2```<br>```#SBATCH -o %A_%a.out```|```12345_1.out```<br>```12345_2.out```|
-|```%J```|Job ID plus [stepid](https://slurm.schedmd.com/sattach.html)|```#SBATCH -o %J.out```|```12345.out```|
-|```%j```|Job ID|```#SBATCH -o %j.out```|```12345.out```|
-|```%N```|Hostname of the first compute node allocated to the job|```#SBATCH -o %N.out```|```r1u11n1.out```|
-|```%u```|Username|```#SBATCH -o %u.out```|```netid.out```|
-|```%x```|Job name|```#SBATCH --job-name=JobName```<br>```#SBATCH -o %x.out```|```JobName.out```|
+|```%A```|A job array's main job ID|<pre><code>#SBATCH --array=1-2<br>#SBATCH -o %A.out<br>#SBATCH --open-mode=append</code></pre>|```12345.out```|
+|```%a```|A job array's index number|<pre><code>#SBATCH --array=1-2<br>#SBATCH -o %A_%a.out</code></pre>|```12345_1.out```<br>```12345_2.out```|
+|```%J```|Job ID plus [stepid](https://slurm.schedmd.com/sattach.html)|<pre><code>#SBATCH -o %J.out</code></pre>|```12345.out```|
+|```%j```|Job ID|<pre><code>#SBATCH -o %j.out</code></pre>|```12345.out```|
+|```%N```|Hostname of the first compute node allocated to the job|<pre><code>#SBATCH -o %N.out</code></pre>|```r1u11n1.out```|
+|```%u```|Username|<pre><code>#SBATCH -o %u.out</code></pre>|```netid.out```|
+|```%x```|Job name|<pre><code>#SBATCH --job-name=JobName<br>#SBATCH -o %x.out</code></pre>|```JobName.out```|
 
 [^1]: Groups and users are subject to limitations on resource usage. For more information, see [job limits](/running_jobs/job_limits/).
 
@@ -182,14 +160,14 @@ Filenames take patterns that allow for job information substitution. A list of f
 ## Additional Directives
 |<div style="width:270px">Command</div>|Purpose|
 |-|-|
-|```#SBATCH --job-name=JobName```|Optional: Specify a name for your job. This will not automatically affect the output filename.|
-|```#SBATCH -e output_filename.err```<br>```#SBATCH -o output_filename.out```|Optional: Specify output filename(s). If ```-e``` is missing, stdout and stderr will be combined.|
-|```#SBATCH --open-mode=append```|Optional: Append your job's output to the specified output filename(s).```
-|```#SBATCH --mail-type=BEGIN|END|FAIL|ALL```|Optional: Request email notifications. **Beware of mail bombing yourself.**|
-|```#SBATCH --mail-user=email@address.xyz```|Optional: Specify email address. If this is missing, notifications will go to your UArizona email address by default.|
-|```#SBATCH --export=VAR```|Optional: Export a comma-delimited list of environment variables to a job.|
-|```#SBATCH --export=all```|Optional: Export your working environment to your job. This is the default.|
-|```#SBATCH --export=none```|Optional: Do not export working environment to your job.|
+|<pre><code>#SBATCH --job-name=JobName</code></pre>|Optional: Specify a name for your job. This will not automatically affect the output filename.|
+|<pre><code>#SBATCH -e output_filename.err<br>#SBATCH -o output_filename.out</code></pre>|Optional: Specify output filename(s). If ```-e``` is missing, stdout and stderr will be combined.|
+|<pre><code>#SBATCH --open-mode=append</code></pre>|Optional: Append your job's output to the specified output filename(s).|
+|<pre><code>#SBATCH --mail-type=BEGIN&#124;END&#124;FAIL&#124;ALL</code></pre>|Optional: Request email notifications. **Beware of mail bombing yourself.**|
+|<pre><code>#SBATCH --mail-user=email@address.xyz</code></pre>|Optional: Specify email address. If this is missing, notifications will go to your UArizona email address by default.|
+|<pre><code>#SBATCH --export=VAR</pre></code>|Optional: Export a comma-delimited list of environment variables to a job.|
+|<pre><code>#SBATCH --export=all</pre></code>|Optional: Export your working environment to your job. This is the default.|
+|<pre><code>#SBATCH --export=none</pre></code>|Optional: Do not export working environment to your job.|
 
 
 

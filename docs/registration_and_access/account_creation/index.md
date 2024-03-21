@@ -7,7 +7,7 @@ Faculty members will receive a PI Account which is different from the Sponsored 
 
 ## How to Register
 
-The process of getting registered for an HPC account varies depending on your affiliation with the University. Take a look at the list below to determine how you should register:
+The process of registering for an HPC account varies depending on your affiliation with the university. Take a look at the list below to determine how you should register:
 
 <html>
 <link rel="stylesheet" href="../../assets/stylesheets/animated_dropdown.css">
@@ -38,7 +38,11 @@ The process of getting registered for an HPC account varies depending on your af
     <br><br>
     <b>Step 2</b>: Request sponsorship from a UArizona faculty member. Note: Your faculty sponsor will need their own HPC account before they are able to sponsor others.
     <br> 
-    To request sponsorship, navigate to <a href="https://portal.hpc.arizona.edu/portal/sendlink.php">https://portal.hpc.arizona.edu/portal/sendlink.php</a>. On the right-hand side, enter your sponsor's email address and click send. Your sponsor will then receive an email with a link used to authorize your account. Once they confirm your request, you will receive an email with instructions for accessing the HPC systems.
+    To request sponsorship, navigate to <a href="https://portal.hpc.arizona.edu/portal/sendlink.php">https://portal.hpc.arizona.edu/portal/sendlink.php</a>. On the right-hand side, enter your sponsor's email address and click send. 
+    
+    <img src="images/request_sponsorship.png" style="width:800px;">
+
+    Your sponsor will then receive an email with a link used to authorize your account. Once they confirm your request, you will receive an email with instructions for accessing the HPC systems.
     <br><br>
     Note: it may take up to 15 minutes after approval to receive a confirmation email and for your account to officially be activated.
     <br>

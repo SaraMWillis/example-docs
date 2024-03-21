@@ -657,6 +657,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external_resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2212,6 +2233,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/unsupported/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unsupported Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2630,6 +2672,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../support_and_training/people/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support Staff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -2640,10 +2703,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2654,8 +2717,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
             <span class="md-nav__icon md-icon"></span>
             FAQs
           </label>
@@ -2832,10 +2895,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
         
           
-          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2846,8 +2909,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
             <span class="md-nav__icon md-icon"></span>
             Workshops
           </label>
@@ -2911,10 +2974,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_4_3" id="__nav_8_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2925,8 +2988,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_3">
             <span class="md-nav__icon md-icon"></span>
             Intro to Machine Learning on HPC
           </label>
@@ -3284,7 +3347,7 @@ PI: parent_974 Total time: 7000:00:00
 <p>You should see a name next to the <code>Group</code> field (in the example above <code>group_name</code>). If you see multiple groups, then you are sponsored in multiple groups and can choose any one of your group names. Note the name of your account and hang onto it for the upcoming sections.</p>
 <h3 id="interactive-jobs">Interactive Jobs</h3>
 <p>Now, let's actually access a compute node. When you're connected to a login node, you can connect to a compute node by using the command <code>interactive</code>. The command <code>interactive</code> by default will give you one CPU for one hour (which will charge your account one CPU hour -- don't worry, you have a lot!). You can adjust this using the different flags available which are documented on our <a href="../../running_jobs/interactive_jobs/">Interactive Jobs</a> page. For now, we'll stick with the default resources. </p>
-<p>To access a session, run the following, substituting your own group name (that you found with <code>va</code> in the section above) in for <code>group_name</code>:
+<p>To access a session, run the following, substituting your own group name (that you found with <code>va</code> in the section above) for <code>group_name</code>:
 <div class="highlight"><pre><span></span><code>interactive -a group_name
 </code></pre></div></p>
 <p>For example, in my case:
@@ -3296,7 +3359,7 @@ salloc: Nodes cpu39 are ready for job
 [netid@cpu39 ~]$ hostname
 cpu39.elgato.hpc.arizona.edu
 </code></pre></div></p>
-<p>You'll notice once your job starts that your command line prompt changes to display the name of the compute node. If you run hostname, this should match your command line prompt and show you the name of the compute node you're connected to. in my case, I'm connected to the ElGato compute node <code>cpu39</code>.</p>
+<p>You'll notice once your job starts that your command line prompt changes to display the name of the compute node. If you run <code>hostname</code>, this should match your command line prompt and show you the name of the compute node you're connected to. In my case, I'm connected to the ElGato compute node <code>cpu39</code>.</p>
 <p>You'll also notice that your session has been assigned a job number (in the above, you can see this as <code>Granted job allocation 1800857</code>). A job number is assigned to every job on the system and is used to keep track of job statistics and metrics. </p>
 <p>Since you're in an interactive session, you now have exclusive access to the resources you've reserved which means you can do things like use software to develop, test, run, and debug your code. Interactive sessions are optimal for these sorts of actions. However, you might run into problems executing your analyses if:</p>
 <ul>
