@@ -1,5 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/assets/stylesheets/embedded_files.css">
+<link rel="stylesheet" href="../../assets/stylesheets/embedded_files.css">
 
 # Grant Resources
 

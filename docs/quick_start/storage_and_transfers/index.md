@@ -5,7 +5,7 @@ When you first access a login node, you're located in your home directory. This 
 
 !!! warning "Do not overfill your home directory"
 
-    If the storage usage of your home directory meets or exceeds the 50 GB limit, you may experience trouble logging in! This is because the system needs to create a file to log your access sessions, and it will be unable to do so if there is no additional storage space. You should still be able to manage your files as described below. 
+    Once your data reaches the 50GB limit you will experience problems, like the inability to log in because the session file cannot be created. And your jobs may fail with unexpected errors depending on how your software reacts to no more space for writing output. 
 
 <center><img src="images/filexfer.png" style="height: 300px;"></center>
 

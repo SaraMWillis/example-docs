@@ -58,8 +58,9 @@ Puma, Ocelote, and El Gato all run CentOS7 and have the following compilers avai
 
 ## Installing additional software
 
-To submit a request to have software installed on the UArizona HPC systems, use our [HPC Software Install Request form](https://uarizona.service-now.com/sp?id=sc_cat_item&sys_id=102d93a71ba720107947edf1604bcb55&sysparm_category=84d3d1acdbc8f4109627d90d6896191f). There is no expected time frame for how long it takes to install software, there are many variables that determine this. If you haven't heard back in a week, it is reasonable for you to follow up with a support ticket
+You are allowed and encouraged to install software you may need on the HPC system. However, you cannot install software that requires root permission or use a method like "yum install" that accesses system paths. For information on installing software on the HPC, see the "User Installations" tab to the left.
 
-You may also install software packages into the space that is allocated to you with your HPC account.  However, you cannot install software that requires root permission or use a method like "yum install" that accesses system paths. For information on installing software locally, see our online guide for an example.
+Sometimes it is beyond the abilities or permissions of a user to install your desired software. In this case, please submit a request for our Consult team to install it for you via the [HPC Software Install Request form](https://uarizona.service-now.com/sp?id=sc_cat_item&sys_id=102d93a71ba720107947edf1604bcb55&sysparm_category=84d3d1acdbc8f4109627d90d6896191f). There is no expected time frame for how long it takes to install software, as there are many variables that determine this. If you haven't heard back within a week, it may be appropriate to follow up.
+
 
 

@@ -46,7 +46,7 @@ Usage: /usr/local/bin/interactive [-x] [-g] [-N nodes] [-m memory per core] [-n 
 You may also create your own salloc commands using any desired [SLURM directives](../batch_jobs/slurm_reference) for maximum customization.
 
 
-**Customizing Your Resources**
+#### Customizing Your Resources
 
 The command ```interactive``` when run without any arguments will allocate you a windfall session using one CPU for one hour which isn't ideal for most use cases. You can modify this by including additional flags. To see the available options, you can use the help flag ```-h```
 
@@ -56,14 +56,14 @@ Usage: /usr/local/bin/interactive [-x] [-g] [-N nodes] [-m memory per core] [-n 
 ```
 The values can be combined and each mean the following:
 
-|Flag|Explanation|<div style="width:200px">Example</div>|
+|Flag|Explanation|<div style="width:250px">Example</div>|
 |-|-|-|
 |```-a```|This is followed by your group's name and will switch you to using the standard partition. This is highly recommended to keep your sessions from being interrupted and to help them start faster|```-a my_group```|
 |```-t```|The amount of time to reserve for your job in the format ```hhh:mm:ss```|```-t 05:00:00```|
 |```-n```|Total number of tasks (CPUs) to allocate to your job. By default, this will be on a single node|```-n 16```|
 |```-N```|Total number of nodes (physical computers) to allocate to your job|```-N 2```|
 |```-m```|Total amount of memory {==per CPU==}. See [CPUs and Memory](../cpus_and_memory/) for more information and potential complications|```-m 5gb```|
-|```Q```|Used to add a qos to access high priority or qualified hours. Only for groups with [buy-in/special project hours](../../resources/allocations/)|```-Q user_qos_pi_netid```|
+|```-Q```|Used to access {==high priority or qualified hours==}. Only for groups with [buy-in/special project hours](../../resources/allocations/)|High Priority: ```-Q user_qos_<PI NETID>```<br>Qualified: ```-Q qual_qos_<PI NETID>```|
 |```-g```|Request one GPU. This flag takes no arguments. On Puma, you may be allocated **either** a v100 **or** [a MIG slice](../../resources/compute_resources/#mig-multi-instance-gpu-resources). If you want more control over your resources, you can use salloc directly using [GPU batch directives](../batch_jobs/batch_directives/#gpus)|```-q```|
 |```-x```|Enable [X11 forwarding](/registration_and_access/system_access/#x11-forwarding). This flag takes no arguments.|```-x```|
 

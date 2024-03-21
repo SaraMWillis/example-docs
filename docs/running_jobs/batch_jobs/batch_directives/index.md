@@ -7,17 +7,39 @@ The first section of a batch script always contains the [Slurm Directives](https
 
 Below are important as well as optional directives to include in any script:
  
-## Partitions
+## Allocations and Partitions
 
 There are four available partitions on the UArizona HPC. With the exception of Windfall, these consume your monthly allocation. See our [allocations documentation](../../../resources/allocations/) for more information on each. The syntax to request each of the following is shown below:
 
+=== "Standard"
+    The standard allocation is available to all groups and is refreshed on a monthly basis. Substitute your own group's name in for ```<PI GROUP>```
+    ```bash
+    #SBATCH --account=<PI GROUP>
+    #SBATCH --partition=standard
+    ```
 
-|Partition|Availability|Priority|Account|QOS|Cost|Slurm|
-|-|-|-|-|-|-|-|
-|Standard|all groups|normal|required|n/a|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=standard</code></pre>|
-|Windfall|all groups|low|n/a|n/a|none|<pre><code>#SBATCH --partition=windfall</code></pre>|
-|High Priority|[buy-in groups](../../../policies/buy_in/)|high|required|required|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=high_priority<br>#SBATCH --qos=user_qos_&lt;PI GROUP&gt;</code></pre>|
-|Qualified|[groups granted special projects](../../../policies/special_projects/)|normal|required|required|normal|<pre><code>#SBATCH --account=&lt;PI GROUP&gt;<br>#SBATCH --partition=standard<br>#SBATCH --qos=qual_qos_&lt;PI GROUP&gt;</code></pre>|
+=== "Windfall"
+    The windfall partition is available to all users and does not consume any monthly hours. However, it is lower priority than the standard and high priority partitions (meaning these jobs are slower to start) and may be preempted (interrupted and restarted) if the resources are required by jobs using higher priority hours. To use the windfall partition, exclude the ```--account``` flag.
+
+    ```bash
+    #SBATCH --partition=windfall
+    ```
+
+=== "High Priority"
+    High priority hours give access to buy-in nodes and are higher priority than the standard partition. These hours are only available to [buy-in groups](../../../policies/buy_in/). To use high priority hours, an additional ```--qos``` flag is needed. Use the following syntax, replacing ```<PI GROUP>``` with your own group's name:
+    ```bash
+    #SBATCH --account=<PI GROUP>
+    #SBATCH --partition=high_priority
+    #SBATCH --qos=user_qos_<PI GROUP>
+    ```
+
+=== "Qualified"
+    If your group has requested a temporary standard allocation increase via [a special project](/policies/special_project), you may use these hours by supplying an additional ```--qos``` flag. Use the following syntax, replacing ```<PI GROUP>``` with your own group's name:
+    ```bash
+    #SBATCH --account=<PI GROUP>
+    #SBATCH --partition=standard
+    #SBATCH --qos=qual_qos_<PI GROUP>
+    ```
 
 
 
@@ -54,17 +76,17 @@ Each job must specify the number of CPUs they need for their application with th
     More detailed information on memory and CPU requests can be found on our [CPUs and Memory page](../../cpus_and_memory/).
     
 !!! warning
-    If you exclude "gb" from your memory request, Slurm will default to mb
+    If you exclude ```gb``` from your memory request, Slurm will default to mb
 
 Memory is an optional flag. By default, the scheduler will allocate you the [standard CPU/memory ratio](../../cpus_and_memory/) available on the cluster. 
 
 Memory can either be requested with the ```--mem``` or ```--mem-per-cpu``` flags. The ```--mem``` flag indicates the amount of {==Memory per **node**==} to allocate to your job. If you are running multi-node MPI jobs with this flag, the total amount of memory you will receive will be ```mem```$\times$```nodes```
 
-The general syntax for requesting ```<N>gb``` of memory per node is
+The general syntax for requesting ```<N>``` GB of memory per node is
 ```
 #SBATCH --mem=<N>gb
 ```
-or, to request ```<N>gb``` of memory per CPU:
+or, to request ```<N>``` GB of memory per CPU:
 ```
 #SBATCH --mem-per-cpu=<N>gb
 ```
@@ -106,7 +128,7 @@ GPUs are an optional resource that may be requested with the ```--gres``` direct
   <tr>
     <td rowspan=3  style="vertical-align: middle;">Puma</td>
     <td><code>#SBATCH --gres=gpu:1</code></td>
-    <td>Request a single GPU. This will either target one Volta GPU (v100) or one A100 MIG slice, depending on availability. Only one GPU should be selected with this method to avoid being allocated multiple MIG slices.</td>
+    <td>Request a single GPU. This will either target one Volta GPU (v100) or one <a href="../../../resources/compute_resources/#mig-multi-instance-gpu-resources">A100 MIG slice</a>, depending on availability. Only one GPU should be selected with this method to avoid being allocated multiple MIG slices.</td>
   </tr>
   <tr>
     <td><code>#SBATCH --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb</code></td>
@@ -125,8 +147,14 @@ GPUs are an optional resource that may be requested with the ```--gres``` direct
 
 ## Job Arrays 
 
-Array jobs in SLURM allow users to submit multiple similar tasks as a single job. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. 
+Array jobs in SLURM allow users to submit multiple similar tasks as a single job. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. The flag for submitting array jobs is:
 
+```
+#SBATCH --array=<N>-<M>
+```
+where ```<N>``` and ```<M>``` are integers. 
+
+For detailed information on job arrays, see our [job array tutorial](../array_jobs/).
 
 ## Output Filenames
 

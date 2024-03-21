@@ -3,8 +3,6 @@
 
 This short training class provides a brief introduction to key concepts of machine learning.  The short lecture will be followed by two hands-on examples that emphasize running a Jupyter notebook on the HPC supercomputers. For the in-person workshop you can stick around and use this as a consulting session.
 
-## PDF 
-
 <center>
 [Click here to download PDF](files/Intro_to_AI_ML.pdf){ .md-button }
 </center>
@@ -54,7 +52,8 @@ rm intro-to-ML.tar.gz
 #### Starting a Jupyter Session
 For this tutorial, we'll use a Jupyter Notebook which is available as an interactive application and can be accessed through [Open OnDemand](https://ood.hpc.arizona.edu/).
 
-<img src="images/application-select.png" alt="application-select" height="400"/> <img src="web-form.png" alt="web-form" height="400"/>
+<img src="images/application-select.png" alt="application-select" height="400"/> 
+
 
 Once you log in using your university credentials, click the **Interactive Apps** dropdown menu and select **Jupyter Notebook**. This will bring you to a web form that's used to request compute resources on one of our clusters. Use the following options in your request:
 
@@ -64,7 +63,6 @@ Once you log in using your university credentials, click the **Interactive Apps*
 |Run Time | 2|
 |Core count on a single node | 1 |
 |Memory per core|4|
-|GPUs required|0|
 |PI Group | your group**|
 |Queue | standard|
 

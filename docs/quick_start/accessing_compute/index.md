@@ -1,7 +1,4 @@
 <link rel="stylesheet" href="../../assets/stylesheets/buttons.css">
-
-
-
 # Accessing Compute Nodes
 
 ### The Compute Nodes
@@ -88,7 +85,7 @@ You should see a name next to the ```Group``` field (in the example above ```gro
 
 Now, let's actually access a compute node. When you're connected to a login node, you can connect to a compute node by using the command ```interactive```. The command ```interactive``` by default will give you one CPU for one hour (which will charge your account one CPU hour -- don't worry, you have a lot!). You can adjust this using the different flags available which are documented on our [Interactive Jobs](../../running_jobs/interactive_jobs/) page. For now, we'll stick with the default resources. 
 
-To access a session, run the following, substituting your own group name (that you found with ```va``` in the section above) in for ```group_name```:
+To access a session, run the following, substituting your own group name (that you found with ```va``` in the section above) for ```group_name```:
 ```
 interactive -a group_name
 ```
@@ -104,7 +101,7 @@ salloc: Nodes cpu39 are ready for job
 cpu39.elgato.hpc.arizona.edu
 ```
 
-You'll notice once your job starts that your command line prompt changes to display the name of the compute node. If you run hostname, this should match your command line prompt and show you the name of the compute node you're connected to. in my case, I'm connected to the ElGato compute node ```cpu39```.
+You'll notice once your job starts that your command line prompt changes to display the name of the compute node. If you run ````hostname````, this should match your command line prompt and show you the name of the compute node you're connected to. In my case, I'm connected to the ElGato compute node ```cpu39```.
 
 You'll also notice that your session has been assigned a job number (in the above, you can see this as ```Granted job allocation 1800857```). A job number is assigned to every job on the system and is used to keep track of job statistics and metrics. 
 

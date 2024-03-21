@@ -1,6 +1,14 @@
 # User Installations
 
-While users cannot add or update system software or libraries using tools that require root privileges such as ```yum```, many software packages can be installed locally without needing to be a superuser. Frequently linux packages make use of the "```configure```, ```make```, ```make install```" method and an example of how to do this is shown under Example Installation below. 
+## Package managers
+
+Many popular programs, in particular Python and R have built-in package managers that can be used to collect new software from the internet and easily install them to your environment. See the section corresponding to your prefered language on the left under the "Popular Software" heading for more detailed instructions.
+
+## Manual installations
+
+You are encouraged to download and [compile]("on a compute node!") any desired software *in their own directories.* Commands like ```git clone``` and ```wget``` are available for users to pull repositories from the internet. The installation process for users may involve changing install locations from system folders (e.g. ```/usr/bin/xyz```) to user folders (e.g. ```/home/ux/netid/anything/``` or ```/groups/pi-net-id/my-net-id/```), and will vary substantially from software to software, so providing instructions for all cases is beyond the scope of this page. If you encounter difficulties while installing your own software, the HPC Consult team is available for assistance. 
+
+While users cannot add or update system software or libraries using tools that require root privileges such as ```yum```, many software packages can be installed locally without needing to be a superuser. Frequently linux packages make use of the "```configure```, ```make```, ```make install```" method and an example of how to do this is shown below. 
 
 !!! tip 
     * Software is not available on the login nodes. To install custom software, log into an interactive session.

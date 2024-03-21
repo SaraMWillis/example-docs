@@ -10,6 +10,7 @@ nav:
     - Storage and Transfers: quick_start/storage_and_transfers/index.md
     - Accessing Compute Nodes: quick_start/accessing_compute/index.md
     - Software: quick_start/software/index.md
+    - External Resources: quick_start/external_resources/index.md
 
   - Policies:
     - Acceptable Use: policies/acceptable_use/index.md
@@ -76,6 +77,7 @@ nav:
       - Pulling Containers: software/containers/pulling_containers/index.md
       - Building Containers: software/containers/building_containers/index.md
       - Running Containers: software/containers/using_containers/index.md
+    - Unsupported Software: software/unsupported/index.md
 
   - Running Jobs:
     - Overview: running_jobs/overview/index.md
@@ -113,6 +115,7 @@ nav:
 
   - Support:
     - Consulting Services: support_and_training/consulting_services/index.md
+    - Support Staff: support_and_training/people/index.md
     - FAQs: 
         - Account Access: support_and_training/faqs/account_access/index.md 
         - General Computing: support_and_training/faqs/general_computing/index.md 

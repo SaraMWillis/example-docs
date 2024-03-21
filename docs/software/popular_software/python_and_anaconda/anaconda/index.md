@@ -1,5 +1,19 @@
 # Anaconda
 
+!!! Warning
+
+    Anaconda is known to cause potential issues on HPC Clusters. If it is possible to design your workflow around the native Python package manager Pip, we highly encourage you to do so. If you decide to use Anaconda on our HPC system, please read this page carefully and make yourself aware of the common problems and how to best avoid them. Thank you.
+
+``` mermaid
+graph LR
+  A[Start] --> B{Should I use conda?};
+  B -->|Yes| C[Hmm...];
+  C --> D[Bork Everything];
+  D --> B;
+  B ---->|No| E[Yay!];
+```
+
+
 ## Overview
 
 We have three versions of Anaconda installed as system modules for use. You can initialize these in your home directory for access and package management. 

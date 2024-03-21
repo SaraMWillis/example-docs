@@ -1,9 +1,9 @@
 ---
 template: results.html
-title: UArizona HPC Documentation
+title: Publications
 social:
   cards_layout_options:
-    title: Documentation that simply works
+    title: Publications
+hide:
+  - title
 ---
-
-Welcome to Material for MkDocs.

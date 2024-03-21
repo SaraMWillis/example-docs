@@ -14,7 +14,7 @@ Once you've succesfully registered for an HPC account, you're ready to log in. T
 
 1. **Open OnDemand**
 
-	This is a browser-based application that provides users with a graphical interface to access the HPC filesystem, run software that requires a graphical component, or access an interactive desktop environment. The login portal for OOD uses the familiar U of A login screen. HPC accounts are tied to university accounts, so your standard net ID and password (i.e. the one used for your email).
+	This is a browser-based application that provides users with a graphical interface to access the HPC filesystem, run software that requires a graphical component, or access an interactive desktop environment. The login portal for OOD uses the familiar U of A login screen. HPC accounts are tied to university accounts, so use your standard net ID and password (i.e. the one used for your email).
 
 2. **Terminal**
 
@@ -48,7 +48,7 @@ gatekeeper.hpc.arizona.edu
 
 The output shows ```gatekeeper``` which is the name of this node and is how you can tell you're connected to the bastion. 
 
-Next, to leave the bastion host, type the command ```shell```.
+Next, to advance from the bastion host, type the command ```shell```.
 
 
 ### The login nodes
@@ -59,7 +59,7 @@ After you type ```shell``` on the bastion host, you're connected to a computer c
 
 We have two of these available and you will be assigned one at random. If you run the ```hostname``` command as you did on the bastion host, you should see either ```wentletrap``` or ```junonia```. 
 
-A login node is a shared workspace with minimal computational capabilities and very little software installed. They are not the place where computational work is done so users should not run their analyses, compile their software, or perform computationally intensive work in this location. Instead, they are meant for activities such as managing files, writing scripts, submitting and monitoring jobs, and viewing system resources.
+A login node is a shared workspace with minimal computational capabilities and very little software installed. This is not the place where computational work is done so users should not run their analyses, compile their software, or perform computationally intensive work in this location. Instead, the login nodes are meant for activities such as managing files, writing scripts, submitting and monitoring jobs, and viewing system resources.
 
 
 

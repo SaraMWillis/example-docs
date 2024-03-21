@@ -1,23 +1,60 @@
 # Time Allocations
 
-All University of Arizona Principal Investigators (PIs; typically faculty) that register for access to the UA High Performance Computing (HPC) receive free standard allocations on the HPC machines which is shared among all members of their team and refreshed on a monthly basis. All PIs receive a standard allocation in addition to the windfall partition. 
+## Group Allocations
+
+All University of Arizona Principal Investigators (PIs; typically faculty) that register for access to the UA High Performance Computing (HPC) receive free standard allocations on the HPC machines which is shared among all members of their team and refreshed on a monthly basis. All PIs receive a standard allocation in addition to the windfall partition. A breakdown of the allocations available on the system and their usage is shown below:
+
+=== "Standard Hours"
+    Every group receives a free allocation of standard hours that refreshes on the first day of each month. 
+
+    ||Puma|Ocelote|ElGato|
+    |-|-|-|-|
+    |Standard CPU Hours|150,000|100,000|7,000|
+
+    In batch jobs, standard hours can be used with the directives
+
+    ```bash
+    #SBATCH --account=<PI GROUP>
+    #SBATCH --partition=standard
+    ```
+
+=== "Windfall Hours"
+    {==Windfall is a partition available to jobs that enables them to run *without charging any standard allocation*, but it also **reduces their priority**==}. This means windfall jobs are slower to start than other partitions. In addition to lower priority, windfall jobs are preemptible, meaning standard and high-priority jobs can interrupt a currently running windfall job, effectively placing it back in the queue. The purpose of windfall is to ensure that the clusters are busy at all times, and to allow researchers additional compute while increasing the efficiency of the system.
+
+    In batch jobs, standard hours can be used with the directive:
+
+    ```bash
+    #SBATCH --partition=windfall
+    ```
 
 
-|HPC Cluster|Standard Partition|High-Priority Partition|Windfall Partition|
-|-|-|-|-|
-|Puma|150,000 CPU Hours|Group Dependent+|Unlimited* |
-|Ocelote|100,000 CPU Hours|n/a|Unlimited* |
-|Elgato|7,000 CPU Hours|n/a|Unlimited* |
+=== "High Priority Hours"
+        
 
-!!! question "+ Can I use the high-priority partition?"
-    High-priority allocations are available to PIs who participated in the [buy-in process](/policies/buy_in) when purchasing the Puma cluster. Currently, there is no active buy-in process, but researchers will be notified when it becomes available again.
+    High-priority allocations are available to PIs who participated in the [buy-in process](/policies/buy_in) when purchasing the Puma cluster. The size of the allocation is dependent on the resources purchased. 
+    
+    High priority allocations provide access to an additional pool of purchased compute nodes and increase the priority of jobs such that they start faster than standard jobs.
+    
+    In batch jobs, standard hours can be used with the directives:
 
-!!! warning "* Windfall jobs are pre-emptable"
-    Windfall is a partition available to jobs that enables them to run *without charging any standard allocation*, but it also **reduces their priority**, meaning that standard and high-priority jobs can 'pre-empt' a currently running windfall job, effectively placing it back in the queue. The purpose of windfall is to ensure that the clusters are busy at all times, and to allow researchers additional compute while increasing the efficiency of the system.
+    ```bash
+    #SBATCH --account=<PI GROUP>
+    #SBATCH --partition=high_priority
+    #SBATCH --qos=user_qos_<PI GROUP>
+    ```
 
-!!! example "Special Projects"
-    In addition to the resources listed above, each PI is eligible to apply for a [Special Project](/policies/special_projects/) allocation, which provides an additional pool of standard hours to the group for a limited amount of time. See the linked page for more information.
+=== "Qualified Hours"
+    Groups with an upcoming deadline (e.g., conference, paper submission, graduation) are eligible to apply for a [Special Project](/policies/special_projects/) allocation once per year. Special projects provide an additional pool of standard hours, known as "qualified hours" to the group for a limited amount of time. See the linked page for more information.
 
+    In batch jobs, standard hours can be used with the directive:
+    ```bash
+    #SBATCH --account=<PI GROUP>
+    #SBATCH --partition=standard
+    #SBATCH --qos=qual_qos_<PI GROUP>
+    ```
+
+
+See: [**interactive jobs**](../../running_jobs/interactive_jobs/#customizing-your-resources), [**batch jobs**](../../running_jobs/batch_jobs/batch_directives/#allocations-and-partitions), or [**Open OnDemand**](../../running_jobs/open_on_demand/#web-form) for more information on the specific syntax for using hours in different jobs.
 
 ## How Allocations are Charged
 
@@ -36,39 +73,6 @@ graph LR
 This accounting is the same regardless of which type of node you request. Standard, GPU, and high memory nodes are all charged using the same model and use the same allocation pool. If you find you are being charged for more CPUs that you are specifying in your submission script, it may be an issue with your job's memory request.
 
 Allocations are refreshed on the first day of each month. Unused hours from the previous month do not roll over.
-
-## How to Use Your Allocation
-
-Your allocation 
-
-
-
-
-=== "Standard Hours"
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=standard
-    ```
-
-=== "Windfall Hours"
-    ```bash
-    #SBATCH --partition=windfall
-    ```
-
-=== "High Priority Hours"
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=high_priority
-    #SBATCH --qos=user_qos_<PI GROUP>
-    ```
-
-=== "Qualified Hours"
-    If your group has requested a temporary allocation increase via [a special project](/policies/special_project), you may use these hours by supplying an additional ```--qos``` flag. Use the following syntax, replacing ```<PI GROUP>``` with your own group's name:
-    ```bash
-    #SBATCH --account=<PI GROUP>
-    #SBATCH --partition=standard
-    #SBATCH --qos=qual_qos_<PI GROUP>
-    ```
     
 
 ## How to Find Your Remaining Allocation
