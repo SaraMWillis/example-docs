@@ -591,6 +591,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external_resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2146,6 +2167,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/unsupported/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unsupported Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2564,6 +2606,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../support_and_training/people/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support Staff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -2574,10 +2637,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2588,8 +2651,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
             <span class="md-nav__icon md-icon"></span>
             FAQs
           </label>
@@ -2766,10 +2829,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
         
           
-          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2780,8 +2843,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
             <span class="md-nav__icon md-icon"></span>
             Workshops
           </label>
@@ -2845,10 +2908,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_4_3" id="__nav_8_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2859,8 +2922,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_3">
             <span class="md-nav__icon md-icon"></span>
             Intro to Machine Learning on HPC
           </label>
@@ -3160,7 +3223,7 @@
 <p>When you first access a login node, you're located in your home directory. This is a space with a 50GB limit and is accessible to only you. The files you store here are housed on a large storage array and are accessible anywhere you are on the system except the bastion host. </p>
 <div class="admonition warning">
 <p class="admonition-title">Do not overfill your home directory</p>
-<p>If the storage usage of your home directory meets or exceeds the 50 GB limit, you may experience trouble logging in! This is because the system needs to create a file to log your access sessions, and it will be unable to do so if there is no additional storage space. You should still be able to manage your files as described below. </p>
+<p>Once your data reaches the 50GB limit you will experience problems, like the inability to log in because the session file cannot be created. And your jobs may fail with unexpected errors depending on how your software reacts to no more space for writing output. </p>
 </div>
 <p><center><img src="images/filexfer.png" style="height: 300px;"></center></p>
 <p>To store your files in your home, you will need to transfer them to the system. Small files can most easily be transferred to/from HPC using our web interface <a href="https://ood.hpc.arizona.edu/">Open OnDemand</a>. In the upper-left you'll see a dropdown called Files where you can select Home Directory. </p>
