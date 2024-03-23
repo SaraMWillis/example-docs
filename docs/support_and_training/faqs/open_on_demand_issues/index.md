@@ -13,7 +13,7 @@
       If you are trying to log in to Open Ondemand and are seeing the following:
       <img src="images/not_yet_approved.png" style="width:500px;">
       <ul>
-          <li>You have not yet been sponsored by a faculty member. See our Account Creation page for instructions on getting registered for HPC.</li>
+          <li>You have not yet been sponsored by a faculty member. See our <a href="../../../registration_and_access/account_creation/">Account Creation</a> page for instructions on getting registered for HPC.</li>
           <li>If you are already registered for HPC, this may be a browser issue. Try logging in again in an incognito session or different browser to test. If this succeeds, clearing your browser's cookies should help.</li>
       </ul>
   </p>
@@ -37,7 +37,7 @@
       <br>
       <img src="images/somethingwentwrong.png" style="width:500px;">
       <br>
-      check your storage usage in your home directory. You can do this by logging into HPC in a terminal session and using the command uquota. If your storage usage is >50GB, OnDemand cannot create the temporary files necessary to give access to the website. Try clearing out some space in your home and then logging back into OnDemand.
+      check your storage usage in your home directory. You can do this by logging into HPC in a terminal session and using the command <code>uquota</code>. If your storage usage is >50 GB, OnDemand cannot create the temporary files necessary to give access to the website. Try clearing out some space in your home and then logging back into OnDemand.
   </p>
 </div>
 
@@ -52,7 +52,7 @@
       <pre><code>
 conda config --set auto_activate_base false
       </code></pre>
-      This will prevent conda from auto-activating when you first log in and allow you to have more control over your environment. When you'd like to activate anaconda, run conda activate. See this example for information running anaconda workflows in batch with auto-activation disabled.
+      This will prevent conda from auto-activating when you first log in and allow you to have more control over your environment. When you'd like to activate Anaconda, run <code>conda activate</code>. 
   </p>
 </div>
     

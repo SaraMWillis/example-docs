@@ -5,7 +5,7 @@
 
 ## Command Line Access
 
-Soteria command line access is available with ssh. The hostname is ```shell.cougar.hpc.arizona.edu```
+Soteria command line access is available with SSH using the hostname ```shell.cougar.hpc.arizona.edu```
 
 ```
 $ ssh your_netid@shell.cougar.hpc.arizona.edu
@@ -16,11 +16,11 @@ Authorized uses only. All activity may be monitored and reported.
 netid@taub:~ $
 ```
 
-Taub is a login node and will provide the same functionality and have the same policies as the other HPC clusters. Modules are available on Soteria's compute nodes but not on the login node. The command ```interactive``` is available to request a session on a compute node and jobs may be submitted using the standard sbatch. More details on Slurm commands can be found in [Running Jobs](../../running_jobs/batch_jobs/slurm_documentation/)
+Taub is a login node and will provide the same functionality and have the same policies as the other HPC clusters. Modules are available on Soteria's compute nodes but not on the login node. The command ```interactive``` is available to request a session on a compute node and jobs may be submitted using the standard `sbatch`. More details on Slurm commands can be found in [Running Jobs](../../../running_jobs/batch_jobs/intro/)
 
 ## Graphical Interface
 
-Similar to the other HPC clusters, we offer the service [Open OnDemand](../../running_jobs/open_on_demand/overview/) to provide web browser access to Soteria. This can be used to navigate, view, and edit files as well as gain access to graphical applications.
+Similar to the other HPC clusters, we offer the service [Open OnDemand](../../../running_jobs/open_on_demand/) to provide web browser access to Soteria. This can be used to navigate, view, and edit files as well as gain access to graphical applications.
 
 In your favorite browser, go to: [https://ondemand-hipaa.hpc.arizona.edu](https://ondemand-hipaa.hpc.arizona.edu)
 

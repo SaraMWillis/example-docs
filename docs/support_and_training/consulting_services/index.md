@@ -20,7 +20,7 @@ Consulting is available free of cost to everyone and we welcome you to reach out
     * **Detail detail detail**<br>A full error log may seem like a lot to send, but the more information we have, the more likely we are to be able to diagnose and/or replicate your issue.
 
     * **Use reply-all to email chains**<br>
-    We will cc hpc-consult in our responses so that our (small) consulting team is able to view the issue and contribute.
+    We will cc hpc-consult in our responses so that our [small consulting team](../people/) is able to view the issue and contribute.
 
     * **Provide context**<br>There's a common support issue called [The XY Problem](http://xyproblem.info/). Say you have a problem and try to solve it yourself but the attempted solution produces an additional problem. Submitting a ticket requesting help with the attempted solution without information about the original issue can lead to more confusion. 
 
@@ -33,7 +33,7 @@ Consulting is available free of cost to everyone and we welcome you to reach out
 
     Our consultants typically don't know how to run your applications unless they have broad usage like Python or R. So once we determine it is likely an issue with the code we will refer you to the provider. We don't troubleshoot bugs or run profilers, but we support tools like Valgrind for you to use.
 
-    We don't mind you asking lots of questions. We encourage you to ask for a consulting session via zoom or Office Hours (see below). We are not in the office so you can't drop by (although we kind of miss that personal engagement).
+    We don't mind you asking lots of questions. We encourage you to ask for a consulting session via Zoom or Office Hours (see below). We are not in the office so you can't drop by (although we kind of miss that personal engagement).
 
     The bottom line is that the supercomputers are only really productive tools when you have the support to gain the most out of them to improve both your results and the time to get results.
 
@@ -43,7 +43,7 @@ Consulting is available free of cost to everyone and we welcome you to reach out
 ### Office Hours
 ![Office Hours](images/office_hours.png){ align=right }
 
-We host virtual, drop-in office hours every Wednesday from 2pm to 4pm. Drop by to visit with our consultants to ask any questions you have about using HPC resources. It might be a bunch of getting started questions, or you might want to share your screen to walk us through a particular problem you're hung up on. We have private spaces for one-on-one consults. You can [join us in Gather Town at this link](https://gather.town/app/dVsAprPNBVmI9NpL/hpc-office-hours). 
+We host virtual, drop-in office hours every Wednesday from 2:00-4:00pm. Drop by to visit with our consultants to ask any questions you have about using HPC resources. It might be a bunch of getting started questions, or you might want to share your screen to walk us through a particular problem you're hung up on. We have private spaces for one-on-one consults. You can [join us in Gather Town at this link](https://gather.town/app/dVsAprPNBVmI9NpL/hpc-office-hours). 
  
 
 If you have never used Gather Town before and would like additional information, [check out this page](https://support.gather.town/hc/en-us).

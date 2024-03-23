@@ -3348,36 +3348,38 @@
 <p>The first section of a batch script always contains the <a href="https://slurm.schedmd.com/" title="slurm.schedmd.com">Slurm Directives</a>, which specify the resource requests for your job. The scheduler parses these in order to allocate CPUs, memory, walltime, etc. to your job request.</p>
 <p>Below are important as well as optional directives to include in any script:</p>
 <h2 id="allocations-and-partitions">Allocations and Partitions</h2>
-<p>There are four available partitions on the UArizona HPC. With the exception of Windfall, these consume your monthly allocation. See our <a href="../../../resources/allocations/">allocations documentation</a> for more information on each. The syntax to request each of the following is shown below:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standard</label><label for="__tabbed_1_2">Windfall</label><label for="__tabbed_1_3">High Priority</label><label for="__tabbed_1_4">Qualified</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>The standard allocation is available to all groups and is refreshed on a monthly basis. Substitute your own group's name in for <code>&lt;PI GROUP&gt;</code>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --account=&lt;PI GROUP&gt;</span>
-<span class="c1">#SBATCH --partition=standard</span>
-</code></pre></div></p>
-</div>
-<div class="tabbed-block">
-<p>The windfall partition is available to all users and does not consume any monthly hours. However, it is lower priority than the standard and high priority partitions (meaning these jobs are slower to start) and may be preempted (interrupted and restarted) if the resources are required by jobs using higher priority hours. To use the windfall partition, exclude the <code>--account</code> flag.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --partition=windfall</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>High priority hours give access to buy-in nodes and are higher priority than the standard partition. These hours are only available to <a href="../../../policies/buy_in/">buy-in groups</a>. To use high priority hours, an additional <code>--qos</code> flag is needed. Use the following syntax, replacing <code>&lt;PI GROUP&gt;</code> with your own group's name:
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --account=&lt;PI GROUP&gt;</span>
-<span class="c1">#SBATCH --partition=high_priority</span>
-<span class="c1">#SBATCH --qos=user_qos_&lt;PI GROUP&gt;</span>
-</code></pre></div></p>
-</div>
-<div class="tabbed-block">
-<p>If your group has requested a temporary standard allocation increase via <a href="/policies/special_project">a special project</a>, you may use these hours by supplying an additional <code>--qos</code> flag. Use the following syntax, replacing <code>&lt;PI GROUP&gt;</code> with your own group's name:
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --account=&lt;PI GROUP&gt;</span>
-<span class="c1">#SBATCH --partition=standard</span>
-<span class="c1">#SBATCH --qos=qual_qos_&lt;PI GROUP&gt;</span>
-</code></pre></div></p>
-</div>
-</div>
-</div>
+<p>There are four available partitions on the UArizona HPC. With the exception of Windfall, these consume your monthly allocation. See our <a href="../../../resources/allocations/">allocations documentation</a> for more detailed information on each. The syntax to request each of the following is shown below:</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Request Syntax</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard</td>
+<td><pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=standard</code></pre></td>
+<td></td>
+</tr>
+<tr>
+<td>Windfall</td>
+<td><pre><code>#SBATCH --partition=windfall</code></pre></td>
+<td>Unlimited access. Preemptible</td>
+</tr>
+<tr>
+<td>High Priority</td>
+<td><pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=high_priority<br>#SBATCH --qos=user_qos_&#60;PI GROUP&#62;</code></pre></td>
+<td>Only available to <a href="../../../policies/buy_in/">buy-in groups</a>.</td>
+</tr>
+<tr>
+<td>Qualified</td>
+<td><pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=standard<br>#SBATCH --qos=qual_qos_&#60;PI GROUP&#62;</code></pre></td>
+<td>Available to groups with an activate <a href="../../../policies/special_projects/">special project</a>.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="nodes">Nodes</h2>
 <details class="danger" open="open">
 <summary>Danger</summary>
@@ -3457,20 +3459,20 @@ or, to request <code>&lt;N&gt;</code> GB of memory per CPU:
   </tr>
   <tr>
     <td rowspan=3  style="vertical-align: middle;">Puma</td>
-    <td><code>#SBATCH --gres=gpu:1</code></td>
+    <td><pre><code>#SBATCH --gres=gpu:1</code></pre></td>
     <td>Request a single GPU. This will either target one Volta GPU (v100) or one <a href="../../../resources/compute_resources/#mig-multi-instance-gpu-resources">A100 MIG slice</a>, depending on availability. Only one GPU should be selected with this method to avoid being allocated multiple MIG slices.</td>
   </tr>
   <tr>
-    <td><code>#SBATCH --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb</code></td>
+    <td><pre><code>#SBATCH --gres=gpu:nvidia_a100_80gb_pcie_2g.20gb</code></pre></td>
     <td>Target one A100 MIG slice.</td>
   </tr>
   <tr>
-    <td><code>#SBATCH --gres=gpu:volta:N</code></td>
+    <td><pre><code>#SBATCH --gres=gpu:volta:N</code></code></td>
     <td>Request <code>N</code> V100 GPUs where 1&le;<code>N</code>&le;4</td>
   </tr>
   <tr>
     <td>Ocelote</td>
-    <td><code>#SBATCH --gres=gpu:1</code></td>
+    <td><pre><code>#SBATCH --gres=gpu:1</code></pre></td>
     <td>Request 1 Pascal GPU (p100)</td>
 </table>
 
@@ -3499,43 +3501,43 @@ where <code>&lt;N&gt;</code> and <code>&lt;M&gt;</code> are integers. </p>
 <tr>
 <td><code>%A</code></td>
 <td>A job array's main job ID</td>
-<td><code>#SBATCH --array=1-2</code><br><code>#SBATCH -o %A.out</code><br><code>#SBATCH --open-mode=append</code></td>
+<td><pre><code>#SBATCH --array=1-2<br>#SBATCH -o %A.out<br>#SBATCH --open-mode=append</code></pre></td>
 <td><code>12345.out</code></td>
 </tr>
 <tr>
 <td><code>%a</code></td>
 <td>A job array's index number</td>
-<td><code>#SBATCH --array=1-2</code><br><code>#SBATCH -o %A_%a.out</code></td>
+<td><pre><code>#SBATCH --array=1-2<br>#SBATCH -o %A_%a.out</code></pre></td>
 <td><code>12345_1.out</code><br><code>12345_2.out</code></td>
 </tr>
 <tr>
 <td><code>%J</code></td>
 <td>Job ID plus <a href="https://slurm.schedmd.com/sattach.html">stepid</a></td>
-<td><code>#SBATCH -o %J.out</code></td>
+<td><pre><code>#SBATCH -o %J.out</code></pre></td>
 <td><code>12345.out</code></td>
 </tr>
 <tr>
 <td><code>%j</code></td>
 <td>Job ID</td>
-<td><code>#SBATCH -o %j.out</code></td>
+<td><pre><code>#SBATCH -o %j.out</code></pre></td>
 <td><code>12345.out</code></td>
 </tr>
 <tr>
 <td><code>%N</code></td>
 <td>Hostname of the first compute node allocated to the job</td>
-<td><code>#SBATCH -o %N.out</code></td>
+<td><pre><code>#SBATCH -o %N.out</code></pre></td>
 <td><code>r1u11n1.out</code></td>
 </tr>
 <tr>
 <td><code>%u</code></td>
 <td>Username</td>
-<td><code>#SBATCH -o %u.out</code></td>
+<td><pre><code>#SBATCH -o %u.out</code></pre></td>
 <td><code>netid.out</code></td>
 </tr>
 <tr>
 <td><code>%x</code></td>
 <td>Job name</td>
-<td><code>#SBATCH --job-name=JobName</code><br><code>#SBATCH -o %x.out</code></td>
+<td><pre><code>#SBATCH --job-name=JobName<br>#SBATCH -o %x.out</code></pre></td>
 <td><code>JobName.out</code></td>
 </tr>
 </tbody>
@@ -3550,42 +3552,42 @@ where <code>&lt;N&gt;</code> and <code>&lt;M&gt;</code> are integers. </p>
 </thead>
 <tbody>
 <tr>
-<td><code>#SBATCH --job-name=JobName</code></td>
+<td><pre><code>#SBATCH --job-name=JobName</code></pre></td>
 <td>Optional: Specify a name for your job. This will not automatically affect the output filename.</td>
 </tr>
 <tr>
-<td><code>#SBATCH -e output_filename.err</code><br><code>#SBATCH -o output_filename.out</code></td>
+<td><pre><code>#SBATCH -e output_filename.err<br>#SBATCH -o output_filename.out</code></pre></td>
 <td>Optional: Specify output filename(s). If <code>-e</code> is missing, stdout and stderr will be combined.</td>
 </tr>
 <tr>
-<td><code>#SBATCH --open-mode=append</code></td>
-<td>Optional: Append your job's output to the specified output filename(s).```</td>
+<td><pre><code>#SBATCH --open-mode=append</code></pre></td>
+<td>Optional: Append your job's output to the specified output filename(s).</td>
 </tr>
 <tr>
-<td><code>#SBATCH --mail-type=BEGIN|END|FAIL|ALL</code></td>
+<td><pre><code>#SBATCH --mail-type=BEGIN&#124;END&#124;FAIL&#124;ALL</code></pre></td>
 <td>Optional: Request email notifications. <strong>Beware of mail bombing yourself.</strong></td>
 </tr>
 <tr>
-<td><code>#SBATCH --mail-user=email@address.xyz</code></td>
+<td><pre><code>#SBATCH --mail-user=email@address.xyz</code></pre></td>
 <td>Optional: Specify email address. If this is missing, notifications will go to your UArizona email address by default.</td>
 </tr>
 <tr>
-<td><code>#SBATCH --export=VAR</code></td>
+<td><pre><code>#SBATCH --export=VAR</pre></code></td>
 <td>Optional: Export a comma-delimited list of environment variables to a job.</td>
 </tr>
 <tr>
-<td><code>#SBATCH --export=all</code></td>
+<td><pre><code>#SBATCH --export=all</pre></code></td>
 <td>Optional: Export your working environment to your job. This is the default.</td>
 </tr>
 <tr>
-<td><code>#SBATCH --export=none</code></td>
+<td><pre><code>#SBATCH --export=none</pre></code></td>
 <td>Optional: Do not export working environment to your job.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="examples-and-explanations">Examples and Explanations</h2>
 <p>The below examples are <em>complete</em> sections of Slurm directives that will produce valid requests. Other directives can be added (like output files), but they are not strictly necessary to submit a valid request. For simplicity, the Puma cluster is assumed when discussing memory and GPU resources. Note that these examples do not include the shebang <code>#!bin/bash</code> statement, which should be at the top of <em>every</em> slurm script. Also, note that the order of directives does not matter.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Single CPU</label><label for="__tabbed_2_2">Single Node</label><label for="__tabbed_2_3">Single GPU Node</label><label for="__tabbed_2_4">Multi-Node</label><label for="__tabbed_2_5">High-Memory Node</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Single CPU</label><label for="__tabbed_1_2">Single Node</label><label for="__tabbed_1_3">Single GPU Node</label><label for="__tabbed_1_4">Multi-Node</label><label for="__tabbed_1_5">High-Memory Node</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>#SBATCH --job-name=hello_world

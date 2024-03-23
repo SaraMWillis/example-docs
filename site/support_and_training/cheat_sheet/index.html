@@ -3383,12 +3383,29 @@
 <p>In the cheat sheet below, we offer some basics as a reference. We also highly suggest you explore some more comprehensive guides such as the following: <a href="../workshops/intro_to_linux/">Introduction to Linux on HPC</a></p>
 <h2 id="shell-basics">Shell Basics</h2>
 <h3 id="shortcuts">Shortcuts</h3>
-<p>Shortcuts are used as standins 
-|Shortcut|Description|
-|-|-|
-|<code>~</code>|Your home directory|
-|<code>.</code>|Your working directory|
-|<code>..</code> One directory above your working directory|</p>
+<p>Shortcuts can be used as standins for system locations, avoiding the need for full paths. A few examples:</p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~</code></td>
+<td>Your home directory</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Your working directory</td>
+</tr>
+<tr>
+<td><code>..</code></td>
+<td>One directory above your working directory</td>
+</tr>
+</tbody>
+</table>
 <h3 id="commands">Commands</h3>
 <table>
 <thead>
@@ -3457,6 +3474,24 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>When working with hidden configuration files in your account (<code>.bashrc</code> and <code>.bash_profile</code>), be careful of:</p>
+<ol>
+<li>
+<p><strong>Aliasing important Linux commands</strong></p>
+<p>For example, the character <code>.</code> is a shortcut for <code>source</code>. If you do something like add <code>alias .=&lt;command&gt;</code> to your bashrc, you will lose basic functionality in the terminal, e.g., access to modules, virtual environments, etc. </p>
+</li>
+<li>
+<p><strong>Recursively sourcing configuration files</strong></p>
+<p>If you add <code>source ~/.bashrc</code> or <code>source ~/.bash_profile</code> to your bashrc, then you will enter an infinite sourcing loop. This means when you try to log in, your terminal will freeze, then your access will be denied. </p>
+</li>
+<li>
+<p><strong>Be careful with <code>echo</code></strong></p>
+<p>If you use CLI tools for data transfer, e.g. <code>scp</code> or <code>sftp</code>, they may require a "silent" terminal. If you're trying to initiate transfers and are getting the error "Received message too long", check your bashrc to make sure you aren't printing anything to the terminal. </p>
+</li>
+</ol>
+</div>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>Bash variables control how your environment is configured. For example: what executables, libraries, header files, etc. are findable by default; information about your Slurm job; MPI settings; GPU configuration; etc. To see all the environment variables that are defined for your session, try running the command <code>env</code>.</p>
 <p>An example of an important environment variable is <code>PATH</code>. This is set to a <code>:</code>-delimited list of paths that it uses to search for executables. You can see what it's set to by running <code>echo $PATH</code>. Any time you run a command, for example <code>ls</code>, that list is searched in order. To add new executables to your environment, you can add a path to <code>PATH</code>. For example:</p>

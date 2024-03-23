@@ -14,7 +14,7 @@ Once you've succesfully registered for an HPC account, you're ready to log in. T
 
 1. **Open OnDemand**
 
-	This is a browser-based application that provides users with a graphical interface to access the HPC filesystem, run software that requires a graphical component, or access an interactive desktop environment. The login portal for OOD uses the familiar U of A login screen. HPC accounts are tied to university accounts, so use your standard net ID and password (i.e. the one used for your email).
+	This is a browser-based application that provides users with a graphical interface to access the HPC filesystem, run software that requires a graphical component, or access an interactive desktop environment. The login portal for Open OnDemand uses the familiar UArizona WebAuth login screen. HPC accounts are tied to university accounts, so use your standard NetID and password (i.e. the one used for your email).
 
 2. **Terminal**
 
@@ -26,7 +26,7 @@ HPC systems can sometimes feel a little like a complicated black box and it can 
 
 ### The bastion host
 
-In another browser window, open [our instructions on logging in from the command line](../../registration_and_access/system_access/command_line_access/). Start by following the first step shown that's specific to your operating system. Stop when your terminal displays 
+In another browser window, open [our instructions on logging in from the command line](../../registration_and_access/system_access/#command-line-access). Start by following the first step shown that's specific to your operating system. Stop when your terminal displays 
 
 ```
 Success. Logging you in...

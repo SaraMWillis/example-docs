@@ -25,9 +25,9 @@ Try running ```module avail``` without specifying any arguments. You'll notice w
 
 That's it! You now should have a sense of how UArizona's HPC systems are laid out, how to log in, and how to access compute nodes and software.
 
-To continue learning about HPC, our online documentation has a lot more information that can help get you started. For example [FAQs](../../support_and_training/faqs/account_access/), information on [HPC storage](../../storage_and_transfers/storage/hpc_storage/), and [file transfers](../../storage_and_transfers/transfers/overview/). You can also find additional example batch jobs in our [Running Jobs](../../running_jobs/batch_jobs/example_batch_jobs/) section.
+To continue learning about HPC, our online documentation has a lot more information that can help get you started. For example [FAQs](../../support_and_training/faqs/account_access/), information on [HPC storage](../../storage_and_transfers/storage/hpc_storage/), and [file transfers](../../storage_and_transfers/transfers/overview/). 
 
-Other great resources include: [virtual office hours every Wednesday](../../support_and_training/consulting_services/#office-hours) from 2:00-4:00pm, consultation services offered through ServiceNow, an examples Github page with sample jobs, and a YouTube channel with training videos. 
+Other great resources include: [virtual office hours every Wednesday](../../support_and_training/consulting_services/#office-hours) from 2:00-4:00pm, [consultation services](../../support_and_training/consulting_services/) offered through ServiceNow, an [examples Github page with sample jobs](https://ua-researchcomputing-hpc.github.io/), and a [YouTube channel](https://www.youtube.com/@universityofarizonauitsres7597) with training videos. 
 
 
 <html>

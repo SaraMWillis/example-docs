@@ -24,7 +24,7 @@ This should hopefully make navigation easier for the students?-->
 
 ### Logging In
 
-<a class="md-button" href="../../../registration_and_access/system_access/command_line_access/" target="_blank">Instructions on Logging In</a>
+<a class="md-button" href="../../../registration_and_access/system_access/" target="_blank">Instructions on Logging In</a>
 
 ### Activity: Let’s run a batch job!
 
@@ -116,8 +116,8 @@ Congrats! You just ran your first batch job!
 ### Additional Resources
 
 The HPC Consult Team is here for you!
+
 - Documentation: docs.hpc.arizona.edu
 - GitHub: ua-researchcomputing-hpc.github.io
 - ServiceNow: [HPC Support and Consulting Request](https://uarizona.service-now.com/sp?id=sc_cat_item&sys_id=2983102adbd23c109627d90d689619c6&sysparm_category=84d3d1acdbc8f4109627d90d6896191f)
-- Email: hpc-consult@list.arizona.edu
 - Office Hours: every Wednesday 2-4pm on [GatherTown](https://gather.town/app/dVsAprPNBVmI9NpL/hpc-office-hours)

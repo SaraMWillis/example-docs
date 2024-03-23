@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="../../assets/stylesheets/buttons.css">
 # Storage and Transfers
 
-When you first access a login node, you're located in your home directory. This is a space with a 50GB limit and is accessible to only you. The files you store here are housed on a large storage array and are accessible anywhere you are on the system except the bastion host. 
+When you first access a login node, you're located in your home directory. This is a space with a 50 GB limit and is accessible to only you. The files you store here are housed on a large storage array and are accessible anywhere you are on the system except the bastion host. 
 
 !!! warning "Do not overfill your home directory"
 
-    Once your data reaches the 50GB limit you will experience problems, like the inability to log in because the session file cannot be created. And your jobs may fail with unexpected errors depending on how your software reacts to no more space for writing output. 
+    Once your data reaches the 50 GB limit you will experience problems, like the inability to log into Open OnDemand because the session file cannot be created. And your jobs may fail with unexpected errors depending on how your software reacts to no more space for writing output. 
 
 <center><img src="images/filexfer.png" style="height: 300px;"></center>
 

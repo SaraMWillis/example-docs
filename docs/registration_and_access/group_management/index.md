@@ -58,7 +58,7 @@ If you are a faculty member and are teaching a course that makes use of HPC reso
 
 ### Creating a Class Group
 
-Log into your [User Portal](https://portal.hpc.arizona.edu/), navigate to the **Manage Groups** tab, and select the **Add New Group** dropdown option at the top of the page.There will be an option to specify your **Group Type** on the right. Choose **Class** from the dropdown menu
+Log into your [user portal](https://portal.hpc.arizona.edu/), navigate to the **Manage Groups** tab, and select the **Add New Group** dropdown option at the top of the page.There will be an option to specify your **Group Type** on the right. Choose **Class** from the dropdown menu
 
 <img src="images/select-class-group.png" style="width:500px;">
 

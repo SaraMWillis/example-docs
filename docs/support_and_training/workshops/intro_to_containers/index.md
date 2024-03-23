@@ -156,10 +156,11 @@ We show three ways to use tensorflow containers on HPC. We just use Tensorflow a
 
 ### References
 
+In addition to our [Apptainer documentation](../../../software/containers/what_are_containers/), see the following resources for helpful information on getting started with containers:
+
 | Reference | Link |
 | ----------| ---- |
-| UA HPC Containers Documentation | [https://public.confluence.arizona.edu/display/UAHPC/Containers](https://public.confluence.arizona.edu/display/UAHPC/Containers) |
-| UA HPC Examples Github | [https://ua-researchcomputing-hpc.github.io](https://ua-researchcomputing-hpc.github.io) |
+| UArizona HPC Examples Github | [https://ua-researchcomputing-hpc.github.io](https://ua-researchcomputing-hpc.github.io) |
 | NIH Containers Documentation | [https://hpc.nih.gov/apps/Apptainer.html](https://hpc.nih.gov/apps/Apptainer.html) |
 | Sylabs User Guide | [https://sylabs.io/guides/3.5/user-guide/introduction.html](https://sylabs.io/guides/3.5/user-guide/introduction.html) |
 | Sylabs Examples | [https://github.com/sylabs/examples](https://github.com/sylabs/examples) |

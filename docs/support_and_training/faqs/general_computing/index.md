@@ -9,7 +9,7 @@
 <div class="content">
   <p>There may be a few reasons for this. First, make sure your shell is set to Bash. If your shell is not set to Bash, contact our consultants so that they can reset it for you.
   <br>
-  If your shell is set to bash, double-check that you haven't changed, overwritten, or aliased anything important either your <code>~/.bashrc</code> or <code>~/.bash_profile</code>. E.g., unsetting your <code>PATH</code>, aliasing <code>.</code>, and so on will corrupt your environment and prevent you from interacting with HPC normally. 
+  If your shell is set to Bash, double-check that you haven't changed, overwritten, or aliased anything important either your <code>~/.bashrc</code> or <code>~/.bash_profile</code>. E.g., unsetting your <code>PATH</code>, aliasing <code>.</code>, and so on will corrupt your environment and prevent you from interacting with HPC normally. 
   </p>
 </div>
 
@@ -37,14 +37,7 @@ fi
   <br>
   Your bashrc is a specific dot file that lives in your home directory (<code>~</code> is just shorthand for your home) and defines your environment every time you log in. Any commands you add to that file will be run whenever you access the system. This means, if you have common aliases you like to use, paths you like exported in your environment, etc., these can be added to your bashrc to avoid the headache of having to define them in every session.
   <br>
-  <b>A word of caution.</b> Be careful with the contents of this file. Some things to avoid:
-  <br><br>
-    &ensp;1. Don't alias important Linux commands. For example, the character <code>.</code> is a shortcut for source. If you do something like add alias <code>.="echo foo"</code> to your bashrc, you will lose basic functionality in the terminal, e.g., access to modules, virtual environments, etc. 
-    <br>
-    &ensp;2. Do not recursively source your configuration files. For example, if you add <code>source ~/.bashrc</code> or <code>source ~/.bash_profile</code> to your bashrc, then you will enter an infinite sourcing loop. This means when you try to log in, your terminal will freeze for a moment before your access is denied. 
-    <br>
-    &ensp;3. Be careful with echoes. If you use CLI tools for data transfer, e.g. <code>scp</code> or <code>sftp</code>, they may require a "silent" terminal. If you're trying to initiate transfers and are getting the error "Received message too long", check your bashrc to make sure you aren't printing anything to the terminal. 
-  </p>
+  For more information on working with hidden files, see our <a href="../../cheat_sheet/#hidden-files-and-directories">Linux cheat sheet page</a>. 
 </div>
 
 <div class="vertical-space"></div>

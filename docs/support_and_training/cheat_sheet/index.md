@@ -39,6 +39,22 @@ Hidden files and directories start with a dot ```.``` and won't show up when you
 |```~/.local```|This is a hidden directory in your home where pip-installed python packages, jupyter kernels, RStudio session information, etc. goes.|If you pip-install python packages when a virtual environment is not active, they will be installed in this directory. These will then be automatically loaded for all future python sessions (version-specific), including in Singularity images. This may cause versioning issues. We recommend always using [virtual environments](../../software/popular_software/python_and_anaconda/python/).|
 |```~/.apptainer```|A hidden directory in your home where Apptainer images and cache files are stored by default.|This directory can grow large quickly and fill up your home. You can modify your ```~/.bashrc``` to [set a different cache directory location](../../software/containers/containers_on_hpc/) that has a larger quota.
 
+!!! danger
+    When working with hidden configuration files in your account (`.bashrc` and `.bash_profile`), be careful of:
+
+    1. **Aliasing important Linux commands**
+
+        For example, the character `.` is a shortcut for `source`. If you do something like add `alias .=<command>` to your bashrc, you will lose basic functionality in the terminal, e.g., access to modules, virtual environments, etc. 
+
+    2. **Recursively sourcing configuration files**
+
+        If you add `source ~/.bashrc` or `source ~/.bash_profile` to your bashrc, then you will enter an infinite sourcing loop. This means when you try to log in, your terminal will freeze, then your access will be denied. 
+    
+    3. **Be careful with `echo`**
+
+        If you use CLI tools for data transfer, e.g. `scp` or `sftp`, they may require a "silent" terminal. If you're trying to initiate transfers and are getting the error "Received message too long", check your bashrc to make sure you aren't printing anything to the terminal. 
+
+
 ## Environment Variables
 
 Bash variables control how your environment is configured. For example: what executables, libraries, header files, etc. are findable by default; information about your Slurm job; MPI settings; GPU configuration; etc. To see all the environment variables that are defined for your session, try running the command ```env```.

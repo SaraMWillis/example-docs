@@ -36,7 +36,7 @@ A component of these workshops is interactive where users will learn to:
 Both of these exercises will make use of Python in a Jupyter Notebook through [Open OnDemand](https://ood.hpc.arizona.edu).
 
 #### Accessing the Data
-To begin, start a terminal to log into the system and copy the necessary files into your account. If you're unsure of how to use or access a terminal, see [our online documentation](https://public.confluence.arizona.edu/display/UAHPC/System+Access#SystemAccess-CommandLine/TerminalAccess) for information (or, if you're in a live workshop, flag one of us down and we can help). To get the files you need, use the following commands: 
+To begin, start a terminal to log into the system and copy the necessary files into your account. If you're unsure of how to use or access a terminal, see [our system access page](../../../../registration_and_access/system_access/) for information (or, if you're in a live workshop, flag one of us down and we can help). To get the files you need, use the following commands: 
 ```console
 ssh your_netid@hpc.arizona.edu
 shell

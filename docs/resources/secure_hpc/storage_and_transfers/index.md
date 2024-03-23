@@ -1,6 +1,9 @@
 # Storage and Transfers
 
-## File Paths
+
+## Storage Available
+
+All users are granted a home directory. Additional communal space can be found in a groups directory allocated to each PI.
 
 Your files can be accessed on the filexfer nodes(1):
 { .annotate }
@@ -23,6 +26,6 @@ Currently, directories are not subject to a quota limit.
 
 ## Transferring Data
 
-Globus can be used for moving data in and out of the Soteria environment. For more information on using Globus, see our [Globus documentation](../../storage_and_transfers/transfers/globus/)
+Globus can be used for moving data in and out of the Soteria environment. For more information on using Globus, see our [Globus documentation](../../../storage_and_transfers/transfers/globus/)
 
 Soteria's endpoint is: **UA HPC HIPAA Filesystems**

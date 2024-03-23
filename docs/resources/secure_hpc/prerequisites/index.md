@@ -5,13 +5,14 @@ To gain access, you will need to submit a Soteria request form. Once your form h
 ## Complete Required Training in Edge Learning
 
 The CRRSP team will register you for the required trainings listed below (courses can also be found here: [https://uaccess.arizona.edu](https://uaccess.arizona.edu)):
+
 1. HIPAA Essentials
 2. Information Security: Insider Threat Awareness
 3. Information Security Awareness Certification
 
 ## Assignment to the Soteria VPN
 
-Once you have completed your required training, the CRRSP team will notify you via email when you have been assigned access to the Soteria VPN. This VPN is an important part of our HIPAA compliance and differentiates Soteria usage from the standard HPC clusters. Soteria access cannot be established when not connect to the VPN. For VPN access, use: ```vpn.arizona.edu/soteria```.
+Once you have completed your required training, the CRRSP team will notify you via email when you have been assigned access to the Soteria VPN. This VPN is an important part of our HIPAA compliance and differentiates Soteria usage from the standard HPC clusters. {==Soteria access cannot be established when not connected to the VPN==}. For VPN access, use: ```vpn.arizona.edu/soteria```.
 
 <img src="images/vpn_screenshot.jpg" width=500px>
 

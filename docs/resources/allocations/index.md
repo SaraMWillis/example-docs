@@ -2,11 +2,11 @@
 
 ## Group Allocations
 
-All University of Arizona Principal Investigators (PIs; typically faculty) that register for access to the UA High Performance Computing (HPC) receive free standard allocations on the HPC machines which is shared among all members of their team and refreshed on a monthly basis. All PIs receive a standard allocation in addition to the windfall partition. A breakdown of the allocations available on the system and their usage is shown below. 
+All University of Arizona Principal Investigators (PIs; typically faculty) that register for access to UArizona High Performance Computing (HPC) services receive free standard allocations on the HPC machines which is shared among all members of their team and refreshed on a monthly basis. All PIs receive a standard allocation in addition to the windfall partition. A breakdown of the allocations available on the system and their usage is shown below. 
 
 !!! Warning "High Priority"
 
-    Please note that the High Priority partition is only available to PI groups who participated in the [buy-in process](/policies/buy_in) for Puma. PIs will be notified if another buy-in session becomes available
+    Please note that the High Priority partition is only available to PI groups who participated in the [buy-in process](/policies/buy_in) for Puma. PIs will be notified when another buy-in session is available
 
 !!! Example "Qualified Hours"
 
@@ -27,13 +27,15 @@ All University of Arizona Principal Investigators (PIs; typically faculty) that 
     ```
 
 === "Windfall Hours"
-    {==Windfall is a partition available to jobs that enables them to run *without charging any standard allocation*, but it also **reduces their priority**==}. This means windfall jobs are slower to start than other partitions. In addition to lower priority, windfall jobs are preemptible, meaning standard and high-priority jobs can interrupt a currently running windfall job, effectively placing it back in the queue. The purpose of windfall is to ensure that the clusters are busy at all times, and to allow researchers additional compute while increasing the efficiency of the system.
+    {==Windfall is a partition available to jobs that enables them to run **without consuming your allocation**, but it also **reduces their priority**==}. This means windfall jobs are slower to start than other partitions. In addition to lower priority, windfall jobs are preemptible, meaning standard and high-priority jobs can interrupt a running windfall job, effectively placing it back in the queue. The purpose of windfall is to ensure that the clusters are busy at all times, and to allow researchers additional compute while increasing the efficiency of the system.
 
-    In batch jobs, standard hours can be used with the directive:
+    In batch jobs, the windfall partition can be used with the directive:
 
     ```bash
     #SBATCH --partition=windfall
     ```
+
+    note that the ```--account``` flag is not used in this case.
 
 
 === "High Priority Hours"
@@ -65,7 +67,7 @@ See: [**interactive jobs**](../../running_jobs/interactive_jobs/#customizing-you
 
 The number of CPU hours a job consumes is determined by **the number of CPUs it is allocated multiplied by its requested walltime**. When a job is submitted, the CPU hours it requires are automatically deducted from the account. If the job ends early, the unused hours are automatically refunded.
 
-For example, a job requesting 50 CPUs for 10 hours will be charged 500 CPU hours. When the job is submitted, all 500 CPU hours are deducted from the user's account, however, if the job only runs for 5 hours and then completes, the unused 250 hours would be refunded.
+For example, a job requesting 50 CPUs for 10 hours will be charged 500 CPU hours. When the job is submitted, all 500 CPU hours are deducted from the user's account, however, if the job only runs for 8 hours and then completes, the unused 100 CPU hours would be refunded.
 
 ``` mermaid
 graph LR
@@ -75,14 +77,14 @@ graph LR
   D --> E[100 CPU hours<br>refunded];
 ```
 
-This accounting is the same regardless of which type of node you request. Standard, GPU, and high memory nodes are all charged using the same model and use the same allocation pool. If you find you are being charged for more CPUs that you are specifying in your submission script, it may be an issue with your job's memory request.
+This accounting is the same regardless of which type of node you request. Standard, GPU, and high memory nodes are all charged using the same model and use the same allocation pool. If you find you are being charged for more CPUs that you are specifying in your submission script, it may be an [issue with your job's memory request](../../running_jobs/cpus_and_memory/).
 
 Allocations are refreshed on the first day of each month. Unused hours from the previous month do not roll over.
     
 
 ## How to Find Your Remaining Allocation
 
-To view your [allocation's used, unused, and encumbered hours](/support_and_training/glossary/ "For information on terminology, see our glossary"), use the command ```va``` in a terminal. For example:
+To view your allocation's used, unused, and [encumbered hours](/support_and_training/glossary/ "For information on terminology, see our glossary"), use the command ```va``` in a terminal. For example:
 ```bash
 (elgato) [user@gpu5 ~]$ va
 Windfall: Unlimited
@@ -96,3 +98,5 @@ PI: parent_974 Total time: 7000:00:00
  
 *Usage includes all subgroups, some of which may not be displayed here
 ```
+
+Note that if your PI has created [multiple groups](../../registration_and_access/group_management/), each of these groups consumes CPU hours from the *same allocation*. You can see the total allocation pool and the usage for each group you are a member of in the output of `va`. 
