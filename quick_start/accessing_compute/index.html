@@ -3287,11 +3287,11 @@
 <p><link rel="stylesheet" href="../../assets/stylesheets/buttons.css"></p>
 <h1 id="accessing-compute-nodes">Accessing Compute Nodes</h1>
 <h3 id="the-compute-nodes">The Compute Nodes</h3>
-<p>Unlike the bastion host and login nodes, there are many compute nodes and each has, as the name suggests, a large amount of computational resources available to run your work. For example, Puma standard nodes have 94 available CPUs and a whopping 470GB of RAM. </p>
+<p>Unlike the bastion host and login nodes, there are many compute nodes and each has, as the name suggests, a large amount of computational resources available to run your work. For example, Puma standard nodes have 94 available CPUs and a whopping 470 GB of RAM. </p>
 <p><center><img src="images/compute.png" style="height: 300px;"></center></p>
 <p>To get a sense of what the cluster looks like, try running the command <code>nodes-busy</code>. The output should look something like this:</p>
 <div class="highlight"><pre><span></span><code>✚    Buy-in nodes. Only accept high_priority and windfall jobs
-(puma) [sarawillis@wentletrap ~]$ nodes-busy 
+(puma) [netid@wentletrap ~]$ nodes-busy 
 ==============================================================
 
                       ▒ System Status ▒
@@ -3330,8 +3330,8 @@ $ elgato
 (elgato) [user@wentletrap ~]$ 
 </code></pre></div>
 <h3 id="job-charging">Job Charging</h3>
-<p>Before you connect to a compute node, let's quickly cover job charges. </p>
-<p>Every HPC <a href="../../registration_and_access/group_management/" title="Each PI (faculty) manages a group. Students and staff can be members of groups.">group</a> gets a free allocation of CPU hours that they can spend every month to access compute resources. You can think of a CPU hour as a token to buy one CPU for one hour, so if you want to reserve 5 CPUs for 10 hours, this will charge 50 CPU hours to your account. You can see more detailed information on job queues, allocations, and job charging on our <a href="../../running_jobs/allocations/">Time Allocations</a> page which has a comprehensive breakdown. </p>
+<p>Before we connect to a compute node, let's quickly cover how access is charged. </p>
+<p>Every HPC group gets a <strong>free</strong> allocation of CPU hours that they can spend every month to access compute resources. You can think of a CPU hour as a token to buy one CPU for one hour, so if you want to reserve 5 CPUs for 10 hours, this will charge 50 CPU hours to your account. You can see more detailed information on job queues, allocations, and job charging on our <a href="../../resources/allocations/">Time Allocations</a> page which has a comprehensive breakdown. </p>
 <p>For this tutorial, we'll focus on the standard partition. This is a job queue and is the one that consumes your standard allocation. To use this job queue, you'll need to know your account name. To check, use the command <code>va</code> which stands for "view allocation". The output will look something like:</p>
 <div class="highlight"><pre><span></span><code>(elgato) [user@gpu5 ~]$ va
 Windfall: Unlimited
@@ -3344,11 +3344,11 @@ PI: parent_974 Total time: 7000:00:00
 
 *Usage includes all subgroups, some of which may not be displayed here
 </code></pre></div>
-<p>You should see a name next to the <code>Group</code> field (in the example above <code>group_name</code>). If you see multiple groups, then you are sponsored in multiple groups and can choose any one of your group names. Note the name of your account and hang onto it for the upcoming sections.</p>
+<p>You should see a name next to the <code>Group</code> field (in the example above, this is <code>group_name</code>). If you see multiple groups, then you are sponsored in multiple groups and can choose any one of your group names. Note the name of your account and hang onto it for the upcoming sections.</p>
 <h3 id="interactive-jobs">Interactive Jobs</h3>
-<p>Now, let's actually access a compute node. When you're connected to a login node, you can connect to a compute node by using the command <code>interactive</code>. The command <code>interactive</code> by default will give you one CPU for one hour (which will charge your account one CPU hour -- don't worry, you have a lot!). You can adjust this using the different flags available which are documented on our <a href="../../running_jobs/interactive_jobs/">Interactive Jobs</a> page. For now, we'll stick with the default resources. </p>
-<p>To access a session, run the following, substituting your own group name (that you found with <code>va</code> in the section above) for <code>group_name</code>:
-<div class="highlight"><pre><span></span><code>interactive -a group_name
+<p>Now, let's actually access a compute node. When you're connected to a login node, you can initiate a Slurm job to interactively connect to a compute node by using the command <code>interactive</code>. By default, this will give you one CPU for one hour. You can adjust this using the different flags available which are documented on our <a href="../../running_jobs/interactive_jobs/">Interactive Jobs</a> page. For now, we'll stick with the default resources. </p>
+<p>To access a session, run the following, substituting your own group name (that you found with <code>va</code> in the section above) for <code>&lt;group_name&gt;</code>:
+<div class="highlight"><pre><span></span><code>interactive -a &lt;group_name&gt;
 </code></pre></div></p>
 <p>For example, in my case:
 <div class="highlight"><pre><span></span><code>(elgato) [netid@wentletrap ~]$ interactive -a hpcteam
@@ -3370,9 +3370,9 @@ cpu39.elgato.hpc.arizona.edu
 </ul>
 <p>That's where batch jobs come in. </p>
 <h2 id="batch-jobs">Batch Jobs</h2>
-<p>Batch jobs are the real meat and potatoes of HPC. In contrast to interactive jobs, batch jobs are a way of submitting work to run on a compute node without the need to be physically present. Batch jobs are essentially special text files that act as blueprints that the scheduler uses to determine the resources you need and the commands needed to run your job. </p>
+<p>Batch jobs are the real meat and potatoes of HPC. In contrast to interactive jobs, batch jobs are a way of submitting work to run on a compute node without the need to be physically present. Batch jobs are essentially special text files that act as blueprints that the scheduler uses to determine job resources and any terminal commands needed to run your analyses. </p>
 <p>Because you do not need to be physically present while your work is running, you can log out of the system, turn off you computer and your work will not be interrupted. Additionally, it enables you to submit tens, hundreds, or even thousands of jobs to run simultaneously which can help you get a tremendous amount of work done.</p>
-<p>We won't cover the specifics of running batch jobs in this section. Instead, see <a href="../../running_jobs/batch_jobs/intro/">Intro to Batch Jobs</a> for an in-depth explanation and walkthrough. </p>
+<p>We won't cover the specifics of running batch jobs in this section since there's a lot to cover. Instead, see <a href="../../running_jobs/batch_jobs/intro/">Intro to Batch Jobs</a> for an in-depth explanation and walkthrough. </p>
 <html>
 <div class="button-container">
     <a href="../storage_and_transfers/"><button class="left-button"></button></a>

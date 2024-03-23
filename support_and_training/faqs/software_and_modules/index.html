@@ -3240,13 +3240,14 @@
 <button class="collapsible">What executables are available when I load a module?</button>
 <div class="content">
   <p>
-      Load the module, find the path to the executable by checking the $PATH variable, then list the contents.  For example:
+      Load the module, find the path to the executable by checking the <code>$PATH</code> variable, then list the contents.  For example:
       <pre><code>
 module load lammps
 echo $PATH
 ls /opt/ohpc/pub/apps/lammps/3Mar20/bin
 lmp_mpi
       </code></pre>
+      Alternatively, use the command <code>module show &#60;software&#62;</code> to see all the environment variables that are set at load time. 
   </p>
 </div>
 
@@ -3310,10 +3311,10 @@ fi
 </div>
 
 <!-- I've been using an older version of Singularity, why isn't available anymore? -->   
-<button class="collapsible">I've been using an older version of Singularity, why isn't available anymore? </button>
+<button class="collapsible">I've been using an older version of Apptainer (formerly Singularity), why isn't available anymore?</button>
 <div class="content">
   <p>
-    Prior versions of Singularity are routinely removed since only the latest one is considered secure.  Notify the consultants if you need help with transition to the current version. Singularity is installed on the operating systems of all compute nodes so does not need to be loaded with a module. 
+    Prior versions of Apptainer are routinely removed since only the latest one is considered secure. Notify the consultants if you need help with transition to the current version. Apptainer is installed on the operating systems of all compute nodes so does not need to be loaded with a module. 
   </p>
 </div>
 
@@ -3321,7 +3322,7 @@ fi
 <button class="collapsible">Can I use Windows applications on HPC?</button>
 <div class="content">
   <p>
-    Unfortunately, Windows applications can't be run on HPC. However, AWS has been used successfully for Windows software with GPU needs. It’s easy to set up, cost effective, and very scalable. Amazon also has a <a href="https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/ [aws.amazon.com]">cloud credit for research program available</a>.
+    Unfortunately, Windows applications can't be run on HPC. However, AWS has been used successfully for Windows software with GPU needs. It’s easy to set up, cost effective, and very scalable. Amazon also has a <a href="https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/">cloud credit for research program available</a>.
     <br>
     You may also consider trying Jetstream2, a national resource where you can create and use Windows virtual machines. More information can be found here: <a href="https://jetstream-cloud.org/">https://jetstream-cloud.org/</a>
   </p>
@@ -3332,7 +3333,7 @@ fi
 <button class="collapsible">How do I install this R package/Why can't I install this R package?</button>
 <div class="content">
   <p>
-      R installations can sometimes be frustrating. We have instructions for how to set up a usable R environment, how to diagnose and troubleshoot problems, and steps to help with known troublesome packages documented in in our <a href="../../../software/R/">Using and Customizing R Packages</a> section. 
+      R installations can sometimes be frustrating. We have instructions for how to set up a usable R environment, how to diagnose and troubleshoot problems, and steps to help with known troublesome packages documented in in our <a href="../../../software/popular_software/R/">Using and Customizing R Packages</a> section. 
   </p>
 </div>
 
@@ -3340,7 +3341,7 @@ fi
 <button class="collapsible">How do I install Python packages?</button>
 <div class="content">
   <p>
-     You can install python packages locally using either a <a href="../../../software/python_and_anaconda/python">virtual environment</a> or a <a href="../../../software/python_and_anaconda/anaconda">local conda environment</a>. 
+     You can install python packages locally using either a <a href="../../../software/popular_software/python_and_anaconda/python/#installing-python-packages-using-a-virtual-environment">virtual environment</a> or a <a href="../../../software/popular_software/python_and_anaconda/anaconda/#creating-a-conda-environment">local conda environment</a>. 
   </p>
 </div>
 
@@ -3349,7 +3350,7 @@ fi
 <button class="collapsible">How do I access custom Python packages from an OOD Jupyter session?</button>
 <div class="content">
   <p>
-  Instructions on accessing custom packages are under Accessing Custom Packages from a Jupyter Session in our documentation on <a href="../../../software/python_and_anaconda/python">Using Python & Python Packages</a>.
+  You can install packages and make them available by first creating a virtual environment or conda environment, then setting up a custom Jupyter kernel. See instructions in our <a href="../../../software/popular_software/python_and_anaconda/python/">Python</a> or <a href="../../../software/popular_software/python_and_anaconda/anaconda/">Anaconda</a> documentation for details. 
   </p>
 </div>
 

@@ -3310,7 +3310,7 @@
 <button class="collapsible">Do you allow users to NFS mount their own storage onto the compute nodes?</button>
 <div class="content">
   <p>
-       No. We NFS mount storage across all compute nodes so that data is available independent of which compute nodes are used. See our page on <a href="../../storage_and_transfers/transfers/">transferring data</a> for more information.
+       No. We NFS mount storage across all compute nodes so that data is available independent of which compute nodes are used. See our page on <a href="../../../storage_and_transfers/transfers/overview/">transferring data</a> for more information.
   </p>
 </div>
 
@@ -3326,9 +3326,11 @@
 <button class="collapsible">I accidentally deleted files, can I get them back?</button>
 <div class="content">
   <p>
-      Unfortunately, no. Backups are not made and anything deleted is permanently erased. It is impossible for us to recover it. To ensure your data are safe, we recommend:
+      It's unlikely. Backups are not made and anything deleted is permanently erased. If you have deleted an important file, reach out to our consultants as soon as possible and they may be able to retrieve it, however, this is not guaranteed. 
+      <br>
+      To ensure your data are safe, we strongly recommend:
       <ul>
-          <li>Make frequent backups, ideally in three places and two formats. Helpful information on making backups can be found on our page <a href="../../../storage_and_transfers/transfers/overview/">Transferring Data</a>.</li>
+          <li>Making frequent backups, ideally in three places and two formats. Helpful information on moving data can be found on our page <a href="../../../storage_and_transfers/transfers/overview/">Transferring Data</a>.</li>
           <li>Use <code>rm</code> and <code>rm -r</code> with caution as these commands cannot be undone! Consider using <code>rm -i</code> when removing files/directories. The <code>-i</code> flag will prompt you to manually confirm file removals to make <i>really</i> sure they can be deleted.</li>
           <li>You can open <a href="../../../support_and_training/consulting_services/">a support ticket</a> to request assistance.  Files that are deleted may not have been removed from the storage array immediately (though this is not guaranteed), don't wait more than a few days.</li>
       </ul>
@@ -3340,7 +3342,7 @@
 <button class="collapsible">My home directory is full, what's using all the space?</button>
 <div class="content">
   <p>
-      If your home directory is full and you can't find what is taking up all the space, it's possible the culprit is a hidden file or directory. Hidden objects are used for storing libraries, cached singularity/apptainer objects, saved R session, anaconda environments, configuration files, and more. It's important to be careful with hidden, or "dot", files since they often control your environment and modifying them can lead to unintended consequences.<br><br>
+      If your home directory is full and you can't find what is taking up all the space, it's possible the culprit is a hidden file or directory. Hidden objects are used for storing libraries, cached singularity/apptainer objects, saved R session, Anaconda environments, configuration files, and more. It's important to be careful with hidden, or "dot", files since they often control your environment and modifying them can lead to unintended consequences.<br><br>
       To view the sizes of all the objects (including hidden) in your home, one quick command is <code>du -hs $(ls -A ~)</code>, for example:
       <pre><code>
 [netid@junonia ~]$ du -hs $(ls -A ~)
@@ -3387,7 +3389,7 @@
 <button class="collapsible">Who owns our group's /xdisk?</button>
 <div class="content">
   <p>
-      A group's PI owns the xdisk allocation. By default, your PI has exclusive read/write/execute privileges for the root folder <code>/xdisk/pi_netid</code>.
+      A group's PI owns the xdisk allocation. By default, your PI has exclusive read/write/execute privileges for the root folder <code>/xdisk/&#60;pi_netid&#62;</code>.
   </p>
 </div>
 
@@ -3395,10 +3397,11 @@
 <button class="collapsible">Can a PI make their /xdisk writeable for their whole group? </button>
 <div class="content">
   <p>
-      By default, members of a research group only have write access to their subdirectories under <code>/xdisk/pi_netid</code>. If they so choose, a PI may allow their group members to write directly to that location by running the following command:
+      By default, members of a research group only have write access to their subdirectories under <code>/xdisk/&#60;pi_netid&#62;</code>. If they so choose, a PI may allow their group members to write directly to that location by running the following command:
       <pre><code>
-chmod g+w /xdisk/pi_netid
+chmod g+w /xdisk/&#60;pi_netid&#62;
       </code></pre>
+      For more information on Linux file permissions, see our <a href="../../cheat_sheet/#linux-file-permissions">cheat sheet</a>. 
   </p>
 </div>
 
@@ -3406,11 +3409,11 @@ chmod g+w /xdisk/pi_netid
 <button class="collapsible">Where can group members store their files?</button>
 <div class="content">
   <p>
-      When an xdisk allocation is created, a subdirectory is automatically generated for and owned by each individual group member. If the directory <code>/xdisk/pi_netid</code> does not have group privileges, group members may not access the root directory, but may access their individual spaces by:
+      When an xdisk allocation is created, a subdirectory is automatically generated for and owned by each individual group member. Group members can access their individual spaces by:
       <pre><code>
-cd /xdisk/pi_netid/netid
+cd /xdisk/&#60;pi_netid&#62;/&#60;netid&#62;
       </code></pre>
-      If a user joins the group after the xdisk was created and <code>/xdisk/pi_netid</code> is not writeable for group members, <a href="../../../consulting_services/">contact our consultants</a> and they can create one.
+      If a user joins the group after the xdisk was created and <code>/xdisk/&#60;pi_netid&#62;</code> is not writeable for group members, <a href="../../consulting_services/">contact our consultants</a> and they can create one.
   </p>
 </div>
 
@@ -3460,7 +3463,7 @@ cd /xdisk/pi_netid/netid
 <button class="collapsible">Why am I getting "xdisk: command not found"?</button>
 <div class="content">
   <p>
-      If you're getting errors using xdisk commands in a terminal session, check that you are on a login node. If you are on the bastion host (hostname: gatekeeper), are in an interactive session, or are on the filexfer node, you won't be able to check or modify your xdisk. When you are on a login node, your terminal prompt should show the hostname junonia or wentletrap. You can also check your hostname using the command <code>hostname</code>
+      If you're getting errors using <code>xdisk</code> commands in a terminal session, check that you are on a login node. If you are on the bastion host (hostname: <code>gatekeeper</code>), are in an interactive session, or are on the filexfer node, you won't be able to check or modify your xdisk. When you are on a login node, your terminal prompt should show the hostname junonia or wentletrap. You can also check your hostname using the command <code>hostname</code>
   </p>
 </div>
 
@@ -3473,7 +3476,7 @@ cd /xdisk/pi_netid/netid
 (puma) [netid@junonia ~]$ xdisk -c expire -d 1
 invalid request_days: 1
       </code></pre>
-      for every value you enter, your xdisk has likely reached its maximum time limit. To check, have a delegate or PI go to <a href="portal.hpc.arizona.edu">portal.hpc.arizona.edu</a>, click <b>Manage XDISK</b>, and look at the box next to Duration. If you see 300, your allocation cannot be extended further.
+      for every value you enter, your xdisk has likely reached its maximum time limit. To check, have a delegate or PI go to <a href="https://portal.hpc.arizona.edu">portal.hpc.arizona.edu</a>, click <b>Manage XDISK</b>, and look at the box next to Duration. If you see 300, your allocation cannot be extended further.
 
     If your allocation is at its limit, you will need to back up your data to external storage (e.g., a local machine, lab server, or cloud service). Once your xdisk has been removed (either by expiring or through manual deletion), you can immediately create a new allocation and restore your data. Detailed xdisk information can be found on our <a href="../../../storage_and_transfers/storage/hpc_storage/">HPC High Performance Storage</a> page. You may also want to look at our page on <a href="../../../storage_and_transfers/transfers/overview/">Transferring Data</a>.
   </p>
@@ -3503,7 +3506,7 @@ invalid request_days: 1
 
     If you're moving large quantities of data, Globus is a great option. We have instructions in our <a href="../../../storage_and_transfers/transfers/globus/">Globus documentation</a> for setting up and using this software.
 
-    We strongly recommend making archives (.tar, .zip, files etc.) of large directories prior to transferring them off the system. In general, transfer software struggles with moving many small files and performs much more efficiently moving fewer large files. You will get the better transfer speeds (sometimes by orders of magnitude) if you compress your files prior to transferring them. This can be done on our filexfer node which is designed for large file management operations (hostname: filexfer.hpc.arizona.edu). 
+    We strongly recommend making archives (.tar, .zip, files etc.) of large directories prior to transferring them off the system. In general, transfer software struggles with moving many small files and performs much more efficiently moving fewer large files. You will get the better transfer speeds (sometimes by orders of magnitude) if you compress your files prior to transferring them. This can be done on our filexfer node which is designed for large file management operations (hostname: <code>filexfer.hpc.arizona.edu</code>). 
   </p>
 </div>
 
@@ -3616,7 +3619,7 @@ invalid request_days: 1
 <button class="collapsible">Who can submit a Tier 2 storage request?</button>
 <div class="content">
   <p>
-    A PI must submit their group's storage request. The exception to this is if a group member has been <a href="../../registration_and_access/group_management/delegating_group_management_rights/">designated xdisk/storage delegate</a>. Delegates may submit a request on behalf of their PI by switching users in the user portal.
+    A PI must submit their group's storage request. The exception to this is if a group member has been <a href="../../../registration_and_access/group_management/#delegating-group-management-rights">designated xdisk/storage delegate</a>. Delegates may submit a request on behalf of their PI by switching users in the <a href="https://portal.hpc.arizona.edu/portal/">user portal</a>.
   </p>
 </div>
 
@@ -3628,16 +3631,8 @@ invalid request_days: 1
   </p>
 </div>
 
-<!-- Can I move my data directly from Google Drive to the new S3 account? -->
-<button class="collapsible">Can I move my data directly from Google Drive to the new S3 account?</button>
-<div class="content">
-  <p>
-     Yes. Using <a href="../../storage_and_transfers/transfers/globus/">Globus</a> you can move data from Google Drive to S3.
-  </p>
-</div>
-
 <!-- What is the pricing for S3? -->
-<button class="collapsible">Question goes here</button>
+<button class="collapsible">What is the pricing for S3?</button>
 <div class="content">
   <p>
     You should check <a href="https://aws.amazon.com/s3/pricing/?nc=sn&loc=4">the Amazon site</a>. As of March 2022:
@@ -3669,7 +3664,7 @@ invalid request_days: 1
 <button class="collapsible">What is a KFS number?</button>
 <div class="content">
   <p>
-     It is used for accounting purposes and used by your Department's finance specialist.
+     It is used for accounting purposes and used by your Department's finance specialist. If you are unsure what your KFS number is, contact your department's financial services office.
   </p>
 </div>
 
@@ -3697,8 +3692,8 @@ invalid request_days: 1
   </p>
 </div>
 
-<!-- I use workflows to move data using google drive, and to share with others. Will AWS support something similar? -->
-<button class="collapsible">I use workflows to move data using google drive, and to share with others. Will AWS support something similar?</button>
+<!-- I use workflows to move data using Google Drive, and to share with others. Will AWS support something similar? -->
+<button class="collapsible">I use workflows to move data using Google Drive, and to share with others. Will AWS support something similar?</button>
 <div class="content">
   <p>
      Amazon S3 will likely support what you do. Perhaps our consultants can help to rework your workflows.
@@ -3725,7 +3720,7 @@ invalid request_days: 1
 <button class="collapsible">Are there any limits on uploads, e.g. may transfer size/day?</button>
 <div class="content">
   <p>
-    The max file size is 5TB based on <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html">Amazon's official documentation</a>.
+    The max file size is 5 TB based on <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html">Amazon's official documentation</a>.
   </p>
 </div>
 
