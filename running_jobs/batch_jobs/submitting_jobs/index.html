@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/running_jobs/batch_jobs/submitting_jobs/">
-      
       
         <link rel="prev" href="../array_jobs/">
       
@@ -2157,27 +2155,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2538,6 +2515,72 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3291,7 +3334,7 @@ Submitted batch job 807387
 </code></pre></div>
 <p>The command <code>squeue</code> gives us detailed information about our batch jobs while they're in queue or running. Under <code>ST</code> you can check the state of your job. In this case, it's pending (<code>PD</code>) which means it's waiting in line with other jobs. Once the job starts running, it's state will change to <code>R</code>, and when the job has completed running, <code>squeue</code> will return a blank line. </p>
 <h2 id="submitting-multiple-jobs">Submitting Multiple Jobs</h2>
-<p>Frequently, users need to submit multiple, related jobs. It may be tempting to do this using a bash loop but there are several drawbacks to this method which are discussed under <a href="../../overview/#jobs">Best Practices under Running Jobs</a>. </p>
+<p>Frequently, users need to submit multiple, related jobs. It may be tempting to do this using a bash loop but there are several drawbacks to this method which are discussed under <a href="../../overview/#jobs">Best Practices</a>. </p>
 <p>The best way to submit related jobs is to use job arrays. Jobs arrays allow users to submit multiple related jobs using a single script and single <code>sbatch</code> command. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. See <a href="../array_jobs/">Array Jobs</a> for specifics on how to submit these sorts of workflows.</p>
 <h2 id="output-files">Output Files</h2>
 <p class="annotate">Once your job completes, you should see an output file <mark class="critic">in the directory where you submitted the batch script</mark>. This output file captures anything that would have been printed to the terminal if you had run it interactively. By default, output filenames will be <code>slurm-&lt;jobid&gt;.out</code>(1). In the example above, this translates to filename <code>slurm-807387.out</code>. </p>

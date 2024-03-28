@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/software/popular_software/gaussian/">
-      
       
         <link rel="prev" href="../../common_datasets/">
       
@@ -2219,27 +2217,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2525,6 +2502,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3272,18 +3315,17 @@
 
 <h1 id="gaussian">Gaussian</h1>
 <h2 id="access">Access</h2>
-<p>In order to access Gaussian and Gaussview, you will need to belong to a special group called <strong>g03</strong>.  You can request to be added by submitting a help ticket. This is a constraint in Gaussian that other modules do not have.</p>
+<p>In order to access Gaussian and Gaussview, you will need to belong to a special group called <strong>g03</strong>.  You can request to be added by <a href="../../../support_and_training/consulting_services/">submitting a help ticket</a>. This is a constraint in Gaussian that other modules do not have.</p>
 <h2 id="gpu-notes">GPU Notes</h2>
-<p>Using GPUs</p>
-<p>When reading these notes, keep in mind that the GPU nodes on Ocelote have one P100 GPU, 28 cores and 256GB RAM.</p>
+<p>When reading these notes, keep in mind that the GPU nodes on Ocelote have one P100 GPU, 28 cores and 256 GB RAM.</p>
 <ol>
 <li>
 <p>Gaussian 16 can use the NVIDIA P100 GPUs installed on Ocelote.  Earlier
 GPUs do not have the computational capabilities or memory size to run the algorithms in G16.  Allowing larger amounts of memory is even more important when using GPUs than for CPUs, since larger batches of work
-must be done at the same time in order to use the GPUs efficiently   (see below).</p>
+must be done at the same time in order to use the GPUs efficiently (see below).</p>
 </li>
 <li>
-<p>When using GPUs it is essential to have the GPU controlled by a specific CPU and much preferable if the CPU is physically close to the GPU it is controlling.  The hardware arrangement can be checked using the nvidia-smi utility.  For example, this output is for a machine with 2 16-core Haswell CPU chips and 4 K80 boards, each of which has two GPUs:</p>
+<p>When using GPUs it is essential to have the GPU controlled by a specific CPU and much preferable if the CPU is physically close to the GPU it is controlling. The hardware arrangement can be checked using the <code>nvidia-smi</code> utility. For example, this output is for a machine with 2 16-core Haswell CPU chips and 4 K80 boards, each of which has two GPUs:</p>
 <div class="highlight"><pre><span></span><code>GPU0 GPU1 GPU2 GPU3 GPU4 GPU5 GPU6 GPU7 CPU Affinity 
 GPU0  X    PIX  SOC  SOC  SOC  SOC  SOC  SOC    0-15
 GPU1  PIX   X   SOC  SOC  SOC  SOC  SOC  SOC    0-15
@@ -3303,7 +3345,7 @@ GPU7  SOC  SOC  PHB  PHB  PXB  PXB  PIX   X    16-31
 %gpucpu=0,1,2,3,4,5,6,7=0,1,16,17,18,19,20,21
 </code></pre></div>
 <p>This pins threads 0-31 to CPUs 0-31 and then uses GPU0 controlled by CPU 0, GPU1 controlled by CPU 1, GPU2 controlled by CPU 16, etc.</p>
-<p>Normally one uses consecutive numbering in the obvious way, but things can be associated differently in special cases. For example, suppose on the other machine one already had one job using 6 CPUs running with %cpu=16-21.  Then if one wanted to use the other 26 CPUs with 8 controlling GPUs one would specify:</p>
+<p>Normally one uses consecutive numbering in the obvious way, but things can be associated differently in special cases. For example, suppose on the other machine one already had one job using 6 CPUs running with <code>%cpu=16-21</code>.  Then if one wanted to use the other 26 CPUs with 8 controlling GPUs one would specify:</p>
 <div class="highlight"><pre><span></span><code>%cpu=0-15,22-31
 %gpucpu=0-7=0-1,22-27
 </code></pre></div>
@@ -3314,7 +3356,7 @@ GPU7  SOC  SOC  PHB  PHB  PXB  PXB  PIX   X    16-31
 <p>Each GPU is several times faster than a CPU but since on modern machines there are typically many more CPUs than GPUs, it is important to use all the CPUs as well as the GPUs and the speedup from GPUs is reduced because many CPUs are also used effectively (i.e., in a job which uses all the CPUs and all the GPUs).  For example, if the GPU is 5x faster than a CPU, then the speedup from going to 1 CPU to 1 CPU + 1 GPU would be 5x, but the speedup going from 32 CPUs to 32 CPUs + 8 GPUs would be 32 CPUs -&gt; 24 CPUs + 8 GPUs, which would be equivalent to 24 + 5x8 = 64 CPUs, for a speedup of 64/32 or 2x.</p>
 </li>
 <li>
-<p>The GPUs can have up to 16 GBytes of memory and one typically tries to have most of this available for Gaussian, which requires at least an equal amount of memory for the CPU thread which is running each GPU.  8 or 9 GBytes works well if there is 12 GByte total on each GPU, or 11-12 GBytes for a 16GByte GPU.  Since the program gives equal shares of memory to each thread, this means that the total memory allowed should be the number of threads times the memory required to use a GPU efficiently.  For example, when using 4 CPUs and two GPUs each of which has 12GBytes of memory, one should use 4 x 12 GB of total memory, i.e. </p>
+<p>The GPUs can have up to 16 GB of memory and one typically tries to have most of this available for Gaussian, which requires at least an equal amount of memory for the CPU thread which is running each GPU.  8 or 9 GB works well if there is 12 GB total on each GPU, or 11-12 GB for a 16 GB GPU.  Since the program gives equal shares of memory to each thread, this means that the total memory allowed should be the number of threads times the memory required to use a GPU efficiently.  For example, when using 4 CPUs and two GPUs each of which has 12 GB of memory, one should use 4 x 12 GB of total memory, i.e. </p>
 <div class="highlight"><pre><span></span><code>%mem=48gb
 %cpu=0-3
 %gpucpu=0-1=0,2

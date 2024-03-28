@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/running_jobs/monitoring_jobs_and_resources/">
-      
       
         <link rel="prev" href="../batch_jobs/submitting_jobs/">
       
@@ -2157,27 +2155,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2465,6 +2442,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3283,7 +3326,7 @@
 <p class="admonition-title">Tip</p>
 <p>Some of these functions are specific to the UA HPC, and may not work if invoked on other systems. </p>
 </div>
-<p>Every job has a unique ID associated with it that can be used to track its status, view resource allocations and usage. Below is a list of some helpful commands you can use to track your jobs and their statuses. </p>
+<p>Every job has a unique ID associated with it that can be used to track its status, view resource allocations, and resource usage. Below is a list of some helpful commands you can use for job monitoring.</p>
 <table>
 <thead>
 <tr>
@@ -3300,7 +3343,7 @@
 </tr>
 <tr>
 <td><code>squeue --me</code></td>
-<td>Retrieves all of a user's running and pending jobs' status'</td>
+<td>Retrieves all your running and pending jobs</td>
 <td></td>
 </tr>
 <tr>
@@ -3336,7 +3379,7 @@
 </tbody>
 </table>
 <h2 id="slurm-reason-codes">Slurm Reason Codes</h2>
-<p>Sometimes, if you check a pending job there is a message that show up under a field called <code>Reason</code> indicating why your job may not be running. Some of these codes are non-intuitive so a human-readable translation is provided below:</p>
+<p>Sometimes, if you check a pending job there is a message under the field <code>Reason</code> indicating why your job may not be running. Some of these codes are non-intuitive so a human-readable translation is provided below:</p>
 <table>
 <thead>
 <tr>

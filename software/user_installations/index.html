@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/software/user_installations/">
-      
       
         <link rel="prev" href="../modules/">
       
@@ -2217,27 +2215,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2523,6 +2500,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3272,13 +3315,16 @@
 <h2 id="package-managers">Package managers</h2>
 <p>Many popular programs, in particular <a href="../popular_software/python_and_anaconda/python/">Python</a> and <a href="../popular_software/R/">R</a> have built-in package managers that can be used to collect new software from the internet and easily install them to your environment. See the section corresponding to your prefered language on the left under the "Popular Software" heading for more detailed instructions.</p>
 <h2 id="manual-installations">Manual installations</h2>
-<p>You are encouraged to download and <a href="" title="on a compute node!">compile</a> any desired software <em>in their own directories.</em> Commands like <code>git clone</code> and <code>wget</code> are available for users to pull repositories from the internet. The installation process for users may involve changing install locations from system folders (e.g. <code>/usr/bin/xyz</code>) to user folders (e.g. <code>/home/ux/netid/anything/</code> or <code>/groups/pi-net-id/my-net-id/</code>), and will vary substantially from software to software, so providing instructions for all cases is beyond the scope of this page. If you encounter difficulties while installing your own software, the HPC Consult team is available for assistance. </p>
-<p>While users cannot add or update system software or libraries using tools that require root privileges such as <code>yum</code>, many software packages can be installed locally without needing to be a superuser. Frequently linux packages make use of the "<code>configure</code>, <code>make</code>, <code>make install</code>" method and an example of how to do this is shown below. </p>
+<p class="annotate">You are encouraged to download and compile(1) any desired software in your own account. Commands like <code>git clone</code> and <code>wget</code> are available to pull repositories from the internet. The installation process may involve changing install locations from system folders (e.g. <code>/usr/bin/xyz</code>) to user folders (e.g. <code>/home/ux/netid/</code> or <code>/groups/pi_netid/netid/</code>), and will vary substantially from software to software, so providing instructions for all cases is beyond the scope of this page. If you encounter difficulties while installing your own software, the HPC Consult team is available for assistance. </p>
+<ol>
+<li>on a compute node!</li>
+</ol>
+<p>While you cannot add or update system software or libraries using tools that require root privileges such as <code>yum</code>, many software packages can be installed locally without needing to be a superuser. Frequently linux packages make use of the "<code>configure</code>, <code>make</code>, <code>make install</code>" method which allows you to customize your installation location. An example of how to do this is shown below. </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>Software is not available on the login nodes. To install custom software, log into an interactive session.</li>
-<li>For a typical Linux installation, the default settings may attempt to install files in system directories outside your directories. This is not permitted, so the installation process (specifically, the <code>./configure</code> step) needs to be changed so that files are installed in a specified location.  There is frequently a <code>--prefix=/path/to/software option</code>.</li>
+<li>For a typical Linux installation, the default settings may attempt to install files in system locations. This is not permitted, so the installation process (specifically, the <code>./configure</code> step) needs to be changed so that files are installed somewhere you have write access to.  There is frequently done with the syntax <code>--prefix=/path/to/software option</code>.</li>
 </ul>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">configure/make/make install example</label><label for="__tabbed_1_2">cmake</label></div>
@@ -3305,7 +3351,7 @@
 <p class="admonition-title">Tip</p>
 <p>Often, there is an additional option to test your software after compiling it and before installing it. Usually, this is something like <code>make test</code> or <code>make check</code></p>
 </div>
-<p>The <code>make</code> command compiles the software according to the instructions provided in the Makefile generated by the ./configure script. Once the software is compiled, <code>make install</code> will install the software in the directory you specified with the <code>--prefix</code> option.</p>
+<p>The <code>make</code> command compiles the software according to the instructions provided in the Makefile generated by <code>./configure</code>. Once the software is compiled, <code>make install</code> will install the software in the directory you specified with the <code>--prefix</code> option.</p>
 <div class="highlight"><pre><span></span><code>[user@cpu39 hello-2.10]$ make
 [user@cpu39 hello-2.10]$ make install
 [user@cpu39 hello-2.10]$ ls $HOME/hello_install 

@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/support_and_training/cheat_sheet/">
-      
       
         <link rel="prev" href="../glossary/">
       
@@ -2157,27 +2155,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2463,6 +2440,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3445,6 +3488,10 @@
 </table>
 <h2 id="hidden-files-and-directories">Hidden Files and Directories</h2>
 <p>Hidden files and directories start with a dot <code>.</code> and won't show up when you do a simple <code>ls</code>. Some of these files are used to configure your environment when you first log in. Be careful when removing or modifying these files since doing so can cause unintended consequences.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code>~</code> in the filenames below indicates your home directory. For example, <code>~/.bashrc</code> is specifying a file in your home called <code>.bashrc</code>.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -3457,12 +3504,12 @@
 <tr>
 <td><code>~/.bash_profile</code></td>
 <td>This file sets your working environment when you first log into HPC. This file sources your <code>~/.bashrc</code> (see below).</td>
-<td>Removing this file will result in the loss of the module command</td>
+<td>See the list in the danger block below.</td>
 </tr>
 <tr>
 <td><code>~/.bashrc</code></td>
 <td>This file sets your working environment when you first log into HPC.</td>
-<td>Removing this file will result in the loss of the module command</td>
+<td>See the list in the danger block below.</td>
 </tr>
 <tr>
 <td><code>~/.local</code></td>
@@ -3489,8 +3536,12 @@
 <p>If you add <code>source ~/.bashrc</code> or <code>source ~/.bash_profile</code> to your bashrc, then you will enter an infinite sourcing loop. This means when you try to log in, your terminal will freeze, then your access will be denied. </p>
 </li>
 <li>
-<p><strong>Be careful with <code>echo</code></strong></p>
+<p><strong>Using <code>echo</code></strong></p>
 <p>If you use CLI tools for data transfer, e.g. <code>scp</code> or <code>sftp</code>, they may require a "silent" terminal. If you're trying to initiate transfers and are getting the error "Received message too long", check your bashrc to make sure you aren't printing anything to the terminal. </p>
+</li>
+<li>
+<p><strong>Removing your files</strong></p>
+<p>If you delete either your <code>~/.bashrc</code> or <code>~/.bash_profile</code>, you will lose access to <code>module</code> commands. </p>
 </li>
 </ol>
 </div>

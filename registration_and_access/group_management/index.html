@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/registration_and_access/group_management/">
-      
       
         <link rel="prev" href="../account_deletion/">
       
@@ -2292,27 +2290,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2598,6 +2575,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3361,8 +3404,8 @@
 <p>The process of adding new members may take a few seconds to complete. Once the changes have taken place, you will see the user's NetID in your group:</p>
 <p><img src="images/added_user.png" style="width:500px;"></p>
 <h3 id="creating-a-new-group">Creating a New Group</h3>
-<p>A new group can be created at any time through the user portal. New groups will share their time and storage allocations with your primary group. Alternate research groups can be a good solution for managing file permissions. For example, if you needed to restrict access of a particular directory to a certain subset of your group, you could do this by creating a new research group, adding the group members who need access to those files, and then changing the group ownership of the files/directories that need restricted access.</p>
-<p>To create a new group, log into the user portal, select the Manage Groups and select the Add New Group dropdown menu. </p>
+<p>A new group can be created at any time through the user portal. New groups will share their time and storage allocations with your primary group. Alternate research groups can be a good solution for managing file permissions. For example, if a particular directory and its contents needs restricted access, you could do this by creating a new research group, adding the group members who need access to those files, and then changing the group ownership of the files/directories.</p>
+<p>To create a new group, log into the user portal, select the <strong>Manage Groups</strong> and select the <strong>Add New Group</strong> dropdown menu. </p>
 <p><img src="images/create-research-group.png" style="width:500px;"></p>
 <p>Once your group has been created, you will see it when running <code>va</code> (short for View Allocation) in the same block as your primary group:</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>puma<span class="o">)</span><span class="w"> </span><span class="o">[</span>faculty-netid@junonia<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>va
@@ -3378,7 +3421,7 @@ PI:<span class="w"> </span>parent_1206<span class="w"> </span>Total<span class="
 <p class="admonition-title">Tip</p>
 <p>If you are interested in having an HPC staff member come to your class to do an Intro to HPC presentation, reach out to our consultants.</p>
 </div>
-<p>If you are a faculty member and are teaching a course that makes use of HPC resources, you can create a Class Group that will grant your students system access. Class groups are designed to be created and used for one semester only.</p>
+<p>If you are a faculty member and are teaching a course that makes use of HPC resources, you can create a class group that will grant your students system access. Class groups are designed to be created and used for one semester only.</p>
 <h3 id="creating-a-class-group">Creating a Class Group</h3>
 <p>Log into your <a href="https://portal.hpc.arizona.edu/">user portal</a>, navigate to the <strong>Manage Groups</strong> tab, and select the <strong>Add New Group</strong> dropdown option at the top of the page.There will be an option to specify your <strong>Group Type</strong> on the right. Choose <strong>Class</strong> from the dropdown menu</p>
 <p><img src="images/select-class-group.png" style="width:500px;"></p>
@@ -3397,17 +3440,17 @@ Standard hours used on Ocelote are pulled from the same pool as your research gr
 <div class="highlight"><pre><span></span><code><span class="o">(</span>ocelote<span class="o">)</span><span class="w"> </span><span class="o">[</span>faculty_netid@wentletrap<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>va
 Windfall:<span class="w"> </span>Unlimited
 
-PI:<span class="w"> </span>parent_000<span class="w"> </span>Total<span class="w"> </span>time:<span class="w"> </span><span class="m">35000</span>:00:00
+PI:<span class="w"> </span>parent_000<span class="w"> </span>Total<span class="w"> </span>time:<span class="w"> </span><span class="m">100000</span>:00:00
 <span class="w">    </span>Group:<span class="w"> </span>hpc101<span class="w"> </span>Time<span class="w"> </span>used:<span class="w"> </span><span class="m">0</span>:00:00<span class="w"> </span>Time<span class="w"> </span>encumbered:<span class="w"> </span><span class="m">0</span>:00:00
 <span class="w">    </span>Group:<span class="w"> </span>faculty_netid<span class="w"> </span>Time<span class="w"> </span>used:<span class="w"> </span><span class="m">0</span>:00:00<span class="w"> </span>Time<span class="w"> </span>encumbered:<span class="w"> </span><span class="m">0</span>:00:00
 <span class="w">    </span>Total<span class="w"> </span>used:<span class="w"> </span><span class="m">0</span>:00:00
 <span class="w">    </span>Total<span class="w"> </span>encumbered:<span class="w"> </span><span class="m">0</span>:00:00
-<span class="w">    </span>Total<span class="w"> </span>remaining:<span class="w"> </span><span class="m">35000</span>:00:00
+<span class="w">    </span>Total<span class="w"> </span>remaining:<span class="w"> </span><span class="m">100000</span>:00:00
 </code></pre></div>
 <h2 id="delegating-group-management-rights">Delegating Group Management Rights</h2>
 <p>PI's can delegate management rights to trusted group members. Delegates may create research and class groups, sponsor users, remove users, and request and manage storage offerings on behalf of their faculty sponsor. To add a group member as a delegate, the PI can click the <strong>Manage Delegates</strong> link on the home page of the <a href="https://portal.hpc.arizona.edu/portal/">user portal</a>. In the Manage Delegates window that appears, select <strong>Add Delegate</strong>, enter your group member's NetID, and click <strong>Add</strong>.</p>
 <p><img src="images/add-delegate.png" style="width:500px;"></p>
-<p>Once a group member has been added as a delegate, they can log into the user portal, selecting <strong>Switch User</strong>, enter their PI's NetID in the pop-up field, and click <strong>Switch User</strong>. This will allow them to perform functions on their PI's behalf. They may switch back to their own account at any time by selecting Switch User and entering their own NetID.</p>
+<p>Once a group member has been added as a delegate, they can log into the user portal, select <strong>Switch User</strong>, enter their PI's NetID in the pop-up field, and click <strong>Switch User</strong>. This will allow them to perform functions on their PI's behalf. They may switch back to their own account at any time by selecting Switch User and entering their own NetID.</p>
 <p><img src="images/switch-user.png" style="width:500px;"></p>
 
 

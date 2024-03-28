@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/storage_and_transfers/transfers/rsync/">
-      
       
         <link rel="prev" href="../irods/">
       
@@ -1625,25 +1623,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example-1" class="md-nav__link">
     <span class="md-ellipsis">
       Example 1
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example 1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-2" class="md-nav__link">
     <span class="md-ellipsis">
       Example 2
@@ -1651,18 +1639,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#additional-options" class="md-nav__link">
     <span class="md-ellipsis">
       Additional Options
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2243,27 +2226,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2549,6 +2511,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3295,17 +3323,17 @@
 
 
 <h1 id="rsync">rsync</h1>
-<h2 id="overview">Overview</h2>
 <p>rsync is a fast and extraordinarily versatile file copying tool. It synchronizes files and directories between two different locations (or servers). Rsync copies only the differences of files that have actually changed. An important feature of rsync not found in most similar programs/protocols is that the mirroring takes place with only one transmission in each direction. Rsync can copy or display directory contents and copy files, optionally using compression and recursion. You use rsync in the same way you use scp. You must specify a source and a destination, one of which may be remote. </p>
 <h2 id="example-1">Example 1</h2>
-<p>Recursively transfers all files from the directory <code>src/directory-name</code> on the machine <code>computer-name</code> into the <code>/data/tmp/directory-name</code> directory on the local machine. The files are transferred in archive mode, which ensures that symbolic  links, devices, attributes, permissions, ownerships, etc. are preserved in the transfer. Additionally, compression will be used to reduce the size of data portions of the transfer. </p>
-<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avz<span class="w">  </span>computer-name:src/directory-name<span class="w">  </span>user@remote.host:/data/tmp<span class="w"> </span>--log-file<span class="o">=</span>hpc-user-rsync.log<span class="w">  </span>
+<p>Recursively transfers all files from the directory <code>src/directory-name</code> on a local machine into <code>/data/tmp/</code> on a remote machine. The directory <code>directory-name</code> will be created on the remote machine in this process. </p>
+<p>The files are transferred in archive mode, which ensures that symbolic  links, devices, attributes, permissions, ownerships, etc. are preserved in the transfer. Additionally, compression will be used to reduce the size of data portions of the transfer. </p>
+<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avz<span class="w">  </span>src/directory-name<span class="w">  </span>user@remote.host:/data/tmp<span class="w"> </span>--log-file<span class="o">=</span>hpc-user-rsync.log<span class="w">  </span>
 </code></pre></div>
-<h3 id="example-2">Example 2</h3>
-<p>A trailing slash on the source changes the behavior slightly. This inclusion avoids creating an additional directory level at the destination. You can think of a trailing / on a source as meaning “copy the contents of this directory” as opposed to “copy the directory by name”, but in both cases the attributes of the containing directory are transferred to the containing directory on the destination. </p>
+<h2 id="example-2">Example 2</h2>
+<p>A trailing slash on the source changes the behavior slightly. This inclusion avoids creating an additional directory level at the destination. You can think of a trailing <code>/</code> on a source as meaning “copy the contents of this directory” as opposed to “copy the directory by name”, but in both cases the attributes of the containing directory are transferred to the containing directory on the destination. </p>
 <div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avz<span class="w">  </span>computer-name:src/directory-name/<span class="w">  </span>user@remote.host:/data/tmp<span class="w"> </span>--log-file<span class="o">=</span>hpc-user-rsync.log<span class="w"> </span>
 </code></pre></div>
-<h3 id="additional-options">Additional Options</h3>
+<h2 id="additional-options">Additional Options</h2>
 <table>
 <thead>
 <tr>

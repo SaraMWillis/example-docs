@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/software/common_datasets/">
-      
       
         <link rel="prev" href="../user_installations/">
       
@@ -2226,27 +2224,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2532,6 +2509,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3279,9 +3322,9 @@
 
 <h1 id="common-datasets">Common Datasets</h1>
 <p>We host several large community datasets.  It is beneficial to you and us.  For you, it saves all that time downloading and filling up your storage allocation.  And for us it reduces the occurrence of the same data in many places. We do not currently update them on any particular cadence. You can request updates if you feel those would be useful to the community.</p>
-<p>These datasets and databases are available on the compute nodes in the filesystem called /contrib/datasets in read-only mode. You can view them there.</p>
+<p>These datasets and databases are available on the compute nodes under <code>/contrib/datasets</code> in read-only mode. </p>
 <h2 id="alphafold-2">AlphaFold 2</h2>
-<p>AlphaFold is an AI system developed by the Google DeepMind project to predict the 3D structure of a protein from its amino acid sequence. AlphaFold needs multiple datasets to run, the combined size of which is around 2.62 TB. It takes a long time to download them. We save you that effort by locating these datasets at <code>/contrib/datasets/alphafold</code>.</p>
+<p>AlphaFold is an AI system developed by the Google DeepMind project to predict the 3D structure of a protein from its amino acid sequence. AlphaFold needs multiple datasets to run, the combined size of which is around 2.62 TB. You can find these datasets under <code>/contrib/datasets/alphafold</code>.</p>
 <p>We also host containers at <code>/contrib/singularity/alphafold</code> that you can use with the provided datasets to predict protein structures with AlphaFold. You can access the container by loading the alphafold module from an interactive session or a batch submission script. When you load the alphafold module, it defines the following additional environment variables that you can use to easily access the container and the datasets:</p>
 <ul>
 <li><code>ALPHAFOLD_DIR</code> which points to <code>/contrib/singularity/alphafold</code></li>
@@ -3319,9 +3362,9 @@ alphafold<span class="w"> </span>--nv<span class="w"> </span><span class="se">\<
 <span class="w">          </span>--fasta_paths<span class="o">=</span>input.fasta
 </code></pre></div>
 <h2 id="llama-2">Llama 2</h2>
-<p>The Meta Large Language Model project has several datasets that we make available.</p>
+<p>The Meta Large Language Model project has several datasets that we make available under <code>/contrib/datasets/llama2</code>.</p>
 <h2 id="ncbi-blast">NCBI Blast</h2>
-<p>The Blast databases are provided in support of the Blast module.</p>
+<p>The Blast databases are provided in support of the Blast module under <code>/contrib/datasets/blast</code>.</p>
 
 
 

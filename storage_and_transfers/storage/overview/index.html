@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/storage_and_transfers/storage/overview/">
-      
       
         <link rel="prev" href="../../overview/">
       
@@ -2228,27 +2226,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2534,6 +2511,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3282,16 +3325,16 @@
 <h1 id="storage-overview">Storage Overview</h1>
 <h2 id="where-should-i-store-my-data">Where Should I Store My Data?</h2>
 <ol>
-<li>Data undergoing active analyses should be stored in HPC's local <a href="storage_and_transfers/storage/hpc_storage">High Performance Storage</a>.</li>
-<li>Large amounts of data not requiring immediate access from our HPC compute nodes can be stored at reasonable rates on our <a href="/storage_and_transfers/storage/rental_storage">Rental Storage</a>. </li>
-<li>RDAS is a <a href="storage_and_transfers/storage/rdas_storage">research data service</a> which supports the mounting of SMB shares. The supported operating systems are MacOS, Linux, and Windows. It provides 5TB of free storage. </li>
-<li>Research data not requiring immediate access should be stored in <a href="/storage_and_transfers/storage/tier2_storage">General Research Data Storage (Tier 2)</a>. For example:<ol>
+<li>Data undergoing active analyses should be stored in HPC's local <a href="../hpc_storage/">High Performance Storage</a>.</li>
+<li>Large amounts of data not requiring immediate access from our HPC compute nodes can be stored at reasonable rates on our <a href="../rental_storage/">Rental Storage</a>. </li>
+<li>RDAS is a <a href="../rdas_storage/">research data service</a> which supports the mounting of SMB shares. The supported operating systems are MacOS, Linux, and Windows. It provides 5TB of free storage. </li>
+<li>Research data not requiring immediate access should be stored in <a href="../tier2_storage/">General Research Data Storage (Tier 2)</a>. For example:<ol>
 <li>Large datasets where only subsets are actively being analyzed</li>
 <li>Results no longer requiring immediate access</li>
 <li>Backups (highly encouraged!)</li>
 </ol>
 </li>
-<li>Data that require HIPAA-compliance can be stored on Soteria (currently in the pilot phase).</li>
+<li>Data that require HIPAA-compliance can be stored on <a href="../../../resources/secure_hpc/overview/">Soteria</a> (currently in the pilot phase).</li>
 </ol>
 <p><center>
 <pre class="mermaid"><code>graph LR
@@ -3301,8 +3344,8 @@
   C--&gt;|No| E[Unsupported];
   B--&gt;|No| F{Archival?}
   F--&gt;|Yes| G[&lt;a href="../../storage/tier2_storage/"&gt;AWS Tier 2&lt;br&gt;Storage&lt;/a&gt;]
-  F--&gt;|No| H{Need&lt;br&gt;HPC&lt;br&gt;access?}
-  H--&gt;|Yes| I{Under&lt;br&gt;20TB?}
+  F--&gt;|No| H{Need&lt;br&gt;HPC&lt;br&gt;compute?}
+  H--&gt;|Yes| I{Under&lt;br&gt;20 TB?}
   I--&gt;|Yes| J[&lt;a href="../../storage/hpc_storage/"&gt;HPC Storage&lt;/a&gt;]
   I--&gt;|No| K[&lt;a href="../../storage/rental_storage/"&gt;Rental Storage&lt;/a&gt;]
   H--&gt;|No| L{Under&lt;br&gt;5 TB?}
@@ -3327,7 +3370,7 @@
 <tr>
 <td>Primary HPC Storage</td>
 <td>Research data. Supports compute. Directly attached to HPC.</td>
-<td><code>/home</code>: 50GB<br><code>/groups</code>: 500GB<br><code>/xdisk</code>: 20TB</td>
+<td><code>/home</code>: 50 GB<br><code>/groups</code>: 500 GB<br><code>/xdisk</code>: 20 TB</td>
 <td>Free</td>
 <td>Not for restricted data</td>
 <td>Directly mounted on HPC. Also uses Globus and DTNs.</td>
@@ -3337,7 +3380,7 @@
 <tr>
 <td>R-DAS</td>
 <td>Research Desktop Attached Storage - SMB shares</td>
-<td>5TB</td>
+<td>5 TB</td>
 <td>Free</td>
 <td>Not for restricted data</td>
 <td>Mounted to workstations as shares</td>
@@ -3347,7 +3390,7 @@
 <tr>
 <td>Rental Storage</td>
 <td>Research data. Large datasets. Typically for staging to HPC</td>
-<td>Rented per Terabyte per year</td>
+<td>Rented per TB per year</td>
 <td>Rental rate: $47.35 per TB per year</td>
 <td>Not for restricted data</td>
 <td>Uses Globus and DTNs. Copy data to Primary</td>
@@ -3357,8 +3400,8 @@
 <tr>
 <td>Tier 2</td>
 <td>Typically research data. Unused data is archived</td>
-<td>15GB to TBs</td>
-<td>Tier-based system. First 1TB of active data and archival data are free. Active data &gt; 1TB is paid.</td>
+<td>15 GB to TBs</td>
+<td>Tier-based system. First 1 TB of active data and archival data are free. Active data &gt; 1 TB is paid.</td>
 <td>Not for restricted data</td>
 <td>Uses Globus and AWS command line interface</td>
 <td>Typically long term since use of Glacier is free and slow</td>
@@ -3387,7 +3430,7 @@
 <tr>
 <td>Box</td>
 <td>General Data</td>
-<td>50gb</td>
+<td>50 GB</td>
 <td>Free</td>
 <td>Not for restricted data</td>
 <td>Browser</td>
@@ -3397,8 +3440,8 @@
 <tr>
 <td>Google Drive</td>
 <td>General data</td>
-<td>15gb</td>
-<td>Free. Google rates for amounts &gt; 15gb</td>
+<td>15 GB</td>
+<td>Free. Google rates for amounts &gt; 15 GB</td>
 <td>Not for restricted data</td>
 <td>Browser</td>
 <td>Unlimited usage expires March 1, 2023</td>

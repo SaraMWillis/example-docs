@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/software/overview/">
-      
       
         <link rel="prev" href="../../storage_and_transfers/transfers/scp/">
       
@@ -1778,6 +1776,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#unsupported-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unsupported Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#federal-regulations" class="md-nav__link">
     <span class="md-ellipsis">
       Federal Regulations
@@ -2250,27 +2257,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2556,6 +2542,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3362,6 +3414,40 @@
 <tr>
 <td><strong>Broad interest</strong></td>
 <td>The High Performance Computing team will consider acquiring and supporting software packages that have broad interest among our users. Full facility support will depend on the cost of the package and our ability to comply with any restrictive licensing conditions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unsupported-software">Unsupported Software</h3>
+<p>Unfortunately, our HPC system is not configured to support all software use cases. We have summarized the main scenarios which cause software to be unsupported by our system below. Prior to submitting an installation request, double-check that your software requirements don't fall into one of these categories. While the HPC may not be able to support these cases, it may be possible that other campus resources are able to. We encourage you to contact services listed in our <a href="../../support_and_training/external_resources/">Community Resources</a> page.</p>
+<p>The below list is not exhaustive and may be expanded as new scenarios are encountered. If you are unsure whether your desired software is supported, feel free to <a href="../../support_and_training/consulting_services/">contact our consultants</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Software Requirements</th>
+<th></th>
+<th><div style="width: 150px;">Examples</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Non-SSH External Connections</strong></td>
+<td>Software requiring external communications that utilize protocols other than SSH are not supported.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Job Management/Scheduling</strong></td>
+<td>The UArizona HPC uses Slurm as its task scheduler and resource manager. Software requiring different a scheduler is therefore unsupported.</td>
+<td>Apache Spark<br>Sun Grid Engine</td>
+</tr>
+<tr>
+<td><strong>Persistent Databases/Servers</strong></td>
+<td>The UArizona HPC is not configured to support databases, server instances, or other persistent software-specific daemons.</td>
+<td>SQL databases<br>Application deployments<br>SAS server</td>
+</tr>
+<tr>
+<td><strong>Windows Applications</strong></td>
+<td>While there are plenty of excellent Windows software suites available for scientific computing, they unfortunately cannot be run on HPC. There are, however, national resources available that may support your application. One example is JetStream2 available through an ACCESS Allocation. See our <a href="../../support_and_training/external_resources/">Community Resources</a> page linked at the top of this page for more details.</td>
+<td>ArcGIS</td>
 </tr>
 </tbody>
 </table>

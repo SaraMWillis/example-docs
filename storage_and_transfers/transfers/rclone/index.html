@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/storage_and_transfers/transfers/rclone/">
-      
       
         <link rel="prev" href="../rsync/">
       
@@ -1609,6 +1607,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    rclone
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1618,6 +1627,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-google-drive-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Google Drive Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2171,27 +2208,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2477,6 +2493,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3223,46 +3305,50 @@
 
 
 <h1 id="rclone">Rclone</h1>
-<p>Rclone is a CLI installed on <code>filexfer.hpc.arizona.edu</code> that can be used to transfer files to Google Drive as well as other Cloud-based storage sites. To use rclone, you will need to start by configuring it. The walkthrough provided by rclone is fairly straightforward. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you encounter issues configuring rclone on HPC due to an internet browser not being available, try using a terminal in an <a href="../../../running_jobs/open_on_demand/">interactive desktop session in Open OnDemand</a>. This will allow you to grant application access graphically. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>For information on rclone commands, see: <a href="https://rclone.org/commands/">https://rclone.org/commands/</a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Google Drive</label><label for="__tabbed_1_2">AWS Tier 2</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+</div>
+<p>Rclone is a CLI installed on <code>filexfer.hpc.arizona.edu</code> that can be used to transfer files between HPC and Cloud-based storage sites. To use rclone, you will need to start by configuring it. The walkthrough provided by rclone is fairly straightforward and has a large number of options to choose from. A configuration example for Google Drive is shown below. </p>
+<h2 id="example-google-drive-configuration">Example Google Drive Configuration</h2>
 <div class="highlight"><pre><span></span><code>[netid@sdmz-dtn-4 ~]$ rclone config
 Name                 Type
 ====                 ====
 
-e) Edit existing remote
-n) New remote
-d) Delete remote
-r) Rename remote
-c) Copy remote
-s) Set configuration password
-q) Quit config
-e/n/d/r/c/s/q&gt; n
-name&gt; GoogleDrive
-Type of storage to configure.
-Enter a string value. Press Enter for the default (&quot;&quot;).
-Choose a number from below, or type in your own value
-...
-12 / Google Drive
-   \ &quot;drive&quot;
-...
-Storage&gt; 12
-Google Application Client Id
-client_id&gt;
-client_secret&gt;
-scope&gt; 1
-root_folder_id&gt;
-service_account_file&gt;
-Edit advanced config? (y/n)
-y) Yes
-n) No
-y/n&gt; n
-
-The next prompt will ask if you would like to use auto config, select N here or the configuration will not be successful. You will be given a URL. Copy and paste this into your web browser and follow the prompts to allow rclone to have access to your UArizona Google Drive account. When you are done, it will give you a verification code. Copy and paste this back into the terminal to proceed.
-
-Remote config
+  e) Edit existing remote
+  n) New remote
+  d) Delete remote
+  r) Rename remote
+  c) Copy remote
+  s) Set configuration password
+  q) Quit config
+  e/n/d/r/c/s/q&gt; n
+  name&gt; GoogleDrive
+  Type of storage to configure.
+  Enter a string value. Press Enter for the default (&quot;&quot;).
+  Choose a number from below, or type in your own value
+  ...
+  12 / Google Drive
+    \ &quot;drive&quot;
+  ...
+  Storage&gt; 12
+  Google Application Client Id
+  client_id&gt;
+  client_secret&gt;
+  scope&gt; 1
+  root_folder_id&gt;
+  service_account_file&gt;
+  Edit advanced config? (y/n)
+  y) Yes
+  n) No
+  y/n&gt; n
+</code></pre></div>
+<p>The next prompt will ask if you would like to use auto config, select N here or the configuration will not be successful. You will be given a URL. Copy and paste this into your web browser and follow the prompts to allow rclone to have access to your UArizona Google Drive account. When you are done, it will give you a verification code. Copy and paste this back into the terminal to proceed.</p>
+<div class="highlight"><pre><span></span><code>Remote config
 Use auto config?
   * Say Y if not sure
   * Say N if you are working on a remote or headless machine
@@ -3294,43 +3380,6 @@ GoogleDrive          drive
 
 Your Google Drive connection is now active and you can use rclone to make transfers. 
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>[netid@sdmz-dtn-4 ~]$ rclone config
-Current remotes:
-
-Name                 Type
-====                 ====
-
-e) Edit existing remote
-n) New remote
-d) Delete remote
-r) Rename remote
-c) Copy remote
-s) Set configuration password
-q) Quit config
-e/n/d/r/c/s/q&gt; n
-name&gt; AWS
-Storage&gt; s3
-provider&gt; AWS
-env_auth&gt; false
-access_key_id&gt; YOUR_KEY_ID_HERE
-secret_access_key&gt; YOUR_SECRET_ACCESS_KEY_HERE
-region&gt; us-west-2
-endpoint&gt;
-location_constraint&gt;
-acl&gt;
-server_side_encryption&gt;
-sse_kms_key_id&gt;
-storage_class&gt; INTELLIGENT_TIERING
-Edit advanced config? (y/n)
-y) Yes
-n) No
-y/n&gt; n
-</code></pre></div>
-</div>
-</div>
-</div>
 
 
 

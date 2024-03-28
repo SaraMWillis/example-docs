@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/running_jobs/interactive_jobs/">
-      
       
         <link rel="prev" href="../open_on_demand/">
       
@@ -2157,27 +2155,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2571,6 +2548,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3318,14 +3361,14 @@
 
 <h1 id="interactive-jobs">Interactive Jobs</h1>
 <h2 id="overview">Overview</h2>
-<p>Interactive sessions are a way to gain access to a compute node from the command line. This is useful for <a href="../../software/modules/">checking and using available software modules</a>, testing <a href="../batch_jobs/int">submission scripts</a>, debugging code, compiling software, and running programs in real time. </p>
-<p>The term "interactive session" in this context refers to jobs run from within the command line on a terminal client. Opening a terminal in an <a href="../open_on_demand/">interactive graphical desktop</a> is also equivalent, but these sessions are fixed to the resources allocated to that OOD session. As you'll see below, one has more control over their resources when requesting an interactive session via SSH on a terminal client.</p>
+<p>Interactive sessions are a way to gain access to a compute node from the command line. This is useful for <a href="../../software/modules/">checking and using available software modules</a>, testing <a href="../batch_jobs/intro/">submission scripts</a>, debugging code, compiling software, and running programs in real time. </p>
+<p>The term "interactive session" in this context refers to jobs run from within the command line on a terminal client. Opening a terminal in an <a href="../open_on_demand/">interactive graphical desktop</a> is also equivalent, but these sessions are fixed to the resources allocated to that OOD session. As you'll see below, one has more control over their resources when requesting an interactive session via SSH in a terminal client.</p>
 <h2 id="clusters">Clusters</h2>
 <p>An interactive session can be requested on any of our three clusters: El Gato, Ocelote, and Puma. Since the request to start an interactive session is processed by Slurm, these jobs will be subject to the same wait times as batch jobs. Since Puma is typically busy with high traffic throughput, it is not recommended to request an interactive session on this cluster unless specific resources are needed and longer wait times are acceptable to the user. </p>
 <h2 id="how-to-request-an-interactive-session">How to Request an Interactive Session</h2>
 <h3 id="the-interactive-command">The <code>interactive</code> Command</h3>
-<p>When you are on a login node, you can request an interactive session on a compute node. We have a built-in shortcut command that will allow you to quickly and easily request a session by simply entering: <code>interactive</code></p>
-<p>The <code>interactive</code> command is essentially a convenient wrapper for a Slurm command called <code>salloc</code>. This can be thought of as similar to the sbatch command, but for interactive jobs rather than (batch jobs)[../batch_jobs/intro]. When you request a session using interactive, the full salloc command being executed will be displayed for reference.</p>
+<p>We have a built-in shortcut command that will allow you to quickly and easily request a session by simply entering: <code>interactive</code></p>
+<p>The <code>interactive</code> command is essentially a convenient wrapper for a Slurm command called <code>salloc</code>. This can be thought of as similar to the <code>sbatch</code> command, but for interactive jobs rather than <a href="../batch_jobs/intro">batch jobs</a>. When you request a session using interactive, the full <code>salloc</code> command being executed will be displayed for reference.</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>ocelote<span class="o">)</span><span class="w"> </span><span class="o">[</span>netid@junonia<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>interactive
 Run<span class="w"> </span><span class="s2">&quot;interactive -h for help customizing interactive use&quot;</span>
 Submitting<span class="w"> </span>with<span class="w"> </span>/usr/local/bin/salloc<span class="w"> </span>--job-name<span class="o">=</span>interactive<span class="w"> </span>--mem-per-cpu<span class="o">=</span>4GB<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w">    </span>--ntasks<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">01</span>:00:00<span class="w"> </span>--account<span class="o">=</span>windfall<span class="w"> </span>--partition<span class="o">=</span>windfall
@@ -3337,18 +3380,13 @@ salloc:<span class="w"> </span>Waiting<span class="w"> </span><span class="k">fo
 salloc:<span class="w"> </span>Nodes<span class="w"> </span>i16n1<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
 <span class="o">[</span>netid@i16n1<span class="w"> </span>~<span class="o">]</span>$
 </code></pre></div>
-<p>Notice in the example above how the command prompt changes once your session starts. When you're on a login node, your prompt will show "junonia" or "wentletrap". Once you're in an interactive session, you'll see the name of the compute node you're connected to. </p>
-<p>If no options are supplied to the command interactive, your job will automatically run using the windfall partition for one hour using one CPU. To use the standard partition, include the flag "-a" followed by your group's name. To see all the customization options:</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>ocelote<span class="o">)</span><span class="w"> </span><span class="o">[</span>netid@junonia<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>interactive<span class="w"> </span>-h
-Usage:<span class="w"> </span>/usr/local/bin/interactive<span class="w"> </span><span class="o">[</span>-x<span class="o">]</span><span class="w"> </span><span class="o">[</span>-g<span class="o">]</span><span class="w"> </span><span class="o">[</span>-N<span class="w"> </span>nodes<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="w"> </span>memory<span class="w"> </span>per<span class="w"> </span>core<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>ncpus<span class="w"> </span>per<span class="w"> </span>node<span class="o">]</span><span class="w"> </span><span class="o">[</span>-Q<span class="w"> </span>optional<span class="w"> </span>qos<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="w"> </span>hh::mm:ss<span class="o">]</span><span class="w"> </span><span class="o">[</span>-a<span class="w"> </span>account<span class="w"> </span>to<span class="w"> </span>charge<span class="o">]</span>
-</code></pre></div>
-<p>You may also create your own salloc commands using any desired <a href="../batch_jobs/slurm_reference">SLURM directives</a> for maximum customization.</p>
+<p>Notice in the example above how the command prompt changes once your session starts. When you're on a login node, your prompt will show <code>junonia</code> or <code>wentletrap</code>. Once you're in an interactive session, you'll see the name of the compute node you're connected to. </p>
 <h4 id="customizing-your-resources">Customizing Your Resources</h4>
-<p>The command <code>interactive</code> when run without any arguments will allocate you a windfall session using one CPU for one hour which isn't ideal for most use cases. You can modify this by including additional flags. To see the available options, you can use the help flag <code>-h</code></p>
+<p>The command <code>interactive</code> when run without any arguments will allocate a windfall session using one CPU for one hour which isn't ideal for most use cases. You can modify this by including additional flags. To see the available options, you can use the help flag <code>-h</code></p>
 <p><div class="highlight"><pre><span></span><code><span class="o">(</span>ocelote<span class="o">)</span><span class="w"> </span><span class="o">[</span>netid@junonia<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>interactive<span class="w"> </span>-h
 Usage:<span class="w"> </span>/usr/local/bin/interactive<span class="w"> </span><span class="o">[</span>-x<span class="o">]</span><span class="w"> </span><span class="o">[</span>-g<span class="o">]</span><span class="w"> </span><span class="o">[</span>-N<span class="w"> </span>nodes<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="w"> </span>memory<span class="w"> </span>per<span class="w"> </span>core<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>total<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>tasks<span class="o">]</span><span class="w"> </span><span class="o">[</span>-Q<span class="w"> </span>optional<span class="w"> </span>qos<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="w"> </span>hh::mm:ss<span class="o">]</span><span class="w"> </span><span class="o">[</span>-a<span class="w"> </span>account<span class="w"> </span>to<span class="w"> </span>charge<span class="o">]</span>
 </code></pre></div>
-The values can be combined and each mean the following:</p>
+The values shown in the output can be combined and each mean the following:</p>
 <table>
 <thead>
 <tr>
@@ -3360,7 +3398,7 @@ The values can be combined and each mean the following:</p>
 <tbody>
 <tr>
 <td><code>-a</code></td>
-<td>This is followed by your group's name and will switch you to using the standard partition. This is highly recommended to keep your sessions from being interrupted and to help them start faster</td>
+<td>This is followed by your group's name will switch you to using the standard partition. This is highly recommended to keep your sessions from being interrupted and to help them start faster</td>
 <td><code>-a my_group</code></td>
 </tr>
 <tr>
@@ -3390,7 +3428,7 @@ The values can be combined and each mean the following:</p>
 </tr>
 <tr>
 <td><code>-g</code></td>
-<td>Request one GPU. This flag takes no arguments. On Puma, you may be allocated <strong>either</strong> a v100 <strong>or</strong> <a href="../../resources/compute_resources/#mig-multi-instance-gpu-resources">a MIG slice</a>. If you want more control over your resources, you can use salloc directly using <a href="../batch_jobs/batch_directives/#gpus">GPU batch directives</a></td>
+<td>Request one GPU. This flag takes no arguments. On Puma, you may be allocated <strong>either</strong> a v100 <strong>or</strong> <a href="../../resources/compute_resources/#mig-multi-instance-gpu-resources">a MIG slice</a>. If you want more control over your resources, you can use <code>salloc</code> directly using <a href="../batch_jobs/batch_directives/#gpus">GPU batch directives</a></td>
 <td><code>-q</code></td>
 </tr>
 <tr>
@@ -3402,7 +3440,7 @@ The values can be combined and each mean the following:</p>
 </table>
 <p>You may also create your own <a href="https://slurm.schedmd.com/salloc.html">salloc</a> commands using any desired Slurm directives for maximum customization.</p>
 <h3 id="using-salloc-directly">Using <code>salloc</code> Directly</h3>
-<p>The command <code>interactive</code> is a wrapper for the Slurm command <code>salloc</code> with more limited options. If <code>interactive</code> is insufficient to meet you resource requirements (e.g., if you need to request more than one GPU or a GPU MIG slice), you can use <code>salloc</code> directly to further customize your job. </p>
+<p>If <code>interactive</code> is insufficient to meet you resource requirements (e.g., if you need to request more than one GPU or a GPU MIG slice), you can use the Slurm command <code>salloc</code> to further customize your job. </p>
 <p>The command <code>salloc</code> expects <a href="../batch_jobs/batch_directives/">Slurm directives</a> as input arguments that it uses to customize your interactive session. For comprehensive documentation on using <code>salloc</code>, see <a href="https://slurm.schedmd.com/salloc.html">Slurm's official documentation</a>.</p>
 <p><strong>Simple Example</strong></p>
 <div class="highlight"><pre><span></span><code>salloc --account=&lt;YOUR_GROUP&gt; --partition=standard --nodes=1 --ntasks=1 --time=1:00:00 --job-name=interactive

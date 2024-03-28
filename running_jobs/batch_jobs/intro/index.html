@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/running_jobs/batch_jobs/intro/">
-      
       
         <link rel="prev" href="../../interactive_jobs/">
       
@@ -2157,27 +2155,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2534,6 +2511,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3282,24 +3325,28 @@
 <p><link rel="stylesheet" href="../../../assets/stylesheets/tables.css"></p>
 <h1 id="introduction-to-batch-jobs">Introduction to Batch Jobs</h1>
 <h2 id="what-are-batch-jobs">What are batch jobs?</h2>
-<p>Some jobs don't need a GUI, may take a long time to run, and/or do not need user input. In these cases, batch jobs are useful because they allow a user to request resources for a job, then wait until it completes automatically without any further input. The user can even fully log off of HPC, and the submitted jobs will continue to run.  The program on HPC that takes requests and assigns resources at ideal times to optimize cluster usage is called a scheduler, and the name of our scheduler is Slurm. All three clusters, Puma, Ocelote, and ElGato, use Slurm for resource management and job scheduling.</p>
+<p>Some jobs don't need a GUI, may take a long time to run, and/or do not need user input. In these cases, batch jobs are useful because they allow a user to request resources for a job, then wait until it completes automatically without any further input. The user can even fully log off of HPC, and the submitted jobs will continue to run.  The program on HPC that takes requests and assigns resources at ideal times to optimize cluster usage is called a scheduler. All three clusters, Puma, Ocelote, and El Gato, use Slurm for resource management and job scheduling.</p>
 <p><strong>Contrast with graphical and interactive jobs</strong></p>
-<p>The main difference between batch and GUI jobs is that batch jobs are only text-based and give no graphical feedback during runtime. While there is a method to submit jobs using a GUI, strictly speaking, batch jobs are of a different nature than GUI jobs, such as ones that use RStudio or MATLAB.</p>
+<p>The main difference between batch and GUI jobs is that batch jobs are only text-based and give no graphical feedback during runtime. While there is a method to submit jobs using a GUI, strictly speaking, batch jobs are of a different nature than GUI jobs.</p>
 <p>Batch jobs are also different from interactive jobs, because while both use the command line interface and the Slurm scheduler, there is no feedback or interactivity with batch jobs. The script is run exactly as submitted with no way to change it once it is submitted, though it can be canceled. Each batch job is assigned a unique job ID that can be used to trace it.</p>
 <h2 id="batch-workflow">Batch workflow</h2>
 <p>The general process for submitting a batch job is as follows:</p>
 <ol>
 <li>
-<p><strong>Write your analysis.</strong> This requires an executable program as well as some input files or options. This varies widely between different types of analysis, and you will need to determine what needs to be done for your particular analysis.</p>
+<p><strong>Write your analysis.</strong> </p>
+<p>This requires an executable program as well as some input files or options. This varies widely between different types of analyses, you will need to determine what needs to be done for your particular analysis.</p>
 </li>
 <li>
-<p><strong>Write your Slurm batch script.</strong> This tells the scheduler what resources you want for your job and how to run it. The batch script is written in bash, and normal bash commands can be used within the batch script.</p>
+<p><strong>Write your Slurm batch script.</strong> </p>
+<p>This tells the scheduler what resources you want for your job and how to run it. The batch script is written in bash, and normal bash commands can be used within the batch script.</p>
 </li>
 <li>
-<p><strong>Submit your request.</strong> This is usually as simple as running "<code>sbatch my-request.slurm</code>"</p>
+<p><strong>Submit your request.</strong> </p>
+<p>This is usually as simple as running <code>sbatch my-script.slurm</code>.</p>
 </li>
 <li>
-<p><strong>Wait.</strong> Now the scheduler has your request. It will compare your job to all currently waiting jobs and determine when to run it. Jobs that request more resources generally wait longer in the queue, but there is no concrete rule that determines how long a given job will wait. Typical wait times vary by cluster and activity. Generally, jobs submitted to ElGato will start much sooner than jobs submitted to Puma, with Ocelote falling in between. To check on the activity of a given cluster, use <code>nodes-busy</code> for a detailed report or <code>cluster-busy</code> for an overview. To give some expectation, small jobs on Puma may start within 5 minutes, but large multinode jobs may wait days to begin.</p>
+<p><strong>Wait.</strong> </p>
+<p>Now the scheduler has your request. It will compare your job to all currently waiting jobs and determine when to run it. Jobs that request more resources generally wait longer in the queue, but there is no concrete rule that determines how long a given job will wait. Typical wait times vary by cluster and activity. Generally, jobs submitted to El Gato will start much sooner than jobs submitted to Puma, with Ocelote falling in between. To check on the activity of a given cluster, use <code>nodes-busy</code> for a detailed report or <code>cluster-busy</code> for an overview. To give some expectation, small jobs on Puma may start within 5 minutes, but large multinode jobs may wait days to begin.</p>
 </li>
 </ol>
 <h2 id="batch-script-structure">Batch Script Structure</h2>
@@ -3326,8 +3373,10 @@
 <li><mark style="background-color: #feffe6;">The third section</mark> in your script is a set of bash commands that tells the system how to run your analyses. This includes any <a href="../../../software/modules/">module load commands</a> you'd need to run to access your software, software commands to execute your analyses, directory changes, etc. </li>
 </ol>
 <p>An example batch script might look like the following:</p>
-<html><pre style="background-color: transparent;"><code style="background-color: #d7fbff;">#!/bin/bash
-</code><code style="background-color: #e6fff2;"># --------------------------------------------------------------
+<!-- Sorry for the mess below, it's the only way I could get the code block to have multiple background colors and be able to be copied to the clipboard-->
+
+<html>
+  <pre style="background-color: transparent;"><code  style="background-color: transparent;"><div style="background-color: #d7fbff; padding: 10px;">#!/bin/bash</div><div style="background-color: #e6fff2; padding: 10px;"># --------------------------------------------------------------
 ### Directives Section: Requests resources to run your job.
 # --------------------------------------------------------------
 #SBATCH --job-name=hello_world
@@ -3335,17 +3384,14 @@
 #SBATCH --partition=standard
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --time=00:01:00
-</code><code style="background-color: #feffe6;"># --------------------------------------------------------------
+#SBATCH --time=00:01:00</div><div style="background-color: #feffe6; padding: 10px;"># --------------------------------------------------------------
 ### Code Section: Executes bash commands to run your job
 # --------------------------------------------------------------
 module load python/3.9
 cd ~/hello_world
-python3 -c "print("hello world")
+python3 -c "print('hello world')"
 ### sleep is used for demonstration purposes
-sleep 30
-</code>
-</pre>
+sleep 30</div></code></pre>
 </html>
 
 

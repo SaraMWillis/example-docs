@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/storage_and_transfers/transfers/sftp_ftp_lftp/">
-      
       
         <link rel="prev" href="../cyberduck/">
       
@@ -2219,27 +2217,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2525,6 +2502,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3271,8 +3314,13 @@
 
 
 <h1 id="sftpftplftp">SFTP/FTP/LFTP</h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To use SFTP/LFTP, you will need to be connected to our file transfer nodes, hostname: <code>filexfer.hpc.arizona.edu</code>.</p>
+</div>
 <h2 id="sftp">SFTP</h2>
-<p>The intent is that <code>filexfer.hpc.arizona.edu</code> is to be used for most file transfers. SFTP encrypts data before it is sent across the network. Additional capabilities include resuming interrupted transfers, directory listings, and remote file removal. To transfer files with SFTP, you will need to open an SSH v2 compliant terminal and navigate to a desired working directory on your local machine. To access HPC:</p>
+<p>SFTP (Secure File Transfer Protocol) ensures data encryption during transmission over the network. It offers features such as resuming interrupted transfers, directory listing, and remote file management.</p>
+<p>To perform file transfers using SFTP, you'll need an SSH v2 compliant terminal. To connect to HPC's data transfer nodes, run:</p>
 <div class="highlight"><pre><span></span><code>sftp<span class="w"> </span>your_netid@filexfer.hpc.arizona.edu
 </code></pre></div>
 <p>You will then be able to move files between your machine and HPC using <code>get</code> and <code>put</code> commands. For example:</p>
@@ -3284,10 +3332,6 @@ sftp&gt;<span class="w"> </span><span class="nb">help</span><span class="w"> </s
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Due to security risks, it is not possible to FTP to the file transfer node from a remote machine, however, you may FTP from the file transfer node to a remote machine.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For more information on LFTP, see their <a href="https://lftp.tech/">official documentation</a>.</p>
 </div>
 <p>HPC uses the FTP client LFTP to transfer files between the file transfer node and remote machines. This can be done using get and put commands. To use lftp, you must first connect to our file transfer node using an SSH v2 compliant terminal:</p>
 <div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>your_netid@filexfer.hpc.arizona.edu

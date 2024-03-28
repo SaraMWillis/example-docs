@@ -9,8 +9,6 @@
       
       
       
-        <link rel="canonical" href="https://saramwillis.github.io/example-docs/resources/compute_resources/">
-      
       
         <link rel="prev" href="../allocations/">
       
@@ -928,15 +926,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#technical-specifications" class="md-nav__link">
-    <span class="md-ellipsis">
-      Technical Specifications
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gpu-nodes" class="md-nav__link">
     <span class="md-ellipsis">
       GPU Nodes
@@ -957,6 +946,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Technical Specifications
+    </span>
+  </a>
   
 </li>
       
@@ -2241,27 +2239,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../software/unsupported/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unsupported Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2547,6 +2524,72 @@
   
   <span class="md-ellipsis">
     Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example Batch Jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Example Batch Jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running_jobs/batch_jobs/slurm_reference/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer Examples
   </span>
   
 
@@ -3294,7 +3337,7 @@
 
 <h1 id="compute-resources">Compute Resources</h1>
 <h2 id="compute-resources-available-by-cluster">Compute Resources Available by Cluster</h2>
-<p>Before submitting a Slurm script, you must know (or at least have a general idea) of the resources needed for your job. This will tell you which type of node to request, how much memory, and other useful information that can be provided to the system via your batch script. A detailed list of Slurm batch flags are included below. </p>
+<p>Below is a list of the node types and physical hardware that are available on each of our three clusters. These can be used as a reference when submitting jobs to the system to ensure you are targeting the correct machines and getting the computational resources you need.</p>
 <p><strong>Node Types</strong></p>
 <table>
 <thead>
@@ -3327,12 +3370,12 @@
 <thead>
 <tr>
 <th>Node Type</th>
-<th>Number of Nodes</th>
+<th><div style="width: 100px;">Number of Nodes</div></th>
 <th>CPUs/Node</th>
 <th>RAM/CPU</th>
 <th>CPU RAM/Node</th>
 <th>GPUs/Node</th>
-<th>RAM/GPU</th>
+<th><div style="width: 95px;">RAM/GPU</div></th>
 <th>GPU RAM/Node</th>
 <th>Total GPUs</th>
 </tr>
@@ -3342,8 +3385,8 @@
 <td>Standard</td>
 <td>192 standard<br>108 buy-in</td>
 <td>94</td>
-<td>5gb</td>
-<td>470gb</td>
+<td>5 GB</td>
+<td>470 GB</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -3353,8 +3396,8 @@
 <td>High Memory</td>
 <td>3 standard<br>2 buy-in</td>
 <td>94</td>
-<td>32gb</td>
-<td>3008gb</td>
+<td>32 GB</td>
+<td>3008 GB</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -3364,11 +3407,11 @@
 <td>GPU</td>
 <td>8 standard<br>7 buy-in</td>
 <td>94</td>
-<td>5gb</td>
-<td>470gb</td>
+<td>5 GB</td>
+<td>470 GB</td>
 <td>4</td>
-<td>32gb</td>
-<td>128gb</td>
+<td>32 GB (v100s)<br>20 GB (<a href="#mig-multi-instance-gpu-resources">MIGs</a>)</td>
+<td>128 GB</td>
 <td>32 standard<br>28 buy-in</td>
 </tr>
 </tbody>
@@ -3394,8 +3437,8 @@
 <td>Standard</td>
 <td>400</td>
 <td>28</td>
-<td>6gb</td>
-<td>168gb</td>
+<td>6 GB</td>
+<td>168 GB</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -3405,8 +3448,8 @@
 <td>High Memory</td>
 <td>1</td>
 <td>48</td>
-<td>41gb</td>
-<td>1968gb</td>
+<td>41 GB</td>
+<td>1968 GB</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -3416,11 +3459,11 @@
 <td>GPU</td>
 <td>46</td>
 <td>28</td>
-<td>8gb</td>
-<td>224gb</td>
+<td>8 GB</td>
+<td>224 GB</td>
 <td>1</td>
-<td>16gb</td>
-<td>16gb</td>
+<td>16 GB</td>
+<td>16 GB</td>
 <td>46</td>
 </tr>
 </tbody>
@@ -3442,15 +3485,40 @@
 <td>Standard</td>
 <td>130</td>
 <td>16</td>
-<td>4gb</td>
-<td>64gb</td>
+<td>4 GB</td>
+<td>64 GB</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<h2 id="technical-specifications">Technical Specifications</h2>
+<h2 id="gpu-nodes">GPU Nodes</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Puma</label><label for="__tabbed_2_2">Ocelote</label><label for="__tabbed_2_3">ElGato</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img src="images/v100_info.jpg" width=400px style="float: right; margin: 5px;">
+Puma has a different arrangement for GPU nodes than Ocelote. Whereas Ocelote has one GPU per node, Puma has four. This has a financial advantage for providing GPU's with lower overall cost, and a technical advantage of allowing jobs that can use multiple GPU's to run faster than spanning multiple nodes.  This capability comes from using a newer operating system.  </p>
+<p>Puma's GPU nodes have four Nvidia V100S model GPUs. They are provisioned with 32 GB memory compared to 16 GB on the P100's.  </p>
+<p>In addition to the V100 nodes, one node has four A100s, each subdivided into three smaller virtual GPUs. See the MIG (Multi-instance GPU) Resources section below for details. </p>
+</div>
+<div class="tabbed-block">
+<p><img src="images/p100_info.png" width=400px style="float: right; margin: 5px;">
+Ocelote has 46 compute nodes with Nvidia P100 GPUs that are available to researchers on campus. The limitation is a maximum of 10 concurrent jobs. Previously, one node with a V100 was available, but it has since been replaced with a P100. Tasks which require multiple GPUs must either request multiple nodes on Ocelote, or use Puma's GPU nodes.</p>
+</div>
+<div class="tabbed-block">
+<p>ElGato has no GPU nodes. During the quarterly maintenance cycle on April 27, 2022 the ElGato K20s and Ocelote K80s were removed after support was ended by Nvidia.</p>
+</div>
+</div>
+</div>
+<h3 id="mig-multi-instance-gpu-resources">MIG (Multi-Instance GPU) Resources</h3>
+<p><strong>Overview</strong></p>
+<p>The Four A100 GPUs on Puma Node r5u13n1 are each subdivided into three smaller virtual GPUs using the Nvidia MIG (Multi-Instance GPU) method.  Each of these MIG slices allows the use of 20 GB of GPU memory. The vast majority of jobs run on Puma in 2023 used less than this amount of GPU memory. The 12 MIG GPUs increase overall GPU availability on Puma by freeing the 32 GB V100 GPUs for users requiring larger amounts of GPU memory.</p>
+<p>Jobs requesting MIG resources will ideally be scheduled more quickly than those requesting the standard V100 GPUs, so MIG resources should be preferred when sufficient.</p>
+<p>A limitation is that only one MIG slice can be addressed by a single application, so <mark class="critic">MIG slices are not appropriate for jobs utilizing multiple GPUs</mark>.</p>
+<p><strong>Using MIG Resources</strong> </p>
+<p>The addition of the MIG devices to the Slurm queues will have a number of impacts, and some users may need to make changes to submissions to ensure proper functioning of analyses. For more information on requesting GPU resources, see our <a href="../../running_jobs/batch_jobs/batch_directives/#gpus">Batch Jobs</a>, <a href="../../running_jobs/interactive_jobs/">Interactive Jobs</a>, and/or <a href="../../running_jobs/open_on_demand/">Open OnDemand Jobs</a> guides. </p>
+<h2 id="system-technical-specifications">System Technical Specifications</h2>
 <table>
 <thead>
 <tr>
@@ -3481,9 +3549,9 @@
 </tr>
 <tr>
 <td>Total System Memory</td>
-<td>26TB</td>
-<td>82.6TB</td>
-<td>128TB</td>
+<td>26 TB</td>
+<td>82.6 TB</td>
+<td>128 TB</td>
 </tr>
 <tr>
 <td>Processors</td>
@@ -3493,9 +3561,9 @@
 </tr>
 <tr>
 <td>Cores/Node (Schedulable)</td>
-<td>16c</td>
-<td>28c (48c - High-memory node)</td>
-<td>94c</td>
+<td>16</td>
+<td>28 (48 - High-memory node)</td>
+<td>94</td>
 </tr>
 <tr>
 <td>Total Cores</td>
@@ -3505,15 +3573,15 @@
 </tr>
 <tr>
 <td>Processor Speed</td>
-<td>2.66GHz</td>
-<td>2.3GHz (2.4GHz - Broadwell CPUs)</td>
-<td>2.4GHz</td>
+<td>2.66 GHz</td>
+<td>2.3 GHz (2.4GHz - Broadwell CPUs)</td>
+<td>2.4 GHz</td>
 </tr>
 <tr>
 <td>Memory/Node</td>
-<td>256GB - GPU nodes<br>64GB - CPU-only nodes</td>
-<td>192GB (2TB - High-memory node)</td>
-<td>512GB (3TB - High-memory nodes)</td>
+<td>256 GB - GPU nodes<br>64 GB - CPU-only nodes</td>
+<td>192 GB<br>(2 TB - High-memory node)</td>
+<td>512 GB<br>(3 TB - High-memory nodes)</td>
 </tr>
 <tr>
 <td>Accelerators</td>
@@ -3543,34 +3611,10 @@
 <td>Interconnect</td>
 <td>FDR Inifinband</td>
 <td>FDR Infiniband for node-node<br>10 Gb Ethernet node-storage</td>
-<td>1x 25Gb/s Ethernet RDMA (RoCEv2)<br>1x 25Gb/s Ethernet to storage</td>
+<td>1x 25 Gb/s Ethernet RDMA (RoCEv2)<br>1x 25 Gb/s Ethernet to storage</td>
 </tr>
 </tbody>
 </table>
-<h2 id="gpu-nodes">GPU Nodes</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Puma</label><label for="__tabbed_2_2">Ocelote</label><label for="__tabbed_2_3">ElGato</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img src="images/v100_info.jpg" width=400px style="float: right; margin: 5px;">
-Puma has a different arrangement for GPU nodes than Ocelote and ElGato. Whereas the older clusters have one GPU per node, Puma has four. This has a financial advantage for providing GPU's with lower overall cost, and a technical advantage of allowing jobs that can use multiple GPU's to run faster than spanning multiple nodes.  This capability comes from using a newer operating system.  </p>
-<p>Each node has four Nvidia V100S model GPUs. They are provisioned with 32GB memory compared to 16GB on the P100's.  </p>
-</div>
-<div class="tabbed-block">
-<p><img src="images/p100_info.png" width=400px style="float: right; margin: 5px;">
-Ocelote has 46 compute nodes with Nvidia P100 GPUs that are available to researchers on campus. The limitation is a maximum of 10 concurrent jobs. Previously, one node with a V100 was available, but it has since been replaced with a P100. Tasks which require multiple GPUs must either request multiple nodes on Ocelote, or use Puma's GPU nodes.</p>
-</div>
-<div class="tabbed-block">
-<p>ElGato has no GPU nodes. During the quarterly maintenance cycle on April 27, 2022 the ElGato K20s and Ocelote K80s were removed due to no longer being supported by Nvidia.</p>
-</div>
-</div>
-</div>
-<h3 id="mig-multi-instance-gpu-resources">MIG (Multi-Instance GPU) Resources</h3>
-<p><strong>Overview</strong></p>
-<p>The Four A100 GPUs on Puma Node r5u13n1 are each subdivided into 3 smaller virtual GPUs using the Nvidia MIG (Multi-Instance GPU) method.  Each of these MIG slices allows the use of 20 GB of GPU memory.  The vast majority of jobs run on Puma in 2023 used less than this amount of GPU memory.  The  12 MIG GPUs  will increase overall GPU availability on Puma by freeing the 32 GB V100 GPUs for users requiring larger amounts of GPU memory.</p>
-<p>Jobs requesting MIG resources will ideally be scheduled more quickly than those requesting the standard V100 GPUs, so MIG resources should be preferred when sufficient.</p>
-<p>A limitation is that only one MIG slice can be addressed by a single application, so <mark class="critic">MIG slices are not appropriate for jobs utilizing multiple GPUs</mark>.</p>
-<p><strong>Using MIG Resources</strong> </p>
-<p>The addition of the MIG devices to the Slurm queues will have a number of impacts, and some users may need to make changes to submissions to ensure proper functioning of analyses. For more information on requesting GPU resources, see our <a href="../../running_jobs/batch_jobs/batch_directives/#gpus">Batch Jobs</a>, <a href="../../running_jobs/interactive_jobs/">Interactive Jobs</a>, and/or <a href="../../running_jobs/open_on_demand/">Open OnDemand Jobs</a> guides. </p>
 <div class="footnote">
 <hr />
 <ol>

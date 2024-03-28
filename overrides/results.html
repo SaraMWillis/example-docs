@@ -203,7 +203,7 @@
     
     <tr><td>Song, J. P., Clay, R. T., & Mazumdar, S. (2022). <a href="https://arxiv.org/abs/2207.00628">Valence Transition Theory of the Pressure-Induced Dimensionality Crossover in Superconducting Sr $ _ {14-x} $ Ca $ _x $ Cu $ _ {24} $ O $ _ {41} $</a>. <i>arXiv preprint arXiv:2207.00628</i>.</td></tr>
     
-    <tr><td>Spotnitz, M., Kwong, N. H., & Binder, R. <a href="https://www.researchgate.net/profile/Michael-Rafailov/publication/362712778_Ultrafast_Dynamics_VIII_Washington_DC_2021/links/62fb8995e3c7de4c345fc976/Ultrafast-Dynamics-VIII-Washington-DC-2021.pdf#page=38">Terahertz spectroscopy of semiconductor microcavity lasers</a>. In <i>2021 INTERNATIONAL SYMPOSIUM</i> (p. 38).</td></tr>
+    <tr><td>Spotnitz, M., Kwong, N. H., & Binder, R. (2021)<a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.104.115305">Terahertz spectroscopy of semiconductor microcavity lasers: Photon lasers</a>. <i>Physical Review B, 104</i>(11), 115305.</td></tr>
     
     <tr><td>Tamadoni Saray, M., Yurkiv, V., & Shahbazian-Yassar, R. (2023). <a href="https://pubs.acs.org/doi/abs/10.1021/acsanm.2c05528">Role of Kinetics and Thermodynamics in Controlling the Crystal Structure of Nickel Nanoparticles Formed on Reduced Graphene Oxide: Implications for Energy Storage and Conversion Applications</a>. <i>ACS Applied Nano Materials</i>.</td></tr>
     
@@ -238,22 +238,23 @@
 {% endblock %}
 {% block content %}{% endblock %}
 {% block footer %}
+
 <footer class="md-footer">
-    <div class="md-footer-meta md-typeset">
-        <div class="md-footer-meta__inner md-grid">
-            <!-- Copyright and theme information -->
-            <div class="md-footer-copyright">
-                {% if config.copyright %}
-                <div class="md-footer-copyright__highlight">
-                    {{ config.copyright }}
-                </div>
-                {% endif %}
-                University of Arizona Research Computing
-            </div>
-            {% block social %}
-            {% include "partials/social.html" %}
-            {% endblock %}
-        </div>
-    </div>
+  <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+          <!-- Copyright and theme information -->
+          <div class="md-copyright">
+              {% if config.copyright %}
+              <div class="md-copyright__highlight">
+                  {{ config.copyright }}
+              </div>
+              {% endif %}
+
+          </div>
+          {% block social %}
+          {% include "partials/social.html" %}
+          {% endblock %}
+      </div>
+  </div>
 </footer>
 {% endblock %}
