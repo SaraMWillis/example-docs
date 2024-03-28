@@ -20,7 +20,7 @@ The command ```squeue``` gives us detailed information about our batch jobs whil
 
 
 ## Submitting Multiple Jobs
-Frequently, users need to submit multiple, related jobs. It may be tempting to do this using a bash loop but there are several drawbacks to this method which are discussed under [Best Practices under Running Jobs](../../overview/#jobs). 
+Frequently, users need to submit multiple, related jobs. It may be tempting to do this using a bash loop but there are several drawbacks to this method which are discussed under [Best Practices](../../overview/#jobs). 
 
 The best way to submit related jobs is to use job arrays. Jobs arrays allow users to submit multiple related jobs using a single script and single ```sbatch``` command. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. See [Array Jobs](../array_jobs/) for specifics on how to submit these sorts of workflows.
 

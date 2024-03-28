@@ -1,8 +1,13 @@
 # SFTP/FTP/LFTP
 
+!!! tip
+    To use SFTP/LFTP, you will need to be connected to our file transfer nodes, hostname: `filexfer.hpc.arizona.edu`.
+
 ## SFTP
 
-The intent is that ```filexfer.hpc.arizona.edu``` is to be used for most file transfers. SFTP encrypts data before it is sent across the network. Additional capabilities include resuming interrupted transfers, directory listings, and remote file removal. To transfer files with SFTP, you will need to open an SSH v2 compliant terminal and navigate to a desired working directory on your local machine. To access HPC:
+SFTP (Secure File Transfer Protocol) ensures data encryption during transmission over the network. It offers features such as resuming interrupted transfers, directory listing, and remote file management.
+
+To perform file transfers using SFTP, you'll need an SSH v2 compliant terminal. To connect to HPC's data transfer nodes, run:
 
 ```bash
 sftp your_netid@filexfer.hpc.arizona.edu
@@ -21,8 +26,6 @@ sftp> help ### prints detailed sftp usage
 !!! warning
     Due to security risks, it is not possible to FTP to the file transfer node from a remote machine, however, you may FTP from the file transfer node to a remote machine.
     
-!!! tip
-    For more information on LFTP, see their [official documentation](https://lftp.tech/).
 
 HPC uses the FTP client LFTP to transfer files between the file transfer node and remote machines. This can be done using get and put commands. To use lftp, you must first connect to our file transfer node using an SSH v2 compliant terminal:
 

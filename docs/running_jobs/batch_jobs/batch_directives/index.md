@@ -3,18 +3,18 @@
 !!! tip
     For a full list of directives, see [Slurm's official documentation](https://slurm.schedmd.com/sbatch.html).
 
-The first section of a batch script always contains the [Slurm Directives](https://slurm.schedmd.com/ "slurm.schedmd.com"), which specify the resource requests for your job. The scheduler parses these in order to allocate CPUs, memory, walltime, etc. to your job request.
+The first section of a batch script always contains the Slurm Directives, which specify the resource requests for your job. The scheduler parses these in order to allocate CPUs, memory, walltime, etc. to your job request.
 
 Below are important as well as optional directives to include in any script:
  
 ## Allocations and Partitions
 
-There are four available partitions on the UArizona HPC. With the exception of Windfall, these consume your monthly allocation. See our [allocations documentation](../../../resources/allocations/) for more detailed information on each. The syntax to request each of the following is shown below:
+There are four available partitions, or queues, on the UArizona HPC which determine the priority of your jobs. With the exception of Windfall, these consume your monthly allocation. See our [allocations documentation](../../../resources/allocations/) for more detailed information on each. The syntax to request each of the following is shown below:
 
 |Partition|Request Syntax|Comments|
 |-|-|-|
 |Standard|<pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=standard</code></pre>||
-|Windfall|<pre><code>#SBATCH --partition=windfall</code></pre>|Unlimited access. Preemptible|
+|Windfall|<pre><code>#SBATCH --partition=windfall</code></pre>|Unlimited access. Preemptible. Do not include an `--account` flag when requesting this partition.|
 |High Priority|<pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=high_priority<br>#SBATCH --qos=user_qos_&#60;PI GROUP&#62;</code></pre>|Only available to <a href="../../../policies/buy_in/">buy-in groups</a>.|
 |Qualified|<pre><code>#SBATCH --account=&#60;PI GROUP&#62;<br>#SBATCH --partition=standard<br>#SBATCH --qos=qual_qos_&#60;PI GROUP&#62;</code></pre>|Available to groups with an activate [special project](../../../policies/special_projects/).|
 
@@ -54,7 +54,7 @@ Each job must specify the number of CPUs they need for their application with th
     More detailed information on memory and CPU requests can be found on our [CPUs and Memory page](../../cpus_and_memory/).
     
 !!! warning
-    If you exclude ```gb``` from your memory request, Slurm will default to mb
+    If you exclude ```gb``` from your memory request, Slurm will default to `mb`.
 
 Memory is an optional flag. By default, the scheduler will allocate you the [standard CPU/memory ratio](../../cpus_and_memory/) available on the cluster. 
 
@@ -90,7 +90,7 @@ The syntax for requesting time for your job is ```HHH:MM:SS``` or ```DD-HHH:MM:S
 
 ## GPUs
 
-GPUs are an optional resource that may be requested with the ```--gres``` directive. For an overview of the specific GPU resources available on each cluster, see our [resources documentation](../../../resources/compute_resources/gpu_nodes/). 
+GPUs are an optional resource that may be requested with the ```--gres``` directive. For an overview of the specific GPU resources available on each cluster, see our [resources documentation](../../../resources/compute_resources/#gpu-nodes). 
 
 <table>
   <colgroup>
@@ -119,13 +119,13 @@ GPUs are an optional resource that may be requested with the ```--gres``` direct
   <tr>
     <td>Ocelote</td>
     <td><pre><code>#SBATCH --gres=gpu:1</code></pre></td>
-    <td>Request 1 Pascal GPU (p100)</td>
+    <td>Request one Pascal GPU (p100)</td>
 </table>
 
 
 ## Job Arrays 
 
-Array jobs in SLURM allow users to submit multiple similar tasks as a single job. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. The flag for submitting array jobs is:
+Array jobs in Slurm allow users to submit multiple similar tasks as a single job. Each task within the array can have its own unique input parameters, making it ideal for running batch jobs with varied inputs or executing repetitive tasks efficiently. The flag for submitting array jobs is:
 
 ```
 #SBATCH --array=<N>-<M>
@@ -171,20 +171,9 @@ Filenames take patterns that allow for job information substitution. A list of f
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ## Examples and Explanations
 
-The below examples are _complete_ sections of Slurm directives that will produce valid requests. Other directives can be added (like output files), but they are not strictly necessary to submit a valid request. For simplicity, the Puma cluster is assumed when discussing memory and GPU resources. Note that these examples do not include the shebang ```#!bin/bash``` statement, which should be at the top of _every_ slurm script. Also, note that the order of directives does not matter.
+The below examples are complete sections of Slurm directives that will produce valid requests. Other directives can be added (like output files), but they are not strictly necessary to submit a valid request. For simplicity, the Puma cluster is assumed when discussing memory and GPU resources. Note that these examples do not include the shebang ```#!bin/bash``` statement, which should be at the top of _every_ slurm script. Also, note that the order of directives does not matter.
 
 === "Single CPU"
     ```
@@ -208,7 +197,7 @@ The below examples are _complete_ sections of Slurm directives that will produce
     #SBATCH --time=01:00:00
     ```
 
-    10 CPUs are now requested. The default value of ```mem-per-cpu``` is assumed, therefore giving this job 50gb of total memory. Specifying this value by including ```#SBATCH --mem-per-cpu=5gb``` will not change the behavior of the above request. If ```#SBATCH --mem-per-cpu=10gb``` is included (for example), a high-memory node will be requested instead. Please only include values from the above table for the ```mem-per-cpu``` option. 
+    10 CPUs are now requested. The default value of ```mem-per-cpu``` is assumed, therefore giving this job 50 GB of total memory. Specifying this value by including ```#SBATCH --mem-per-cpu=5gb``` will not change the behavior of the above request.
 
     The example below will produce an equivalent request as above:
 
@@ -221,8 +210,7 @@ The below examples are _complete_ sections of Slurm directives that will produce
     #SBATCH --mem=50gb
     #SBATCH --time=01:00:00
     ```
-
-    On Puma, up to 94 CPUs or 470gb of memory can be requested. If using the ```mem``` flag, be sure to calculate the number of CPUs you are requesting by referring to the table with standard memory per CPU available and computing (total memory)/(memory per CPU). 
+    On Puma, up to 94 CPUs or 470 GB of memory can be requested. 
 
 === "Single GPU Node"
 
@@ -240,7 +228,7 @@ The below examples are _complete_ sections of Slurm directives that will produce
 
 === "Multi-Node"
     
-    When requesting a multi-node job, up to 94 ```ntasks-per-node``` and up to ```nodes``` $\times$ ```ntasks-per-node``` total ```ntasks``` can be requested. The numbers below are chosen for illustrative purposes and can be replaced with your choice, up to system limitations.
+    When requesting a multi-node job, up to 94 ```--ntasks-per-node``` can be requested on Puma. The numbers below are chosen for illustrative purposes and can be replaced with your choice, up to system limitations.
 
     ```
     #SBATCH --job-name=Multi-Node-MPI-Job
@@ -254,7 +242,7 @@ The below examples are _complete_ sections of Slurm directives that will produce
 
 === "High-Memory Node"
     
-    When requesting a high memory node, include **both** the ```mem-per-cpu``` and ```constraint``` directives.
+    When requesting a high memory node, include **both** the ```--mem-per-cpu``` and ```--constraint``` directives.
 
     ```
     #SBATCH --job-name=High-Mem-Job

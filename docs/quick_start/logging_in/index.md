@@ -22,7 +22,7 @@ Once you've succesfully registered for an HPC account, you're ready to log in. T
 
 ## System Layout
 
-HPC systems can sometimes feel a little like a complicated black box and it can be a challenge to know exactly where you are and what the structure looks like. In this section, we'll give you an idea of how the system is laid out so you understand exactly where you are at each stage of the login process and what activities are performed where. 
+The inner workings of HPC systems may be somewhat obscured to new users. In this section, we'll give you an idea of how the system is laid out so you understand exactly where you are at each stage of the login process and what activities are performed where. 
 
 ### The bastion host
 

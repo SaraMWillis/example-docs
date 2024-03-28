@@ -8,12 +8,12 @@ Before submitting your job to the scheduler, it's important to know that the num
 
 |Cluster|Standard Node|High-Memory Node|GPU Node|
 |-|-|-|-|
-|Puma| 5 Gb | 32 Gb | 5 Gb|
-|Ocelote| 6 Gb | 41 Gb | 8 Gb|
-|El Gato| 4 Gb | - | -|
+|Puma| 5 GB | 32 GB | 5 GB|
+|Ocelote| 6 GB | 41 GB | 8 GB|
+|El Gato| 4 GB | - | -|
 
 
-For example, using the table above we can see on Puma standard nodes you get 5G for each CPU you request. This means a standard job using 4 CPUs gets 5G/CPU × 4 CPUs = 20G of total memory.
+For example, using the table above we can see on Puma standard nodes you get 5 GB for each CPU you request. This means a standard job using 4 CPUs gets 5 GB/CPU × 4 CPUs = 20 GB of total memory.
 
 The video below shows the relationship between memory and CPUs, specifically looking at one of our Puma nodes. 
 
@@ -54,16 +54,14 @@ Note that there is no deterministic method of finding the exact amount of memory
 
 ## Things to Watch out for
 
-- **Invalid Values**
-
-    Be careful when requesting memory and memory per CPU. Note that if you request invalid mem/cpu values, unpredictable results may occur:
-        1. You may may be put in queue for a high memory node which have significantly longer wait times.
-        2. You may receive less memory than expected
+Be careful when requesting memory and memory per CPU. Note that {==if you request invalid mem/cpu values, unpredictable results may occur==}:
 
 - **Memory and CPU Mismatches**
 
-    In the case of batch script: if you request memory instead of memory/CPU, the scheduler will automatically bump up your CPU allocation to match your memory requirements if there is a mismatch. This means, for example, if you were to request one CPU and 50 GB of total memory, the scheduler would allocate 10 CPUs to your job.  
+    In batch scripts, if you request `--memory` instead of `--mem-per-cpu`, the scheduler will automatically increase your CPU allocation to align with your memory requirements in case of a mismatch. For instance, if you request one CPU and 50 GB of total memory, the scheduler will adjust your resource requirements by allocating 10 CPUs to match your memory request.
 
 - **Invalid Mem/CPU Options**
 
-    If you request a mem/CPU value that is invalid, the scheduler will not reject it and will try to accomodate your request. This may mean your job will be bumped to the high memory node if you request more than the standard ratio. It may also mean you'll get less memory than expected.
+    If you request a mem/CPU value that isn't valid, the scheduler won't outright reject your job. Instead, it will attempt to accommodate your request. This could involve your job being moved to a high memory node if you ask for more than the standard ratio. However, high memory nodes usually have considerably longer wait times compared to standard nodes, potentially resulting in a longer queue time than anticipated.
+    
+    Alternatively, you might end up with less memory allocated than you expected. For instance, there aren't any machines with a memory ratio exceeding 41 GB/CPU. Therefore, if you request 100 GB/CPU, your job will still be constrained by the physical limits of available memory.

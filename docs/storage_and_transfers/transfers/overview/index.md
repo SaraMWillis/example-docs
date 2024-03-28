@@ -11,7 +11,7 @@ Files are transferred to shared data storage and not to the bastion node, login 
 
 ## Data Transfers By Size
 
-1. Small Transfers: For small data transfers the [web portal](ood.hpc.arizona.edu) offers the most intuitive method.
+1. Small Transfers: For small data transfers the [web portal](https://ood.hpc.arizona.edu) offers the most intuitive method.
 2. Transfers <100GB: we recommend sftp, scp or rsync using ```filexfer.hpc.arizona.edu```.  
 3. Transfers (>100GB), transfers outside the university, and large transfers within HPC: we recommend using Globus (GridFTP).
 

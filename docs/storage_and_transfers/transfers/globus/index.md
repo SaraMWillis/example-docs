@@ -8,6 +8,15 @@ GridFTP is an extension of the standard File transfer Protocol (FTP) for high-sp
 
 To use GridFTP, we recommend you use Globus. Globus uses endpoints to make transfers. 
 
+A list of endpoint names managed by HPC are shown below for reference. For more information on usage, see [HPC-Managed Globus Endpoints](#hpc-managed-globus-endpoints) below. 
+
+|Endpoint Name|Data Storage|
+|-|-|
+|UA HPC Filesystems|[HPC's main storage array](../../storage/hpc_storage/) (access to home, xdisk, and groups)|
+|UA Rental Storage Filesystem|[HPC rental storage](../../storage/rental_storage/)|
+|Tier 2 AWS Storage|[HPC-managed AWS S3 buckets](../../storage/tier2_storage/)|
+|UA HPC HIPAA Filesystems|[Soteria](../../../resources/secure_hpc/overview/)|
+
 ## Accessing Globus
 Globus can be used as a web application. To access it, go to [https://www.globus.org/](https://www.globus.org/). Next, click **Log In** in the upper right-hand corner
 
@@ -24,7 +33,7 @@ This will take you through the standard university WebAuth login process. Once y
 
 ## Globus Connect Personal
 
-To transfer files to/from your personal computer with Globus, you'll need to have a local endpoint set up. This can be achieved using Globus Connect Personal. Official documentation on how to install the relevant software and configure a local endpoint can be found in Globus' offical how-to documentation](https://docs.globus.org/how-to/). An overview is shown for Mac, Linux, and Windows below.
+To transfer files to/from your personal computer with Globus, you'll need to have a local endpoint set up. This can be achieved using Globus Connect Personal. Official documentation on how to install the relevant software and configure a local endpoint can be found in [Globus' offical how-to documentation](https://docs.globus.org/how-to/). An overview is shown for Mac, Linux, and Windows below.
 
 To start, regardless of operating system, go to [https://www.globus.org/](https://www.globus.org/), log in, navigate to the **Collections** tab, and select Get Globus Connect Personal
 
@@ -52,35 +61,35 @@ From there, choose your operating system to proceed with the download and setup 
 
 
 === "Windows"
-    Once your installation is complete, open the .exe file to initiate the install. Click Yes to allow Globus Connect Personal to make changes to your device
+    Once your installation is complete, open the .exe file to initiate the install. Click **Yes** to allow Globus Connect Personal to make changes to your device
     
     <img src="images/globus_windows_allow.png" style="width:50%">
     
-    Next, select the install location, and click Install. 
+    Next, select the install location, and click **Install**. 
     
     <img src="images/windows_install.png" style="width:50%">
 
-    Once the install is complete, make sure the Run Globus Connect Personal box is checked and click Finish.
+    Once the install is complete, make sure the **Run Globus Connect Personal** box is checked and click **Finish**.
 
     <img src="images/windows_finish_install.png" style="width:50%">
 
 
-    Globus Connect Personal will then open and begin the configuration process. Click Log In to continue.
+    Globus Connect Personal will then open and begin the configuration process. Click **Log In** to continue.
 
     <img src="images/windows_gpc_login.png" style="width:50%;">
 
-    This will open a web browser where you will go through the typical UArizona WebAuth login process. Once you're logged in, give your local endpoint a descriptive name and click Allow.
+    This will open a web browser where you will go through the typical UArizona WebAuth login process. Once you're logged in, give your local endpoint a descriptive name and click **Allow**.
 
     <img src="images/gpc_allow_windows.png" style="width:50%;">
 
-    This will bring you back to your local install. Enter a descriptive local name for your endpoint and click Save.
+    This will bring you back to your local install. Enter a descriptive local name for your endpoint and click **Save**.
 
     <img src="images/windows_local_gpc.png" style="width:50%;">
 
        
 
 === "Linux"
-    Once your installation is complete, open a terminal, navigate to your Downloads directory, and unpack the tar archive. Next, change into the unpacked directory and execute the globusconnectpersonal binary:
+    Once your installation is complete, open a terminal, navigate to your Downloads directory, and unpack the tar archive. Next, change into the unpacked directory and execute the `globusconnectpersonal` binary:
 
     ```
     [user@ubuntu ~]$ cd Downloads
@@ -89,15 +98,15 @@ From there, choose your operating system to proceed with the download and setup 
     [user@ubuntu globusconnectpersonal-3.2.0]$ ./globusconnectpersonal
     ```
 
-    This will bring up a graphical application. Click Log In to continue
+    This will bring up a graphical application. Click **Log In** to continue
 
     <img src="images/ubuntu_login.png" style="width:50%">
 
-    This will open a web browser where you will need to go through the typical university WebAuth process. Once you're logged in, give your endpoint a name and click Allow.
+    This will open a web browser where you will need to go through the typical university WebAuth process. Once you're logged in, give your endpoint a name and click **Allow**.
 
     <img src="images/ubuntu_allow.png" style="width:50%">
 
-    This will bring you back to your local installation. Give your machine a descriptive name, then select Save.
+    This will bring you back to your local installation. Give your machine a descriptive name, then select **Save**.
     <img src="images/ubuntu_collection_details.png" style="width:50%">  
 
 Your setup should now be complete and your endpoint will now be usable to initiate transfers. You can find your endpoint by navigating to the **Collections** tab and checking the box **Administered by you**. For example:
@@ -106,7 +115,11 @@ Your setup should now be complete and your endpoint will now be usable to initia
 
     
 
-## HPC-Managed Globus Endpoints
+## HPC Managed Globus Endpoints
+
+HPC managed endpoints allow you to connect to HPC-affiliated storage to initiate transfers. Transfers can be made between any two endpoints; for example, allowing you to make transfers between your own personal computer and HPC storage, between HPC storage (`/home`, `/groups`, or `/xdisk`) and a rental option (such as Tier 2 AWS buckets or HPC rental storage), or between HPC and another institution's endpoint.
+
+Below are a list of HPC managed endpoints and how to configure them:
 
 === "HPC Storage"
     The endpoint for HPC can be found by searching {==**UA HPC Filesystems**==} under the **Collections** tab.
@@ -144,7 +157,7 @@ Your setup should now be complete and your endpoint will now be usable to initia
 
 === "Tier 2 AWS Storage"
 
-    Under the Collections tab, enter {==**UA AWS S3**==} in the search bar. In the results, you should see the name UA AWS S3 show up with the description {==Managed Mapped Collection==}. Click the endpoint's name to proceed
+    To access a [Tier 2 AWS S3 bucket](../../storage/tier2_storage/), in the Collections tab, enter {==**UA AWS S3**==} in the search bar. In the results, you should see the name UA AWS S3 show up with the description {==Subscribed Mapped Collection==}. Click the endpoint's name to proceed
 
     <img src="images/aws_s3_endpoint.png" style="width:100%;">
 
@@ -174,37 +187,7 @@ Your setup should now be complete and your endpoint will now be usable to initia
     If you click the display name, this will open the bucket in the Globus file manager window allowing you to see the contents
 
     <img src="images/aws_bucket_contents.png" style="width:100%;">
-    
-    
-    
 
-=== "Google Drive Storage"
-
-    !!! danger
-        UArizona Google Drive unlimited storage is deprecated. Users are subject to a 15GB limit.
-
-    !!! tip
-        The Globus endpoint is configured to have its root directory in your My Drive. This means you won't be able to access objects stored in your Shared With Me location on Google Drive. If you wish to access them, you can set up a shortcut in Google Drive to move objects from Shared With Me to My Drive.
-
-    Under the Collections tab (see: left-hand side menu) Search for {==**UA Google Drive**==} and select the result UA Google Drive with the subheading {==Subscribed Mapped Collection (GCS) on arizona#hpc-dtn==}.
-
-    <img src="images/ua_google_drive_endpoint.png" style="width:100%;">
-
-    After clicking the result, navigate to the **Credentials** tab and select **Add Credentials**
-
-    <img src="images/add_gdrive_credential.png" style="width:100%;">
-
-    This should bring you to a page to register your credentials. Click Continue.
-
-    <img src="images/gdrive_user_credentials.png" style="width:100%;">
-
-    This will bring you to Google sign-in page. Select your university account and grant Globus access. The ability to create a shared guest collection has been deprecated following the phasing out of unlimited Google Drive storage. To view and download contents from your drive, select **Open in File Manager** from the main Collections tab
-
-    <img src="images/gdrive_file_manager.png" style="width:100%;">
-
-    This will bring you to a window where you can see the contents of your My Drive
-
-    <img src="images/gdrive_contents.png" style="width:100%;">
 
     
     

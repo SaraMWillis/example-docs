@@ -10,7 +10,7 @@ The main storage array that is accessible to the HPC is the Primary HPC Storage,
 
 * ```/groups/<pi-netid>/``` provides 500 Gb of storage to each PI group, to be shared among members. Group members should have personal directories located at ```/groups/<pi-netid>/<user-netid>``` which they should have full ownership and control over.
 
-* ```/xdisk/<pi-netid/``` provides up to 20 Tb of storage to each PI group, to be shared among members. Xdisk shares are not provided by default and must be requested by the PI through the [HPC user portal](portal.hpc.arizona.edu). Xdisk shares are also subject to a 300 day expiration cycle. 
+* ```/xdisk/<pi-netid/``` provides up to 20 Tb of storage to each PI group, to be shared among members. Xdisk shares are not provided by default and must be requested by the PI through the [HPC user portal](https://portal.hpc.arizona.edu). Xdisk shares are also subject to a 300 day expiration cycle. 
 
 !!! Tip
 

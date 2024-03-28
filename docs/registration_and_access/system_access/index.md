@@ -29,7 +29,7 @@ If you experience any problems, refer to our [FAQ page](../../support_and_traini
 
     1. Log into [Open OnDemand](https://ood.hpc.arizona.edu/) and, under My Interactive Sessions, select Interactive Desktop under Desktops on the left-hand side of the page.
         
-    2. A form will appear where you will select the target cluster, enter the amount of time you'd like to be allotted (in hours), the number of cores you need, your PI Group (if you are unsure what your group name is, you can check in https://portal.hpc.arizona.edu/portal/), and the queue. Once you've filled in your request, click Launch.
+    2. A form will appear where you will select the target cluster, enter the amount of time you'd like to be allotted (in hours), the number of cores you need, your PI Group (if you are unsure what your group name is, you can check in [https://portal.hpc.arizona.edu/portal/](https://portal.hpc.arizona.edu/portal/)), and the queue. Once you've filled in your request, click Launch.
         
         <img src="images/desktop_form.jpg" width="700"/>
         

@@ -6,12 +6,12 @@
     Some of these functions are specific to the UA HPC, and may not work if invoked on other systems. 
 
 
-Every job has a unique ID associated with it that can be used to track its status, view resource allocations and usage. Below is a list of some helpful commands you can use to track your jobs and their statuses. 
+Every job has a unique ID associated with it that can be used to track its status, view resource allocations, and resource usage. Below is a list of some helpful commands you can use for job monitoring.
 
 |<div style="width:220px">Command</div>|Purpose|<div style="width:220px">Example</div>|
 |-|-|-|
 |```squeue --job=<jobid>```|Retrieves a running or pending job's status.|```squeue --job=12345```|
-|```squeue --me```|Retrieves all of a user's running and pending jobs' status'||
+|```squeue --me```|Retrieves all your running and pending jobs||
 |```scontrol show jobs <jobid>```|Retrieve detailed information on a running or pending job|```scontrol show job 12345```|
 |```scancel <jobid>```|Cancel a running or pending job|```scancel 12345```|
 |```job-history <jobid>```|Retrieves a running or completed job's history in a user-friendly format|```job-history 12345```|
@@ -21,7 +21,7 @@ Every job has a unique ID associated with it that can be used to track its statu
 
 ## Slurm Reason Codes
 
-Sometimes, if you check a pending job there is a message that show up under a field called ```Reason``` indicating why your job may not be running. Some of these codes are non-intuitive so a human-readable translation is provided below:
+Sometimes, if you check a pending job there is a message under the field ```Reason``` indicating why your job may not be running. Some of these codes are non-intuitive so a human-readable translation is provided below:
 
 |Reason|Explanation|
 |-|-|

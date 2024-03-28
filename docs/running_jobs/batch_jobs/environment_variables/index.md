@@ -1,6 +1,6 @@
 # Slurm Environment Variables
 
-Every Slurm job has environment variables that are set by default. These can be used in a job to control job behavior, for example setting the names of output files or directories, setting CPU count for multithreaded processes, controlling input parameters, etc. 
+Every Slurm job has [environment variables](../../../support_and_training/cheat_sheet/#environment-variables) that are set by default. These can be used in a job to control job behavior, for example setting the names of output files or directories, setting CPU count for multithreaded processes, controlling input parameters, etc. 
 
 |<div style="width:270px">Variable</div>|Purpose|<div style="width:130px">Example Value</div>|
 |-|-|-|

@@ -31,9 +31,9 @@ The process of adding new members may take a few seconds to complete. Once the c
 
 ### Creating a New Group
 
-A new group can be created at any time through the user portal. New groups will share their time and storage allocations with your primary group. Alternate research groups can be a good solution for managing file permissions. For example, if you needed to restrict access of a particular directory to a certain subset of your group, you could do this by creating a new research group, adding the group members who need access to those files, and then changing the group ownership of the files/directories that need restricted access.
+A new group can be created at any time through the user portal. New groups will share their time and storage allocations with your primary group. Alternate research groups can be a good solution for managing file permissions. For example, if a particular directory and its contents needs restricted access, you could do this by creating a new research group, adding the group members who need access to those files, and then changing the group ownership of the files/directories.
 
-To create a new group, log into the user portal, select the Manage Groups and select the Add New Group dropdown menu. 
+To create a new group, log into the user portal, select the **Manage Groups** and select the **Add New Group** dropdown menu. 
 
 <img src="images/create-research-group.png" style="width:500px;">
 
@@ -54,7 +54,7 @@ PI: parent_1206 Total time: 7000:00:00
 !!! tip 
     If you are interested in having an HPC staff member come to your class to do an Intro to HPC presentation, reach out to our consultants.
     
-If you are a faculty member and are teaching a course that makes use of HPC resources, you can create a Class Group that will grant your students system access. Class groups are designed to be created and used for one semester only.
+If you are a faculty member and are teaching a course that makes use of HPC resources, you can create a class group that will grant your students system access. Class groups are designed to be created and used for one semester only.
 
 ### Creating a Class Group
 
@@ -86,12 +86,12 @@ Standard hours used on Ocelote are pulled from the same pool as your research gr
 (ocelote) [faculty_netid@wentletrap ~]$ va
 Windfall: Unlimited
  
-PI: parent_000 Total time: 35000:00:00
+PI: parent_000 Total time: 100000:00:00
     Group: hpc101 Time used: 0:00:00 Time encumbered: 0:00:00
     Group: faculty_netid Time used: 0:00:00 Time encumbered: 0:00:00
     Total used: 0:00:00
     Total encumbered: 0:00:00
-    Total remaining: 35000:00:00
+    Total remaining: 100000:00:00
 ```
 
 ## Delegating Group Management Rights
@@ -99,6 +99,6 @@ PI's can delegate management rights to trusted group members. Delegates may crea
 
 <img src="images/add-delegate.png" style="width:500px;">
 
-Once a group member has been added as a delegate, they can log into the user portal, selecting **Switch User**, enter their PI's NetID in the pop-up field, and click **Switch User**. This will allow them to perform functions on their PI's behalf. They may switch back to their own account at any time by selecting Switch User and entering their own NetID.
+Once a group member has been added as a delegate, they can log into the user portal, select **Switch User**, enter their PI's NetID in the pop-up field, and click **Switch User**. This will allow them to perform functions on their PI's behalf. They may switch back to their own account at any time by selecting Switch User and entering their own NetID.
 
 <img src="images/switch-user.png" style="width:500px;">

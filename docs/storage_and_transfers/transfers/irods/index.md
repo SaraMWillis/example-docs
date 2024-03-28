@@ -3,19 +3,22 @@
 !!! tip
     If you are looking for information on how to connect to CyVerse's data store, [see their iRODS documentation for a guide](https://learning.cyverse.org/ds/icommands/#icommands-first-time-configuration).
 
-iRODS 4 is installed as a standard package to the operating system on every node. This means you will not have to "module load irods". You will still need to ```iinit``` the first time (see below). iRODS is also available on the filexfer nodes for use.
+!!! danger
+    iRODS should only be used on the filexfer nodes which is equipped to handle large data transfers. Use of iRODS on the compute nodes may result in system issues.
+
+iRODS 4 is installed as a standard package on the operating systems of the data transfer nodes. You will need to ```iinit``` the first time you use the software (see below). 
 
 ## Initializing iRODS
 
-Running ```iinit``` for any system using iRODS 4.x, unlike its iRODS3 counterpart, does not help you set up the environment. Instead, you need to run ```create_irods_env``` with suitable options for the iRODS host, zone, username,etc manually.
+Running ```iinit``` for any system using iRODS 4.x, unlike its iRODS3 counterpart, does not help you set up the environment. Instead, you need to run ```create_irods_env``` with suitable options for the iRODS host, zone, username, etc manually.
 
 |For this key|Enter this|
 |-|-|
-|```-h```| <hostname of iRODS server>|
-|```-p```|<port number of iRODS server> (1247 is default)|
-|```-z```|<Zone name of iRODS zone>|
-|```-u```|<user name on the iRODS server> (may not match your netid)|
-|```-a```|<authentication method for the iRODS server> (PAM, native,...)|
+|```-h```| `<hostname of iRODS server>`|
+|```-p```|`<port number of iRODS server>` (1247 is default)|
+|```-z```|`<Zone name of iRODS zone>`|
+|```-u```|`<user name on the iRODS server>` (may not match your netid)|
+|```-a```|`<authentication method for the iRODS server>` (PAM, native,...)|
 
 For example
 ```

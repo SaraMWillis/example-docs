@@ -32,10 +32,13 @@ Shortcuts can be used as standins for system locations, avoiding the need for fu
 ## Hidden Files and Directories
 Hidden files and directories start with a dot ```.``` and won't show up when you do a simple ```ls```. Some of these files are used to configure your environment when you first log in. Be careful when removing or modifying these files since doing so can cause unintended consequences.
 
+!!! tip 
+    The `~` in the filenames below indicates your home directory. For example, `~/.bashrc` is specifying a file in your home called `.bashrc`.
+
 |<div style="width:120px">File/Directory</div>|What It Does|Warnings|
 |-|-|-|
-|```~/.bash_profile```|	This file sets your working environment when you first log into HPC. This file sources your ```~/.bashrc``` (see below).|Removing this file will result in the loss of the module command|
-|```~/.bashrc```|This file sets your working environment when you first log into HPC.|Removing this file will result in the loss of the module command|
+|```~/.bash_profile```|	This file sets your working environment when you first log into HPC. This file sources your ```~/.bashrc``` (see below).|See the list in the danger block below.|
+|```~/.bashrc```|This file sets your working environment when you first log into HPC.|See the list in the danger block below.|
 |```~/.local```|This is a hidden directory in your home where pip-installed python packages, jupyter kernels, RStudio session information, etc. goes.|If you pip-install python packages when a virtual environment is not active, they will be installed in this directory. These will then be automatically loaded for all future python sessions (version-specific), including in Singularity images. This may cause versioning issues. We recommend always using [virtual environments](../../software/popular_software/python_and_anaconda/python/).|
 |```~/.apptainer```|A hidden directory in your home where Apptainer images and cache files are stored by default.|This directory can grow large quickly and fill up your home. You can modify your ```~/.bashrc``` to [set a different cache directory location](../../software/containers/containers_on_hpc/) that has a larger quota.
 
@@ -50,9 +53,13 @@ Hidden files and directories start with a dot ```.``` and won't show up when you
 
         If you add `source ~/.bashrc` or `source ~/.bash_profile` to your bashrc, then you will enter an infinite sourcing loop. This means when you try to log in, your terminal will freeze, then your access will be denied. 
     
-    3. **Be careful with `echo`**
+    3. **Using `echo`**
 
         If you use CLI tools for data transfer, e.g. `scp` or `sftp`, they may require a "silent" terminal. If you're trying to initiate transfers and are getting the error "Received message too long", check your bashrc to make sure you aren't printing anything to the terminal. 
+    
+    4. **Removing your files**
+
+        If you delete either your `~/.bashrc` or `~/.bash_profile`, you will lose access to `module` commands. 
 
 
 ## Environment Variables

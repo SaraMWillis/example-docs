@@ -1,5 +1,8 @@
 # Open OnDemand
 
+!!! tip
+    Open OnDemand file transfers are limited to 64 MB. For larger files, see [our data transfer overview](../overview/) for more options.
+
 A popular method of transfering files to and from the HPC is the Open OnDemand interface, which is accessed through the browser at [ood.hpc.arizona.edu](ood.hpc.arizona.edu). 
 
 To access the file browser in Open OnDemand, choose your desired share from the "Files" dropdown menu.
@@ -10,7 +13,7 @@ From there, you should see a list of folders and files. Click on folders to open
 
 <img src="images/file_path.png" style="width:350px;">
 
-Additional actions can be taken using the button ribbon on the top right. Note that file uploads are limited to 64 Mb. 
+Additional actions can be taken using the button ribbon on the top right. 
 
 <img src="images/buttons.png" style="width:700px;">
 

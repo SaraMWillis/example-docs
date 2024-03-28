@@ -3,7 +3,7 @@
 
 ## Overview 
 
-Visual Studio Code can be used to edit source code and other files on the HPC systems.  VSCode is available to run directly on HPC through the Open on Demand system. 
+Visual Studio Code (VSCode) can be used to edit source code and other files on the HPC systems.  VSCode is available to run directly on HPC through the Open OnDemand system. 
 
 VSCode can also be run locally on laptop or desktop computers and used to make a remote connection to the HPC systems.  This documentation is intended to detail the steps that must be taken to allow such a connection.  The details of how to make such a connection within the VSCode software itself is beyond the scope of this documentation. Refer to the VSCode documentation here: [https://code.visualstudio.com/docs/remote/ssh-tutorial](https://code.visualstudio.com/docs/remote/ssh-tutorial).  
 
@@ -27,7 +27,7 @@ The specific steps are these:
  
     ```bash
     elgato
-    interactive -t 4:00:00 -a PI_name
+    interactive -t 4:00:00 -a <group_name>
     ```
     
     After the interactive session starts, type ```hostname```, which will give something like ```cpu25.elgato.hpc.arizona.edu```. This is the name that you will enter in your local VSCode as the remote computer to connect to. Note that each time you start an interactive session you will likely get a different node, and will therefore need to tell VSCode the specific host to connect to each time.

@@ -2,14 +2,14 @@
 
 ## Where Should I Store My Data?
 
-1. Data undergoing active analyses should be stored in HPC's local [High Performance Storage](storage_and_transfers/storage/hpc_storage).
-2. Large amounts of data not requiring immediate access from our HPC compute nodes can be stored at reasonable rates on our [Rental Storage](/storage_and_transfers/storage/rental_storage). 
-3. RDAS is a [research data service](storage_and_transfers/storage/rdas_storage) which supports the mounting of SMB shares. The supported operating systems are MacOS, Linux, and Windows. It provides 5TB of free storage. 
-4. Research data not requiring immediate access should be stored in [General Research Data Storage (Tier 2)](/storage_and_transfers/storage/tier2_storage). For example:
+1. Data undergoing active analyses should be stored in HPC's local [High Performance Storage](../hpc_storage/).
+2. Large amounts of data not requiring immediate access from our HPC compute nodes can be stored at reasonable rates on our [Rental Storage](../rental_storage/). 
+3. RDAS is a [research data service](../rdas_storage/) which supports the mounting of SMB shares. The supported operating systems are MacOS, Linux, and Windows. It provides 5TB of free storage. 
+4. Research data not requiring immediate access should be stored in [General Research Data Storage (Tier 2)](../tier2_storage/). For example:
     1. Large datasets where only subsets are actively being analyzed
     2. Results no longer requiring immediate access
     3. Backups (highly encouraged!)
-5. Data that require HIPAA-compliance can be stored on Soteria (currently in the pilot phase).
+5. Data that require HIPAA-compliance can be stored on [Soteria](../../../resources/secure_hpc/overview/) (currently in the pilot phase).
 
 
 <center>
@@ -21,8 +21,8 @@ graph LR
   C-->|No| E[Unsupported];
   B-->|No| F{Archival?}
   F-->|Yes| G[<a href="../../storage/tier2_storage/">AWS Tier 2<br>Storage</a>]
-  F-->|No| H{Need<br>HPC<br>access?}
-  H-->|Yes| I{Under<br>20TB?}
+  F-->|No| H{Need<br>HPC<br>compute?}
+  H-->|Yes| I{Under<br>20 TB?}
   I-->|Yes| J[<a href="../../storage/hpc_storage/">HPC Storage</a>]
   I-->|No| K[<a href="../../storage/rental_storage/">Rental Storage</a>]
   H-->|No| L{Under<br>5 TB?}
@@ -36,14 +36,14 @@ graph LR
 
 ||Purpose|<div style="width:120px">Capacity</div>|Cost|Restricted Data|Access|Duration|Backup|
 |-|-|-|-|-|-|-|-|
-|Primary HPC Storage|Research data. Supports compute. Directly attached to HPC.|```/home```: 50GB<br>```/groups```: 500GB<br>```/xdisk```: 20TB|Free|Not for restricted data|Directly mounted on HPC. Also uses Globus and DTNs.|Long term. Aligns with HPC purchase cycle.|No|
-|R-DAS|Research Desktop Attached Storage - SMB shares|5TB|Free|Not for restricted data|Mounted to workstations as shares|Long term|No|
-|Rental Storage|Research data. Large datasets. Typically for staging to HPC|Rented per Terabyte per year|Rental rate: $47.35 per TB per year|Not for restricted data|Uses Globus and DTNs. Copy data to Primary|Long term. Aligns with HPC purchase cycle|No|
-|Tier 2|Typically research data. Unused data is archived|15GB to TBs|Tier-based system. First 1TB of active data and archival data are free. Active data > 1TB is paid.|Not for restricted data|Uses Globus and AWS command line interface|Typically long term since use of Glacier is free and slow|Archival|
+|Primary HPC Storage|Research data. Supports compute. Directly attached to HPC.|```/home```: 50 GB<br>```/groups```: 500 GB<br>```/xdisk```: 20 TB|Free|Not for restricted data|Directly mounted on HPC. Also uses Globus and DTNs.|Long term. Aligns with HPC purchase cycle.|No|
+|R-DAS|Research Desktop Attached Storage - SMB shares|5 TB|Free|Not for restricted data|Mounted to workstations as shares|Long term|No|
+|Rental Storage|Research data. Large datasets. Typically for staging to HPC|Rented per TB per year|Rental rate: $47.35 per TB per year|Not for restricted data|Uses Globus and DTNs. Copy data to Primary|Long term. Aligns with HPC purchase cycle|No|
+|Tier 2|Typically research data. Unused data is archived|15 GB to TBs|Tier-based system. First 1 TB of active data and archival data are free. Active data > 1 TB is paid.|Not for restricted data|Uses Globus and AWS command line interface|Typically long term since use of Glacier is free and slow|Archival|
 |ReData|[Research data](https://data.library.arizona.edu/data-management/services/research-data-repository-redata). Managed by UA Libraries|Quota system|Free|Not for restricted data|Log in and fill out fields, then upload|Longer than 10 years|No|
 |Soteria HIPAA|Secure data enclave|Individual requests|Free upon qualification|Restricted data; HIPAA, ePHI|HIPAA training required, followed by request process|Long term|No|
-|Box|General Data|50gb|Free|Not for restricted data|Browser|Long term|No|
-|Google Drive|General data|15gb|Free. Google rates for amounts > 15gb|Not for restricted data|Browser|Unlimited usage expires March 1, 2023|No|
+|Box|General Data|50 GB|Free|Not for restricted data|Browser|Long term|No|
+|Google Drive|General data|15 GB|Free. Google rates for amounts > 15 GB|Not for restricted data|Browser|Unlimited usage expires March 1, 2023|No|
 
 
 

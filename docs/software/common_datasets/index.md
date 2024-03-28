@@ -2,11 +2,11 @@
 
 We host several large community datasets.  It is beneficial to you and us.  For you, it saves all that time downloading and filling up your storage allocation.  And for us it reduces the occurrence of the same data in many places. We do not currently update them on any particular cadence. You can request updates if you feel those would be useful to the community.
 
-These datasets and databases are available on the compute nodes in the filesystem called /contrib/datasets in read-only mode. You can view them there.
+These datasets and databases are available on the compute nodes under `/contrib/datasets` in read-only mode. 
 
 ## AlphaFold 2
 
-AlphaFold is an AI system developed by the Google DeepMind project to predict the 3D structure of a protein from its amino acid sequence. AlphaFold needs multiple datasets to run, the combined size of which is around 2.62 TB. It takes a long time to download them. We save you that effort by locating these datasets at ```/contrib/datasets/alphafold```.
+AlphaFold is an AI system developed by the Google DeepMind project to predict the 3D structure of a protein from its amino acid sequence. AlphaFold needs multiple datasets to run, the combined size of which is around 2.62 TB. You can find these datasets under ```/contrib/datasets/alphafold```.
 
 We also host containers at ```/contrib/singularity/alphafold``` that you can use with the provided datasets to predict protein structures with AlphaFold. You can access the container by loading the alphafold module from an interactive session or a batch submission script. When you load the alphafold module, it defines the following additional environment variables that you can use to easily access the container and the datasets:
 
@@ -48,7 +48,7 @@ alphafold --nv \
 ```
 
 ## Llama 2
-The Meta Large Language Model project has several datasets that we make available.
+The Meta Large Language Model project has several datasets that we make available under `/contrib/datasets/llama2`.
 
 ## NCBI Blast
-The Blast databases are provided in support of the Blast module.
+The Blast databases are provided in support of the Blast module under `/contrib/datasets/blast`.

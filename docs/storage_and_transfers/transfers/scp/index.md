@@ -4,7 +4,7 @@ SCP uses Secure Shell (SSH) for data transfer and utilizes the same mechanisms f
 
 ## Mac/Linux
 
-You will need to use an SSH v2 compliant terminal to move files to/from HPC. For more information on using SCP, use man scp.
+You will need to use an SSH v2 compliant terminal to move files to/from HPC. For more information on using SCP, use `man scp`.
 
 ### Moving a File or Directory to HPC
 
@@ -29,7 +29,7 @@ scp -rp NetId@filexfer.hpc.arizona.edu:filenameordirectory .
 Wildcards can be used for multiple file transfers (e.g. all files with .dat extension). Note the backslash ```\``` preceding ```*```
 
 ```bash
-scp NetId@filexfer.hpc.arizona.edu: subdirectory /\*. dat
+scp NetId@filexfer.hpc.arizona.edu:subdirectory/\*.dat .
 ```
 
 ## Windows

@@ -77,7 +77,7 @@ nav:
       - Pulling Containers: software/containers/pulling_containers/index.md
       - Building Containers: software/containers/building_containers/index.md
       - Running Containers: software/containers/using_containers/index.md
-    - Unsupported Software: software/unsupported/index.md
+    #- Unsupported Software: software/unsupported/index.md
 
   - Running Jobs:
     - Overview: running_jobs/overview/index.md
@@ -98,7 +98,8 @@ nav:
       - Array Jobs: running_jobs/batch_jobs/array_jobs/index.md
       - Submitting Jobs: running_jobs/batch_jobs/submitting_jobs/index.md
       #- Slurm Cheat Sheet: running_jobs/batch_jobs/slurm_reference/index.md
-    #- Example Batch Jobs:
+    - Example Batch Jobs:
+        - Apptainer Examples: running_jobs/batch_jobs/slurm_reference/index.md
     #   - Array Jobs:
     #      - Basic Array Job: running_jobs/example_batch_jobs/array_jobs/basic_array/index.md
     #      - Array Jobs with Text Filenames: running_jobs/example_batch_jobs/array_jobs/array_read_filenames/index.md

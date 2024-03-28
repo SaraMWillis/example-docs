@@ -2,7 +2,7 @@ There are two main types of limits imposed on all jobs: (1) those due to hardwar
 
 ## Hardware Limits
 
-See our page on [Compute Resources](../compute_resources) for more information. Note that each cluster has...
+See our page on [Compute Resources](../../resources/compute_resources/) for more information. Note that each cluster has:
 
 * a fixed number of nodes
 * a fixed number of CPUs per node
